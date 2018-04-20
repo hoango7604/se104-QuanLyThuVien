@@ -1,0 +1,5 @@
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.dll
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.pdb
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csprojResolveAssemblyReference.cache
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb
