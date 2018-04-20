@@ -8,7 +8,6 @@ namespace QuanLiThuVienBUS
 {
     class QuanLiBanDoc
     {
-        //lấy connection
-       // public bool 
+       
     }
 }
