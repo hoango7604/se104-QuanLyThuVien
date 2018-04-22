@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{533910D4-E89F-4DBE-AA7F-94692C466D86}</ProjectGuid>
+    <ProjectGuid>{23683DAA-7959-45FB-A885-8A14069B3F60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLiThuVienDTO</RootNamespace>

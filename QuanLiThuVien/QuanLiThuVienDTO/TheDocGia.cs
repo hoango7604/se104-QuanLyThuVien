@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLiThuVienDTO
 {
-    class TheDocGia
+    public class TheDocGia
     {
         /// <summary>
         /// Số Cmnd
