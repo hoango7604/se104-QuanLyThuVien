@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLiThuVienDTO
+namespace QuanLiThuVienBUS
 {
-    public class Class1
+    class QuanLiBanDoc
     {
+       
     }
 }
