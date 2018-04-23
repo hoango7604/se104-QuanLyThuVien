@@ -17,7 +17,7 @@ namespace QuanLiThuVienGUI
             InitializeComponent();
         }
 
-        private void thêmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thembandocToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThemBanDoc f = new frmThemBanDoc();
             f.ShowDialog();
@@ -27,6 +27,26 @@ namespace QuanLiThuVienGUI
         {
             frmThemSach f = new frmThemSach();
             f.ShowDialog();
+        }
+
+        private void btnThemBanDoc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSuaThongTinBanDoc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaBanDoc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tìmKiếmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
