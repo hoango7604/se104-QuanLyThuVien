@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLiBanDoc.cs" />
+    <Compile Include="QuanLiTheDocGia.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLiThuVienDTO\QuanLiThuVienDTO.csproj">
