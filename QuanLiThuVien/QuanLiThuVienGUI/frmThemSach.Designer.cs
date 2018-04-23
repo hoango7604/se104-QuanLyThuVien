@@ -72,7 +72,7 @@
             this.panel1.Controls.Add(this.lbTheLoaiSach);
             this.panel1.Controls.Add(this.lbTacGiaSach);
             this.panel1.Controls.Add(this.lbNhaXuatBanSach);
-            this.panel1.Location = new System.Drawing.Point(13, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(468, 504);
             this.panel1.TabIndex = 17;
@@ -254,8 +254,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnHuySach;
-            this.ClientSize = new System.Drawing.Size(507, 422);
+            this.ClientSize = new System.Drawing.Size(505, 422);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmThemSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm sách";
