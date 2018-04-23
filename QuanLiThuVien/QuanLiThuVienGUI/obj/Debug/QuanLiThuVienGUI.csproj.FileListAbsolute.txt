@@ -16,3 +16,4 @@ D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Deb
 D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.CoreCompileInputs.cache
 D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe
 D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThongTinBanDoc.resources

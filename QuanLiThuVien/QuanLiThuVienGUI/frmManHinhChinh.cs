@@ -88,12 +88,13 @@ namespace QuanLiThuVienGUI
 
         private void btnTimKiemBanDoc_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnHienThongTinChiTietBanDoc_Click(object sender, EventArgs e)
         {
-
+            frmThongTinBanDoc f = new frmThongTinBanDoc();
+            f.ShowDialog();
         }
 
         private void btnThemBanDoc_Click(object sender, EventArgs e)
