@@ -42,6 +42,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="QuanLiBanDoc.cs" />
+>>>>>>> origin/hoango7604-GUIupdate
     <Compile Include="QuanLiTheDocGia.cs" />
   </ItemGroup>
   <ItemGroup>
