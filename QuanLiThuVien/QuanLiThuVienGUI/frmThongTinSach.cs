@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLiThuVienGUI
 {
-    public partial class frmThongTinBanDoc : Form
+    public partial class frmThongTinSach : Form
     {
-        public frmThongTinBanDoc()
+        public frmThongTinSach()
         {
             InitializeComponent();
         }

@@ -37,12 +37,12 @@ namespace QuanLiThuVienGUI
 
         private void tìmKiếmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            tcManHinhChinh.SelectTab(tpBanDoc);
         }
 
         private void tìmKiếmSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            tcManHinhChinh.SelectTab(tpSach);
         }
 
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,9 +75,14 @@ namespace QuanLiThuVienGUI
 
         }
 
-        private void thôngTinPhầnMềmToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thôngTinPhầnMềmToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         /// <summary>
@@ -126,7 +131,8 @@ namespace QuanLiThuVienGUI
 
         private void btnHienThongTinChiTietSach_Click(object sender, EventArgs e)
         {
-
+            frmThongTinSach f = new frmThongTinSach();
+            f.ShowDialog();
         }
 
         private void btnThemSach_Click(object sender, EventArgs e)
@@ -176,6 +182,20 @@ namespace QuanLiThuVienGUI
         private void btnTaoPhieuThuTienPhat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Event Form Man Hinh Chinh
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void frmManHinhChinh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thoát chương trình", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

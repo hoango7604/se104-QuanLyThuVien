@@ -70,6 +70,12 @@
     <Compile Include="frmThongTinBanDoc.Designer.cs">
       <DependentUpon>frmThongTinBanDoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThongTinSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinSach.Designer.cs">
+      <DependentUpon>frmThongTinSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmManHinhChinh.resx">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinBanDoc.resx">
       <DependentUpon>frmThongTinBanDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinSach.resx">
+      <DependentUpon>frmThongTinSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
