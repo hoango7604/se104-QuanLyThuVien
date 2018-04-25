@@ -6,3 +6,6 @@ C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiTh
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.GenerateResource.Cache
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.pdb
+C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe.config
+C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe
+C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.pdb
