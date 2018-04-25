@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace QuanLiThuVienDTO
 {
+<<<<<<< HEAD:QuanLiThuVien/QuanLiThuVienDTO/ChiTietPhieuTraDTO.cs
     public class ChiTietPhieuTraDTO
+=======
+    public class ChiTietPhieuTra
+>>>>>>> 44a7782f9adfb6d612e6f162e5455e17e429be69:QuanLiThuVien/QuanLiThuVienDTO/ChiTietPhieuTra.cs
     {
         public string MaPT { get; set; }
         public string MaSach { get; set; }

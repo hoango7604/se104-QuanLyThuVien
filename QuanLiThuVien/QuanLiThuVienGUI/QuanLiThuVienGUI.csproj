@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A8C8297-7905-4820-A95E-D715BD098C00}</ProjectGuid>
+    <ProjectGuid>{C729460D-4C08-4726-98EB-47D5CB96286D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLiThuVienGUI</RootNamespace>
@@ -46,14 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmManHinhChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmManHinhChinh.Designer.cs">
+      <DependentUpon>frmManHinhChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemBanDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemBanDoc.Designer.cs">
+      <DependentUpon>frmThemBanDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemSach.Designer.cs">
+      <DependentUpon>frmThemSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinBanDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinBanDoc.Designer.cs">
+      <DependentUpon>frmThongTinBanDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinSach.Designer.cs">
+      <DependentUpon>frmThongTinSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmManHinhChinh.resx">
+      <DependentUpon>frmManHinhChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemBanDoc.resx">
+      <DependentUpon>frmThemBanDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemSach.resx">
+      <DependentUpon>frmThemSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinBanDoc.resx">
+      <DependentUpon>frmThongTinBanDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinSach.resx">
+      <DependentUpon>frmThongTinSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,6 +116,20 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLiThuVienBUS\QuanLiThuVienBUS.csproj">
+      <Project>{e3b99ea3-3692-4fd6-ac9f-2ca6c04a259b}</Project>
+      <Name>QuanLiThuVienBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLiThuVienDAL\QuanLiThuVienDAL.csproj">
+      <Project>{6f6c8998-2545-44e6-b951-ecabeadcea26}</Project>
+      <Name>QuanLiThuVienDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLiThuVienDTO\QuanLiThuVienDTO.csproj">
+      <Project>{23683daa-7959-45fb-a885-8a14069b3f60}</Project>
+      <Name>QuanLiThuVienDTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

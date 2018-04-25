@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4BA89DFF-A731-450E-841E-E8EEC5DD6C6C}</ProjectGuid>
+    <ProjectGuid>{E3B99EA3-3692-4FD6-AC9F-2CA6C04A259B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLiThuVienBUS</RootNamespace>
@@ -41,20 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLiBanDoc.cs" />
+    <Compile Include="QuanLiTheDocGia.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuanLiThuVienDAL\QuanLiThuVienDAL.csproj">
-      <Project>{10087e0a-a84e-4236-954b-c6b3f7fdef3a}</Project>
-      <Name>QuanLiThuVienDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\QuanLiThuVienDTO\QuanLiThuVienDTO.csproj">
-      <Project>{533910d4-e89f-4dbe-aa7f-94692c466d86}</Project>
+      <Project>{23683daa-7959-45fb-a885-8a14069b3f60}</Project>
       <Name>QuanLiThuVienDTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\QuanLiThuVienGUI\QuanLiThuVienGUI.csproj">
-      <Project>{9a8c8297-7905-4820-a95e-d715bd098c00}</Project>
-      <Name>QuanLiThuVienGUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

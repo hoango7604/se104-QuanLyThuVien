@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLiThuVienGUI
 {
-    public partial class Form1 : Form
+    public partial class frmThongTinBanDoc : Form
     {
-        public Form1()
+        public frmThongTinBanDoc()
         {
             InitializeComponent();
+        }
+
+        private void btnCapNhatBanDoc_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
         }
     }
 }

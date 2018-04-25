@@ -1,5 +1,11 @@
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.dll
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.pdb
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csprojResolveAssemblyReference.cache
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csproj.CoreCompileInputs.cache
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.dll
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csproj.CoreCompileInputs.cache
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csprojResolveAssemblyReference.cache

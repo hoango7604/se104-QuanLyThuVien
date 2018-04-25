@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe.config
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.pdb
@@ -9,3 +10,25 @@ C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiTh
 C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe.config
 C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe
 C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.pdb
+=======
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe.config
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienBUS.dll
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienDAL.dll
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienDTO.dll
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienBUS.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienDAL.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienDTO.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csprojResolveAssemblyReference.cache
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmManHinhChinh.resources
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThemBanDoc.resources
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThemSach.resources
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.Properties.Resources.resources
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.GenerateResource.Cache
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.CoreCompileInputs.cache
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.pdb
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThongTinBanDoc.resources
+D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThongTinSach.resources
+>>>>>>> 44a7782f9adfb6d612e6f162e5455e17e429be69
