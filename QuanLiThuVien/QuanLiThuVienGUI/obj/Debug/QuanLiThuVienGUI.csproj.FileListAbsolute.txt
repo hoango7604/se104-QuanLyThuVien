@@ -15,3 +15,6 @@ D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\Q
 =======
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien2\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe.config
 >>>>>>> ThemXoaSuaDocGia
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe.config
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.pdb

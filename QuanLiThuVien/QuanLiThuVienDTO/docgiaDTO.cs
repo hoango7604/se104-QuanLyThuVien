@@ -6,25 +6,30 @@ using System.Threading.Tasks;
 
 namespace QuanLiThuVienDTO
 {
-    public class TheDocGia
+    public class docgiaDTO
     {
-        /// <summary>
-        /// Số Cmnd
-        /// </summary>
-        private string maThe;
+        private int  maThe;
+        private string hoten;
+        private string diachi;
+        private string email;
+        private DateTime  ngaysinh;
+        private DateTime ngaydk;
+        private int  tongtienno;
+
+    
 
         public string MaThe
-             {
-                get
-                    {
-                        return maThe;
-                    }
-
-                set
-                    {
-                        maThe = value;
-                    }
+        {
+            get
+            {
+                return maThe;
             }
+
+            set
+            {
+                maThe = value;
+            }
+        }
 
         public string HoTen
         {
@@ -78,45 +83,45 @@ namespace QuanLiThuVienDTO
             }
         }
 
-        public string NgayTaoThe
+        public string Ngaydk
         {
             get
             {
-                return NgayTaoThe;
+                return Ngaydk;
             }
 
             set
             {
-                NgayTaoThe = value;
+                Ngaydk = value;
             }
         }
 
-        public int TongTienNo
+        public string Tongtienno
         {
             get
             {
-                return TongTienNo;
+                return Tongtienno;
             }
 
             set
             {
-                TongTienNo = value;
+                Tongtienno = value;
             }
         }
 
+        private int  loaidocgia;
         /// <summary>
         /// Tạo 1 thẻ đọc giả với giá trị "" cho các thuộc tính string và 0 với Tongtienno
         /// </summary>
-        public TheDocGia()
-        {
-            this.maThe = "";
-            this.HoTen = "";
-            this.DiaChi = "";
-            this.Email = "";
-            this.NgaySinh = "";
-            this.NgayTaoThe = "";
-            this.TongTienNo = 0;
 
+
+        public int  Loaidocgia
+        {
+            get { return loaidocgia; }
+            set { loaidocgia = value; }
         }
+
+
+
     }
 }

@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
+
+namespace dbConnection
+
+{
+    public class dbconnection
+    {  
+
+                private SqlDataAdapter myAdapter;
+        private SqlConnection conn; 
+
+
+        public dbconnection () {
+            myAdapter = new SqlDataAdapter();
+            conn = new SqlConnection(ConfigurationManager.AppSettings("ConnectionStr"));
+
+
+            }
+
+        public SqlConnection  openConnection ()
+        {
+            if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
+
+            {
+                conn.Open(); 
+            }
+
+            return conn; 
+        
+        }
+
+
+        public DataTable excuteNonQuery(string query ,SqlParameter [] parm )
+        {
+           DataTable datatable=  new DataTable(); 
+               datatable=null; 
+            SqlCommand comm= new SqlCommand ();
+
+            comm.Connection = openConnection();
+            comm.CommandText = query;
+            comm.Parameters.AddRange(parm);
+            comm.ExecuteNonQuery(); 
+
+
+            myAdapter.SelectCommand = comm;
+            myAdapter.Fill(datatable); 
+
+
+          
+
+
+            return datatable  ; 
+
+        }
+
+    }
+}
