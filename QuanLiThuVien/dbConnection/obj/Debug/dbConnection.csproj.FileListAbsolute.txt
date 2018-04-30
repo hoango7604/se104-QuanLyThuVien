@@ -1,0 +1,5 @@
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\dbConnection\obj\Debug\dbConnection.csprojResolveAssemblyReference.cache
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\dbConnection\bin\Debug\dbConnection.dll
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\dbConnection\bin\Debug\dbConnection.pdb
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\dbConnection\obj\Debug\dbConnection.dll
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\dbConnection\obj\Debug\dbConnection.pdb

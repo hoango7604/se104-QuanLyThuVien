@@ -18,7 +18,7 @@ namespace QuanLiThuVienDTO
 
     
 
-        public string MaThe
+        public int  MaThe
         {
             get
             {
@@ -70,7 +70,7 @@ namespace QuanLiThuVienDTO
             }
         }
 
-        public string NgaySinh
+        public DateTime NgaySinh
         {
             get
             {
@@ -83,7 +83,7 @@ namespace QuanLiThuVienDTO
             }
         }
 
-        public string Ngaydk
+        public DateTime Ngaydk
         {
             get
             {
@@ -96,7 +96,7 @@ namespace QuanLiThuVienDTO
             }
         }
 
-        public string Tongtienno
+        public int Tongtienno
         {
             get
             {

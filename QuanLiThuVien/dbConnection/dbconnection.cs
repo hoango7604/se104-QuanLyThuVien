@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 
+
+
 namespace dbConnection
 
 {
@@ -20,7 +22,8 @@ namespace dbConnection
 
         public dbconnection () {
             myAdapter = new SqlDataAdapter();
-            conn = new SqlConnection(ConfigurationManager.AppSettings("ConnectionStr"));
+           // string str = ConfigurationManager.AppSettings("ConnectionStr");
+            conn = new SqlConnection("@Data Source=. ;Initial Catalog=THUVIEN;Integrated Security=True");
 
 
             }

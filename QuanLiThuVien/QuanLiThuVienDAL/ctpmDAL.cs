@@ -13,17 +13,17 @@ namespace QuanLiThuVienDAL
     class ctpmDAL
     {
 
-        
-       private dbconnection conn;
+
+        private dbconnection conn;
 
 
-       public ctpmDAL()
-       {
-           conn = new dbconnection(); 
-       }
+        public ctpmDAL()
+        {
+            conn = new dbconnection();
+        }
         // hien thi list dto 
 
-        public bool danhsachCTPM(List<ctpmDTO> listctpmDTO  )
+        public bool danhsachCTPM(List<ctpmDTO> listctpmDTO)
         {
 
             string query = string.Format("select* from [ct_phieumuon] ");
@@ -36,25 +36,25 @@ namespace QuanLiThuVienDAL
 
             foreach (DataRow dr in datatable.Rows)
             {
-                 ctpmDTO pmDTO = new ctpmDTO();
-                 pmDTO.Mapm = Int32.Parse( dr["mapm"].ToString());
+                ctpmDTO pmDTO = new ctpmDTO();
+                pmDTO.Mapm = Int32.Parse(dr["mapm"].ToString());
 
-                 pmDTO.Masach = Int32.Parse(dr["masach"].ToString());
+                pmDTO.Masach = Int32.Parse(dr["masach"].ToString());
 
 
-                 listctpmDTO.Add(pmDTO);
+                listctpmDTO.Add(pmDTO);
             }
-        
-       
 
 
-            return true; 
+
+
+            return true;
         }
 
 
 
-        
-        public bool themCTPM(ctpmDTO ctpmDTO )
+
+        public bool themCTPM(ctpmDTO ctpmDTO)
         {
 
 
@@ -64,8 +64,8 @@ namespace QuanLiThuVienDAL
             param[0].Value = Convert.ToString(ctpmDTO.Mapm);
             param[1] = new SqlParameter("@masach", SqlDbType.Int);
             param[1].Value = Convert.ToString(ctpmDTO.Masach);
-           
- 
+
+
             conn.excuteNonQuery(query, param);
 
 
@@ -74,5 +74,6 @@ namespace QuanLiThuVienDAL
 
 
 
+        }
     }
 }

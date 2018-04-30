@@ -3,3 +3,20 @@ D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\Q
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csproj.CoreCompileInputs.cache
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csprojResolveAssemblyReference.cache
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.dll
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.pdb
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\dbConnection.dll
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\mscorlib.dll
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDTO.dll
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\System.Net.Http.dll
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\dbConnection.pdb
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDTO.pdb
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\System.Net.Http.xml
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\normidna.nlp
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\normnfc.nlp
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\normnfd.nlp
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\normnfkc.nlp
+C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\normnfkd.nlp
