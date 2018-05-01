@@ -1,0 +1,1 @@
+SQLCMD -S ANDONGNHI\SQLEXPRESS -E -i Library2.sql
