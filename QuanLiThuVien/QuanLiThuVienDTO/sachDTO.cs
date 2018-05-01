@@ -57,7 +57,15 @@ namespace QuanLiThuVienDTO
         {
             get { return trangthai; }
             set { trangthai = value; }
-        } 
+        }
+
+        private string tacgia;
+
+        public string Tacgia
+        {
+            get { return tacgia; }
+            set { tacgia = value; }
+        }
 
     }
 }

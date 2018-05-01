@@ -173,6 +173,14 @@ namespace QuanLiThuVienGUI
 
         }
 
+<<<<<<< HEAD
+        private void lvDanhSachBanDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+
+=======
         /// <summary>
         /// Event Tab Phieu Tra
         /// </summary>
@@ -196,6 +204,7 @@ namespace QuanLiThuVienGUI
             {
                 e.Cancel = true;
             }
+>>>>>>> 8c2a9403855c8db69b897490ba157f45e4f233f0
         }
     }
 }

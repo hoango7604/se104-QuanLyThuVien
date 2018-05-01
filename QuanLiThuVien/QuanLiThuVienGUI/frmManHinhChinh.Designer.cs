@@ -132,6 +132,12 @@
             this.lbDanhSachPhieuThuTienPhat = new System.Windows.Forms.Label();
             this.tpThongKe = new System.Windows.Forms.TabPage();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.dtpNgayTaoTheBanDoc = new System.Windows.Forms.DateTimePicker();
+            this.txbTongTienNoBanDoc = new System.Windows.Forms.TextBox();
+            this.lbNgayTaoTheBanDoc = new System.Windows.Forms.Label();
+            this.lbTongTienNoBanDoc = new System.Windows.Forms.Label();
+            this.cbTinhTrangSach = new System.Windows.Forms.ComboBox();
+            this.lbTinhTrangSach = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tcManHinhChinh.SuspendLayout();
             this.tpBanDoc.SuspendLayout();
@@ -187,17 +193,25 @@
             // thêmBạnĐọcToolStripMenuItem
             // 
             this.thêmBạnĐọcToolStripMenuItem.Name = "thêmBạnĐọcToolStripMenuItem";
+<<<<<<< HEAD
+            this.thêmBạnĐọcToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+=======
             this.thêmBạnĐọcToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.thêmBạnĐọcToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+>>>>>>> 8c2a9403855c8db69b897490ba157f45e4f233f0
             this.thêmBạnĐọcToolStripMenuItem.Text = "Thêm bạn đọc";
             this.thêmBạnĐọcToolStripMenuItem.Click += new System.EventHandler(this.thêmBạnĐọcToolStripMenuItem_Click);
             // 
             // thêmSáchToolStripMenuItem
             // 
             this.thêmSáchToolStripMenuItem.Name = "thêmSáchToolStripMenuItem";
+<<<<<<< HEAD
+            this.thêmSáchToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+=======
             this.thêmSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.N)));
             this.thêmSáchToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+>>>>>>> 8c2a9403855c8db69b897490ba157f45e4f233f0
             this.thêmSáchToolStripMenuItem.Text = "Thêm sách";
             this.thêmSáchToolStripMenuItem.Click += new System.EventHandler(this.thêmSáchToolStripMenuItem_Click);
             // 
@@ -460,6 +474,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.dtpNgayTaoTheBanDoc);
+            this.panel3.Controls.Add(this.txbTongTienNoBanDoc);
+            this.panel3.Controls.Add(this.lbNgayTaoTheBanDoc);
+            this.panel3.Controls.Add(this.lbTongTienNoBanDoc);
             this.panel3.Controls.Add(this.btnHienThongTinChiTietBanDoc);
             this.panel3.Controls.Add(this.txbDiaChiBanDoc);
             this.panel3.Controls.Add(this.dtpNgaySinhBanDoc);
@@ -475,7 +493,7 @@
             this.panel3.Controls.Add(this.lbDiaChiBanDoc);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(445, 335);
+            this.panel3.Size = new System.Drawing.Size(445, 448);
             this.panel3.TabIndex = 3;
             // 
             // btnHienThongTinChiTietBanDoc
@@ -612,6 +630,7 @@
             this.lvDanhSachBanDoc.Size = new System.Drawing.Size(448, 477);
             this.lvDanhSachBanDoc.TabIndex = 0;
             this.lvDanhSachBanDoc.UseCompatibleStateImageBehavior = false;
+            this.lvDanhSachBanDoc.SelectedIndexChanged += new System.EventHandler(this.lvDanhSachBanDoc_SelectedIndexChanged);
             // 
             // tpSach
             // 
@@ -772,6 +791,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.cbTinhTrangSach);
+            this.panel4.Controls.Add(this.lbTinhTrangSach);
             this.panel4.Controls.Add(this.btnHienThongTinChiTietSach);
             this.panel4.Controls.Add(this.txbGiaTriSach);
             this.panel4.Controls.Add(this.lbGiaTriSach);
@@ -791,7 +812,7 @@
             this.panel4.Controls.Add(this.lbNhaXuatBanSach);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(445, 441);
+            this.panel4.Size = new System.Drawing.Size(445, 497);
             this.panel4.TabIndex = 18;
             // 
             // btnHienThongTinChiTietSach
@@ -824,6 +845,7 @@
             // dtpNgayNhapSach
             // 
             this.dtpNgayNhapSach.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayNhapSach.Enabled = false;
             this.dtpNgayNhapSach.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayNhapSach.Location = new System.Drawing.Point(108, 302);
             this.dtpNgayNhapSach.Name = "dtpNgayNhapSach";
@@ -1163,6 +1185,65 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
+            // dtpNgayTaoTheBanDoc
+            // 
+            this.dtpNgayTaoTheBanDoc.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayTaoTheBanDoc.Enabled = false;
+            this.dtpNgayTaoTheBanDoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayTaoTheBanDoc.Location = new System.Drawing.Point(108, 405);
+            this.dtpNgayTaoTheBanDoc.Name = "dtpNgayTaoTheBanDoc";
+            this.dtpNgayTaoTheBanDoc.Size = new System.Drawing.Size(200, 29);
+            this.dtpNgayTaoTheBanDoc.TabIndex = 19;
+            // 
+            // txbTongTienNoBanDoc
+            // 
+            this.txbTongTienNoBanDoc.Enabled = false;
+            this.txbTongTienNoBanDoc.Location = new System.Drawing.Point(108, 351);
+            this.txbTongTienNoBanDoc.Name = "txbTongTienNoBanDoc";
+            this.txbTongTienNoBanDoc.Size = new System.Drawing.Size(325, 29);
+            this.txbTongTienNoBanDoc.TabIndex = 20;
+            // 
+            // lbNgayTaoTheBanDoc
+            // 
+            this.lbNgayTaoTheBanDoc.AutoSize = true;
+            this.lbNgayTaoTheBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbNgayTaoTheBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbNgayTaoTheBanDoc.Location = new System.Drawing.Point(3, 405);
+            this.lbNgayTaoTheBanDoc.Name = "lbNgayTaoTheBanDoc";
+            this.lbNgayTaoTheBanDoc.Size = new System.Drawing.Size(103, 20);
+            this.lbNgayTaoTheBanDoc.TabIndex = 21;
+            this.lbNgayTaoTheBanDoc.Text = "Ngày tạo thẻ:";
+            // 
+            // lbTongTienNoBanDoc
+            // 
+            this.lbTongTienNoBanDoc.AutoSize = true;
+            this.lbTongTienNoBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbTongTienNoBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbTongTienNoBanDoc.Location = new System.Drawing.Point(5, 351);
+            this.lbTongTienNoBanDoc.Name = "lbTongTienNoBanDoc";
+            this.lbTongTienNoBanDoc.Size = new System.Drawing.Size(101, 20);
+            this.lbTongTienNoBanDoc.TabIndex = 22;
+            this.lbTongTienNoBanDoc.Text = "Tổng tiền nợ:";
+            // 
+            // cbTinhTrangSach
+            // 
+            this.cbTinhTrangSach.Enabled = false;
+            this.cbTinhTrangSach.FormattingEnabled = true;
+            this.cbTinhTrangSach.Location = new System.Drawing.Point(108, 452);
+            this.cbTinhTrangSach.Name = "cbTinhTrangSach";
+            this.cbTinhTrangSach.Size = new System.Drawing.Size(200, 32);
+            this.cbTinhTrangSach.TabIndex = 38;
+            // 
+            // lbTinhTrangSach
+            // 
+            this.lbTinhTrangSach.AutoSize = true;
+            this.lbTinhTrangSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTinhTrangSach.Location = new System.Drawing.Point(3, 453);
+            this.lbTinhTrangSach.Name = "lbTinhTrangSach";
+            this.lbTinhTrangSach.Size = new System.Drawing.Size(84, 20);
+            this.lbTinhTrangSach.TabIndex = 39;
+            this.lbTinhTrangSach.Text = "Tình trạng:";
+            // 
             // frmManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1322,5 +1403,11 @@
         private System.Windows.Forms.Label lbDanhSachPhieuThuTienPhat;
         private System.Windows.Forms.ToolStripMenuItem thôngTinPhầnMềmToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker dtpNgayTaoTheBanDoc;
+        private System.Windows.Forms.TextBox txbTongTienNoBanDoc;
+        private System.Windows.Forms.Label lbNgayTaoTheBanDoc;
+        private System.Windows.Forms.Label lbTongTienNoBanDoc;
+        private System.Windows.Forms.ComboBox cbTinhTrangSach;
+        private System.Windows.Forms.Label lbTinhTrangSach;
     }
 }

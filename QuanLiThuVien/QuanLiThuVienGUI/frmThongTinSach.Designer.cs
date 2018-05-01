@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnHuyCapNhatBanDoc = new System.Windows.Forms.Button();
-            this.btnCapNhatBanDoc = new System.Windows.Forms.Button();
-            this.lbThongTinSach = new System.Windows.Forms.Label();
+            this.cbTinhTrangSach = new System.Windows.Forms.ComboBox();
+            this.lbTinhTrangSach = new System.Windows.Forms.Label();
             this.txbGiaTriSach = new System.Windows.Forms.TextBox();
             this.lbGiaTriSach = new System.Windows.Forms.Label();
             this.dtpNgayNhapSach = new System.Windows.Forms.DateTimePicker();
@@ -48,8 +47,9 @@
             this.lbTheLoaiSach = new System.Windows.Forms.Label();
             this.lbTacGiaSach = new System.Windows.Forms.Label();
             this.lbNhaXuatBanSach = new System.Windows.Forms.Label();
-            this.cbTinhTrangSach = new System.Windows.Forms.ComboBox();
-            this.lbTinhTrangSach = new System.Windows.Forms.Label();
+            this.btnHuyCapNhatBanDoc = new System.Windows.Forms.Button();
+            this.btnCapNhatBanDoc = new System.Windows.Forms.Button();
+            this.lbThongTinSach = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,38 +81,24 @@
             this.panel1.Size = new System.Drawing.Size(845, 327);
             this.panel1.TabIndex = 18;
             // 
-            // btnHuyCapNhatBanDoc
+            // cbTinhTrangSach
             // 
-            this.btnHuyCapNhatBanDoc.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuyCapNhatBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnHuyCapNhatBanDoc.Location = new System.Drawing.Point(757, 286);
-            this.btnHuyCapNhatBanDoc.Name = "btnHuyCapNhatBanDoc";
-            this.btnHuyCapNhatBanDoc.Size = new System.Drawing.Size(82, 38);
-            this.btnHuyCapNhatBanDoc.TabIndex = 10;
-            this.btnHuyCapNhatBanDoc.Text = "Hủy";
-            this.btnHuyCapNhatBanDoc.UseVisualStyleBackColor = true;
+            this.cbTinhTrangSach.Enabled = false;
+            this.cbTinhTrangSach.FormattingEnabled = true;
+            this.cbTinhTrangSach.Location = new System.Drawing.Point(108, 255);
+            this.cbTinhTrangSach.Name = "cbTinhTrangSach";
+            this.cbTinhTrangSach.Size = new System.Drawing.Size(200, 21);
+            this.cbTinhTrangSach.TabIndex = 8;
             // 
-            // btnCapNhatBanDoc
+            // lbTinhTrangSach
             // 
-            this.btnCapNhatBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCapNhatBanDoc.Location = new System.Drawing.Point(669, 286);
-            this.btnCapNhatBanDoc.Name = "btnCapNhatBanDoc";
-            this.btnCapNhatBanDoc.Size = new System.Drawing.Size(82, 38);
-            this.btnCapNhatBanDoc.TabIndex = 9;
-            this.btnCapNhatBanDoc.Text = "Cập nhật";
-            this.btnCapNhatBanDoc.UseVisualStyleBackColor = true;
-            this.btnCapNhatBanDoc.Click += new System.EventHandler(this.btnCapNhatBanDoc_Click);
-            // 
-            // lbThongTinSach
-            // 
-            this.lbThongTinSach.AutoSize = true;
-            this.lbThongTinSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThongTinSach.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbThongTinSach.Location = new System.Drawing.Point(304, 0);
-            this.lbThongTinSach.Name = "lbThongTinSach";
-            this.lbThongTinSach.Size = new System.Drawing.Size(243, 39);
-            this.lbThongTinSach.TabIndex = 20;
-            this.lbThongTinSach.Text = "Thông tin sách";
+            this.lbTinhTrangSach.AutoSize = true;
+            this.lbTinhTrangSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTinhTrangSach.Location = new System.Drawing.Point(3, 256);
+            this.lbTinhTrangSach.Name = "lbTinhTrangSach";
+            this.lbTinhTrangSach.Size = new System.Drawing.Size(84, 20);
+            this.lbTinhTrangSach.TabIndex = 37;
+            this.lbTinhTrangSach.Text = "Tình trạng:";
             // 
             // txbGiaTriSach
             // 
@@ -134,6 +120,7 @@
             // dtpNgayNhapSach
             // 
             this.dtpNgayNhapSach.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayNhapSach.Enabled = false;
             this.dtpNgayNhapSach.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayNhapSach.Location = new System.Drawing.Point(545, 106);
             this.dtpNgayNhapSach.Name = "dtpNgayNhapSach";
@@ -253,23 +240,38 @@
             this.lbNhaXuatBanSach.TabIndex = 32;
             this.lbNhaXuatBanSach.Text = "Nhà xuất bản:";
             // 
-            // cbTinhTrangSach
+            // btnHuyCapNhatBanDoc
             // 
-            this.cbTinhTrangSach.FormattingEnabled = true;
-            this.cbTinhTrangSach.Location = new System.Drawing.Point(108, 255);
-            this.cbTinhTrangSach.Name = "cbTinhTrangSach";
-            this.cbTinhTrangSach.Size = new System.Drawing.Size(200, 21);
-            this.cbTinhTrangSach.TabIndex = 8;
+            this.btnHuyCapNhatBanDoc.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuyCapNhatBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnHuyCapNhatBanDoc.Location = new System.Drawing.Point(757, 286);
+            this.btnHuyCapNhatBanDoc.Name = "btnHuyCapNhatBanDoc";
+            this.btnHuyCapNhatBanDoc.Size = new System.Drawing.Size(82, 38);
+            this.btnHuyCapNhatBanDoc.TabIndex = 10;
+            this.btnHuyCapNhatBanDoc.Text = "Hủy";
+            this.btnHuyCapNhatBanDoc.UseVisualStyleBackColor = true;
             // 
-            // lbTinhTrangSach
+            // btnCapNhatBanDoc
             // 
-            this.lbTinhTrangSach.AutoSize = true;
-            this.lbTinhTrangSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTinhTrangSach.Location = new System.Drawing.Point(3, 256);
-            this.lbTinhTrangSach.Name = "lbTinhTrangSach";
-            this.lbTinhTrangSach.Size = new System.Drawing.Size(84, 20);
-            this.lbTinhTrangSach.TabIndex = 37;
-            this.lbTinhTrangSach.Text = "Tình trạng:";
+            this.btnCapNhatBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCapNhatBanDoc.Location = new System.Drawing.Point(669, 286);
+            this.btnCapNhatBanDoc.Name = "btnCapNhatBanDoc";
+            this.btnCapNhatBanDoc.Size = new System.Drawing.Size(82, 38);
+            this.btnCapNhatBanDoc.TabIndex = 9;
+            this.btnCapNhatBanDoc.Text = "Cập nhật";
+            this.btnCapNhatBanDoc.UseVisualStyleBackColor = true;
+            this.btnCapNhatBanDoc.Click += new System.EventHandler(this.btnCapNhatBanDoc_Click);
+            // 
+            // lbThongTinSach
+            // 
+            this.lbThongTinSach.AutoSize = true;
+            this.lbThongTinSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThongTinSach.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbThongTinSach.Location = new System.Drawing.Point(304, 0);
+            this.lbThongTinSach.Name = "lbThongTinSach";
+            this.lbThongTinSach.Size = new System.Drawing.Size(243, 39);
+            this.lbThongTinSach.TabIndex = 20;
+            this.lbThongTinSach.Text = "Thông tin sách";
             // 
             // frmThongTinSach
             // 
