@@ -1,6 +1,5 @@
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\bin\Debug\dbConnection.dll
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\bin\Debug\dbConnection.pdb
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.dll
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.pdb

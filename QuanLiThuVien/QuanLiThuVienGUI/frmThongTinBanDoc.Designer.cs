@@ -49,12 +49,12 @@
             this.lbEmailBanDoc = new System.Windows.Forms.Label();
             this.lbDiaChiBanDoc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
-            this.btnLapPhieuTra = new System.Windows.Forms.Button();
             this.btnGiaHanSach = new System.Windows.Forms.Button();
+            this.btnLapPhieuTra = new System.Windows.Forms.Button();
+            this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.dongThongTinSach1 = new QuanLiThuVienGUI.dongThongTinSach();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,7 +84,7 @@
             this.panel1.Controls.Add(this.lbDiaChiBanDoc);
             this.panel1.Location = new System.Drawing.Point(12, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 218);
+            this.panel1.Size = new System.Drawing.Size(845, 227);
             this.panel1.TabIndex = 17;
             // 
             // dtpNgayTaoTheBanDoc
@@ -284,16 +284,15 @@
             this.panel2.Size = new System.Drawing.Size(845, 306);
             this.panel2.TabIndex = 18;
             // 
-            // lbDanhSachSachDangMuon
+            // btnGiaHanSach
             // 
-            this.lbDanhSachSachDangMuon.AutoSize = true;
-            this.lbDanhSachSachDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDanhSachSachDangMuon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbDanhSachSachDangMuon.Location = new System.Drawing.Point(82, 5);
-            this.lbDanhSachSachDangMuon.Name = "lbDanhSachSachDangMuon";
-            this.lbDanhSachSachDangMuon.Size = new System.Drawing.Size(446, 39);
-            this.lbDanhSachSachDangMuon.TabIndex = 15;
-            this.lbDanhSachSachDangMuon.Text = "Danh sách sách đang mượn";
+            this.btnGiaHanSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGiaHanSach.Location = new System.Drawing.Point(728, 3);
+            this.btnGiaHanSach.Name = "btnGiaHanSach";
+            this.btnGiaHanSach.Size = new System.Drawing.Size(114, 41);
+            this.btnGiaHanSach.TabIndex = 17;
+            this.btnGiaHanSach.Text = "Gia hạn sách";
+            this.btnGiaHanSach.UseVisualStyleBackColor = true;
             // 
             // btnLapPhieuTra
             // 
@@ -305,15 +304,16 @@
             this.btnLapPhieuTra.Text = "Lập phiếu trả";
             this.btnLapPhieuTra.UseVisualStyleBackColor = true;
             // 
-            // btnGiaHanSach
+            // lbDanhSachSachDangMuon
             // 
-            this.btnGiaHanSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGiaHanSach.Location = new System.Drawing.Point(728, 3);
-            this.btnGiaHanSach.Name = "btnGiaHanSach";
-            this.btnGiaHanSach.Size = new System.Drawing.Size(114, 41);
-            this.btnGiaHanSach.TabIndex = 17;
-            this.btnGiaHanSach.Text = "Gia hạn sách";
-            this.btnGiaHanSach.UseVisualStyleBackColor = true;
+            this.lbDanhSachSachDangMuon.AutoSize = true;
+            this.lbDanhSachSachDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhSachSachDangMuon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbDanhSachSachDangMuon.Location = new System.Drawing.Point(82, 5);
+            this.lbDanhSachSachDangMuon.Name = "lbDanhSachSachDangMuon";
+            this.lbDanhSachSachDangMuon.Size = new System.Drawing.Size(446, 39);
+            this.lbDanhSachSachDangMuon.TabIndex = 15;
+            this.lbDanhSachSachDangMuon.Text = "Danh sách sách đang mượn";
             // 
             // panel3
             // 
@@ -325,6 +325,14 @@
             this.panel3.Size = new System.Drawing.Size(838, 253);
             this.panel3.TabIndex = 18;
             // 
+            // dongThongTinSach1
+            // 
+            this.dongThongTinSach1.BackColor = System.Drawing.SystemColors.Window;
+            this.dongThongTinSach1.Location = new System.Drawing.Point(1, 4);
+            this.dongThongTinSach1.Name = "dongThongTinSach1";
+            this.dongThongTinSach1.Size = new System.Drawing.Size(816, 70);
+            this.dongThongTinSach1.TabIndex = 1;
+            // 
             // listView1
             // 
             this.listView1.Location = new System.Drawing.Point(0, 3);
@@ -332,13 +340,6 @@
             this.listView1.Size = new System.Drawing.Size(818, 314);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // dongThongTinSach1
-            // 
-            this.dongThongTinSach1.Location = new System.Drawing.Point(1, 4);
-            this.dongThongTinSach1.Name = "dongThongTinSach1";
-            this.dongThongTinSach1.Size = new System.Drawing.Size(816, 70);
-            this.dongThongTinSach1.TabIndex = 1;
             // 
             // frmThongTinBanDoc
             // 
