@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemBanDoc));
             this.lbThemBanDoc = new System.Windows.Forms.Label();
             this.lbTenBanDoc = new System.Windows.Forms.Label();
             this.txbTenBanDoc = new System.Windows.Forms.TextBox();
@@ -49,139 +50,85 @@
             // 
             // lbThemBanDoc
             // 
-            this.lbThemBanDoc.AutoSize = true;
-            this.lbThemBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThemBanDoc.Location = new System.Drawing.Point(74, 13);
+            resources.ApplyResources(this.lbThemBanDoc, "lbThemBanDoc");
             this.lbThemBanDoc.Name = "lbThemBanDoc";
-            this.lbThemBanDoc.Size = new System.Drawing.Size(332, 55);
-            this.lbThemBanDoc.TabIndex = 0;
-            this.lbThemBanDoc.Text = "Thêm bạn đọc";
             // 
             // lbTenBanDoc
             // 
-            this.lbTenBanDoc.AutoSize = true;
-            this.lbTenBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenBanDoc.Location = new System.Drawing.Point(3, 90);
+            resources.ApplyResources(this.lbTenBanDoc, "lbTenBanDoc");
             this.lbTenBanDoc.Name = "lbTenBanDoc";
-            this.lbTenBanDoc.Size = new System.Drawing.Size(101, 20);
-            this.lbTenBanDoc.TabIndex = 1;
-            this.lbTenBanDoc.Text = "Tên bạn đọc:";
             // 
             // txbTenBanDoc
             // 
-            this.txbTenBanDoc.Location = new System.Drawing.Point(108, 90);
+            resources.ApplyResources(this.txbTenBanDoc, "txbTenBanDoc");
             this.txbTenBanDoc.Name = "txbTenBanDoc";
-            this.txbTenBanDoc.Size = new System.Drawing.Size(351, 20);
-            this.txbTenBanDoc.TabIndex = 0;
             // 
             // txbCMNDBanDoc
             // 
-            this.txbCMNDBanDoc.Location = new System.Drawing.Point(108, 137);
+            resources.ApplyResources(this.txbCMNDBanDoc, "txbCMNDBanDoc");
             this.txbCMNDBanDoc.Name = "txbCMNDBanDoc";
-            this.txbCMNDBanDoc.Size = new System.Drawing.Size(351, 20);
-            this.txbCMNDBanDoc.TabIndex = 1;
             // 
             // lbCMNDBanDoc
             // 
-            this.lbCMNDBanDoc.AutoSize = true;
-            this.lbCMNDBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCMNDBanDoc.Location = new System.Drawing.Point(3, 135);
+            resources.ApplyResources(this.lbCMNDBanDoc, "lbCMNDBanDoc");
             this.lbCMNDBanDoc.Name = "lbCMNDBanDoc";
-            this.lbCMNDBanDoc.Size = new System.Drawing.Size(60, 20);
-            this.lbCMNDBanDoc.TabIndex = 3;
-            this.lbCMNDBanDoc.Text = "CMND:";
             // 
             // lbNgaySinhBanDoc
             // 
-            this.lbNgaySinhBanDoc.AutoSize = true;
-            this.lbNgaySinhBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgaySinhBanDoc.Location = new System.Drawing.Point(3, 179);
+            resources.ApplyResources(this.lbNgaySinhBanDoc, "lbNgaySinhBanDoc");
             this.lbNgaySinhBanDoc.Name = "lbNgaySinhBanDoc";
-            this.lbNgaySinhBanDoc.Size = new System.Drawing.Size(82, 20);
-            this.lbNgaySinhBanDoc.TabIndex = 5;
-            this.lbNgaySinhBanDoc.Text = "Ngày sinh:";
             // 
             // txbEmailBanDoc
             // 
-            this.txbEmailBanDoc.Location = new System.Drawing.Point(108, 227);
+            resources.ApplyResources(this.txbEmailBanDoc, "txbEmailBanDoc");
             this.txbEmailBanDoc.Name = "txbEmailBanDoc";
-            this.txbEmailBanDoc.Size = new System.Drawing.Size(351, 20);
-            this.txbEmailBanDoc.TabIndex = 3;
             // 
             // lbEmailBanDoc
             // 
-            this.lbEmailBanDoc.AutoSize = true;
-            this.lbEmailBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmailBanDoc.Location = new System.Drawing.Point(3, 227);
+            resources.ApplyResources(this.lbEmailBanDoc, "lbEmailBanDoc");
             this.lbEmailBanDoc.Name = "lbEmailBanDoc";
-            this.lbEmailBanDoc.Size = new System.Drawing.Size(52, 20);
-            this.lbEmailBanDoc.TabIndex = 7;
-            this.lbEmailBanDoc.Text = "Email:";
             // 
             // txbDiaChiBanDoc
             // 
-            this.txbDiaChiBanDoc.Location = new System.Drawing.Point(108, 274);
+            resources.ApplyResources(this.txbDiaChiBanDoc, "txbDiaChiBanDoc");
             this.txbDiaChiBanDoc.Name = "txbDiaChiBanDoc";
-            this.txbDiaChiBanDoc.Size = new System.Drawing.Size(351, 20);
-            this.txbDiaChiBanDoc.TabIndex = 4;
             // 
             // lbDiaChiBanDoc
             // 
-            this.lbDiaChiBanDoc.AutoSize = true;
-            this.lbDiaChiBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiaChiBanDoc.Location = new System.Drawing.Point(3, 274);
+            resources.ApplyResources(this.lbDiaChiBanDoc, "lbDiaChiBanDoc");
             this.lbDiaChiBanDoc.Name = "lbDiaChiBanDoc";
-            this.lbDiaChiBanDoc.Size = new System.Drawing.Size(61, 20);
-            this.lbDiaChiBanDoc.TabIndex = 9;
-            this.lbDiaChiBanDoc.Text = "Địa chỉ:";
             // 
             // dtpNgaySinhBanDoc
             // 
-            this.dtpNgaySinhBanDoc.CustomFormat = "dd/MM/yyyy";
+            resources.ApplyResources(this.dtpNgaySinhBanDoc, "dtpNgaySinhBanDoc");
             this.dtpNgaySinhBanDoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinhBanDoc.Location = new System.Drawing.Point(108, 179);
             this.dtpNgaySinhBanDoc.Name = "dtpNgaySinhBanDoc";
-            this.dtpNgaySinhBanDoc.Size = new System.Drawing.Size(200, 20);
-            this.dtpNgaySinhBanDoc.TabIndex = 2;
             // 
             // btnThemBanDoc
             // 
-            this.btnThemBanDoc.Location = new System.Drawing.Point(290, 359);
+            resources.ApplyResources(this.btnThemBanDoc, "btnThemBanDoc");
             this.btnThemBanDoc.Name = "btnThemBanDoc";
-            this.btnThemBanDoc.Size = new System.Drawing.Size(75, 23);
-            this.btnThemBanDoc.TabIndex = 6;
-            this.btnThemBanDoc.Text = "Thêm";
             this.btnThemBanDoc.UseVisualStyleBackColor = true;
             this.btnThemBanDoc.Click += new System.EventHandler(this.btnThemBanDoc_Click);
             // 
             // btnHuyBanDoc
             // 
             this.btnHuyBanDoc.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuyBanDoc.Location = new System.Drawing.Point(384, 359);
+            resources.ApplyResources(this.btnHuyBanDoc, "btnHuyBanDoc");
             this.btnHuyBanDoc.Name = "btnHuyBanDoc";
-            this.btnHuyBanDoc.Size = new System.Drawing.Size(75, 23);
-            this.btnHuyBanDoc.TabIndex = 7;
-            this.btnHuyBanDoc.Text = "Hủy";
             this.btnHuyBanDoc.UseVisualStyleBackColor = true;
             this.btnHuyBanDoc.Click += new System.EventHandler(this.btnHuyBanDoc_Click);
             // 
             // lbLoaiDocGia
             // 
-            this.lbLoaiDocGia.AutoSize = true;
-            this.lbLoaiDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoaiDocGia.Location = new System.Drawing.Point(3, 326);
+            resources.ApplyResources(this.lbLoaiDocGia, "lbLoaiDocGia");
             this.lbLoaiDocGia.Name = "lbLoaiDocGia";
-            this.lbLoaiDocGia.Size = new System.Drawing.Size(98, 20);
-            this.lbLoaiDocGia.TabIndex = 14;
-            this.lbLoaiDocGia.Text = "Loại độc giả:";
             // 
             // cbLoaiDocGia
             // 
             this.cbLoaiDocGia.FormattingEnabled = true;
-            this.cbLoaiDocGia.Location = new System.Drawing.Point(108, 325);
+            resources.ApplyResources(this.cbLoaiDocGia, "cbLoaiDocGia");
             this.cbLoaiDocGia.Name = "cbLoaiDocGia";
-            this.cbLoaiDocGia.Size = new System.Drawing.Size(200, 21);
-            this.cbLoaiDocGia.TabIndex = 5;
             // 
             // panel1
             // 
@@ -200,23 +147,19 @@
             this.panel1.Controls.Add(this.lbNgaySinhBanDoc);
             this.panel1.Controls.Add(this.lbEmailBanDoc);
             this.panel1.Controls.Add(this.lbDiaChiBanDoc);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(468, 398);
-            this.panel1.TabIndex = 16;
             // 
             // frmThemBanDoc
             // 
             this.AcceptButton = this.btnThemBanDoc;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.CancelButton = this.btnHuyBanDoc;
-            this.ClientSize = new System.Drawing.Size(494, 422);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmThemBanDoc";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm bạn đọc";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThemBanDoc_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

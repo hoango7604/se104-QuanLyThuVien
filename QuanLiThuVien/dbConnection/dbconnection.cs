@@ -16,8 +16,8 @@ namespace dbConnection
     public class dbconnection
     {  
 
-                private SqlDataAdapter myAdapter;
-        private SqlConnection conn; 
+        private SqlDataAdapter myAdapter;
+        private SqlConnection conn;
 
 
         public dbconnection () {

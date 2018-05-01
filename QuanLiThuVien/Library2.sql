@@ -1,9 +1,6 @@
-
-
-
-CREATE DATABASE THUVIEN 
+ï»¿CREATE DATABASE THUVIEN 
 GO 
-USE THUVIEN 
+USE THUVIEN
 GO 
 
 
@@ -88,7 +85,7 @@ GO
 
  INSERT INTO dbo.docgia
  VALUES  ( 0 , -- mathe - int
-           N'nguy?n minh tín  ' , -- hoten - nvarchar(50)
+           N'nguyá»…n minh tÃ­n  ' , -- hoten - nvarchar(50)
            'mh@gmail.com' , -- email - varchar(50)
            convert(datetime,'18-06-2012 10:34:09 PM',103) , -- ngaysinh - datetime
            convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngaydk - datetime
@@ -132,7 +129,7 @@ VALUES  ( 2  -- loaidg - int
  --tb [quydinh][phieumuon] ngaymuon-ngaydk <= hanthesudung          them phieumuon      
  --tb [phieumuon][quydinh] ngayhientai -ngaymuon <= songayduocmuon  them phieumuon 
  --tb [] 
- -- ??a DTO c?a QUYDINH len h?t lên bus s? lí 
+ -- ??a DTO c?a QUYDINH len h?t lÃªn bus s? lÃ­ 
  -- 
 
 

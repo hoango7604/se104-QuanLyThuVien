@@ -35,12 +35,12 @@ namespace QuanLiThuVienDTO
         {
             get
             {
-                return HoTen;
+                return hoten;
             }
 
             set
             {
-                HoTen = value;
+                hoten = value;
             }
         }
 
@@ -48,12 +48,12 @@ namespace QuanLiThuVienDTO
         {
             get
             {
-                return DiaChi;
+                return diachi;
             }
 
             set
             {
-                DiaChi = value;
+                diachi = value;
             }
         }
 
@@ -61,12 +61,12 @@ namespace QuanLiThuVienDTO
         {
             get
             {
-                return Email;
+                return email;
             }
 
             set
             {
-                Email = value;
+                email = value;
             }
         }
 
@@ -74,12 +74,12 @@ namespace QuanLiThuVienDTO
         {
             get
             {
-                return NgaySinh;
+                return ngaysinh;
             }
 
             set
             {
-                NgaySinh = value;
+                ngaysinh = value;
             }
         }
 
@@ -87,12 +87,12 @@ namespace QuanLiThuVienDTO
         {
             get
             {
-                return Ngaydk;
+                return ngaydk;
             }
 
             set
             {
-                Ngaydk = value;
+                ngaydk = value;
             }
         }
 
@@ -100,12 +100,12 @@ namespace QuanLiThuVienDTO
         {
             get
             {
-                return Tongtienno;
+                return tongtienno;
             }
 
             set
             {
-                Tongtienno = value;
+                tongtienno = value;
             }
         }
 
