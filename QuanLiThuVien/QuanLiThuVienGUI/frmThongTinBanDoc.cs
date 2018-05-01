@@ -21,5 +21,10 @@ namespace QuanLiThuVienGUI
         {
             MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
         }
+
+        private void btnLapPhieuTra_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

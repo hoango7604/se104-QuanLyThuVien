@@ -53,11 +53,19 @@
             this.btnLapPhieuTra = new System.Windows.Forms.Button();
             this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dongThongTinSach1 = new QuanLiThuVienGUI.dongThongTinSach();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lbNgayMuonSach = new System.Windows.Forms.Label();
+            this.lbTenSach = new System.Windows.Forms.Label();
+            this.lbMaSach = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.chkChonSach = new System.Windows.Forms.CheckBox();
+            this.lbTinhTrangSach = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -275,6 +283,7 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.btnGiaHanSach);
             this.panel2.Controls.Add(this.btnLapPhieuTra);
             this.panel2.Controls.Add(this.lbDanhSachSachDangMuon);
@@ -303,6 +312,7 @@
             this.btnLapPhieuTra.TabIndex = 16;
             this.btnLapPhieuTra.Text = "Lập phiếu trả";
             this.btnLapPhieuTra.UseVisualStyleBackColor = true;
+            this.btnLapPhieuTra.Click += new System.EventHandler(this.btnLapPhieuTra_Click);
             // 
             // lbDanhSachSachDangMuon
             // 
@@ -318,28 +328,98 @@
             // panel3
             // 
             this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.dongThongTinSach1);
-            this.panel3.Controls.Add(this.listView1);
-            this.panel3.Location = new System.Drawing.Point(4, 50);
+            this.panel3.Controls.Add(this.pnDanhSachSachDangMuon);
+            this.panel3.Location = new System.Drawing.Point(4, 95);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(838, 253);
+            this.panel3.Size = new System.Drawing.Size(838, 206);
             this.panel3.TabIndex = 18;
             // 
-            // dongThongTinSach1
+            // pnDanhSachSachDangMuon
             // 
-            this.dongThongTinSach1.BackColor = System.Drawing.SystemColors.Window;
-            this.dongThongTinSach1.Location = new System.Drawing.Point(1, 4);
-            this.dongThongTinSach1.Name = "dongThongTinSach1";
-            this.dongThongTinSach1.Size = new System.Drawing.Size(816, 70);
-            this.dongThongTinSach1.TabIndex = 1;
+            this.pnDanhSachSachDangMuon.AutoSize = true;
+            this.pnDanhSachSachDangMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnDanhSachSachDangMuon.Location = new System.Drawing.Point(3, 3);
+            this.pnDanhSachSachDangMuon.Name = "pnDanhSachSachDangMuon";
+            this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 211);
+            this.pnDanhSachSachDangMuon.TabIndex = 19;
             // 
-            // listView1
+            // panel4
             // 
-            this.listView1.Location = new System.Drawing.Point(0, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(818, 314);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.panel4.Controls.Add(this.lbTinhTrangSach);
+            this.panel4.Controls.Add(this.lbNgayMuonSach);
+            this.panel4.Controls.Add(this.lbTenSach);
+            this.panel4.Controls.Add(this.lbMaSach);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Location = new System.Drawing.Point(7, 50);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(820, 41);
+            this.panel4.TabIndex = 19;
+            // 
+            // lbNgayMuonSach
+            // 
+            this.lbNgayMuonSach.AutoEllipsis = true;
+            this.lbNgayMuonSach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbNgayMuonSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNgayMuonSach.Location = new System.Drawing.Point(419, 3);
+            this.lbNgayMuonSach.Name = "lbNgayMuonSach";
+            this.lbNgayMuonSach.Size = new System.Drawing.Size(210, 35);
+            this.lbNgayMuonSach.TabIndex = 29;
+            this.lbNgayMuonSach.Text = "Ngày mượn";
+            this.lbNgayMuonSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbTenSach
+            // 
+            this.lbTenSach.AutoEllipsis = true;
+            this.lbTenSach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbTenSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenSach.Location = new System.Drawing.Point(180, 3);
+            this.lbTenSach.Name = "lbTenSach";
+            this.lbTenSach.Size = new System.Drawing.Size(241, 35);
+            this.lbTenSach.TabIndex = 27;
+            this.lbTenSach.Text = "Tên sách";
+            this.lbTenSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbMaSach
+            // 
+            this.lbMaSach.AutoEllipsis = true;
+            this.lbMaSach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaSach.Location = new System.Drawing.Point(40, 3);
+            this.lbMaSach.Name = "lbMaSach";
+            this.lbMaSach.Size = new System.Drawing.Size(144, 35);
+            this.lbMaSach.TabIndex = 26;
+            this.lbMaSach.Text = "Mã sách";
+            this.lbMaSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.chkChonSach);
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(38, 35);
+            this.panel6.TabIndex = 28;
+            // 
+            // chkChonSach
+            // 
+            this.chkChonSach.AutoSize = true;
+            this.chkChonSach.Location = new System.Drawing.Point(11, 9);
+            this.chkChonSach.Name = "chkChonSach";
+            this.chkChonSach.Size = new System.Drawing.Size(15, 14);
+            this.chkChonSach.TabIndex = 0;
+            this.chkChonSach.UseVisualStyleBackColor = true;
+            // 
+            // lbTinhTrangSach
+            // 
+            this.lbTinhTrangSach.AutoEllipsis = true;
+            this.lbTinhTrangSach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbTinhTrangSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTinhTrangSach.Location = new System.Drawing.Point(628, 3);
+            this.lbTinhTrangSach.Name = "lbTinhTrangSach";
+            this.lbTinhTrangSach.Size = new System.Drawing.Size(189, 35);
+            this.lbTinhTrangSach.TabIndex = 30;
+            this.lbTinhTrangSach.Text = "Tình trạng sách";
+            this.lbTinhTrangSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmThongTinBanDoc
             // 
@@ -360,6 +440,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,7 +475,13 @@
         private System.Windows.Forms.Button btnGiaHanSach;
         private System.Windows.Forms.Button btnLapPhieuTra;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListView listView1;
-        private dongThongTinSach dongThongTinSach1;
+        private System.Windows.Forms.Panel pnDanhSachSachDangMuon;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lbTinhTrangSach;
+        private System.Windows.Forms.Label lbNgayMuonSach;
+        private System.Windows.Forms.Label lbTenSach;
+        private System.Windows.Forms.Label lbMaSach;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.CheckBox chkChonSach;
     }
 }
