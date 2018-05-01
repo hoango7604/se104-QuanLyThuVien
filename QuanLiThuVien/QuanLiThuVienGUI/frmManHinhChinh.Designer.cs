@@ -160,14 +160,14 @@
             // thêmBạnĐọcToolStripMenuItem
             // 
             this.thêmBạnĐọcToolStripMenuItem.Name = "thêmBạnĐọcToolStripMenuItem";
-            this.thêmBạnĐọcToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thêmBạnĐọcToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.thêmBạnĐọcToolStripMenuItem.Text = "Thêm bạn đọc";
             this.thêmBạnĐọcToolStripMenuItem.Click += new System.EventHandler(this.thembandocToolStripMenuItem_Click);
             // 
             // thêmSáchToolStripMenuItem
             // 
             this.thêmSáchToolStripMenuItem.Name = "thêmSáchToolStripMenuItem";
-            this.thêmSáchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thêmSáchToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.thêmSáchToolStripMenuItem.Text = "Thêm sách";
             this.thêmSáchToolStripMenuItem.Click += new System.EventHandler(this.thêmSáchToolStripMenuItem_Click);
             // 
@@ -550,6 +550,7 @@
             this.lvDanhSachBanDoc.Size = new System.Drawing.Size(448, 477);
             this.lvDanhSachBanDoc.TabIndex = 0;
             this.lvDanhSachBanDoc.UseCompatibleStateImageBehavior = false;
+            this.lvDanhSachBanDoc.SelectedIndexChanged += new System.EventHandler(this.lvDanhSachBanDoc_SelectedIndexChanged);
             // 
             // tabPage2
             // 

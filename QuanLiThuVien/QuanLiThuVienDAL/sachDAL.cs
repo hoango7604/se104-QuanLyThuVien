@@ -47,6 +47,7 @@ namespace QuanLiThuVienDAL
                 sDTO.Ngayxb =DateTime.Parse(dr["ngayxb"].ToString());
                 sDTO.Giatri = Int32.Parse(dr["giatri"].ToString());
                 sDTO.Trangthai = Int32.Parse(dr["trangthai"].ToString());
+                sDTO.Tacgia = dr["tacgia"].ToString();
                 lsachDTO.Add(sDTO);
             }
         
@@ -62,8 +63,8 @@ namespace QuanLiThuVienDAL
 
        public bool themSach(sachDTO sDTO)
        {
-           string query = string.Format("insert into [sach] value (@masach,@tensach,@theloai,@nxb,@ngayxb,@giatri,@trangthai)");
-           SqlParameter[] param = new SqlParameter[7];
+           string query = string.Format("insert into [sach] value (@masach,@tensach,@theloai,@nxb,@ngayxb,@giatri,@trangthai,@tacgia)");
+           SqlParameter[] param = new SqlParameter[8];
            param[0] = new SqlParameter("@masach", SqlDbType.Int);
            param[0].Value = Convert.ToString(sDTO.Masach);
            param[1] = new SqlParameter("@tensach", SqlDbType.NVarChar);
@@ -78,7 +79,8 @@ namespace QuanLiThuVienDAL
            param[5].Value = Convert.ToString(sDTO.Giatri);
            param[6] = new SqlParameter("@trangthai", SqlDbType.Int);
            param[6].Value = Convert.ToString(sDTO.Trangthai);
-
+           param[7] = new SqlParameter("@tacgia", SqlDbType.NVarChar);
+           param[7].Value = Convert.ToString(sDTO.Tacgia);
 
            conn.excuteNonQuery(query, param);
 
@@ -89,8 +91,8 @@ namespace QuanLiThuVienDAL
       // update sach 
        public bool suaSach(sachDTO sDTO, int masach)
        {
-           string query = string.Format("  update [sach] set  tensach=@tensach,tensach=@tensach,nxb=@nxb,ngayxb=@ngayxb,giatri=@giatri,trangthai=@trangthai where mathe=@masach ");
-           SqlParameter[] param = new SqlParameter[7];
+           string query = string.Format("  update [sach] set  tensach=@tensach,tensach=@tensach,nxb=@nxb,ngayxb=@ngayxb,giatri=@giatri,trangthai=@trangthai,tacgia=@tacgia where mathe=@masach ");
+           SqlParameter[] param = new SqlParameter[8];
            param[0] = new SqlParameter("@masach", SqlDbType.Int);
            param[0].Value = Convert.ToString(sDTO.Masach);
            param[1] = new SqlParameter("@tensach", SqlDbType.NVarChar);
@@ -105,6 +107,9 @@ namespace QuanLiThuVienDAL
            param[5].Value = Convert.ToString(sDTO.Giatri);
            param[6] = new SqlParameter("@trangthai", SqlDbType.Int);
            param[6].Value = Convert.ToString(sDTO.Trangthai);
+           param[7] = new SqlParameter("@tacgia", SqlDbType.NVarChar);
+           param[7].Value = Convert.ToString(sDTO.Tacgia);
+
 
 
            conn.excuteNonQuery(query, param);

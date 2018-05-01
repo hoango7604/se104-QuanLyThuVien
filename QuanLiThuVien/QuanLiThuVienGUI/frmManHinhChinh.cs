@@ -48,5 +48,13 @@ namespace QuanLiThuVienGUI
         {
 
         }
+
+        private void lvDanhSachBanDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+
+        }
     }
 }
