@@ -20,3 +20,8 @@ C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\b
 C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\normnfd.nlp
 C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\normnfkc.nlp
 C:\Users\HieuNM\Desktop\ISE\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\normnfkd.nlp
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\dbConnection.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDTO.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\dbConnection.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDTO.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csprojResolveAssemblyReference.cache
