@@ -1,37 +1,5 @@
-<<<<<<< HEAD
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.dll
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.pdb
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csprojResolveAssemblyReference.cache
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.dll
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.pdb
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\mscorlib.dll
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\System.Net.Http.dll
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\System.Net.Http.xml
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\normidna.nlp
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\normnfc.nlp
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\normnfd.nlp
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\normnfkc.nlp
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\normnfkd.nlp
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csprojResolveAssemblyReference.cache
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
-C:\Users\HieuNM\Desktop\ISE\MyProj\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb
-=======
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien2\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.dll
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien2\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.pdb
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien2\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csprojResolveAssemblyReference.cache
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien2\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
-C:\Users\admin\OneDrive - gm.uit.edu.vn\Worlkpace Winform\QuanLiThuVien2\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.dll
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.pdb
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csprojResolveAssemblyReference.cache
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csproj.CoreCompileInputs.cache
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb
-D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.dll
-D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.pdb
-D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csproj.CoreCompileInputs.cache
-D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
-D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb
->>>>>>> 44a7782f9adfb6d612e6f162e5455e17e429be69

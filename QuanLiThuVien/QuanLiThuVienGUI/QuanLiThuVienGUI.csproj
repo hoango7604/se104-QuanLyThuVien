@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C729460D-4C08-4726-98EB-47D5CB96286D}</ProjectGuid>
+    <ProjectGuid>{9A8C8297-7905-4820-A95E-D715BD098C00}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuanLiThuVienGUI</RootNamespace>

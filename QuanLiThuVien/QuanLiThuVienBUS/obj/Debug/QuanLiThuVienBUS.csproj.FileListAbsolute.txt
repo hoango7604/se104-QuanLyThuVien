@@ -6,3 +6,11 @@ D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Deb
 D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
 D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
 D:\Download\UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache

@@ -16,9 +16,9 @@ namespace QuanLiThuVienBUS
         /// <param name="list"> Danh sách các độc giả có trong csdl </param>
         /// <param name="docgia"> Độc giả cần kiểm tra </param>
         /// <returns></returns>
-        public bool KiemTraDaTonTai(List<TheDocGia> list, TheDocGia docgia)
+        public bool KiemTraDaTonTai(List<TheDocGiaDTO> list, TheDocGiaDTO docgia)
         {
-            foreach (TheDocGia tdg in list)
+            foreach (TheDocGiaDTO tdg in list)
             {
                 if (tdg.MaThe == docgia.MaThe)
                 {

@@ -21,7 +21,7 @@ namespace DBconnection
 
         public dbConnection () {
             myAdapter = new SqlDataAdapter();
-            conn = new SqlConnection(ConfigurationManager.AppSettings("ConnectionStr");
+            conn = new SqlConnection(ConfigurationManager.AppSettings["ConnectionStr"]);
 
 
             }
