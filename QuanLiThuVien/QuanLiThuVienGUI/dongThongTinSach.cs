@@ -16,5 +16,10 @@ namespace QuanLiThuVienGUI
         {
             InitializeComponent();
         }
+
+        public void changeEnable(bool var)
+        {
+            this.cbTinhTrangSach.Enabled = var;
+        }
     }
 }

@@ -49,23 +49,23 @@
             this.lbEmailBanDoc = new System.Windows.Forms.Label();
             this.lbDiaChiBanDoc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnGiaHanSach = new System.Windows.Forms.Button();
-            this.btnLapPhieuTra = new System.Windows.Forms.Button();
-            this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbTinhTrangSach = new System.Windows.Forms.Label();
             this.lbNgayMuonSach = new System.Windows.Forms.Label();
             this.lbTenSach = new System.Windows.Forms.Label();
             this.lbMaSach = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.chkChonSach = new System.Windows.Forms.CheckBox();
-            this.lbTinhTrangSach = new System.Windows.Forms.Label();
+            this.btnGiaHanSach = new System.Windows.Forms.Button();
+            this.btnLapPhieuTra = new System.Windows.Forms.Button();
+            this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -293,56 +293,6 @@
             this.panel2.Size = new System.Drawing.Size(845, 306);
             this.panel2.TabIndex = 18;
             // 
-            // btnGiaHanSach
-            // 
-            this.btnGiaHanSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGiaHanSach.Location = new System.Drawing.Point(728, 3);
-            this.btnGiaHanSach.Name = "btnGiaHanSach";
-            this.btnGiaHanSach.Size = new System.Drawing.Size(114, 41);
-            this.btnGiaHanSach.TabIndex = 17;
-            this.btnGiaHanSach.Text = "Gia hạn sách";
-            this.btnGiaHanSach.UseVisualStyleBackColor = true;
-            // 
-            // btnLapPhieuTra
-            // 
-            this.btnLapPhieuTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapPhieuTra.Location = new System.Drawing.Point(608, 3);
-            this.btnLapPhieuTra.Name = "btnLapPhieuTra";
-            this.btnLapPhieuTra.Size = new System.Drawing.Size(114, 41);
-            this.btnLapPhieuTra.TabIndex = 16;
-            this.btnLapPhieuTra.Text = "Lập phiếu trả";
-            this.btnLapPhieuTra.UseVisualStyleBackColor = true;
-            this.btnLapPhieuTra.Click += new System.EventHandler(this.btnLapPhieuTra_Click);
-            // 
-            // lbDanhSachSachDangMuon
-            // 
-            this.lbDanhSachSachDangMuon.AutoSize = true;
-            this.lbDanhSachSachDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDanhSachSachDangMuon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbDanhSachSachDangMuon.Location = new System.Drawing.Point(82, 5);
-            this.lbDanhSachSachDangMuon.Name = "lbDanhSachSachDangMuon";
-            this.lbDanhSachSachDangMuon.Size = new System.Drawing.Size(446, 39);
-            this.lbDanhSachSachDangMuon.TabIndex = 15;
-            this.lbDanhSachSachDangMuon.Text = "Danh sách sách đang mượn";
-            // 
-            // panel3
-            // 
-            this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.pnDanhSachSachDangMuon);
-            this.panel3.Location = new System.Drawing.Point(4, 95);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(838, 206);
-            this.panel3.TabIndex = 18;
-            // 
-            // pnDanhSachSachDangMuon
-            // 
-            this.pnDanhSachSachDangMuon.AutoSize = true;
-            this.pnDanhSachSachDangMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnDanhSachSachDangMuon.Location = new System.Drawing.Point(3, 3);
-            this.pnDanhSachSachDangMuon.Name = "pnDanhSachSachDangMuon";
-            this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 211);
-            this.pnDanhSachSachDangMuon.TabIndex = 19;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lbTinhTrangSach);
@@ -354,6 +304,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(820, 41);
             this.panel4.TabIndex = 19;
+            // 
+            // lbTinhTrangSach
+            // 
+            this.lbTinhTrangSach.AutoEllipsis = true;
+            this.lbTinhTrangSach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbTinhTrangSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTinhTrangSach.Location = new System.Drawing.Point(628, 3);
+            this.lbTinhTrangSach.Name = "lbTinhTrangSach";
+            this.lbTinhTrangSach.Size = new System.Drawing.Size(189, 35);
+            this.lbTinhTrangSach.TabIndex = 30;
+            this.lbTinhTrangSach.Text = "Tình trạng sách";
+            this.lbTinhTrangSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbNgayMuonSach
             // 
@@ -409,17 +371,55 @@
             this.chkChonSach.TabIndex = 0;
             this.chkChonSach.UseVisualStyleBackColor = true;
             // 
-            // lbTinhTrangSach
+            // btnGiaHanSach
             // 
-            this.lbTinhTrangSach.AutoEllipsis = true;
-            this.lbTinhTrangSach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbTinhTrangSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTinhTrangSach.Location = new System.Drawing.Point(628, 3);
-            this.lbTinhTrangSach.Name = "lbTinhTrangSach";
-            this.lbTinhTrangSach.Size = new System.Drawing.Size(189, 35);
-            this.lbTinhTrangSach.TabIndex = 30;
-            this.lbTinhTrangSach.Text = "Tình trạng sách";
-            this.lbTinhTrangSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGiaHanSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGiaHanSach.Location = new System.Drawing.Point(718, 5);
+            this.btnGiaHanSach.Name = "btnGiaHanSach";
+            this.btnGiaHanSach.Size = new System.Drawing.Size(114, 41);
+            this.btnGiaHanSach.TabIndex = 17;
+            this.btnGiaHanSach.Text = "Gia hạn sách";
+            this.btnGiaHanSach.UseVisualStyleBackColor = true;
+            // 
+            // btnLapPhieuTra
+            // 
+            this.btnLapPhieuTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapPhieuTra.Location = new System.Drawing.Point(598, 5);
+            this.btnLapPhieuTra.Name = "btnLapPhieuTra";
+            this.btnLapPhieuTra.Size = new System.Drawing.Size(114, 41);
+            this.btnLapPhieuTra.TabIndex = 16;
+            this.btnLapPhieuTra.Text = "Lập phiếu trả";
+            this.btnLapPhieuTra.UseVisualStyleBackColor = true;
+            this.btnLapPhieuTra.Click += new System.EventHandler(this.btnLapPhieuTra_Click);
+            // 
+            // lbDanhSachSachDangMuon
+            // 
+            this.lbDanhSachSachDangMuon.AutoSize = true;
+            this.lbDanhSachSachDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhSachSachDangMuon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbDanhSachSachDangMuon.Location = new System.Drawing.Point(82, 5);
+            this.lbDanhSachSachDangMuon.Name = "lbDanhSachSachDangMuon";
+            this.lbDanhSachSachDangMuon.Size = new System.Drawing.Size(446, 39);
+            this.lbDanhSachSachDangMuon.TabIndex = 15;
+            this.lbDanhSachSachDangMuon.Text = "Danh sách sách đang mượn";
+            // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.pnDanhSachSachDangMuon);
+            this.panel3.Location = new System.Drawing.Point(4, 95);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(838, 206);
+            this.panel3.TabIndex = 18;
+            // 
+            // pnDanhSachSachDangMuon
+            // 
+            this.pnDanhSachSachDangMuon.AutoSize = true;
+            this.pnDanhSachSachDangMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnDanhSachSachDangMuon.Location = new System.Drawing.Point(3, 3);
+            this.pnDanhSachSachDangMuon.Name = "pnDanhSachSachDangMuon";
+            this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 211);
+            this.pnDanhSachSachDangMuon.TabIndex = 19;
             // 
             // frmThongTinBanDoc
             // 
@@ -439,11 +439,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

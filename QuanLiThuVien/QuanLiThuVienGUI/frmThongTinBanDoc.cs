@@ -12,6 +12,7 @@ namespace QuanLiThuVienGUI
 {
     public partial class frmThongTinBanDoc : Form
     {
+        dongThongTinSach dtt = new dongThongTinSach();
         public frmThongTinBanDoc()
         {
             InitializeComponent();
@@ -24,7 +25,6 @@ namespace QuanLiThuVienGUI
 
         private void btnLapPhieuTra_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
