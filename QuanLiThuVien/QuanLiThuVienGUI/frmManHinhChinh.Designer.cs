@@ -370,7 +370,6 @@
             // 
             this.dgvThongTinBanDoc.AllowUserToAddRows = false;
             this.dgvThongTinBanDoc.AllowUserToDeleteRows = false;
-            this.dgvThongTinBanDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvThongTinBanDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThongTinBanDoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvThongTinBanDoc.Location = new System.Drawing.Point(0, 0);
@@ -379,6 +378,7 @@
             this.dgvThongTinBanDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThongTinBanDoc.Size = new System.Drawing.Size(475, 480);
             this.dgvThongTinBanDoc.TabIndex = 0;
+            this.dgvThongTinBanDoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinBanDoc_CellClick);
             // 
             // panel1
             // 

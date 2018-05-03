@@ -28,9 +28,13 @@ namespace QuanLiThuVienGUI
             list = quanLiBanDocBUS.DanhSachDocGia();
             dgvThongTinBanDoc.DataSource = list.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
             dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
+            dgvThongTinBanDoc.Columns[0].Width = 80;
             dgvThongTinBanDoc.Columns[1].HeaderText = "Họ tên";
+            dgvThongTinBanDoc.Columns[1].Width = 170;
             dgvThongTinBanDoc.Columns[2].HeaderText = "Email";
+            dgvThongTinBanDoc.Columns[2].Width = 120;
             dgvThongTinBanDoc.Columns[3].HeaderText = "Ngày sinh";
+            dgvThongTinBanDoc.Columns[3].Width = 100;
             dgvThongTinBanDoc.Show();
         }
 
@@ -225,6 +229,20 @@ namespace QuanLiThuVienGUI
             {
                 e.Cancel = true;
             }
+        }
+
+        private void dgvThongTinBanDoc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView data = (DataGridView)sender;
+            int index = data.SelectedRows[0].Index;
+            txbTenBanDoc.Text = list[index].HoTen;
+            txbCMNDBanDoc.Text = list[index].MaThe.ToString();
+            dtpNgaySinhBanDoc.Value = list[index].NgaySinh;
+            txbEmailBanDoc.Text = list[index].Email;
+            txbDiaChiBanDoc.Text = list[index].DiaChi;
+            cbLoaiDocGia.Text = list[index].Loaidocgia.ToString();
+            txbTongTienNoBanDoc.Text = list[index].Tongtienno.ToString();
+            dtpNgayTaoTheBanDoc.Value = list[index].Ngaydk;
         }
     }
 }
