@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace QuanLiThuVienDAL
 {
-public class sachDAL
+  public    class sachDAL
     {
              private dbconnection conn;
 
@@ -118,26 +118,6 @@ public class sachDAL
            return true; 
        
        }
-
-        // kiem tra ma sach co ton tai trong db hay khong
-        public bool isSach(int masach)
-        {
-
-            string query = string.Format("select * from [sach] where masach=@masach");
-            SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("@masach", SqlDbType.Int);
-            param[0].Value = masach;
-
-            DataTable dtb = new DataTable();
-            dtb = conn.excuteNonQuery(query, param);
-
-
-
-            if (dtb.Rows.Count > 0)
-                return true;
-            return false;
-
-        }
 
 
     }

@@ -7,31 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLiThuVienBUS;
-using QuanLiThuVienDTO;
 
 namespace QuanLiThuVienGUI
 {
     public partial class frmManHinhChinh : Form
     {
-        List<docgiaDTO> list;
-        QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
-
         public frmManHinhChinh()
         {
             InitializeComponent();
-            initDataGridView();
-        }
-
-        private void initDataGridView()
-        {
-            list = quanLiBanDocBUS.DanhSachDocGia();
-            dgvThongTinBanDoc.DataSource = list.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
-            dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
-            dgvThongTinBanDoc.Columns[1].HeaderText = "Họ tên";
-            dgvThongTinBanDoc.Columns[2].HeaderText = "Email";
-            dgvThongTinBanDoc.Columns[3].HeaderText = "Ngày sinh";
-            dgvThongTinBanDoc.Show();
         }
 
         /// <summary>
@@ -110,14 +93,7 @@ namespace QuanLiThuVienGUI
 
         private void btnTimKiemBanDoc_Click(object sender, EventArgs e)
         {
-            list = quanLiBanDocBUS.TimDocGia(txbTimKiemBanDocTheoMa.Text, txbTimKiemTheoTenBanDoc.Text);
-            // dgvThongTinBanDoc.Refresh();
-            dgvThongTinBanDoc.DataSource = list.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
-            dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
-            dgvThongTinBanDoc.Columns[1].HeaderText = "Họ tên";
-            dgvThongTinBanDoc.Columns[2].HeaderText = "Email";
-            dgvThongTinBanDoc.Columns[3].HeaderText = "Ngày sinh";
-            dgvThongTinBanDoc.Show();
+            
         }
 
         private void btnHienThongTinChiTietBanDoc_Click(object sender, EventArgs e)

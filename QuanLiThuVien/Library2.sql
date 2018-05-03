@@ -13,7 +13,7 @@ CREATE TABLE docgia (
   ngaydk DATETIME NOT NULL ,
   diachi NVARCHAR(50) , 
   loaidocgia INT NOT NULL , 
-  tongtienno INT  ,
+  tongtienno MONEY  ,
 
 )
 GO
@@ -26,7 +26,7 @@ CREATE TABLE sach (
   theloai VARCHAR(50) NOT NULL ,
   nxb NVARCHAR(50) ,
   ngayxb DATETIME NOT NULL , 
-  giatri INT NOT	NULL ,
+  giatri MONEY NOT	NULL ,
   trangthai INT NOT NULL
 
 )
@@ -59,7 +59,7 @@ CREATE TABLE quydinh (
 CREATE TABLE phieutra (
  mapt INT NOT NULL PRIMARY KEY ,
  ngaytra DATETIME NOT NULL ,
- tienphatkinay INT NOT NULL ,
+ tienphatkinay MONEY NOT NULL ,
  mathe INT FOREIGN KEY REFERENCES dbo.docgia (mathe) 
 )
 GO
@@ -73,7 +73,7 @@ CREATE TABLE ct_phieumuon (
 GO 
  CREATE TABLE ct_phieutra (
  songaydamuon INT NOT NULL , 
- tienphatsach INT NOT NULL ,
+ tienphatsach MONEY NOT NULL ,
 
  mapt INT NOT NULL FOREIGN KEY REFERENCES dbo.phieutra (mapt), 
  masach INT NOT NULL  FOREIGN KEY REFERENCES dbo.sach (masach),
@@ -91,7 +91,7 @@ GO
            convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngaydk - datetime
            N'vvvvv' , -- diachi - nvarchar(50)
             2 , -- loaidocgia - int 
-           123000  -- tongtienno - INT
+           123000  -- tongtienno - money
          )
 
 INSERT INTO	 dbo.sach 
@@ -100,7 +100,7 @@ VALUES  ( 2 , -- masach - int
           'progaming' , -- theloai - varchar(50)
           N'codedao' , -- nxb - nvarchar(50)
          convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngayxb - datetime
-          20 , -- giatri - INT
+          20 , -- giatri - money
           1  -- trangthai - int
         )
 

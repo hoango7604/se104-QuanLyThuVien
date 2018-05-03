@@ -23,8 +23,9 @@ namespace dbConnection
         public dbconnection () {
             myAdapter = new SqlDataAdapter();
            // string str = ConfigurationManager.AppSettings("ConnectionStr");
-            conn = new SqlConnection(@"Data Source=ANDONGNHI\SQLEXPRESS;Initial Catalog=THUVIEN;Integrated Security=True");
-            
+            conn = new SqlConnection("@Data Source=. ;Initial Catalog=THUVIEN;Integrated Security=True");
+
+
             }
 
         public SqlConnection  openConnection ()
@@ -38,23 +39,12 @@ namespace dbConnection
             return conn; 
         
         }
-        public void closeConnection ()
-        {
-            if (conn.State == ConnectionState.Open )
-
-            {
-                conn.Close(); 
-            }
-
-            
-        
-        }
 
 
         public DataTable excuteNonQuery(string query ,SqlParameter [] parm )
         {
            DataTable datatable=  new DataTable(); 
-           //    datatable=null; 
+               datatable=null; 
             SqlCommand comm= new SqlCommand ();
 
             comm.Connection = openConnection();
@@ -64,12 +54,11 @@ namespace dbConnection
 
 
             myAdapter.SelectCommand = comm;
-         
-            myAdapter.Fill(datatable);
+            myAdapter.Fill(datatable); 
 
 
+          
 
-         //   conn.Close();
 
             return datatable  ; 
 

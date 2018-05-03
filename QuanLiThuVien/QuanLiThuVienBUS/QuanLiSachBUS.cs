@@ -8,7 +8,7 @@ using QuanLiThuVienDAL;
 
 namespace QuanLiThuVienBUS
 {
-    public class QuanLiSachBUS
+    class QuanLiSachBUS
     {
         public QuanLiSachBUS()
         {
@@ -26,15 +26,11 @@ namespace QuanLiThuVienBUS
             return new List<sachDTO>();
         }
 
-        public List<sachDTO> TimSach(sachDTO saxDTO)
+        public List<sachDTO> TimSach(string masach,string tensach,string theloai,string tacgia)
         {
             List<sachDTO> list = new List<sachDTO>();
             List<sachDTO> result = new List<sachDTO>();
-            int masach = saxDTO.Masach;
-            string tensach = saxDTO.Tensach;
-            string theloai = saxDTO.Theloai;
-            string tacgia = saxDTO.Nxb;
-            int max_masach_distance = masach.ToString().Length / 2;
+            int max_masach_distance = masach.Length / 2;
             int max_name_distance = tensach.Length / 2;
             int max_author_distance = tacgia.Length / 2;
             sachDAL saxDAL = new sachDAL();
@@ -44,7 +40,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (sach.Masach == masach)
+                    if (sach.Masach==Int32.Parse(masach))
                     {
                         result.Add(sach);
                     }
@@ -52,11 +48,11 @@ namespace QuanLiThuVienBUS
             }
             else
             {
-                if (masach.ToString() != "")
+                if (masach != "")
                 {
-                    foreach (sachDTO sach in list)
+                    foreach(sachDTO sach in list)
                     {
-                        if (Levenshtein_Distance.Distance(sach.Masach.ToString(), masach.ToString()) <= max_masach_distance)
+                        if (Levenshtein_Distance.Distance(sach.Masach.ToString(),masach) <= max_masach_distance)
                         {
                             result.Add(sach);
                             list.Remove(sach);
@@ -88,7 +84,7 @@ namespace QuanLiThuVienBUS
                     }
                 }
 
-                if (tacgia != "null")
+                if (tacgia !="null")
                 {
                     foreach (sachDTO sach in list)
                     {
@@ -106,7 +102,7 @@ namespace QuanLiThuVienBUS
         public bool ThemSach(sachDTO sDTO)
         {
             sachDAL saxDal = new sachDAL();
-            if (saxDal.isSach(sDTO.Masach))
+            if (saxDal.isSach(sDTO.Masach.ToString()))
             {
                 return false;
             }
@@ -128,7 +124,7 @@ namespace QuanLiThuVienBUS
         public bool SuaSach(sachDTO sach)
         {
             sachDAL saxDAL = new sachDAL();
-            if (saxDAL.isSach(sach.Masach))
+            if (saxDAL.isSach(sach.Masach.ToString()))
             {
                 return saxDAL.suaSach(sach, sach.Masach);
             }

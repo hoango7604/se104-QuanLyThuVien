@@ -6,7 +6,3 @@ D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\Q
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb

@@ -16,19 +16,7 @@ namespace QuanLiThuVienDTO
         private DateTime ngaydk;
         private int  tongtienno;
 
-        public docgiaDTO() { }
-
-        public docgiaDTO(int maThe, string hoten, string diachi, string email, DateTime ngaysinh, DateTime ngaydk, int tongtienno, int loaidocgia)
-        {
-            this.maThe = maThe;
-            this.hoten = hoten;
-            this.diachi = diachi;
-            this.email = email;
-            this.ngaysinh = ngaysinh;
-            this.ngaydk = ngaydk;
-            this.tongtienno = tongtienno;
-            this.loaidocgia = loaidocgia;
-        }
+    
 
         public int  MaThe
         {
