@@ -24,12 +24,18 @@ CREATE TABLE sach (
   masach INT NOT NULL PRIMARY KEY , 
   tensach NVARCHAR(50) NOT NULL ,
   theloai VARCHAR(50) NOT NULL ,
+<<<<<<< HEAD
   tacgia NVARCHAR(50) NOT NULL ,
   nxb NVARCHAR(50) ,
+=======
+  tacgia NVARCHAR(50),
+  nxb NVARCHAR(50) ,	
+   
+>>>>>>> e1bac30ad1f3c6ed027037c0720e4ec3f31cf59b
   ngayxb DATETIME NOT NULL , 
   giatri INT NOT	NULL ,
   trangthai INT NOT NULL
-
+ 
 )
 GO
 
