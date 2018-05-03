@@ -49,6 +49,8 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tcManHinhChinh = new System.Windows.Forms.TabControl();
             this.tpBanDoc = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.dgvThongTinBanDoc = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTimKiemTheoTenBanDoc = new System.Windows.Forms.Label();
             this.lbTimKiemBanDocTheoMa = new System.Windows.Forms.Label();
@@ -78,8 +80,6 @@
             this.lbNgaySinhBanDoc = new System.Windows.Forms.Label();
             this.lbEmailBanDoc = new System.Windows.Forms.Label();
             this.lbDiaChiBanDoc = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lvDanhSachBanDoc = new System.Windows.Forms.ListView();
             this.tpSach = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTimSachTheoTacGia = new System.Windows.Forms.Label();
@@ -141,11 +141,12 @@
             this.menuStrip1.SuspendLayout();
             this.tcManHinhChinh.SuspendLayout();
             this.tpBanDoc.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinBanDoc)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.tpSach.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -345,10 +346,10 @@
             // 
             // tpBanDoc
             // 
+            this.tpBanDoc.Controls.Add(this.panel11);
             this.tpBanDoc.Controls.Add(this.panel1);
             this.tpBanDoc.Controls.Add(this.flowLayoutPanel4);
             this.tpBanDoc.Controls.Add(this.flowLayoutPanel3);
-            this.tpBanDoc.Controls.Add(this.flowLayoutPanel1);
             this.tpBanDoc.Location = new System.Drawing.Point(4, 54);
             this.tpBanDoc.Name = "tpBanDoc";
             this.tpBanDoc.Padding = new System.Windows.Forms.Padding(3);
@@ -356,6 +357,28 @@
             this.tpBanDoc.TabIndex = 0;
             this.tpBanDoc.Text = " Bạn đọc ";
             this.tpBanDoc.UseVisualStyleBackColor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.dgvThongTinBanDoc);
+            this.panel11.Location = new System.Drawing.Point(3, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(475, 480);
+            this.panel11.TabIndex = 3;
+            // 
+            // dgvThongTinBanDoc
+            // 
+            this.dgvThongTinBanDoc.AllowUserToAddRows = false;
+            this.dgvThongTinBanDoc.AllowUserToDeleteRows = false;
+            this.dgvThongTinBanDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvThongTinBanDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongTinBanDoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvThongTinBanDoc.Location = new System.Drawing.Point(0, 0);
+            this.dgvThongTinBanDoc.Name = "dgvThongTinBanDoc";
+            this.dgvThongTinBanDoc.ReadOnly = true;
+            this.dgvThongTinBanDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvThongTinBanDoc.Size = new System.Drawing.Size(475, 480);
+            this.dgvThongTinBanDoc.TabIndex = 0;
             // 
             // panel1
             // 
@@ -642,27 +665,6 @@
             this.lbDiaChiBanDoc.Size = new System.Drawing.Size(61, 20);
             this.lbDiaChiBanDoc.TabIndex = 9;
             this.lbDiaChiBanDoc.Text = "Địa chỉ:";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel1.Controls.Add(this.lvDanhSachBanDoc);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(475, 485);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // lvDanhSachBanDoc
-            // 
-            this.lvDanhSachBanDoc.Location = new System.Drawing.Point(3, 3);
-            this.lvDanhSachBanDoc.Name = "lvDanhSachBanDoc";
-            this.lvDanhSachBanDoc.Size = new System.Drawing.Size(448, 477);
-            this.lvDanhSachBanDoc.TabIndex = 0;
-            this.lvDanhSachBanDoc.UseCompatibleStateImageBehavior = false;
-            this.lvDanhSachBanDoc.SelectedIndexChanged += new System.EventHandler(this.lvDanhSachBanDoc_SelectedIndexChanged);
             // 
             // tpSach
             // 
@@ -1252,13 +1254,14 @@
             this.menuStrip1.PerformLayout();
             this.tcManHinhChinh.ResumeLayout(false);
             this.tpBanDoc.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinBanDoc)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.tpSach.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1316,7 +1319,6 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinPhầnMềmToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbTimKiemTheoTenBanDoc;
         private System.Windows.Forms.Label lbTimKiemBanDocTheoMa;
@@ -1342,7 +1344,6 @@
         private System.Windows.Forms.Button btnThemSach;
         private System.Windows.Forms.Button btnSuaThongTinSach;
         private System.Windows.Forms.Button btnXoaSach;
-        private System.Windows.Forms.ListView lvDanhSachBanDoc;
         private System.Windows.Forms.ListView lvDanhSachSach;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnHienThongTinChiTietBanDoc;
@@ -1400,5 +1401,7 @@
         private System.Windows.Forms.Label lbTongTienNoBanDoc;
         private System.Windows.Forms.ComboBox cbTinhTrangSach;
         private System.Windows.Forms.Label lbTinhTrangSach;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.DataGridView dgvThongTinBanDoc;
     }
 }

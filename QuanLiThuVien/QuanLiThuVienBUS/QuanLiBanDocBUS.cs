@@ -8,7 +8,7 @@ using QuanLiThuVienDAL;
 
 namespace QuanLiThuVienBUS
 {
-    class QuanLiBanDocBUS
+    public class QuanLiBanDocBUS
     {
         const int MAX_LEVENSTEIN_DISTANCE = 10;
 
@@ -39,11 +39,13 @@ namespace QuanLiThuVienBUS
         /// <returns></returns>
         public List<docgiaDTO> TimDocGia(string cmnd,string name)
         {
-            cmnd = cmnd.Replace(" ", "");
+            //cmnd = cmnd.Replace(" ", "");
+            if (cmnd == null) cmnd = "";
+            if (name == null) name = "";
             List<docgiaDTO> result = new List<docgiaDTO>();
             List<docgiaDTO> danhsach = this.DanhSachDocGia();
             docgiaDAL docgia = new docgiaDAL();
-            if (docgia.isDocGia(Int32.Parse(cmnd)))
+            if (docgia.isDocGia(int.Parse(cmnd)))
             {
                 foreach (docgiaDTO dg in danhsach)
                 {
