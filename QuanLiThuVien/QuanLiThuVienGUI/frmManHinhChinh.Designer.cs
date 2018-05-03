@@ -594,6 +594,7 @@
             // 
             // txbCMNDBanDoc
             // 
+            this.txbCMNDBanDoc.Enabled = false;
             this.txbCMNDBanDoc.Location = new System.Drawing.Point(108, 106);
             this.txbCMNDBanDoc.Name = "txbCMNDBanDoc";
             this.txbCMNDBanDoc.Size = new System.Drawing.Size(325, 29);

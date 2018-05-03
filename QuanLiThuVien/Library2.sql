@@ -24,14 +24,8 @@ CREATE TABLE sach (
   masach INT NOT NULL PRIMARY KEY , 
   tensach NVARCHAR(50) NOT NULL ,
   theloai VARCHAR(50) NOT NULL ,
-<<<<<<< HEAD
   tacgia NVARCHAR(50) NOT NULL ,
   nxb NVARCHAR(50) ,
-=======
-  tacgia NVARCHAR(50),
-  nxb NVARCHAR(50) ,	
-   
->>>>>>> e1bac30ad1f3c6ed027037c0720e4ec3f31cf59b
   ngayxb DATETIME NOT NULL , 
   giatri INT NOT	NULL ,
   trangthai INT NOT NULL
@@ -101,10 +95,22 @@ GO
            123000  -- tongtienno - INT
          )
 
+INSERT INTO dbo.docgia
+ VALUES  ( 1 , -- mathe - int
+           N'Ngô Đức Hòa  ' , -- hoten - nvarchar(50)
+           'hoa@gmail.com' , -- email - varchar(50)
+           convert(datetime,'18-06-2012 10:34:09 PM',103) , -- ngaysinh - datetime
+           convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngaydk - datetime
+           N'aaaa' , -- diachi - nvarchar(50)
+            2 , -- loaidocgia - int 
+           123000  -- tongtienno - INT
+         )
+
 INSERT INTO	 dbo.sach 
 VALUES  ( 2 , -- masach - int
           N'codedaokisu' , -- tensach - nvarchar(50)
           'progaming' , -- theloai - varchar(50)
+		  N'tao la ai' ,
           N'codedao' , -- nxb - nvarchar(50)
          convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngayxb - datetime
           20 , -- giatri - INT

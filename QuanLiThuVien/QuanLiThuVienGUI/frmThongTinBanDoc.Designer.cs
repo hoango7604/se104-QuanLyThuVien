@@ -61,13 +61,11 @@
             this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
-            this.dongThongTinSach1 = new QuanLiThuVienGUI.dongThongTinSach();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.pnDanhSachSachDangMuon.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -192,6 +190,7 @@
             // 
             // txbCMNDBanDoc
             // 
+            this.txbCMNDBanDoc.Enabled = false;
             this.txbCMNDBanDoc.Location = new System.Drawing.Point(568, 53);
             this.txbCMNDBanDoc.Name = "txbCMNDBanDoc";
             this.txbCMNDBanDoc.Size = new System.Drawing.Size(264, 20);
@@ -418,19 +417,10 @@
             // 
             this.pnDanhSachSachDangMuon.AutoSize = true;
             this.pnDanhSachSachDangMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnDanhSachSachDangMuon.Controls.Add(this.dongThongTinSach1);
             this.pnDanhSachSachDangMuon.Location = new System.Drawing.Point(3, 3);
             this.pnDanhSachSachDangMuon.Name = "pnDanhSachSachDangMuon";
             this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 211);
             this.pnDanhSachSachDangMuon.TabIndex = 19;
-            // 
-            // dongThongTinSach1
-            // 
-            this.dongThongTinSach1.BackColor = System.Drawing.SystemColors.Window;
-            this.dongThongTinSach1.Location = new System.Drawing.Point(4, 4);
-            this.dongThongTinSach1.Name = "dongThongTinSach1";
-            this.dongThongTinSach1.Size = new System.Drawing.Size(816, 70);
-            this.dongThongTinSach1.TabIndex = 0;
             // 
             // frmThongTinBanDoc
             // 
@@ -455,7 +445,6 @@
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.pnDanhSachSachDangMuon.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -495,6 +484,5 @@
         private System.Windows.Forms.Label lbMaSach;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.CheckBox chkChonSach;
-        private dongThongTinSach dongThongTinSach1;
     }
 }

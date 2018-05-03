@@ -9,7 +9,6 @@ using System.Configuration;
 
 
 
-
 namespace dbConnection
 
 {
@@ -60,6 +59,7 @@ namespace dbConnection
             comm.Connection = openConnection();
             comm.CommandText = query;
             comm.Parameters.AddRange(parm);
+
             comm.ExecuteNonQuery(); 
 
 

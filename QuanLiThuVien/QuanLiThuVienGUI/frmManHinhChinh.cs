@@ -21,12 +21,12 @@ namespace QuanLiThuVienGUI
         public frmManHinhChinh()
         {
             InitializeComponent();
-            listDocGia = quanLiBanDocBUS.DanhSachDocGia();
             initDataGridView();
         }
 
         private void initDataGridView()
         {
+            listDocGia = quanLiBanDocBUS.DanhSachDocGia();
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
             dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
             dgvThongTinBanDoc.Columns[0].Width = 80;
@@ -117,11 +117,6 @@ namespace QuanLiThuVienGUI
         {
             listDocGia = quanLiBanDocBUS.TimDocGia(txbTimKiemBanDocTheoMa.Text, txbTimKiemTheoTenBanDoc.Text);
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
-            dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
-            dgvThongTinBanDoc.Columns[1].HeaderText = "Họ tên";
-            dgvThongTinBanDoc.Columns[2].HeaderText = "Email";
-            dgvThongTinBanDoc.Columns[3].HeaderText = "Ngày sinh";
-            //dgvThongTinBanDoc.Show();
         }
 
         private void btnHienThongTinChiTietBanDoc_Click(object sender, EventArgs e)
@@ -145,7 +140,23 @@ namespace QuanLiThuVienGUI
 
         private void btnSuaThongTinBanDoc_Click(object sender, EventArgs e)
         {
+            if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
+            {
+                if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, DateTime.Now, 0, int.Parse(cbLoaiDocGia.Text))))
+                {
+                    MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
 
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin thất bại. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
+
+            }
         }
 
         private void btnXoaBanDoc_Click(object sender, EventArgs e)
@@ -246,8 +257,12 @@ namespace QuanLiThuVienGUI
         private void dgvThongTinBanDoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView data = (DataGridView)sender;
-            index = data.SelectedRows[0].Index;
-            anhXaThongTinBanDoc(index);
+            if (data.RowCount > 0)
+            {
+                index = data.SelectedRows[0].Index;
+                anhXaThongTinBanDoc(index);
+            }
+            
         }
 
         private void anhXaThongTinBanDoc(int index)
