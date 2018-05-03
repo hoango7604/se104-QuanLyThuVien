@@ -40,14 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietPhieuMuon.cs" />
-    <Compile Include="ChiTietPhieuTra.cs" />
-    <Compile Include="PhieuMuon.cs" />
-    <Compile Include="PhieuThuTienPhat.cs" />
-    <Compile Include="PhieuTra.cs" />
+    <Compile Include="cacloaidocgiaDTO.cs" />
+    <Compile Include="ctpmDTO.cs" />
+    <Compile Include="ctptDTO.cs" />
+    <Compile Include="docgiaDTO.cs" />
+    <Compile Include="phieumuonDTO.cs" />
+    <Compile Include="phieutraDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sach.cs" />
-    <Compile Include="TheDocGia.cs" />
+    <Compile Include="quydinhDTO.cs" />
+    <Compile Include="sachDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
