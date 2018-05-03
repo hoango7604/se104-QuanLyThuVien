@@ -14,19 +14,20 @@ namespace QuanLiThuVienGUI
 {
     public partial class frmManHinhChinh : Form
     {
-        List<docgiaDTO> list;
+        List<docgiaDTO> listDocGia;
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
+        int index = -1;
 
         public frmManHinhChinh()
         {
             InitializeComponent();
+            listDocGia = quanLiBanDocBUS.DanhSachDocGia();
             initDataGridView();
         }
 
         private void initDataGridView()
         {
-            list = quanLiBanDocBUS.DanhSachDocGia();
-            dgvThongTinBanDoc.DataSource = list.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
+            dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
             dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
             dgvThongTinBanDoc.Columns[0].Width = 80;
             dgvThongTinBanDoc.Columns[1].HeaderText = "Họ tên";
@@ -114,20 +115,26 @@ namespace QuanLiThuVienGUI
 
         private void btnTimKiemBanDoc_Click(object sender, EventArgs e)
         {
-            list = quanLiBanDocBUS.TimDocGia(txbTimKiemBanDocTheoMa.Text, txbTimKiemTheoTenBanDoc.Text);
-            // dgvThongTinBanDoc.Refresh();
-            dgvThongTinBanDoc.DataSource = list.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
+            listDocGia = quanLiBanDocBUS.TimDocGia(txbTimKiemBanDocTheoMa.Text, txbTimKiemTheoTenBanDoc.Text);
+            dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
             dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
             dgvThongTinBanDoc.Columns[1].HeaderText = "Họ tên";
             dgvThongTinBanDoc.Columns[2].HeaderText = "Email";
             dgvThongTinBanDoc.Columns[3].HeaderText = "Ngày sinh";
-            dgvThongTinBanDoc.Show();
+            //dgvThongTinBanDoc.Show();
         }
 
         private void btnHienThongTinChiTietBanDoc_Click(object sender, EventArgs e)
         {
-            frmThongTinBanDoc f = new frmThongTinBanDoc();
-            f.ShowDialog();
+            if (index >= 0)
+            {
+                frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[index]);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn thông tin bạn đọc để hiển thị", "Thông báo", MessageBoxButtons.OK);
+            }
         }
 
         private void btnThemBanDoc_Click(object sender, EventArgs e)
@@ -231,18 +238,28 @@ namespace QuanLiThuVienGUI
             }
         }
 
+        /// <summary>
+        /// Ánh xạ thông tin bạn đọc
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvThongTinBanDoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView data = (DataGridView)sender;
-            int index = data.SelectedRows[0].Index;
-            txbTenBanDoc.Text = list[index].HoTen;
-            txbCMNDBanDoc.Text = list[index].MaThe.ToString();
-            dtpNgaySinhBanDoc.Value = list[index].NgaySinh;
-            txbEmailBanDoc.Text = list[index].Email;
-            txbDiaChiBanDoc.Text = list[index].DiaChi;
-            cbLoaiDocGia.Text = list[index].Loaidocgia.ToString();
-            txbTongTienNoBanDoc.Text = list[index].Tongtienno.ToString();
-            dtpNgayTaoTheBanDoc.Value = list[index].Ngaydk;
+            index = data.SelectedRows[0].Index;
+            anhXaThongTinBanDoc(index);
+        }
+
+        private void anhXaThongTinBanDoc(int index)
+        {
+            txbTenBanDoc.Text = listDocGia[index].HoTen;
+            txbCMNDBanDoc.Text = listDocGia[index].MaThe.ToString();
+            dtpNgaySinhBanDoc.Value = listDocGia[index].NgaySinh;
+            txbEmailBanDoc.Text = listDocGia[index].Email;
+            txbDiaChiBanDoc.Text = listDocGia[index].DiaChi;
+            cbLoaiDocGia.Text = listDocGia[index].Loaidocgia.ToString();
+            txbTongTienNoBanDoc.Text = listDocGia[index].Tongtienno.ToString();
+            dtpNgayTaoTheBanDoc.Value = listDocGia[index].Ngaydk;
         }
     }
 }

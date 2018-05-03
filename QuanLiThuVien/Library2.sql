@@ -24,6 +24,7 @@ CREATE TABLE sach (
   masach INT NOT NULL PRIMARY KEY , 
   tensach NVARCHAR(50) NOT NULL ,
   theloai VARCHAR(50) NOT NULL ,
+  tacgia NVARCHAR(50) NOT NULL ,
   nxb NVARCHAR(50) ,
   ngayxb DATETIME NOT NULL , 
   giatri INT NOT	NULL ,

@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLiThuVienBUS;
+using QuanLiThuVienDTO;
 
 namespace QuanLiThuVienGUI
 {
     public partial class frmThongTinBanDoc : Form
     {
         dongThongTinSach dtt = new dongThongTinSach();
-        public frmThongTinBanDoc()
+        public frmThongTinBanDoc(docgiaDTO docgia)
         {
             InitializeComponent();
         }
