@@ -143,12 +143,15 @@ namespace QuanLiThuVienDAL
 
 
 
-       // del bool , dto 
-       // con sach k , con tien ko , 
-        public bool xoaDocGia(int mathe)
-        { 
-
-        return  true ;
+        
+        public bool xoaDocGia( docgiaDTO dg,int mathe)
+        {
+            string query = string.Format("delete from [docgia] where @mathe=mathe");
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@mathe", SqlDbType.Int);
+            param[0].Value = Convert.ToString(mathe);
+            conn.excuteNonQuery2(query, param);
+            return  true ;
         }
 
 
