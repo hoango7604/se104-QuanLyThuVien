@@ -15,19 +15,21 @@ namespace QuanLiThuVienGUI
     public partial class frmManHinhChinh : Form
     {
         List<docgiaDTO> listDocGia;
+        List<sachDTO> listSach;
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
+        QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
         int index = -1;
 
         public frmManHinhChinh()
         {
             InitializeComponent();
-            initDataGridView();
+            initDataGridViewBanDoc();
+            initDataGridViewSach();
         }
 
-        private void initDataGridView()
+        private void initDataGridViewBanDoc()
         {
-            listDocGia = quanLiBanDocBUS.DanhSachDocGia();
-            dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
+            loadDanhSachBanDoc();
             dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
             dgvThongTinBanDoc.Columns[0].Width = 80;
             dgvThongTinBanDoc.Columns[1].HeaderText = "Họ tên";
@@ -37,6 +39,32 @@ namespace QuanLiThuVienGUI
             dgvThongTinBanDoc.Columns[3].HeaderText = "Ngày sinh";
             dgvThongTinBanDoc.Columns[3].Width = 100;
             dgvThongTinBanDoc.Show();
+        }
+
+        private void loadDanhSachBanDoc()
+        {
+            listDocGia = quanLiBanDocBUS.DanhSachDocGia();
+            dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
+        }
+
+        private void initDataGridViewSach()
+        {
+            loadDanhSachSach();
+            dgvThongTinSach.Columns[0].HeaderText = "Mã sách";
+            dgvThongTinSach.Columns[0].Width = 80;
+            dgvThongTinSach.Columns[1].HeaderText = "Tên sách";
+            dgvThongTinSach.Columns[1].Width = 170;
+            dgvThongTinSach.Columns[2].HeaderText = "Tác giả";
+            dgvThongTinSach.Columns[2].Width = 120;
+            dgvThongTinSach.Columns[3].HeaderText = "Nhà xuất bản";
+            dgvThongTinSach.Columns[3].Width = 100;
+            dgvThongTinSach.Show();
+        }
+
+        private void loadDanhSachSach()
+        {
+            listSach = quanLiSachBUS.DanhSachSach();
+            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
         }
 
         /// <summary>
@@ -161,7 +189,25 @@ namespace QuanLiThuVienGUI
 
         private void btnXoaBanDoc_Click(object sender, EventArgs e)
         {
-
+            if (index >= 0)
+            {
+                if (MessageBox.Show("Bạn có muốn xóa bạn đọc " + listDocGia[index].HoTen + "?", "Xóa bạn đọc", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    if (quanLiBanDocBUS.XoaDocGia(listDocGia[index]))
+                    {
+                        MessageBox.Show("Xóa bạn đọc thành công", "Thông báo", MessageBoxButtons.OK);
+                        loadDanhSachBanDoc();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa bạn đọc thất bại. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một bạn đọc", "Thông báo", MessageBoxButtons.OK);
+            }
         }
 
         /// <summary>

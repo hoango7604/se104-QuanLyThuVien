@@ -104,7 +104,15 @@ namespace QuanLiThuVienBUS
             return false;
         }
 
-
+        /// <summary>
+        /// M thêm code vô đây
+        /// </summary>
+        /// <param name="docgia"></param>
+        /// <returns></returns>
+        public bool XoaDocGia(docgiaDTO docgia)
+        {
+            return false;
+        }
 
      
     }

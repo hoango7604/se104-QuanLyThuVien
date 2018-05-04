@@ -116,8 +116,6 @@
             this.lbTheLoaiSach = new System.Windows.Forms.Label();
             this.lbTacGiaSach = new System.Windows.Forms.Label();
             this.lbNhaXuatBanSach = new System.Windows.Forms.Label();
-            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lvDanhSachSach = new System.Windows.Forms.ListView();
             this.tpPhieuMuon = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lvDanhSachPhieuMuon = new System.Windows.Forms.ListView();
@@ -138,6 +136,8 @@
             this.lbDanhSachPhieuThuTienPhat = new System.Windows.Forms.Label();
             this.tpThongKe = new System.Windows.Forms.TabPage();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.dgvThongTinSach = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tcManHinhChinh.SuspendLayout();
             this.tpBanDoc.SuspendLayout();
@@ -152,7 +152,6 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
             this.tpPhieuMuon.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -165,6 +164,8 @@
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSach)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -669,10 +670,10 @@
             // 
             // tpSach
             // 
+            this.tpSach.Controls.Add(this.panel12);
             this.tpSach.Controls.Add(this.panel2);
             this.tpSach.Controls.Add(this.flowLayoutPanel2);
             this.tpSach.Controls.Add(this.flowLayoutPanel5);
-            this.tpSach.Controls.Add(this.flowLayoutPanel6);
             this.tpSach.Location = new System.Drawing.Point(4, 54);
             this.tpSach.Name = "tpSach";
             this.tpSach.Padding = new System.Windows.Forms.Padding(3);
@@ -1019,26 +1020,6 @@
             this.lbNhaXuatBanSach.TabIndex = 9;
             this.lbNhaXuatBanSach.Text = "Nhà xuất bản:";
             // 
-            // flowLayoutPanel6
-            // 
-            this.flowLayoutPanel6.AutoScroll = true;
-            this.flowLayoutPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel6.Controls.Add(this.lvDanhSachSach);
-            this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(475, 485);
-            this.flowLayoutPanel6.TabIndex = 4;
-            // 
-            // lvDanhSachSach
-            // 
-            this.lvDanhSachSach.Location = new System.Drawing.Point(3, 3);
-            this.lvDanhSachSach.Name = "lvDanhSachSach";
-            this.lvDanhSachSach.Size = new System.Drawing.Size(448, 477);
-            this.lvDanhSachSach.TabIndex = 1;
-            this.lvDanhSachSach.UseCompatibleStateImageBehavior = false;
-            // 
             // tpPhieuMuon
             // 
             this.tpPhieuMuon.Controls.Add(this.panel6);
@@ -1238,6 +1219,27 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.dgvThongTinSach);
+            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(477, 485);
+            this.panel12.TabIndex = 8;
+            // 
+            // dgvThongTinSach
+            // 
+            this.dgvThongTinSach.AllowUserToAddRows = false;
+            this.dgvThongTinSach.AllowUserToDeleteRows = false;
+            this.dgvThongTinSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongTinSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvThongTinSach.Location = new System.Drawing.Point(0, 0);
+            this.dgvThongTinSach.Name = "dgvThongTinSach";
+            this.dgvThongTinSach.ReadOnly = true;
+            this.dgvThongTinSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvThongTinSach.Size = new System.Drawing.Size(477, 485);
+            this.dgvThongTinSach.TabIndex = 1;
+            // 
             // frmManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1270,7 +1272,6 @@
             this.flowLayoutPanel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.flowLayoutPanel6.ResumeLayout(false);
             this.tpPhieuMuon.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -1288,6 +1289,8 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSach)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1341,11 +1344,9 @@
         private System.Windows.Forms.TextBox txbTimSachTheoMa;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Button btnThemSach;
         private System.Windows.Forms.Button btnSuaThongTinSach;
         private System.Windows.Forms.Button btnXoaSach;
-        private System.Windows.Forms.ListView lvDanhSachSach;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnHienThongTinChiTietBanDoc;
         private System.Windows.Forms.TextBox txbDiaChiBanDoc;
@@ -1404,5 +1405,7 @@
         private System.Windows.Forms.Label lbTinhTrangSach;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.DataGridView dgvThongTinBanDoc;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.DataGridView dgvThongTinSach;
     }
 }

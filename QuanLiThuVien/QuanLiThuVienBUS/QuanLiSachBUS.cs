@@ -26,14 +26,14 @@ namespace QuanLiThuVienBUS
             return new List<sachDTO>();
         }
 
-        public List<sachDTO> TimSach(sachDTO saxDTO)
+        public List<sachDTO> TimSach(sachDTO sDTO)
         {
             List<sachDTO> list = new List<sachDTO>();
             List<sachDTO> result = new List<sachDTO>();
-            int masach = saxDTO.Masach;
-            string tensach = saxDTO.Tensach;
-            string theloai = saxDTO.Theloai;
-            string tacgia = saxDTO.Nxb;
+            int masach = sDTO.Masach;
+            string tensach = sDTO.Tensach;
+            string theloai = sDTO.Theloai;
+            string tacgia = sDTO.Nxb;
             int max_masach_distance = masach.ToString().Length / 2;
             int max_name_distance = tensach.Length / 2;
             int max_author_distance = tacgia.Length / 2;
@@ -132,6 +132,16 @@ namespace QuanLiThuVienBUS
             {
                 return saxDAL.suaSach(sach, sach.Masach);
             }
+            return false;
+        }
+
+        /// <summary>
+        /// M thêm code vô đây
+        /// </summary>
+        /// <param name="sDTO"></param>
+        /// <returns></returns>
+        public bool XoaSach(sachDTO sDTO)
+        {
             return false;
         }
        
