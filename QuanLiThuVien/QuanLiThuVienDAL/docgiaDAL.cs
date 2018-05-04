@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using dbConnection;
+using dbConnection; 
 using QuanLiThuVienDTO;
 using System.Data;
 using System.Data.SqlClient;
@@ -26,29 +26,30 @@ namespace QuanLiThuVienDAL
         {
 
             string query = string.Format("select* from [docgia] ");
-            SqlParameter[] param = new SqlParameter[1];
-            docgiaDTO dgDTO = new docgiaDTO();
-            param[0] = new SqlParameter("@mathe", SqlDbType.Int);
-            param[0].Value = Convert.ToString(dgDTO.MaThe);
+            SqlParameter[] parm = new SqlParameter[1];
+            docgiaDTO dg = new docgiaDTO();
+            parm[0] = new SqlParameter("@mathe", SqlDbType.Int);
+            parm[0].Value = dg.MaThe;
+
             DataTable datatable = new DataTable();
-            datatable = conn.excuteNonQuery(query, param);
+            datatable = conn.excuteNonQuery(query, parm);
 
             //gan value trong datatable vao DTO 
 
             foreach (DataRow dr in datatable.Rows)
             {
-                //docgiaDTO tdgDTO = new docgiaDTO();
-                dgDTO = new docgiaDTO();
-                dgDTO.MaThe = int.Parse(dr["mathe"].ToString());
-                dgDTO.HoTen = dr["hoten"].ToString();
-                dgDTO.Email = dr["email"].ToString();
-                dgDTO.Loaidocgia = Int32.Parse(dr["loaidocgia"].ToString());
-                dgDTO.NgaySinh = DateTime.Parse( dr["ngaysinh"].ToString());
-                dgDTO.Ngaydk = DateTime.Parse( dr["ngaydk"].ToString());
-                dgDTO.DiaChi = dr["diachi"].ToString();
-                dgDTO.Tongtienno = int.Parse(dr["tongtienno"].ToString());
+                docgiaDTO tdgDTO = new docgiaDTO();
 
-                listDGDTO.Add(dgDTO);
+                tdgDTO.MaThe = Int32.Parse( dr["mathe"].ToString());
+                tdgDTO.HoTen = dr["hoten"].ToString();
+                tdgDTO.Email = dr["email"].ToString();
+                tdgDTO.Loaidocgia = Int32.Parse(dr["loaidocgia"].ToString());
+                tdgDTO.NgaySinh = DateTime.Parse( dr["ngaysinh"].ToString());
+                tdgDTO.Ngaydk = DateTime.Parse( dr["ngaydk"].ToString());
+                tdgDTO.DiaChi = dr["diachi"].ToString();
+                tdgDTO.Tongtienno = Int32.Parse(dr["tongtienno"].ToString ());
+
+                listDGDTO.Add(tdgDTO);
             }
         
        
@@ -98,10 +99,10 @@ namespace QuanLiThuVienDAL
             param[5].Value = Convert.ToString(dgDTO.DiaChi);
             param[6] = new SqlParameter("@loaidocgia", SqlDbType.Int);
             param[6].Value = Convert.ToString(dgDTO.Email);
-            param[7] = new SqlParameter("@tongtienno", SqlDbType.Int);
+            param[7] = new SqlParameter("@tongtienno", SqlDbType.Money);
             param[7].Value = Convert.ToString(dgDTO.Tongtienno);
 
-            conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery2(query, param);
 
 
             return true;
@@ -132,7 +133,7 @@ namespace QuanLiThuVienDAL
             param[7] = new SqlParameter("@tongtienno", SqlDbType.Money);
             param[7].Value = Convert.ToString(dgDTO.Tongtienno);
 
-            conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery2(query, param);
 
 
             return true;

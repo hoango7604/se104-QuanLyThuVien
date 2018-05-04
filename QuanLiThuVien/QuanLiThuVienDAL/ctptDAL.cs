@@ -56,7 +56,7 @@ namespace QuanLiThuVienDAL
         {
 
 
-            string query = string.Format("insert into [ct_phieutra] value (songaydamuon=@songaydamuon,tienphatsach=@songaydamuon, mapt=@mapt, masach=@masach)");
+            string query = string.Format("insert into [ct_phieutra] values (songaydamuon=@songaydamuon,tienphatsach=@songaydamuon, mapt=@mapt, masach=@masach)");
             SqlParameter[] param = new SqlParameter[4];
 
             param[0] = new SqlParameter("@songaydamuon", SqlDbType.Int);
@@ -70,7 +70,7 @@ namespace QuanLiThuVienDAL
             param[3].Value = Convert.ToString(ctptDTO.Masach);
 
 
-            conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery2(query, param);
 
 
             return true;

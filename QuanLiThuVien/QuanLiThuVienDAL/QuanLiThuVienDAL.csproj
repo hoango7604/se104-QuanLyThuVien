@@ -52,9 +52,9 @@
     <Compile Include="sachDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dbConnection\dbConnection.csproj">
-      <Project>{b9b2035e-5ede-4e39-893f-b2a86722ed2a}</Project>
-      <Name>dbConnection</Name>
+    <ProjectReference Include="..\DBconnection\DBconnection.csproj">
+      <Project>{a7cbf1d4-b204-4f61-9d60-bfa10266946a}</Project>
+      <Name>DBconnection</Name>
     </ProjectReference>
     <ProjectReference Include="..\QuanLiThuVienDTO\QuanLiThuVienDTO.csproj">
       <Project>{23683daa-7959-45fb-a885-8a14069b3f60}</Project>

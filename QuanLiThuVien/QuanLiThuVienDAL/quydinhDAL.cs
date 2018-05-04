@@ -70,7 +70,7 @@ namespace QuanLiThuVienDAL
           param[4].Value = Convert.ToString(qdDTO.Kcnamxuatban);
 
 
-          conn.excuteNonQuery(query, param);
+          conn.excuteNonQuery2(query, param);
 
           return true;
 
