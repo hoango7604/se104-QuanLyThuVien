@@ -38,10 +38,10 @@ namespace QuanLiThuVienDAL
             {
                  ctptDTO ctphieutraDTO = new ctptDTO();
 
-                 ctphieutraDTO .Mapt = Int32.Parse( dr["mapt"].ToString());
-                 ctphieutraDTO.Masach = Int32.Parse(dr["masach"].ToString());
-                 ctphieutraDTO.Songaydamuon=Int32.Parse(dr["songaydamuon"].ToString());
-                 ctphieutraDTO.Tienphatsach=Int32.Parse(dr["tienphatsach"].ToString());
+                 ctphieutraDTO .Mapt = int.Parse( dr["mapt"].ToString());
+                 ctphieutraDTO.Masach = int.Parse(dr["masach"].ToString());
+                 ctphieutraDTO.Songaydamuon=int.Parse(dr["songaydamuon"].ToString());
+                 ctphieutraDTO.Tienphatsach=int.Parse(dr["tienphatsach"].ToString());
 
                  listctptDTO.Add(ctphieutraDTO); 
             }

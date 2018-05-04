@@ -38,10 +38,10 @@ namespace QuanLiThuVienDAL
             {
                 phieutraDTO ptDTO = new phieutraDTO();
 
-                ptDTO.Mapt = Int32.Parse( dr["mapt"].ToString());
+                ptDTO.Mapt = int.Parse( dr["mapt"].ToString());
                 ptDTO.Ngaytra =DateTime.Parse( dr["ngaytra"].ToString()) ;
-                ptDTO.Tienphatkinay = Int32.Parse(dr["tienphatkinay"].ToString());
-                ptDTO.Mathe= Int32.Parse(dr["mathe"].ToString());
+                ptDTO.Tienphatkinay = int.Parse(dr["tienphatkinay"].ToString());
+                ptDTO.Mathe= int.Parse(dr["mathe"].ToString());
              
                 listPTDTO.Add(ptDTO);
             }

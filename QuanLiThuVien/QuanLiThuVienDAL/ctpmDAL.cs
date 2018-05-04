@@ -37,9 +37,9 @@ namespace QuanLiThuVienDAL
             foreach (DataRow dr in datatable.Rows)
             {
                 ctpmDTO pmDTO = new ctpmDTO();
-                pmDTO.Mapm = Int32.Parse(dr["mapm"].ToString());
+                pmDTO.Mapm = int.Parse(dr["mapm"].ToString());
 
-                pmDTO.Masach = Int32.Parse(dr["masach"].ToString());
+                pmDTO.Masach = int.Parse(dr["masach"].ToString());
 
 
                 listctpmDTO.Add(pmDTO);

@@ -38,9 +38,9 @@ public    class phieumuonDAL
             {
                 phieumuonDTO pmDTO = new phieumuonDTO();
 
-                pmDTO.Maphieumuon = Int32.Parse(dr["mapm"].ToString());
+                pmDTO.Maphieumuon = int.Parse(dr["mapm"].ToString());
                 pmDTO.Ngaymuon = DateTime.Parse(dr["ngaymuon"].ToString());
-                pmDTO.Mathe = Int32.Parse(dr["mathe"].ToString());
+                pmDTO.Mathe = int.Parse(dr["mathe"].ToString());
 
 
                 listPMDTO.Add(pmDTO);

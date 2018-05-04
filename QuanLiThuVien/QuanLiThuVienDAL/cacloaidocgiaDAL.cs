@@ -39,7 +39,7 @@ namespace QuanLiThuVienDAL
            {
                cacloaidocgiaDTO cacloaiDGDTO = new cacloaidocgiaDTO();
 
-               cacloaiDGDTO.Cacloai = Int32.Parse(dr["loaidg"].ToString());
+               cacloaiDGDTO.Cacloai = int.Parse(dr["loaidg"].ToString());
               
                listLoaiDGDTO.Add(cacloaiDGDTO);
            }
