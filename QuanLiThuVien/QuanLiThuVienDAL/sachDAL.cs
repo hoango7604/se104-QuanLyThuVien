@@ -147,6 +147,32 @@ public class sachDAL
 
         }
 
+        public bool isSach(int masach, ref sachDTO sDTO)
+        {
 
+            string query = string.Format("select * from [sach] where masach=@masach");
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@masach", SqlDbType.Int);
+            param[0].Value = masach;
+
+            DataTable dtb = new DataTable();
+            dtb = conn.excuteNonQuery(query, param);
+            if (dtb.Rows.Count > 0)
+            {
+                DataRow dr = dtb.Rows[0];
+                sDTO.Masach = int.Parse(dr["mathe"].ToString());
+                sDTO.Tensach = dr["tensach "].ToString();
+                sDTO.Theloai = dr["Theloai"].ToString();
+                sDTO.Nxb = dr["nxb"].ToString();
+                sDTO.Ngayxb = DateTime.Parse(dr["ngayxb"].ToString());
+                sDTO.Giatri = int.Parse(dr["giatri"].ToString());
+                sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
+                sDTO.Tacgia = dr["tacgia"].ToString();
+
+                return true;
+            }
+            return false;
+
+        }
     }
 }

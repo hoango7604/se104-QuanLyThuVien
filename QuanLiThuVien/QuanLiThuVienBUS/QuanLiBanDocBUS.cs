@@ -10,7 +10,7 @@ namespace QuanLiThuVienBUS
 {
     public class QuanLiBanDocBUS
     {
-        const int MAX_LEVENSTEIN_DISTANCE = 10;
+        const int MAX_LEVENSTEIN_DISTANCE = 5;
 
         public QuanLiBanDocBUS()
         {
@@ -37,53 +37,76 @@ namespace QuanLiThuVienBUS
         /// <param name="cmnd"> Mã số cmnd </param>
         /// <param name="name"> Họ tên bạn đọc </param>
         /// <returns></returns>
-        public List<docgiaDTO> TimDocGia(string cmnd,string name)
+        public List<docgiaDTO> TimDocGia(string cmnd, string name)
         {
             //cmnd = cmnd.Replace(" ", "");
             if (cmnd == null) cmnd = "";
             if (name == null) name = "";
             List<docgiaDTO> result = new List<docgiaDTO>();
             List<docgiaDTO> danhsach = this.DanhSachDocGia();
-            docgiaDAL docgia = new docgiaDAL();
-            if (docgia.isDocGia(int.Parse(cmnd)))
+            docgiaDAL docgiaDAL = new docgiaDAL();
+
+        
+            if (cmnd != "")
             {
-                foreach (docgiaDTO dg in danhsach)
-                {
-                    if (dg.MaThe==Int32.Parse(cmnd))
-                    {
-                        result.Add(dg);
-                    }
-                }
-                 
-            }
-            else
-            {
-                if (name=="")
+                if (docgiaDAL.isDocGia(int.Parse(cmnd)))
                 {
                     foreach (docgiaDTO dg in danhsach)
                     {
-                        if (Levenshtein_Distance.Distance(cmnd, dg.MaThe.ToString()) <= MAX_LEVENSTEIN_DISTANCE/2)
+                        if (dg.MaThe == int.Parse(cmnd))
                         {
                             result.Add(dg);
+                            return result;
                         }
                     }
                 }
                 else
                 {
+                  
                     foreach (docgiaDTO dg in danhsach)
                     {
-                        if (Levenshtein_Distance.Distance(name, dg.HoTen) <= MAX_LEVENSTEIN_DISTANCE)
+                        if (Levenshtein_Distance.Distance(dg.MaThe.ToString(), cmnd) <= (MAX_LEVENSTEIN_DISTANCE / 2)) 
                         {
-                            result.Add(dg);
+                            if (result.IndexOf(dg)==-1)
+                            {
+                                result.Add(dg);
+                            }
+
                         }
                     }
                 }
-                
+
             }
+
+            if (name != "")
+            {
+                foreach (docgiaDTO dg in danhsach)
+                {
+                    if (Levenshtein_Distance.Distance(dg.HoTen,name) <= MAX_LEVENSTEIN_DISTANCE)
+                    {
+                        if (result.IndexOf(dg) == -1)
+                        {
+                            result.Add(dg);
+                        }                      
+                    }
+                }
+            }
+
+            if (result.Count ==0)
+            {
+                return danhsach;
+            }
+
             return result;
+
 
         }
 
+        /// <summary>
+        /// Thêm đọc giả
+        /// </summary>
+        /// <param name="docgia"></param>
+        /// <returns></returns>
         public bool ThemDocGia(docgiaDTO docgia)
         {
             docgiaDAL dgDAL = new docgiaDAL();
@@ -94,6 +117,11 @@ namespace QuanLiThuVienBUS
             return dgDAL.themDocGia(docgia);
         }
 
+        /// <summary>
+        /// Sửa Đọc Giả 
+        /// </summary>
+        /// <param name="docgia"></param>
+        /// <returns></returns>
         public bool SuaDocGia(docgiaDTO docgia)
         {
             docgiaDAL dgDAL = new docgiaDAL();
@@ -106,12 +134,19 @@ namespace QuanLiThuVienBUS
 
         /// <summary>
         /// M thêm code vô đây
+        /// , rep :ok gái
         /// </summary>
         /// <param name="docgia"></param>
         /// <returns></returns>
         public bool XoaDocGia(docgiaDTO docgia)
         {
-            return false;
+            docgiaDAL doxgiaDAL = new docgiaDAL();
+            if (!doxgiaDAL.isDocGia(docgia.MaThe))
+            {
+                return false;
+            }
+
+            return doxgiaDAL.xoaDocGia(docgia.MaThe);
         }
 
      

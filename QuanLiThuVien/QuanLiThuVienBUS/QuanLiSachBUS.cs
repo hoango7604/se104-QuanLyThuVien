@@ -30,75 +30,113 @@ namespace QuanLiThuVienBUS
         {
             List<sachDTO> list = new List<sachDTO>();
             List<sachDTO> result = new List<sachDTO>();
-            int masach = sDTO.Masach;
+           
             string tensach = sDTO.Tensach;
             string theloai = sDTO.Theloai;
-            string tacgia = sDTO.Nxb;
+            string tacgia = sDTO.Tacgia;
+            string nhaxuatban = sDTO.Nxb;
+            string masach;
+
+            if (sDTO.Masach == -1 || sDTO.Masach == null)
+            {
+                masach = "";
+            }
+            else masach = sDTO.Masach.ToString();
+            if (tensach == null) tensach = "";
+            if (theloai == null) theloai = "";
+            if (tacgia == null) tacgia = "";
+            if (nhaxuatban == null) nhaxuatban = "";    
+
             int max_masach_distance = masach.ToString().Length / 2;
             int max_name_distance = tensach.Length / 2;
             int max_author_distance = tacgia.Length / 2;
-            sachDAL saxDAL = new sachDAL();
+            int max_publishcompany_distance = nhaxuatban.Length / 2;
 
+            sachDAL saxDAL = new sachDAL();
+            sachDTO temp = new sachDTO();
             list = DanhSachSach();
-            if (saxDAL.isSach(masach))
+
+            //if(masach != "")
+            //if (saxDAL.isSach(sDTO.Masach,ref temp))
+            //{
+            //    result.Add(temp);
+            //}
+
+            if (masach != "")
+            {
+                if (saxDAL.isSach(sDTO.Masach))
+                {
+                    foreach (sachDTO sax in list)
+                    {
+                        if (sax.Masach == int.Parse(masach))
+                        {
+                            result.Add(sax);
+                            return result;
+                        }
+                    }
+                }
+
+            }
+
+            if (tensach!="")
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (sach.Masach == masach)
+                    if (Levenshtein_Distance.Distance(sach.Tensach,tensach) <= max_name_distance)
                     {
-                        result.Add(sach);
+                        if (result.IndexOf(sach)==-1)
+                        {
+                            result.Add(sach);
+                        }
                     }
                 }
             }
-            else
+
+            if (theloai != "")
             {
-                if (masach.ToString() != "")
+                foreach (sachDTO sach in list)
                 {
-                    foreach (sachDTO sach in list)
+                    if (sach.Theloai == theloai)
                     {
-                        if (Levenshtein_Distance.Distance(sach.Masach.ToString(), masach.ToString()) <= max_masach_distance)
+                        if (result.IndexOf(sach) == -1)
                         {
                             result.Add(sach);
-                            list.Remove(sach);
                         }
                     }
                 }
+            }
 
-                if (tensach != "")
+            if (tacgia != "")
+            {
+                foreach (sachDTO sach in list)
                 {
-                    foreach (sachDTO sach in list)
+                    if (Levenshtein_Distance.Distance(sach.Tacgia,tacgia)<=max_author_distance)
                     {
-                        if (Levenshtein_Distance.Distance(sach.Tensach.ToString(), tensach) <= max_name_distance)
+                        if (result.IndexOf(sach) == -1)
                         {
                             result.Add(sach);
-                            list.Remove(sach);
                         }
                     }
                 }
+            }
 
-                if (theloai != "")
+            if (nhaxuatban != "")
+            {
+                foreach (sachDTO sach in list)
                 {
-                    foreach (sachDTO sach in list)
+                    if (Levenshtein_Distance.Distance(sach.Nxb,nhaxuatban)<= max_publishcompany_distance)
                     {
-                        if (sach.Theloai == theloai)
+                        if (result.IndexOf(sach)==-1)
                         {
                             result.Add(sach);
-                            list.Remove(sach);
                         }
                     }
                 }
+            }
 
-                if (tacgia != "null")
-                {
-                    foreach (sachDTO sach in list)
-                    {
-                        if (Levenshtein_Distance.Distance(sach.Nxb.ToString(), tacgia) <= max_author_distance)
-                        {
-                            result.Add(sach);
-                            list.Remove(sach);
-                        }
-                    }
-                }
+            if (result.Count == 0)
+            {
+                return list;
             }
             return result;
         }
@@ -106,6 +144,8 @@ namespace QuanLiThuVienBUS
         public bool ThemSach(sachDTO sDTO)
         {
             sachDAL saxDal = new sachDAL();
+
+            //kiểm tra các điều kiện
             if (saxDal.isSach(sDTO.Masach))
             {
                 return false;
@@ -122,6 +162,15 @@ namespace QuanLiThuVienBUS
             {
                 return false;
             }
+
+            //tạo 
+            List<sachDTO> list = new List<sachDTO>() ;
+            if (!saxDal.tatcaSach(list))
+            {
+                return false;
+            }
+
+           // sDTO.Masach = list.Count + 1;
             return saxDal.themSach(sDTO);
         }
 

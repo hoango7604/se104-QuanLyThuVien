@@ -76,8 +76,37 @@ namespace QuanLiThuVienDAL
         
         }
 
+        public bool isDocGia(int mathe,ref docgiaDTO dgDTO)
+        {
 
-       // insert  bool ,dto (có chưa bảng qi định dto )
+            string query = string.Format("select * from [docgia] where mathe=@mathe");
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@mathe", SqlDbType.Int);
+            param[0].Value = mathe;
+
+            DataTable dtb = new DataTable();
+
+            dtb = conn.excuteNonQuery(query, param);
+
+            if (dtb.Rows.Count > 0)
+            {
+                DataRow dr = dtb.Rows[0];
+                dgDTO.MaThe = int.Parse(dr["mathe"].ToString());
+                dgDTO.HoTen = dr["hoten"].ToString();
+                dgDTO.Email = dr["email"].ToString();
+                dgDTO.Loaidocgia = int.Parse(dr["loaidocgia"].ToString());
+                dgDTO.NgaySinh = DateTime.Parse(dr["ngaysinh"].ToString());
+                dgDTO.Ngaydk = DateTime.Parse(dr["ngaydk"].ToString());
+                dgDTO.DiaChi = dr["diachi"].ToString();
+                dgDTO.Tongtienno = int.Parse(dr["tongtienno"].ToString());
+
+
+                return true;
+            }
+            return false;
+
+        }
+        // insert  bool ,dto (có chưa bảng qi định dto )
 
         public bool themDocGia(docgiaDTO dgDTO)
         {
