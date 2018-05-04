@@ -58,7 +58,26 @@ namespace QuanLiThuVienDAL
            return true; 
 
        }
-      
+      // check sach co trong db k 
+       public bool isSach(int masach)
+       {
+
+           string query = string.Format("select * from [sach] where masach=@masach");
+           SqlParameter[] param = new SqlParameter[1];
+           param[0] = new SqlParameter("@masach", SqlDbType.Int);
+           param[0].Value = masach;
+
+           DataTable dtb = new DataTable();
+           dtb = conn.excuteNonQuery(query, param);
+
+
+
+           if (dtb.Rows.Count > 0)
+               return true;
+           return false;
+
+       }
+
       // them sach
 
        public bool themSach(sachDTO sDTO)
