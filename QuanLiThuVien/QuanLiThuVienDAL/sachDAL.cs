@@ -30,7 +30,9 @@ public class sachDAL
 
             string query = string.Format("select* from [sach] ");
             SqlParameter[] parm = new SqlParameter[1];
-
+            sachDTO sDTO = new sachDTO();
+            parm[0] = new SqlParameter("@masach", SqlDbType.Int);
+            parm[0].Value = Convert.ToString(sDTO.Masach);
             DataTable datatable = new DataTable();
             datatable = conn.excuteNonQuery(query, parm);
 
@@ -38,15 +40,16 @@ public class sachDAL
 
             foreach (DataRow dr in datatable.Rows)
             {
-                sachDTO sDTO = new sachDTO();
+                //sachDTO sDTO = new sachDTO();
 
-                sDTO.Masach= Int32.Parse( dr["mathe"].ToString());
-                sDTO.Tensach = dr["tensach "].ToString();
-                sDTO.Theloai = dr["Theloai"].ToString();
+                sDTO = new sachDTO();
+                sDTO.Masach= int.Parse( dr["masach"].ToString());
+                sDTO.Tensach = dr["tensach"].ToString();
+                sDTO.Theloai = dr["theloai"].ToString();
                 sDTO.Nxb = dr["nxb"].ToString();
                 sDTO.Ngayxb =DateTime.Parse(dr["ngayxb"].ToString());
-                sDTO.Giatri = Int32.Parse(dr["giatri"].ToString());
-                sDTO.Trangthai = Int32.Parse(dr["trangthai"].ToString());
+                sDTO.Giatri = int.Parse(dr["giatri"].ToString());
+                sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
                 sDTO.Tacgia = dr["tacgia"].ToString();
                 lsachDTO.Add(sDTO);
             }

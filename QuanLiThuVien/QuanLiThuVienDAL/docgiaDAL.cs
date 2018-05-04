@@ -37,18 +37,18 @@ namespace QuanLiThuVienDAL
 
             foreach (DataRow dr in datatable.Rows)
             {
-                docgiaDTO tdgDTO = new docgiaDTO();
+                //docgiaDTO tdgDTO = new docgiaDTO();
+                dgDTO = new docgiaDTO();
+                dgDTO.MaThe = int.Parse(dr["mathe"].ToString());
+                dgDTO.HoTen = dr["hoten"].ToString();
+                dgDTO.Email = dr["email"].ToString();
+                dgDTO.Loaidocgia = Int32.Parse(dr["loaidocgia"].ToString());
+                dgDTO.NgaySinh = DateTime.Parse( dr["ngaysinh"].ToString());
+                dgDTO.Ngaydk = DateTime.Parse( dr["ngaydk"].ToString());
+                dgDTO.DiaChi = dr["diachi"].ToString();
+                dgDTO.Tongtienno = int.Parse(dr["tongtienno"].ToString());
 
-                tdgDTO.MaThe = int.Parse(dr["mathe"].ToString());
-                tdgDTO.HoTen = dr["hoten"].ToString();
-                tdgDTO.Email = dr["email"].ToString();
-                tdgDTO.Loaidocgia = Int32.Parse(dr["loaidocgia"].ToString());
-                tdgDTO.NgaySinh = DateTime.Parse( dr["ngaysinh"].ToString());
-                tdgDTO.Ngaydk = DateTime.Parse( dr["ngaydk"].ToString());
-                tdgDTO.DiaChi = dr["diachi"].ToString();
-                tdgDTO.Tongtienno = int.Parse(dr["tongtienno"].ToString());
-
-                listDGDTO.Add(tdgDTO);
+                listDGDTO.Add(dgDTO);
             }
         
        

@@ -56,7 +56,7 @@ namespace QuanLiThuVienGUI
             dgvThongTinSach.Columns[1].Width = 170;
             dgvThongTinSach.Columns[2].HeaderText = "Tác giả";
             dgvThongTinSach.Columns[2].Width = 120;
-            dgvThongTinSach.Columns[3].HeaderText = "Nhà xuất bản";
+            dgvThongTinSach.Columns[3].HeaderText = "NXB";
             dgvThongTinSach.Columns[3].Width = 100;
             dgvThongTinSach.Show();
         }
