@@ -144,7 +144,7 @@ namespace QuanLiThuVienDAL
 
 
         
-        public bool xoaDocGia( docgiaDTO dg,int mathe)
+        public bool xoaDocGia( int mathe)
         {
             string query = string.Format("delete from [docgia] where @mathe=mathe");
             SqlParameter[] param = new SqlParameter[1];
