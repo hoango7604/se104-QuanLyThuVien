@@ -18,7 +18,8 @@ namespace QuanLiThuVienGUI
         List<sachDTO> listSach;
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
         QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
-        int index = -1;
+        int indexBanDoc = -1;
+        int indexSach = -1;
 
         public frmManHinhChinh()
         {
@@ -149,9 +150,9 @@ namespace QuanLiThuVienGUI
 
         private void btnHienThongTinChiTietBanDoc_Click(object sender, EventArgs e)
         {
-            if (index >= 0)
+            if (indexBanDoc >= 0)
             {
-                frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[index]);
+                frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[indexBanDoc]);
                 f.ShowDialog();
             }
             else
@@ -189,11 +190,11 @@ namespace QuanLiThuVienGUI
 
         private void btnXoaBanDoc_Click(object sender, EventArgs e)
         {
-            if (index >= 0)
+            if (indexBanDoc >= 0)
             {
-                if (MessageBox.Show("Bạn có muốn xóa bạn đọc " + listDocGia[index].HoTen + "?", "Xóa bạn đọc", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Bạn có muốn xóa bạn đọc " + listDocGia[indexBanDoc].HoTen + "?", "Xóa bạn đọc", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    if (quanLiBanDocBUS.XoaDocGia(listDocGia[index]))
+                    if (quanLiBanDocBUS.XoaDocGia(listDocGia[indexBanDoc]))
                     {
                         MessageBox.Show("Xóa bạn đọc thành công", "Thông báo", MessageBoxButtons.OK);
                         loadDanhSachBanDoc();
@@ -218,13 +219,22 @@ namespace QuanLiThuVienGUI
 
         private void btnTimSach_Click(object sender, EventArgs e)
         {
-
+            sachDTO sDTO = new sachDTO(int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, "", DateTime.Now, DateTime.Now, 0, 0, txbTimSachTheoTacGia.Text);
+            listSach = quanLiSachBUS.TimSach(sDTO);
+            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
         }
 
         private void btnHienThongTinChiTietSach_Click(object sender, EventArgs e)
         {
-            frmThongTinSach f = new frmThongTinSach();
-            f.ShowDialog();
+            if (indexSach >= 0)
+            {
+                frmThongTinSach f = new frmThongTinSach(listSach[indexSach]);
+                f.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn thông tin sách để hiển thị", "Thông báo", MessageBoxButtons.OK);
+            }
         }
 
         private void btnThemSach_Click(object sender, EventArgs e)
@@ -305,22 +315,45 @@ namespace QuanLiThuVienGUI
             DataGridView data = (DataGridView)sender;
             if (data.RowCount > 0)
             {
-                index = data.SelectedRows[0].Index;
-                anhXaThongTinBanDoc(index);
+                indexBanDoc = data.SelectedRows[0].Index;
+                anhXaThongTinBanDoc(indexBanDoc);
             }
             
         }
 
-        private void anhXaThongTinBanDoc(int index)
+        private void anhXaThongTinBanDoc(int indexBanDoc)
         {
-            txbTenBanDoc.Text = listDocGia[index].HoTen;
-            txbCMNDBanDoc.Text = listDocGia[index].MaThe.ToString();
-            dtpNgaySinhBanDoc.Value = listDocGia[index].NgaySinh;
-            txbEmailBanDoc.Text = listDocGia[index].Email;
-            txbDiaChiBanDoc.Text = listDocGia[index].DiaChi;
-            cbLoaiDocGia.Text = listDocGia[index].Loaidocgia.ToString();
-            txbTongTienNoBanDoc.Text = listDocGia[index].Tongtienno.ToString();
-            dtpNgayTaoTheBanDoc.Value = listDocGia[index].Ngaydk;
+            txbTenBanDoc.Text = listDocGia[indexBanDoc].HoTen;
+            txbCMNDBanDoc.Text = listDocGia[indexBanDoc].MaThe.ToString();
+            dtpNgaySinhBanDoc.Value = listDocGia[indexBanDoc].NgaySinh;
+            txbEmailBanDoc.Text = listDocGia[indexBanDoc].Email;
+            txbDiaChiBanDoc.Text = listDocGia[indexBanDoc].DiaChi;
+            cbLoaiDocGia.Text = listDocGia[indexBanDoc].Loaidocgia.ToString();
+            txbTongTienNoBanDoc.Text = listDocGia[indexBanDoc].Tongtienno.ToString();
+            dtpNgayTaoTheBanDoc.Value = listDocGia[indexBanDoc].Ngaydk;
+        }
+
+        private void dgvThongTinSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView data = (DataGridView)sender;
+            if (data.RowCount > 0)
+            {
+                indexSach = data.SelectedRows[0].Index;
+                anhXaThongTinSach(indexSach);
+            }
+        }
+
+        private void anhXaThongTinSach(int indexSach)
+        {
+            txbMaSach.Text = listSach[indexSach].Masach.ToString();
+            txbTenSach.Text = listSach[indexSach].Tensach;
+            cbTheLoaiSach.Text = listSach[indexSach].Theloai;
+            txbTacGiaSach.Text = listSach[indexSach].Tacgia;
+            txbNhaXuatBanSach.Text = listSach[indexSach].Nxb;
+            dtpNgayNhapSach.Value = listSach[indexSach].Ngaynhap;
+            txbNamXuatBanSach.Text = listSach[indexSach].Ngayxb.Year.ToString();
+            txbGiaTriSach.Text = listSach[indexSach].Giatri.ToString();
+            cbTinhTrangSach.Text = listSach[indexSach].Trangthai.ToString();
         }
     }
 }

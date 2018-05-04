@@ -1239,6 +1239,7 @@
             this.dgvThongTinSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThongTinSach.Size = new System.Drawing.Size(477, 485);
             this.dgvThongTinSach.TabIndex = 1;
+            this.dgvThongTinSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinSach_CellClick);
             // 
             // frmManHinhChinh
             // 

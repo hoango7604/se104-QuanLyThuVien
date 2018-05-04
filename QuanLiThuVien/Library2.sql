@@ -26,6 +26,7 @@ CREATE TABLE sach (
   theloai VARCHAR(50) NOT NULL ,
   tacgia NVARCHAR(50) NOT NULL ,
   nxb NVARCHAR(50) ,
+  ngaynhap DATETIME NOT NULL ,
   ngayxb DATETIME NOT NULL , 
   giatri INT NOT	NULL ,
   trangthai INT NOT NULL
@@ -112,6 +113,19 @@ VALUES  ( 2 , -- masach - int
           'progaming' , -- theloai - varchar(50)
 		  N'tao la ai' ,
           N'codedao' , -- nxb - nvarchar(50)
+		  convert(datetime,'18-06-2016 10:34:09 PM',103) ,
+         convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngayxb - datetime
+          20 , -- giatri - INT
+          1  -- trangthai - int
+        )
+
+INSERT INTO	 dbo.sach 
+VALUES  ( 1 , -- masach - int
+          N'Sach giao khoa Hoa 12' , -- tensach - nvarchar(50)
+          'sach giao khoa' , -- theloai - varchar(50)
+		  N'Bo giao duc' ,
+          N'nxbgiaoduc' , -- nxb - nvarchar(50)
+		  convert(datetime,'18-06-2016 10:34:09 PM',103) ,
          convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngayxb - datetime
           20 , -- giatri - INT
           1  -- trangthai - int

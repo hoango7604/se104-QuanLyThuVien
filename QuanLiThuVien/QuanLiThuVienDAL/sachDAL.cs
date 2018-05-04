@@ -47,6 +47,7 @@ public class sachDAL
                 sDTO.Tensach = dr["tensach"].ToString();
                 sDTO.Theloai = dr["theloai"].ToString();
                 sDTO.Nxb = dr["nxb"].ToString();
+                sDTO.Ngaynhap = DateTime.Parse(dr["ngaynhap"].ToString());
                 sDTO.Ngayxb =DateTime.Parse(dr["ngayxb"].ToString());
                 sDTO.Giatri = int.Parse(dr["giatri"].ToString());
                 sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
@@ -66,59 +67,63 @@ public class sachDAL
 
        public bool themSach(sachDTO sDTO)
        {
-           string query = string.Format("insert into [sach] value (@masach,@tensach,@theloai,@nxb,@ngayxb,@giatri,@trangthai,@tacgia)");
-           SqlParameter[] param = new SqlParameter[8];
-           param[0] = new SqlParameter("@masach", SqlDbType.Int);
-           param[0].Value = Convert.ToString(sDTO.Masach);
-           param[1] = new SqlParameter("@tensach", SqlDbType.NVarChar);
-           param[1].Value = Convert.ToString(sDTO.Tensach);
-           param[2] = new SqlParameter("@theloai", SqlDbType.VarChar);
-           param[2].Value = Convert.ToString(sDTO.Theloai);
-           param[3] = new SqlParameter("@nxb", SqlDbType.NVarChar);
-           param[3].Value = Convert.ToString(sDTO.Nxb);
-           param[4] = new SqlParameter("@ngayxb", SqlDbType.DateTime);
-           param[4].Value = Convert.ToString(sDTO.Ngayxb);
-           param[5] = new SqlParameter("@giatri", SqlDbType.Int);
-           param[5].Value = Convert.ToString(sDTO.Giatri);
-           param[6] = new SqlParameter("@trangthai", SqlDbType.Int);
-           param[6].Value = Convert.ToString(sDTO.Trangthai);
-           param[7] = new SqlParameter("@tacgia", SqlDbType.NVarChar);
-           param[7].Value = Convert.ToString(sDTO.Tacgia);
+            string query = string.Format("insert into [sach] value (@masach,@tensach,@theloai,@nxb,@ngayxb,@giatri,@trangthai,@tacgia)");
+            SqlParameter[] param = new SqlParameter[8];
+            param[0] = new SqlParameter("@masach", SqlDbType.Int);
+            param[0].Value = Convert.ToString(sDTO.Masach);
+            param[1] = new SqlParameter("@tensach", SqlDbType.NVarChar);
+            param[1].Value = Convert.ToString(sDTO.Tensach);
+            param[2] = new SqlParameter("@theloai", SqlDbType.VarChar);
+            param[2].Value = Convert.ToString(sDTO.Theloai);
+            param[3] = new SqlParameter("@nxb", SqlDbType.NVarChar);
+            param[3].Value = Convert.ToString(sDTO.Nxb);
+            param[4] = new SqlParameter("@ngaynhap", SqlDbType.DateTime);
+            param[4].Value = Convert.ToString(sDTO.Ngaynhap);
+            param[5] = new SqlParameter("@ngayxb", SqlDbType.DateTime);
+            param[5].Value = Convert.ToString(sDTO.Ngayxb);
+            param[6] = new SqlParameter("@giatri", SqlDbType.Int);
+            param[6].Value = Convert.ToString(sDTO.Giatri);
+            param[7] = new SqlParameter("@trangthai", SqlDbType.Int);
+            param[7].Value = Convert.ToString(sDTO.Trangthai);
+            param[8] = new SqlParameter("@tacgia", SqlDbType.NVarChar);
+            param[8].Value = Convert.ToString(sDTO.Tacgia);
 
-           conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery(query, param);
 
-           return true;
+            return true;
        
        }
 
       // update sach 
        public bool suaSach(sachDTO sDTO, int masach)
        {
-           string query = string.Format("  update [sach] set  tensach=@tensach,tensach=@tensach,nxb=@nxb,ngayxb=@ngayxb,giatri=@giatri,trangthai=@trangthai,tacgia=@tacgia where mathe=@masach ");
-           SqlParameter[] param = new SqlParameter[8];
-           param[0] = new SqlParameter("@masach", SqlDbType.Int);
-           param[0].Value = Convert.ToString(sDTO.Masach);
-           param[1] = new SqlParameter("@tensach", SqlDbType.NVarChar);
-           param[1].Value = Convert.ToString(sDTO.Tensach);
-           param[2] = new SqlParameter("@theloai", SqlDbType.VarChar);
-           param[2].Value = Convert.ToString(sDTO.Theloai);
-           param[3] = new SqlParameter("@nxb", SqlDbType.NVarChar);
-           param[3].Value = Convert.ToString(sDTO.Nxb);
-           param[4] = new SqlParameter("@ngayxb", SqlDbType.DateTime);
-           param[4].Value = Convert.ToString(sDTO.Ngayxb);
-           param[5] = new SqlParameter("@giatri", SqlDbType.Int);
-           param[5].Value = Convert.ToString(sDTO.Giatri);
-           param[6] = new SqlParameter("@trangthai", SqlDbType.Int);
-           param[6].Value = Convert.ToString(sDTO.Trangthai);
-           param[7] = new SqlParameter("@tacgia", SqlDbType.NVarChar);
-           param[7].Value = Convert.ToString(sDTO.Tacgia);
+            string query = string.Format("  update [sach] set  tensach=@tensach,tensach=@tensach,nxb=@nxb,ngayxb=@ngayxb,giatri=@giatri,trangthai=@trangthai,tacgia=@tacgia where mathe=@masach ");
+            SqlParameter[] param = new SqlParameter[8];
+            param[0] = new SqlParameter("@masach", SqlDbType.Int);
+            param[0].Value = Convert.ToString(sDTO.Masach);
+            param[1] = new SqlParameter("@tensach", SqlDbType.NVarChar);
+            param[1].Value = Convert.ToString(sDTO.Tensach);
+            param[2] = new SqlParameter("@theloai", SqlDbType.VarChar);
+            param[2].Value = Convert.ToString(sDTO.Theloai);
+            param[3] = new SqlParameter("@nxb", SqlDbType.NVarChar);
+            param[3].Value = Convert.ToString(sDTO.Nxb);
+            param[4] = new SqlParameter("@ngaynhap", SqlDbType.DateTime);
+            param[4].Value = Convert.ToString(sDTO.Ngaynhap);
+            param[5] = new SqlParameter("@ngayxb", SqlDbType.DateTime);
+            param[5].Value = Convert.ToString(sDTO.Ngayxb);
+            param[6] = new SqlParameter("@giatri", SqlDbType.Int);
+            param[6].Value = Convert.ToString(sDTO.Giatri);
+            param[7] = new SqlParameter("@trangthai", SqlDbType.Int);
+            param[7].Value = Convert.ToString(sDTO.Trangthai);
+            param[8] = new SqlParameter("@tacgia", SqlDbType.NVarChar);
+            param[8].Value = Convert.ToString(sDTO.Tacgia);
 
 
 
-           conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery(query, param);
 
 
-           return true; 
+            return true; 
        
        }
 
