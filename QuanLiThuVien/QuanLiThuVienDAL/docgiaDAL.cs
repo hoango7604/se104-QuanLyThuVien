@@ -31,7 +31,7 @@ namespace QuanLiThuVienDAL
             docgiaDTO dg = new docgiaDTO();
             parm[0] = new SqlParameter("@mathe", SqlDbType.Int);
             parm[0].Value = dg.MaThe;
-
+             
             DataTable datatable = new DataTable();
             datatable = conn.excuteNonQuery(query, parm);
 
@@ -141,9 +141,6 @@ namespace QuanLiThuVienDAL
 
         }
 
-
-
-
         
         public bool xoaDocGia( int mathe)
         {
@@ -155,6 +152,14 @@ namespace QuanLiThuVienDAL
             return  true ;
         }
 
-
+        /// <summary>
+        /// M Thêm cái hàm đây nhá Hiếu
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public bool SachDangMuon(List<sachDTO> list)
+        {
+            return true;
+        }
     }
 }

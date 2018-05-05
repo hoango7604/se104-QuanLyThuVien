@@ -230,9 +230,21 @@ namespace QuanLiThuVienBUS
             return false;
         }
        
-        public bool BaoMatSach(sachDTO sDTO)
+        /// <summary>
+        /// Báo sách đã mất
+        /// </summary>
+        /// <param name="sDTO"></param>
+        /// <returns></returns>
+        internal bool MatSach(sachDTO sDTO)
         {
-            return true;
+            sachDAL saxDAL = new sachDAL();
+            if (saxDAL.isSach(sDTO.Masach))
+            {
+                sDTO.Trangthai = (int)TrangThaiSach.DaMat;
+                return SuaSach(sDTO);
+            }
+
+            return false;
         }
     }
 }

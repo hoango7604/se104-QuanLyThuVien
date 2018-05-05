@@ -112,6 +112,7 @@ namespace QuanLiThuVienBUS
             docgiaDAL dgDAL = new docgiaDAL();
             if (dgDAL.isDocGia(docgia.MaThe))
             {
+                BUS_notification.mess = "Đã tồn tại mã thẻ";
                 return false;
             }
             return dgDAL.themDocGia(docgia);
@@ -127,6 +128,7 @@ namespace QuanLiThuVienBUS
             docgiaDAL dgDAL = new docgiaDAL();
             if (dgDAL.isDocGia(docgia.MaThe))
             {
+                BUS_notification.mess = "Khôn tồn tại mã thẻ";
                 return dgDAL.suaDocGia(docgia, docgia.MaThe);
             }
             return false;
@@ -143,6 +145,7 @@ namespace QuanLiThuVienBUS
             docgiaDAL doxgiaDAL = new docgiaDAL();
             if (!doxgiaDAL.isDocGia(docgia.MaThe))
             {
+                BUS_notification.mess = "Không tồn tại mã thẻ";
                 return false;
             }
 
@@ -163,5 +166,7 @@ namespace QuanLiThuVienBUS
             }
             return new List<cacloaidocgiaDTO>();
         }
+
+
     }
 }
