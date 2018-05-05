@@ -19,7 +19,7 @@ namespace dbConnection
         private SqlConnection conn;
 
 
-        public dbconnection () {
+        public dbconnection () { 
             myAdapter = new SqlDataAdapter();
            // string str = ConfigurationManager.AppSettings("ConnectionStr");
             conn = new SqlConnection(@"Data Source=DESKTOP-CUKEF86\SQLEXPRESS;Initial Catalog=THUVIEN;Integrated Security=True");
@@ -72,6 +72,20 @@ namespace dbConnection
          //   conn.Close();
 
             return datatable  ; 
+
+        }
+
+        public void excuteNonQuery2(string query, SqlParameter[] parm)
+        {
+            DataTable datatable = new DataTable();
+            //    datatable=null; 
+            SqlCommand comm = new SqlCommand();
+
+            comm.Connection = openConnection();
+            comm.CommandText = query;
+            comm.Parameters.AddRange(parm);
+
+            comm.ExecuteNonQuery();
 
         }
 
