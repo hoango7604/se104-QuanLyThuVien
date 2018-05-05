@@ -170,7 +170,7 @@ namespace QuanLiThuVienBUS
         /// Thêm sách mới
         /// </summary>
         /// <param name="sDTO"></param>
-        /// <returns></returns>
+        /// <returns></returns> 
         public bool ThemSach(sachDTO sDTO)
         {
             sachDAL saxDal = new sachDAL();
