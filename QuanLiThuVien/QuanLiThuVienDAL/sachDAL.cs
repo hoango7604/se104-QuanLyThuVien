@@ -1,4 +1,3 @@
-
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +30,11 @@ namespace QuanLiThuVienDAL
 
             string query = string.Format("select* from [sach] ");
             SqlParameter[] parm = new SqlParameter[1];
+           // ko can thiet nhung phai co 
+           docgiaDTO dg = new docgiaDTO();
+            parm[0] = new SqlParameter("@mathe", SqlDbType.Int);
+            parm[0].Value = dg.MaThe;
+
 
             DataTable datatable = new DataTable();
             datatable = conn.excuteNonQuery(query, parm);
@@ -44,11 +48,12 @@ namespace QuanLiThuVienDAL
                 sDTO.Masach= int.Parse( dr["mathe"].ToString());
                 sDTO.Tensach = dr["tensach "].ToString();
                 sDTO.Theloai = dr["Theloai"].ToString();
+                sDTO.Tacgia = dr["tacgia"].ToString();
                 sDTO.Nxb = dr["nxb"].ToString();
                 sDTO.Ngayxb =DateTime.Parse(dr["ngayxb"].ToString());
                 sDTO.Giatri = int.Parse(dr["giatri"].ToString());
                 sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
-                sDTO.Tacgia = dr["tacgia"].ToString();
+             
                 lsachDTO.Add(sDTO);
             }
         
@@ -60,7 +65,7 @@ namespace QuanLiThuVienDAL
 
        }
       // check sach co trong db k 
-       public bool isSach(int masach)
+       public bool isSach(int masach, sachDTO sDTO )
        {
 
            string query = string.Format("select * from [sach] where masach=@masach");
@@ -70,12 +75,22 @@ namespace QuanLiThuVienDAL
 
            DataTable dtb = new DataTable();
            dtb = conn.excuteNonQuery(query, param);
-
-
-
            if (dtb.Rows.Count > 0)
+           {
+               DataRow dr = dtb.Rows[0];
+               sDTO.Masach = int.Parse(dr["mathe"].ToString());
+               sDTO.Tensach = dr["tensach "].ToString();
+               sDTO.Theloai = dr["Theloai"].ToString();
+               sDTO.Tacgia = dr["tacgia"].ToString();
+               sDTO.Nxb = dr["nxb"].ToString();
+               sDTO.Ngayxb = DateTime.Parse(dr["ngayxb"].ToString());
+               sDTO.Giatri = int.Parse(dr["giatri"].ToString());
+               sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
+              
+
                return true;
-           return false;
+           }
+               return false;
 
        }
 
