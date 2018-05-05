@@ -8,25 +8,28 @@ namespace QuanLiThuVienDTO
 {
    public class phieumuonDTO
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public phieumuonDTO()
         {
 
         }
-        public phieumuonDTO(int maphieumuon,  DateTime ngaymuon, int mathe)
+        public phieumuonDTO(int mapm,  DateTime ngaymuon, int mathe)
         {
-            Maphieumuon = maphieumuon;
+           Mapm = mapm;
             
             Ngaymuon = ngaymuon;
            
             Mathe = mathe;
         }
 
-        private int maphieumuon;
+        private int mapm;
 
-        public int Maphieumuon
+        public int Mapm
         {
-            get { return maphieumuon; }
-            set { maphieumuon = value; }
+            get { return mapm; }
+            set { mapm = value; }
         }
         private DateTime ngaymuon;
 
