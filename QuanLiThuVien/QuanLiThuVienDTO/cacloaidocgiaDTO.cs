@@ -8,7 +8,16 @@ namespace QuanLiThuVienDTO
 {
      public class cacloaidocgiaDTO
     {
+        public cacloaidocgiaDTO()
+        {
+
+        }
         private int cacloai;
+
+        public cacloaidocgiaDTO(int cacloai)
+        {
+            this.cacloai = cacloai;
+        }
 
         public int Cacloai
         {

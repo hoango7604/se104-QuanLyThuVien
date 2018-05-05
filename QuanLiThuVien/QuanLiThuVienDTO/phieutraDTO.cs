@@ -8,6 +8,19 @@ namespace QuanLiThuVienDTO
 {
    public class phieutraDTO
     {
+        public phieutraDTO()
+        {
+
+        }
+        public phieutraDTO(int mapt, DateTime ngaytra, int tienphatkinay, int mathe)
+        {
+            Mapt = mapt;
+
+            Ngaytra = ngaytra;
+            Tienphatkinay = tienphatkinay;
+
+            Mathe = mathe;
+        }
         private int mapt;
 
         public int Mapt
@@ -30,6 +43,7 @@ namespace QuanLiThuVienDTO
             set { tienphatkinay = value; }
         }
         private int mathe;
+
 
         public int Mathe
         {

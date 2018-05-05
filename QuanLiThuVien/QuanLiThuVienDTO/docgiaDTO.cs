@@ -15,6 +15,7 @@ namespace QuanLiThuVienDTO
         private DateTime  ngaysinh;
         private DateTime ngaydk;
         private int  tongtienno;
+        private int loaidocgia;
 
         public docgiaDTO() { }
 
@@ -121,7 +122,7 @@ namespace QuanLiThuVienDTO
             }
         }
 
-        private int  loaidocgia;
+       
         /// <summary>
         /// Tạo 1 thẻ đọc giả với giá trị "" cho các thuộc tính string và 0 với Tongtienno
         /// </summary>

@@ -7,6 +7,21 @@ namespace QuanLiThuVienDTO
 {
     public class quydinhDTO
     {
+        public quydinhDTO()
+        {
+
+        }
+        public quydinhDTO(int tuoimax, int tuoimin, int sosachduocmuon, int kcnamxuatban)
+        {
+            Tuoimax = tuoimax;
+
+            Tuoimin = tuoimin;
+            Songayduocmuon = songayduocmuon;
+
+
+            Kcnamxuatban = kcnamxuatban;
+        }
+
         private int tuoimax;
 
         public int Tuoimax

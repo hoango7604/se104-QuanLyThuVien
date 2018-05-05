@@ -8,6 +8,19 @@ namespace QuanLiThuVienDTO
 {
    public class phieumuonDTO
     {
+        public phieumuonDTO()
+        {
+
+        }
+        public phieumuonDTO(int maphieumuon,  DateTime ngaymuon, int mathe)
+        {
+            Maphieumuon = maphieumuon;
+            
+            Ngaymuon = ngaymuon;
+           
+            Mathe = mathe;
+        }
+
         private int maphieumuon;
 
         public int Maphieumuon
@@ -24,6 +37,7 @@ namespace QuanLiThuVienDTO
         }
         private int mathe;
 
+       
         public int Mathe
         {
             get { return mathe; }
