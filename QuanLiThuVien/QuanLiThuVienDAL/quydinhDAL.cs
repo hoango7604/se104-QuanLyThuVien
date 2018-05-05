@@ -37,11 +37,11 @@ namespace QuanLiThuVienDAL
            {
                quydinhDTO qdDTO = new quydinhDTO();
 
-               qdDTO.Tuoimax = Int32.Parse(dr["tuoimax"].ToString());
-               qdDTO.Tuoimin = Int32.Parse(dr["tuoimin"].ToString());
-               qdDTO.Songayduocmuon = Int32.Parse(dr["songayduocmuon"].ToString());
-               qdDTO.Sosachduocmuon = Int32.Parse(dr["sosachduocmuon"].ToString());
-               qdDTO.Kcnamxuatban = Int32.Parse(dr["kcnamxuatban"].ToString());
+               qdDTO.Tuoimax = int.Parse(dr["tuoimax"].ToString());
+               qdDTO.Tuoimin = int.Parse(dr["tuoimin"].ToString());
+               qdDTO.Songayduocmuon = int.Parse(dr["songayduocmuon"].ToString());
+               qdDTO.Sosachduocmuon = int.Parse(dr["sosachduocmuon"].ToString());
+               qdDTO.Kcnamxuatban = int.Parse(dr["kcnamxuatban"].ToString());
 
                lqđTO.Add(qdDTO);
 
@@ -70,7 +70,7 @@ namespace QuanLiThuVienDAL
           param[4].Value = Convert.ToString(qdDTO.Kcnamxuatban);
 
 
-          conn.excuteNonQuery(query, param);
+          conn.excuteNonQuery2(query, param);
 
           return true;
 

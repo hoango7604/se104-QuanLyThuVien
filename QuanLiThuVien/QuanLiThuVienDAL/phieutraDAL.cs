@@ -38,10 +38,10 @@ namespace QuanLiThuVienDAL
             {
                 phieutraDTO ptDTO = new phieutraDTO();
 
-                ptDTO.Mapt = Int32.Parse( dr["mapt"].ToString());
+                ptDTO.Mapt = int.Parse( dr["mapt"].ToString());
                 ptDTO.Ngaytra =DateTime.Parse( dr["ngaytra"].ToString()) ;
-                ptDTO.Tienphatkinay = Int32.Parse(dr["tienphatkinay"].ToString());
-                ptDTO.Mathe= Int32.Parse(dr["mathe"].ToString());
+                ptDTO.Tienphatkinay = int.Parse(dr["tienphatkinay"].ToString());
+                ptDTO.Mathe= int.Parse(dr["mathe"].ToString());
              
                 listPTDTO.Add(ptDTO);
             }
@@ -57,7 +57,7 @@ namespace QuanLiThuVienDAL
         {
 
 
-            string query = string.Format("insert into [phieutra] value (mapt=@mapt,ngaytra=@ngaytra,tienphatkinay=@tienphatkinay,mathe=@mathe)");
+            string query = string.Format("insert into [phieutra] values (mapt=@mapt,ngaytra=@ngaytra,tienphatkinay=@tienphatkinay,mathe=@mathe)");
             SqlParameter[] param = new SqlParameter[4];
             param[0] = new SqlParameter("@mapt", SqlDbType.Int);
             param[0].Value = Convert.ToString(ptDTO.Mapt);
@@ -68,7 +68,7 @@ namespace QuanLiThuVienDAL
             param[3] = new SqlParameter("@mathe", SqlDbType.Int);
             param[3].Value = Convert.ToString(ptDTO.Mathe);
 
-            conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery2(query, param);
 
 
             return true;

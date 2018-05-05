@@ -38,9 +38,9 @@ public    class phieumuonDAL
             {
                 phieumuonDTO pmDTO = new phieumuonDTO();
 
-                pmDTO.Maphieumuon = Int32.Parse(dr["mapm"].ToString());
+                pmDTO.Maphieumuon = int.Parse(dr["mapm"].ToString());
                 pmDTO.Ngaymuon = DateTime.Parse(dr["ngaymuon"].ToString());
-                pmDTO.Mathe = Int32.Parse(dr["mathe"].ToString());
+                pmDTO.Mathe = int.Parse(dr["mathe"].ToString());
 
 
                 listPMDTO.Add(pmDTO);
@@ -72,7 +72,7 @@ public    class phieumuonDAL
         {
 
 
-            string query = string.Format("insert into [phieumuon] value (mapm=@mapm,ngaymuon=@ngaymuon,mathe=@mathe)");
+            string query = string.Format("insert into [phieumuon] values (mapm=@mapm,ngaymuon=@ngaymuon,mathe=@mathe)");
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@mapm", SqlDbType.Int);
             param[0].Value = Convert.ToString(pmDTO.Maphieumuon);
@@ -81,7 +81,7 @@ public    class phieumuonDAL
             param[2] = new SqlParameter("@mathe", SqlDbType.Int);
             param[2].Value = Convert.ToString(pmDTO.Mathe);
  
-            conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery2(query, param);
 
 
             return true;
