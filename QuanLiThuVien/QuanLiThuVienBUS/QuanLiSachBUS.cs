@@ -8,6 +8,13 @@ using QuanLiThuVienDAL;
 
 namespace QuanLiThuVienBUS
 {
+    public enum TrangThaiSach
+    {
+        DaChoMuon = 0,
+        CoSan = 1,
+        DaMat = 2
+    }
+
     public class QuanLiSachBUS
     {
         public QuanLiSachBUS()
@@ -15,17 +22,35 @@ namespace QuanLiThuVienBUS
 
         }
 
+        /// <summary>
+        /// Đưa ra danh sách các sách khả dụng trong thư viện
+        /// </summary>
+        /// <returns></returns>
         public List<sachDTO> DanhSachSach()
         {
             List<sachDTO> list = new List<sachDTO>();
+            List<sachDTO> result = new List<sachDTO>();
             sachDAL saxDAL = new sachDAL();
             if (saxDAL.tatcaSach(list))
             {
-                return list;
+                foreach (sachDTO sax in list)
+                {
+                    if (sax.Trangthai == (int)TrangThaiSach.CoSan)
+                    {
+                        result.Add(sax);
+                    }
+                }
+
+                return result;
             }  
             return new List<sachDTO>();
         }
 
+        /// <summary>
+        /// Tìm sách có sặn trong thư viện
+        /// </summary>
+        /// <param name="sDTO"></param>
+        /// <returns></returns>
         public List<sachDTO> TimSach(sachDTO sDTO)
         {
             List<sachDTO> list = new List<sachDTO>();
@@ -68,7 +93,7 @@ namespace QuanLiThuVienBUS
                 {
                     foreach (sachDTO sax in list)
                     {
-                        if (sax.Masach == int.Parse(masach))
+                        if (sax.Masach == int.Parse(masach) && sax.Trangthai == (int)TrangThaiSach.CoSan)
                         {
                             result.Add(sax);
                             return result;
@@ -82,7 +107,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (Levenshtein_Distance.Distance(sach.Tensach,tensach) <= max_name_distance)
+                    if ( sach.Trangthai == (int)TrangThaiSach.CoSan && Levenshtein_Distance.Distance(sach.Tensach,tensach) <= max_name_distance)
                     {
                         if (result.IndexOf(sach)==-1)
                         {
@@ -96,7 +121,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (sach.Theloai == theloai)
+                    if (sach.Trangthai == (int)TrangThaiSach.CoSan  && sach.Theloai == theloai)
                     {
                         if (result.IndexOf(sach) == -1)
                         {
@@ -110,7 +135,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (Levenshtein_Distance.Distance(sach.Tacgia,tacgia)<=max_author_distance)
+                    if (sach.Trangthai == (int)TrangThaiSach.CoSan && Levenshtein_Distance.Distance(sach.Tacgia,tacgia)<=max_author_distance)
                     {
                         if (result.IndexOf(sach) == -1)
                         {
@@ -124,7 +149,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (Levenshtein_Distance.Distance(sach.Nxb,nhaxuatban)<= max_publishcompany_distance)
+                    if (sach.Trangthai == (int)TrangThaiSach.CoSan  && Levenshtein_Distance.Distance(sach.Nxb,nhaxuatban)<= max_publishcompany_distance)
                     {
                         if (result.IndexOf(sach)==-1)
                         {
@@ -141,6 +166,11 @@ namespace QuanLiThuVienBUS
             return result;
         }
 
+        /// <summary>
+        /// Thêm sách mới
+        /// </summary>
+        /// <param name="sDTO"></param>
+        /// <returns></returns>
         public bool ThemSach(sachDTO sDTO)
         {
             sachDAL saxDal = new sachDAL();
@@ -170,10 +200,16 @@ namespace QuanLiThuVienBUS
                 return false;
             }
 
-           // sDTO.Masach = list.Count + 1;
+            // sDTO.Masach = list.Count + 1;
+            sDTO.Trangthai = 1;
             return saxDal.themSach(sDTO);
         }
 
+        /// <summary>
+        /// Sửa thông tin sách
+        /// </summary>
+        /// <param name="sach"></param>
+        /// <returns></returns>
         public bool SuaSach(sachDTO sach)
         {
             sachDAL saxDAL = new sachDAL();
@@ -194,5 +230,9 @@ namespace QuanLiThuVienBUS
             return false;
         }
        
+        public bool BaoMatSach(sachDTO sDTO)
+        {
+            return true;
+        }
     }
 }

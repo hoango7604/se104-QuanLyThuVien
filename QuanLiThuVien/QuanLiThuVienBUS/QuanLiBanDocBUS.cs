@@ -148,7 +148,20 @@ namespace QuanLiThuVienBUS
 
             return doxgiaDAL.xoaDocGia(docgia.MaThe);
         }
-
-     
+         
+        /// <summary>
+        /// Trả về cac loại đọc giả
+        /// </summary>
+        /// <returns></returns>
+        public List<cacloaidocgiaDTO> CacLoaiDocGia()
+        {
+            List<cacloaidocgiaDTO> list = new List<cacloaidocgiaDTO>();
+            cacloaidocgiaDAL docgiasDAL = new cacloaidocgiaDAL();
+            if (docgiasDAL.danhsachLoaiDG(list))
+            {
+                return list; 
+            }
+            return new List<cacloaidocgiaDTO>();
+        }
     }
 }

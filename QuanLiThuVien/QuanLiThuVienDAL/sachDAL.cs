@@ -23,14 +23,19 @@ namespace QuanLiThuVienDAL
        }
 
 
-      //hien thi danh sach 
-       public bool tatcaSach(List<sachDTO> lsachDTO)
-       {
-           
-      
+        //hien thi danh sach 
+        public bool tatcaSach(List<sachDTO> lsachDTO)
+        {
+
+
 
             string query = string.Format("select* from [sach] ");
             SqlParameter[] parm = new SqlParameter[1];
+            // ko can thiet nhung phai co 
+            docgiaDTO dg = new docgiaDTO();
+            parm[0] = new SqlParameter("@masach", SqlDbType.Int);
+            parm[0].Value = dg.MaThe;
+
 
             DataTable datatable = new DataTable();
             datatable = conn.excuteNonQuery(query, parm);
@@ -41,26 +46,27 @@ namespace QuanLiThuVienDAL
             {
                 sachDTO sDTO = new sachDTO();
 
-                sDTO.Masach= int.Parse( dr["mathe"].ToString());
-                sDTO.Tensach = dr["tensach "].ToString();
+                sDTO.Masach = int.Parse(dr["masach"].ToString());
+                sDTO.Tensach = dr["tensach"].ToString();
                 sDTO.Theloai = dr["Theloai"].ToString();
+                sDTO.Tacgia = dr["tacgia"].ToString();
                 sDTO.Nxb = dr["nxb"].ToString();
-                sDTO.Ngayxb =DateTime.Parse(dr["ngayxb"].ToString());
+                sDTO.Ngayxb = DateTime.Parse(dr["ngayxb"].ToString());
                 sDTO.Giatri = int.Parse(dr["giatri"].ToString());
                 sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
-                sDTO.Tacgia = dr["tacgia"].ToString();
+
                 lsachDTO.Add(sDTO);
             }
-        
 
 
 
 
-           return true; 
 
-       }
-      // check sach co trong db k 
-       public bool isSach(int masach)
+            return true;
+
+        }
+        // check sach co trong db k 
+        public bool isSach(int masach)
        {
 
            string query = string.Format("select * from [sach] where masach=@masach");

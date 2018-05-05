@@ -399,7 +399,7 @@ VALUES
     GETDATE(), -- ngaydk - datetime
     N'VietNam',       -- diachi - nvarchar(50)
     1,         -- loaidocgia - int
-    0       -- tongtienno - money
+    1       -- tongtienno - money
 )
 
 
@@ -424,7 +424,7 @@ VALUES
     GETDATE(), -- ngaynhap - datetime
     GETDATE(), -- ngayxb - datetime
     10000,         -- giatri - int
-    0          -- trangthai - int
+    1          -- trangthai - int
 )
 
 INSERT dbo.sach
@@ -448,7 +448,7 @@ VALUES
     GETDATE(), -- ngaynhap - datetime
     GETDATE(), -- ngayxb - datetime
     10000,         -- giatri - int
-    0          -- trangthai - int
+    1          -- trangthai - int
 )
 
 INSERT dbo.sach
@@ -472,7 +472,7 @@ VALUES
     GETDATE(), -- ngaynhap - datetime
     GETDATE(), -- ngayxb - datetime
     10000,         -- giatri - int
-    0          -- trangthai - int
+    1          -- trangthai - int
 )
 
 INSERT dbo.sach
@@ -489,17 +489,16 @@ INSERT dbo.sach
 )
 VALUES
 (   6,         -- masach - int
-    N'Lập Trình Java',       -- tensach - nvarchar(50)
+    N'Đây là cuốn sách',       -- tensach - nvarchar(50)
     'code',        -- theloai - varchar(50)
-    N'UIT',       -- tacgia - nvarchar(50)
+    N'Phạm Nhật Trường',       -- tacgia - nvarchar(50)
     N'UITer',       -- nxb - nvarchar(50)
     GETDATE(), -- ngaynhap - datetime
     GETDATE(), -- ngayxb - datetime
     10000,         -- giatri - int
-    0          -- trangthai - int
+    1          -- trangthai - int
 )
-       -- trangthai - int
-)
+
 INSERT dbo.sach
 (
     masach,
@@ -514,12 +513,12 @@ INSERT dbo.sach
 )
 VALUES
 (   7,         -- masach - int
-    N'Đây là cuốn sách',       -- tensach - nvarchar(50)
+    N'Đây cũng là cuốn sách',       -- tensach - nvarchar(50)
     'code',        -- theloai - varchar(50)
-    N'Phạm Nhật Trường',       -- tacgia - nvarchar(50)
+    N'Phạm Nhậx Trường',       -- tacgia - nvarchar(50)
     N'UITer',       -- nxb - nvarchar(50)
     GETDATE(), -- ngaynhap - datetime
     GETDATE(), -- ngayxb - datetime
     10000,         -- giatri - int
-    0   
-	}
+    1          -- trangthai - int
+)
