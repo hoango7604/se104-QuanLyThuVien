@@ -8,21 +8,22 @@ namespace QuanLiThuVienDTO
 {
     public class sachDTO
     {
+
         public sachDTO() { }
 
-        public sachDTO(int masach, string tensach, string theloai, string nxb, DateTime ngaynhap, DateTime ngayxb, int giatri, int trangthai, string tacgia)
+        public sachDTO(int masach, string tensach, string theloai, string tacgia, string nxb, DateTime ngaynhap, DateTime ngayxb, int giatri, int trangthai)
         {
             this.masach = masach;
             this.tensach = tensach;
             this.theloai = theloai;
+            this.tacgia = tacgia;
             this.nxb = nxb;
             this.ngaynhap = ngaynhap;
             this.ngayxb = ngayxb;
             this.giatri = giatri;
             this.trangthai = trangthai;
-            this.tacgia = tacgia;
+            
         }
-
         private int masach;
 
         public int Masach
@@ -44,6 +45,16 @@ namespace QuanLiThuVienDTO
             get { return theloai; }
             set { theloai = value; }
         }
+
+        private string tacgia;
+
+        public string Tacgia
+        {
+            get { return tacgia; }
+            set { tacgia = value; }
+        }
+
+
         private string nxb;
 
 
@@ -59,7 +70,8 @@ namespace QuanLiThuVienDTO
         {
             get { return ngaynhap; }
             set { ngaynhap = value; }
-        }
+        } 
+
 
         private DateTime ngayxb;
 
@@ -83,12 +95,7 @@ namespace QuanLiThuVienDTO
             set { trangthai = value; }
         }
 
-        private string tacgia;
+       
 
-        public string Tacgia
-        {
-            get { return tacgia; }
-            set { tacgia = value; }
-        }
     }
 }
