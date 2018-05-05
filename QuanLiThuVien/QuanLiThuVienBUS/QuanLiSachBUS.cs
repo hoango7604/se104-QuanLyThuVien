@@ -230,8 +230,14 @@ namespace QuanLiThuVienBUS
             return false;
         }
        
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////// Khu vực Internal ///////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
         /// <summary>
-        /// Báo sách đã mất
+        /// cập nhật thông tin cho sách đã mất
         /// </summary>
         /// <param name="sDTO"></param>
         /// <returns></returns>
@@ -241,6 +247,23 @@ namespace QuanLiThuVienBUS
             if (saxDAL.isSach(sDTO.Masach))
             {
                 sDTO.Trangthai = (int)TrangThaiSach.DaMat;
+                return SuaSach(sDTO);
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Cập nhật thông tin cho sách đã mượn
+        /// </summary>
+        /// <param name="sDTO"></param>
+        /// <returns></returns>
+        internal bool MuonSach(sachDTO sDTO)
+        {
+            sachDAL saxDAL = new sachDAL();
+            if (saxDAL.isSach(sDTO.Masach))
+            {
+                sDTO.Trangthai = (int)TrangThaiSach.DaChoMuon;
                 return SuaSach(sDTO);
             }
 
