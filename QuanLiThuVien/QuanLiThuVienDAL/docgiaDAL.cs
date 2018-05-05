@@ -87,9 +87,9 @@ namespace QuanLiThuVienDAL
             DataTable dtb = new DataTable();
 
             dtb = conn.excuteNonQuery(query, param);
-
+             
             if (dtb.Rows.Count > 0)
-            {
+            { 
                 DataRow dr = dtb.Rows[0];
                 dgDTO.MaThe = int.Parse(dr["mathe"].ToString());
                 dgDTO.HoTen = dr["hoten"].ToString();

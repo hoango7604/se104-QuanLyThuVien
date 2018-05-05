@@ -221,7 +221,7 @@ namespace QuanLiThuVienGUI
         {
 
             sachDTO sDTO = new sachDTO(int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, "", DateTime.Now, DateTime.Now, 0, 0, txbTimSachTheoTacGia.Text);
-            listSach = quanLiSachBUS.TimSach(sDTo);
+            listSach = quanLiSachBUS.TimSach(sDTO);
             dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
         }
 
