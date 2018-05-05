@@ -68,6 +68,11 @@ namespace QuanLiThuVienBUS
                     BUS_notification.mess = "Có sự cố trong khi mượn sách " + sach.Tensach;
                     return false;
                 }
+                else
+                {
+                    QuanLiSachBUS sachBUS = new QuanLiSachBUS();
+                    sachBUS.MuonSach(sach);
+                }
             }
             return true;
 
