@@ -37,7 +37,7 @@ namespace QuanLiThuVienBUS
             List<quydinhDTO> cacQuyDinh = new List<quydinhDTO>();
             List<phieumuonDTO> phieuMuon = new List<phieumuonDTO>();
 
-            banDocDAL.SachDangMuon(cacSachdangmuon);
+            banDocDAL.SachDangMuon(bandoc.MaThe++,cacSachdangmuon);
             quyDinhDAL.listquydinh(cacQuyDinh);
 
             //kiểm tra số luọng sách mươn

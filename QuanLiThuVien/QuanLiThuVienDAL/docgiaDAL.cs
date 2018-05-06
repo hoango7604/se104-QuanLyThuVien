@@ -156,7 +156,7 @@ namespace QuanLiThuVienDAL
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
-        public bool SachDangMuon(List<sachDTO> list)
+        public bool SachDangMuon(int madg,List<sachDTO> list)
         {
             return true;
         }

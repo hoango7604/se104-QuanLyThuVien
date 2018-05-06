@@ -24,7 +24,10 @@ namespace QuanLiThuVienGUI
 
         private void btnThemSach_Click(object sender, EventArgs e)
         {
+            if (txbTenSach.Text != "" && txbMaSach.Text != "" && cbTheLoaiSach.Text != "" && txbTacGiaSach.Text != "" && txbNhaXuatBanSach != "" )
+            {
 
+            }
         }
 
         private void frmThemSach_FormClosing(object sender, FormClosingEventArgs e)

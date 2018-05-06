@@ -53,6 +53,7 @@ namespace QuanLiThuVienDAL
                 sDTO.Nxb = dr["nxb"].ToString();
                 sDTO.Ngayxb = DateTime.Parse(dr["ngayxb"].ToString());
                 sDTO.Giatri = int.Parse(dr["giatri"].ToString());
+                sDTO.Ngaynhap = DateTime.Parse(dr["ngaynhap"].ToString());
                 sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
 
                 lsachDTO.Add(sDTO);

@@ -184,7 +184,7 @@ namespace QuanLiThuVienBUS
                 return new List<sachDTO>();
             }
 
-            if (!docGiaDAL.SachDangMuon(listsach))
+            if (!docGiaDAL.SachDangMuon(docgia.MaThe, listsach))
             {
                 return new List<sachDTO>();
             }

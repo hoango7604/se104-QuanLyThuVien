@@ -14,8 +14,10 @@ namespace QuanLiThuVienGUI
 {
     public partial class frmThemBanDoc : Form
     {
-        public frmThemBanDoc()
+        private Form mainForm;
+        public frmThemBanDoc(Form parent)
         {
+            this.mainForm = parent;
             InitializeComponent();
         }
 
@@ -35,13 +37,14 @@ namespace QuanLiThuVienGUI
                 if (quanLiBanDocBUS.ThemDocGia(dgDTO))
                 {
                     MessageBox.Show("Đã thêm bạn đọc thành công", "Thông báo", MessageBoxButtons.OK);
-                    
+                    (mainForm as frmManHinhChinh).loadDanhSachBanDoc();
                 }
                 else
                 {
                     MessageBox.Show("Thêm bạn đọc thất bại. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
                 }
-                this.Close();
+                
+                //this.Close();
             }
             else
             {

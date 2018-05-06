@@ -42,7 +42,7 @@ namespace QuanLiThuVienGUI
             dgvThongTinBanDoc.Show();
         }
 
-        private void loadDanhSachBanDoc()
+        public void loadDanhSachBanDoc()
         {
             listDocGia = quanLiBanDocBUS.DanhSachDocGia();
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
@@ -65,7 +65,7 @@ namespace QuanLiThuVienGUI
         private void loadDanhSachSach()
         {
             listSach = quanLiSachBUS.DanhSachSach();
-            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
+            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb ,colum5 =o.Ngaynhap.ToString()}).ToList();
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace QuanLiThuVienGUI
 
         private void thêmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmThemBanDoc f = new frmThemBanDoc();
+            frmThemBanDoc f = new frmThemBanDoc(this);
             f.ShowDialog();
         }
 
@@ -163,7 +163,7 @@ namespace QuanLiThuVienGUI
 
         private void btnThemBanDoc_Click(object sender, EventArgs e)
         {
-            frmThemBanDoc f = new frmThemBanDoc();
+            frmThemBanDoc f = new frmThemBanDoc(this);
             f.ShowDialog();
         }
 
@@ -171,10 +171,10 @@ namespace QuanLiThuVienGUI
         {
             if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
             {
-                if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, DateTime.Now, 8,8)))
+                if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, dtpNgayTaoTheBanDoc.Value, 8,8)))
                 {
                     MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
-
+                    loadDanhSachBanDoc();
                 }
                 else
                 {
@@ -222,7 +222,7 @@ namespace QuanLiThuVienGUI
 
            // sachDTO sDTO = new sachDTO(int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, "", DateTime.Now.ToString(), DateTime.Now, 0, 0, txbTimSachTheoTacGia.Text.ToString);
           //   listSach = quanLiSachBUS.TimSach(sDTO);
-            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
+            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia}).ToList();
         }
 
         private void btnHienThongTinChiTietSach_Click(object sender, EventArgs e)

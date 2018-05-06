@@ -8,7 +8,7 @@ GO
 CREATE TABLE docgia (
   mathe INT NOT NULL PRIMARY KEY ,
   hoten NVARCHAR(50) NOT NULL ,
-  email VARCHAR(50) ,
+  email NVARCHAR(50) ,
   ngaysinh DATETIME NOT NULL ,
   ngaydk DATETIME NOT NULL ,
   diachi NVARCHAR(50) , 
@@ -106,29 +106,7 @@ INSERT INTO dbo.docgia
            123000  -- tongtienno - INT
          )
 
-INSERT INTO	 dbo.sach 
-VALUES  ( 2 , -- masach - int
-          N'codedaokisu' , -- tensach - nvarchar(50)
-          'progaming' , -- theloai - varchar(50)
-		  N'tao la ai' ,
-          N'codedao' , -- nxb - nvarchar(50)
-		  convert(datetime,'18-06-2016 10:34:09 PM',103) ,
-         convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngayxb - datetime
-          20 , -- giatri - INT
-          1  -- trangthai - int
-        )
 
-INSERT INTO	 dbo.sach 
-VALUES  ( 1 , -- masach - int
-          N'Sach giao khoa Hoa 12' , -- tensach - nvarchar(50)
-          'sach giao khoa' , -- theloai - varchar(50)
-		  N'Bo giao duc' ,
-          N'nxbgiaoduc' , -- nxb - nvarchar(50)
-		  convert(datetime,'18-06-2016 10:34:09 PM',103) ,
-         convert(datetime,'18-06-2016 10:34:09 PM',103) , -- ngayxb - datetime
-          20 , -- giatri - INT
-          1  -- trangthai - int
-        )
 
 INSERT INTO dbo.quydinh
         ( tuoimax ,
@@ -522,3 +500,5 @@ VALUES
     10000,         -- giatri - int
     1          -- trangthai - int
 )
+
+

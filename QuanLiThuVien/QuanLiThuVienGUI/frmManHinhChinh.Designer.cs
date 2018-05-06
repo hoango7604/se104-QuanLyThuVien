@@ -81,6 +81,8 @@
             this.lbEmailBanDoc = new System.Windows.Forms.Label();
             this.lbDiaChiBanDoc = new System.Windows.Forms.Label();
             this.tpSach = new System.Windows.Forms.TabPage();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.dgvThongTinSach = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTimSachTheoTacGia = new System.Windows.Forms.Label();
             this.txbTimSachTheoTacGia = new System.Windows.Forms.TextBox();
@@ -136,8 +138,6 @@
             this.lbDanhSachPhieuThuTienPhat = new System.Windows.Forms.Label();
             this.tpThongKe = new System.Windows.Forms.TabPage();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.dgvThongTinSach = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tcManHinhChinh.SuspendLayout();
             this.tpBanDoc.SuspendLayout();
@@ -148,6 +148,8 @@
             this.flowLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tpSach.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSach)).BeginInit();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
@@ -164,8 +166,6 @@
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSach)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -681,6 +681,28 @@
             this.tpSach.TabIndex = 1;
             this.tpSach.Text = "    Sách   ";
             this.tpSach.UseVisualStyleBackColor = true;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.dgvThongTinSach);
+            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(477, 485);
+            this.panel12.TabIndex = 8;
+            // 
+            // dgvThongTinSach
+            // 
+            this.dgvThongTinSach.AllowUserToAddRows = false;
+            this.dgvThongTinSach.AllowUserToDeleteRows = false;
+            this.dgvThongTinSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongTinSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvThongTinSach.Location = new System.Drawing.Point(0, 0);
+            this.dgvThongTinSach.Name = "dgvThongTinSach";
+            this.dgvThongTinSach.ReadOnly = true;
+            this.dgvThongTinSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvThongTinSach.Size = new System.Drawing.Size(477, 485);
+            this.dgvThongTinSach.TabIndex = 1;
+            this.dgvThongTinSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinSach_CellClick);
             // 
             // panel2
             // 
@@ -1219,28 +1241,6 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.dgvThongTinSach);
-            this.panel12.Location = new System.Drawing.Point(3, 3);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(477, 485);
-            this.panel12.TabIndex = 8;
-            // 
-            // dgvThongTinSach
-            // 
-            this.dgvThongTinSach.AllowUserToAddRows = false;
-            this.dgvThongTinSach.AllowUserToDeleteRows = false;
-            this.dgvThongTinSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongTinSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvThongTinSach.Location = new System.Drawing.Point(0, 0);
-            this.dgvThongTinSach.Name = "dgvThongTinSach";
-            this.dgvThongTinSach.ReadOnly = true;
-            this.dgvThongTinSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThongTinSach.Size = new System.Drawing.Size(477, 485);
-            this.dgvThongTinSach.TabIndex = 1;
-            this.dgvThongTinSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinSach_CellClick);
-            // 
             // frmManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1267,6 +1267,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tpSach.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSach)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -1290,8 +1292,6 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSach)).EndInit();
             this.ResumeLayout(false);
 
         }
