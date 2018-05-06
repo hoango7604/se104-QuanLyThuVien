@@ -22,7 +22,7 @@ GO
 CREATE TABLE sach (
   masach INT NOT NULL PRIMARY KEY , 
   tensach NVARCHAR(50) NOT NULL ,
-  theloai VARCHAR(50) NOT NULL ,
+  theloai NVARCHAR(50) NOT NULL ,
   tacgia NVARCHAR(50) NOT NULL ,
   nxb NVARCHAR(50) ,
   ngaynhap DATETIME NOT NULL ,
@@ -45,11 +45,14 @@ CREATE TABLE quydinh (
  
  CREATE TABLE cacloaidocgia (
    loaidg INT NOT NULL 
-
  )
  GO
  
-
+ CREATE TABLE cacloaisach(
+	loaisach NVARCHAR(50)
+ )
+ GO
+ 
  CREATE TABLE phieumuon (
  mapm INT NOT NULL  PRIMARY KEY ,
  ngaymuon DATETIME NOT NULL ,

@@ -62,10 +62,10 @@ namespace QuanLiThuVienGUI
             dgvThongTinSach.Show();
         }
 
-        private void loadDanhSachSach()
+        public void loadDanhSachSach()
         {
             listSach = quanLiSachBUS.DanhSachSach();
-            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb ,colum5 =o.Ngaynhap.ToString()}).ToList();
+            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace QuanLiThuVienGUI
 
         private void thêmSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmThemSach f = new frmThemSach();
+            frmThemSach f = new frmThemSach(this);
             f.ShowDialog();
         }
 
@@ -211,18 +211,20 @@ namespace QuanLiThuVienGUI
             }
         }
 
-        /// <summary>
-        /// Event Tab Sach
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
+     
         private void btnTimSach_Click(object sender, EventArgs e)
         {
+            string masach = txbTimSachTheoMa.Text;
+            int resultCMND;
+            if (!int.TryParse(masach,out resultCMND))
+            {
+                resultCMND = -1;
+            }
 
-           // sachDTO sDTO = new sachDTO(int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, "", DateTime.Now.ToString(), DateTime.Now, 0, 0, txbTimSachTheoTacGia.Text.ToString);
-          //   listSach = quanLiSachBUS.TimSach(sDTO);
-            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia}).ToList();
+            sachDTO sDTO = new sachDTO(resultCMND, txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
+            listSach = quanLiSachBUS.TimSach(sDTO);
+            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, colum4 = o.Nxb}).ToList();
+     
         }
 
         private void btnHienThongTinChiTietSach_Click(object sender, EventArgs e)
@@ -240,13 +242,32 @@ namespace QuanLiThuVienGUI
 
         private void btnThemSach_Click(object sender, EventArgs e)
         {
-            frmThemSach f = new frmThemSach();
+            frmThemSach f = new frmThemSach(this);
             f.ShowDialog();
         }
 
         private void btnSuaThongTinSach_Click(object sender, EventArgs e)
         {
+            if (txbTenSach.Text != "" && cbTheLoaiSach.Text != "" && txbTacGiaSach.Text != "" && txbNhaXuatBanSach.Text != "" && txbNamXuatBanSach.Text != "" && txbGiaTriSach.Text != "")
+            {
+                DateTime datebyYear = new DateTime(int.Parse(txbNamXuatBanSach.Text),1,1);
+                sachDTO sach = new sachDTO(int.Parse( txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, dtpNgayNhapSach.Value, datebyYear, int.Parse(txbGiaTriSach.Text), int.Parse( cbTinhTrangSach.Text));
+                QuanLiSachBUS qlSach = new QuanLiSachBUS();
+                if (qlSach.SuaSach(sach))
+                {
+                    MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
+                    loadDanhSachSach();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin thất bại. "+BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
 
+            }
         }
 
         private void btnXoaSach_Click(object sender, EventArgs e)
@@ -259,7 +280,6 @@ namespace QuanLiThuVienGUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
         {
 
@@ -270,7 +290,6 @@ namespace QuanLiThuVienGUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void btnPhieuTra_Click(object sender, EventArgs e)
         {
 
@@ -286,7 +305,6 @@ namespace QuanLiThuVienGUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void btnTaoPhieuThuTienPhat_Click(object sender, EventArgs e)
         {
 
@@ -297,7 +315,6 @@ namespace QuanLiThuVienGUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         private void frmManHinhChinh_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thoát chương trình", MessageBoxButtons.OKCancel) != DialogResult.OK)

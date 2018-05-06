@@ -24,20 +24,26 @@ namespace QuanLiThuVienDAL
 
 
 
-       public bool danhsachLoaiDG(List<cacloaidocgiaDTO> listLoaiDGDTO)
+       public bool danhsachLoaiDG(List<loaidocgiaDTO> listLoaiDGDTO)
        {
 
            string query = string.Format("select* from [cacloaidocgia] ");
            SqlParameter[] parm = new SqlParameter[1];
 
-           DataTable datatable = new DataTable();
+            // ko can thiet nhung phai co 
+            docgiaDTO dg = new docgiaDTO();
+            parm[0] = new SqlParameter("@masach", SqlDbType.Int);
+            parm[0].Value = dg.MaThe;
+
+
+            DataTable datatable = new DataTable();
            datatable = conn.excuteNonQuery(query, parm);
 
            //gan value trong datatable vao DTO 
 
            foreach (DataRow dr in datatable.Rows)
            {
-               cacloaidocgiaDTO cacloaiDGDTO = new cacloaidocgiaDTO();
+               loaidocgiaDTO cacloaiDGDTO = new loaidocgiaDTO();
 
                cacloaiDGDTO.Cacloai = Int32.Parse(dr["loaidg"].ToString());
               

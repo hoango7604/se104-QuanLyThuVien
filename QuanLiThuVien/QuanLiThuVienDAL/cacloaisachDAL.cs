@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using dbConnection;
+using QuanLiThuVienDTO;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace QuanLiThuVienDAL
+{
+    class cacloaisachDAL
+    {
+        private dbConnection.dbconnection conn;
+
+        public cacloaisachDAL()
+        {
+            conn = new dbconnection();
+        }
+
+        public bool danhsachloaisach(List<loaisachDTO> list)
+        {
+            string query = string.Format("select* from [cacloaisach] ");
+            SqlParameter[] parm = new SqlParameter[1];
+
+            // ko can thiet nhung phai co 
+            docgiaDTO dg = new docgiaDTO();
+            parm[0] = new SqlParameter("@masach", SqlDbType.Int);
+            parm[0].Value = dg.MaThe;
+
+            DataTable datatable = new DataTable();
+            datatable = conn.excuteNonQuery(query, parm);
+
+            //gan value trong datatable vao DTO 
+
+            foreach (DataRow dr in datatable.Rows)
+            {
+                loaisachDTO loaisach = new loaisachDTO();
+
+                loaisach.Theloaisach =dr["loaisach"].ToString();
+
+                list.Add(loaisach);
+            }
+
+            return true;
+        }
+    }
+}

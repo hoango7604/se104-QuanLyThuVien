@@ -156,15 +156,15 @@ namespace QuanLiThuVienBUS
         /// Trả về cac loại đọc giả
         /// </summary>
         /// <returns></returns>
-        public List<cacloaidocgiaDTO> CacLoaiDocGia()
+        public List<loaidocgiaDTO> CacLoaiDocGia()
         {
-            List<cacloaidocgiaDTO> list = new List<cacloaidocgiaDTO>();
+            List<loaidocgiaDTO> list = new List<loaidocgiaDTO>();
             cacloaidocgiaDAL docgiasDAL = new cacloaidocgiaDAL();
             if (docgiasDAL.danhsachLoaiDG(list))
             {
                 return list; 
             }
-            return new List<cacloaidocgiaDTO>();
+            return new List<loaidocgiaDTO>();
         }
 
         /// <summary>

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cacloaidocgiaDAL.cs" />
+    <Compile Include="cacloaisachDAL.cs" />
     <Compile Include="ctpmDAL.cs" />
     <Compile Include="ctptDAL.cs" />
     <Compile Include="docgiaDAL.cs" />

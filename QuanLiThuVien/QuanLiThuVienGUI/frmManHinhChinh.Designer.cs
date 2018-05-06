@@ -828,6 +828,7 @@
             // 
             // btnXoaSach
             // 
+            this.btnXoaSach.Enabled = false;
             this.btnXoaSach.Location = new System.Drawing.Point(317, 3);
             this.btnXoaSach.Name = "btnXoaSach";
             this.btnXoaSach.Size = new System.Drawing.Size(151, 90);
@@ -970,6 +971,7 @@
             // 
             // txbMaSach
             // 
+            this.txbMaSach.Enabled = false;
             this.txbMaSach.Location = new System.Drawing.Point(108, 109);
             this.txbMaSach.Name = "txbMaSach";
             this.txbMaSach.Size = new System.Drawing.Size(327, 29);

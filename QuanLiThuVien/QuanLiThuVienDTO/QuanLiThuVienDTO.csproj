@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cacloaidocgiaDTO.cs" />
+    <Compile Include="loaidocgiaDTO.cs" />
+    <Compile Include="loaisachDTO.cs" />
     <Compile Include="ctpmDTO.cs" />
     <Compile Include="ctptDTO.cs" />
     <Compile Include="docgiaDTO.cs" />

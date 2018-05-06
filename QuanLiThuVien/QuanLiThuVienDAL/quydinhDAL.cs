@@ -30,8 +30,11 @@ namespace QuanLiThuVienDAL
 
            SqlParameter[] param = new SqlParameter[1]; 
            DataTable dt= new DataTable ();
-
-           dt = conn.excuteNonQuery(query, param);
+            // ko can thiet nhung phai co 
+            docgiaDTO dg = new docgiaDTO();
+            param[0] = new SqlParameter("@masach", SqlDbType.Int);
+            param[0].Value = dg.MaThe;
+            dt = conn.excuteNonQuery(query, param);
 
            foreach (DataRow dr in dt.Rows)
            {
