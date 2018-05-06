@@ -11,7 +11,7 @@ namespace QuanLiThuVienBUS
         private static int min3(int a, int b, int c)
         {
             return Math.Min(Math.Min(a, c), b);
-        }
+        } 
         public static int Distance(string str, string target)
         {
             int[,] h;

@@ -49,7 +49,7 @@ namespace QuanLiThuVienBUS
 
             //thêm phiế mượn
             phieumuonDTO phieumuonDTO = new phieumuonDTO();
-            phieumuonDTO.Maphieumuon = phieuMuon.Count + 1;
+            phieumuonDTO.Mapm = phieuMuon.Count + 1;
             phieumuonDTO.Mathe = bandoc.MaThe;
             phieumuonDTO.Ngaymuon = DateTime.Now;
             if (!phieuMuonDAL.themPhieuMuon(phieumuonDTO))
@@ -61,7 +61,7 @@ namespace QuanLiThuVienBUS
             foreach (sachDTO sach in sachs)
             {
                 ctpmDTO ctpm = new ctpmDTO();
-                ctpm.Mapm = phieumuonDTO.Maphieumuon;
+                ctpm.Mapm = phieumuonDTO.Mapm;
                 ctpm.Masach = sach.Masach;
                 if (!chiTietPhieuMuonDAL.themCTPM(ctpm))
                 {
@@ -78,5 +78,8 @@ namespace QuanLiThuVienBUS
 
 
         }
+
+
+
     }
 }

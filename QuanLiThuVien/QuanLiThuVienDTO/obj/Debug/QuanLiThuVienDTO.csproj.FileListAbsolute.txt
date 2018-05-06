@@ -8,3 +8,4 @@ C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuV
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.pdb
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csprojResolveAssemblyReference.cache

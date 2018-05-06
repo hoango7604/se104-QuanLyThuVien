@@ -41,14 +41,14 @@ namespace QuanLiThuVienDAL
             {
                 docgiaDTO tdgDTO = new docgiaDTO();
 
-                tdgDTO.MaThe = int.Parse( dr["mathe"].ToString());
+                tdgDTO.MaThe = Int32.Parse( dr["mathe"].ToString());
                 tdgDTO.HoTen = dr["hoten"].ToString();
                 tdgDTO.Email = dr["email"].ToString();
-                tdgDTO.Loaidocgia = int .Parse(dr["loaidocgia"].ToString());
+                tdgDTO.Loaidocgia = Int32.Parse(dr["loaidocgia"].ToString());
                 tdgDTO.NgaySinh = DateTime.Parse( dr["ngaysinh"].ToString());
                 tdgDTO.Ngaydk = DateTime.Parse( dr["ngaydk"].ToString());
                 tdgDTO.DiaChi = dr["diachi"].ToString();
-                tdgDTO.Tongtienno = int.Parse(dr["tongtienno"].ToString ());
+                tdgDTO.Tongtienno = Int32.Parse(dr["tongtienno"].ToString ());
 
                 listDGDTO.Add(tdgDTO);
             }
@@ -99,7 +99,7 @@ namespace QuanLiThuVienDAL
             param[5] = new SqlParameter("@diachi", SqlDbType.NVarChar);
             param[5].Value = Convert.ToString(dgDTO.DiaChi);
             param[6] = new SqlParameter("@loaidocgia", SqlDbType.Int);
-            param[6].Value = Convert.ToString(dgDTO.Email);
+            param[6].Value = Convert.ToString(dgDTO.Loaidocgia);
             param[7] = new SqlParameter("@tongtienno", SqlDbType.Int);
             param[7].Value = Convert.ToString(dgDTO.Tongtienno);
 
@@ -115,7 +115,7 @@ namespace QuanLiThuVienDAL
         public bool suaDocGia(docgiaDTO dgDTO,int mathe )
         {
 
-            string query = string.Format("update [docgia] set hoten=@hoten,email=@email,ngaysinh=@ngaysinh,ngaydk=@ngaydk,diachi=@diachi,loaidocgia=@loaidocgia,tongtienno=@tongtienno where mathe=@mathe ");
+            string query = string.Format("update [docgia] set mathe=@mathe, hoten=@hoten,email=@email,ngaysinh=@ngaysinh,ngaydk=@ngaydk,diachi=@diachi, tongtienno=@tongtienno,loaidocgia=@loaidocgia where mathe=@mathe ");
             SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@mathe", SqlDbType.Int);
             param[0].Value = Convert.ToString(mathe);
@@ -129,11 +129,10 @@ namespace QuanLiThuVienDAL
             param[4].Value = Convert.ToString(dgDTO.Ngaydk);
             param[5] = new SqlParameter("@diachi", SqlDbType.NVarChar);
             param[5].Value = Convert.ToString(dgDTO.DiaChi);
-            param[6] = new SqlParameter("@loaidocgia", SqlDbType.Int);
-            param[6].Value = Convert.ToString(dgDTO.Email);
-            param[7] = new SqlParameter("@tongtienno", SqlDbType.Int);
-            param[7].Value = Convert.ToString(dgDTO.Tongtienno);
-
+            param[6] = new SqlParameter("@tongtienno", SqlDbType.Int);
+            param[6].Value = Convert.ToString(dgDTO.Tongtienno);
+            param[7] = new SqlParameter("@loaidocgia", SqlDbType.Int);
+            param[7].Value = Convert.ToString(dgDTO.Loaidocgia);
             conn.excuteNonQuery2(query, param);
 
 
