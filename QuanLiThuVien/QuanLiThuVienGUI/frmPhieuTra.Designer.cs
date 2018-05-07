@@ -30,14 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbThongTinBanDoc = new System.Windows.Forms.Label();
-            this.txbCMNDBanDoc = new System.Windows.Forms.TextBox();
+            this.txbMaTheBanDoc = new System.Windows.Forms.TextBox();
             this.lbTenBanDoc = new System.Windows.Forms.Label();
             this.txbTenBanDoc = new System.Windows.Forms.TextBox();
             this.lbMaTheBanDoc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbTimSachTheoMa = new System.Windows.Forms.Label();
-            this.txbTimSachTheoMa = new System.Windows.Forms.TextBox();
-            this.btnTaoPhieuMuon = new System.Windows.Forms.Button();
+            this.btnTaoPhieuTra = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbTinhTrangSach = new System.Windows.Forms.Label();
             this.lbNgayMuonSach = new System.Windows.Forms.Label();
@@ -45,9 +43,9 @@
             this.lbMaSach = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.chkChonSach = new System.Windows.Forms.CheckBox();
-            this.lbDanhSachSachMuon = new System.Windows.Forms.Label();
+            this.lbDanhSachSachTra = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
+            this.pnDanhSachSachTra = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -59,7 +57,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lbThongTinBanDoc);
-            this.panel1.Controls.Add(this.txbCMNDBanDoc);
+            this.panel1.Controls.Add(this.txbMaTheBanDoc);
             this.panel1.Controls.Add(this.lbTenBanDoc);
             this.panel1.Controls.Add(this.txbTenBanDoc);
             this.panel1.Controls.Add(this.lbMaTheBanDoc);
@@ -79,13 +77,13 @@
             this.lbThongTinBanDoc.TabIndex = 8;
             this.lbThongTinBanDoc.Text = "Thông tin bạn đọc";
             // 
-            // txbCMNDBanDoc
+            // txbMaTheBanDoc
             // 
-            this.txbCMNDBanDoc.Enabled = false;
-            this.txbCMNDBanDoc.Location = new System.Drawing.Point(85, 56);
-            this.txbCMNDBanDoc.Name = "txbCMNDBanDoc";
-            this.txbCMNDBanDoc.Size = new System.Drawing.Size(264, 20);
-            this.txbCMNDBanDoc.TabIndex = 5;
+            this.txbMaTheBanDoc.Enabled = false;
+            this.txbMaTheBanDoc.Location = new System.Drawing.Point(85, 56);
+            this.txbMaTheBanDoc.Name = "txbMaTheBanDoc";
+            this.txbMaTheBanDoc.Size = new System.Drawing.Size(264, 20);
+            this.txbMaTheBanDoc.TabIndex = 5;
             // 
             // lbTenBanDoc
             // 
@@ -121,43 +119,25 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.lbTimSachTheoMa);
-            this.panel2.Controls.Add(this.txbTimSachTheoMa);
-            this.panel2.Controls.Add(this.btnTaoPhieuMuon);
+            this.panel2.Controls.Add(this.btnTaoPhieuTra);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.lbDanhSachSachMuon);
+            this.panel2.Controls.Add(this.lbDanhSachSachTra);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(11, 116);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(854, 372);
             this.panel2.TabIndex = 20;
             // 
-            // lbTimSachTheoMa
+            // btnTaoPhieuTra
             // 
-            this.lbTimSachTheoMa.AutoSize = true;
-            this.lbTimSachTheoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimSachTheoMa.Location = new System.Drawing.Point(7, 61);
-            this.lbTimSachTheoMa.Name = "lbTimSachTheoMa";
-            this.lbTimSachTheoMa.Size = new System.Drawing.Size(73, 20);
-            this.lbTimSachTheoMa.TabIndex = 22;
-            this.lbTimSachTheoMa.Text = "Mã sách:";
-            // 
-            // txbTimSachTheoMa
-            // 
-            this.txbTimSachTheoMa.Location = new System.Drawing.Point(86, 61);
-            this.txbTimSachTheoMa.Name = "txbTimSachTheoMa";
-            this.txbTimSachTheoMa.Size = new System.Drawing.Size(262, 20);
-            this.txbTimSachTheoMa.TabIndex = 21;
-            // 
-            // btnTaoPhieuMuon
-            // 
-            this.btnTaoPhieuMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoPhieuMuon.Location = new System.Drawing.Point(697, 18);
-            this.btnTaoPhieuMuon.Name = "btnTaoPhieuMuon";
-            this.btnTaoPhieuMuon.Size = new System.Drawing.Size(136, 63);
-            this.btnTaoPhieuMuon.TabIndex = 20;
-            this.btnTaoPhieuMuon.Text = "Tạo phiếu mượn";
-            this.btnTaoPhieuMuon.UseVisualStyleBackColor = true;
+            this.btnTaoPhieuTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoPhieuTra.Location = new System.Drawing.Point(697, 18);
+            this.btnTaoPhieuTra.Name = "btnTaoPhieuTra";
+            this.btnTaoPhieuTra.Size = new System.Drawing.Size(136, 63);
+            this.btnTaoPhieuTra.TabIndex = 20;
+            this.btnTaoPhieuTra.Text = "Tạo phiếu trả";
+            this.btnTaoPhieuTra.UseVisualStyleBackColor = true;
+            this.btnTaoPhieuTra.Click += new System.EventHandler(this.btnTaoPhieuTra_Click);
             // 
             // panel4
             // 
@@ -237,34 +217,34 @@
             this.chkChonSach.TabIndex = 0;
             this.chkChonSach.UseVisualStyleBackColor = true;
             // 
-            // lbDanhSachSachMuon
+            // lbDanhSachSachTra
             // 
-            this.lbDanhSachSachMuon.AutoSize = true;
-            this.lbDanhSachSachMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDanhSachSachMuon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbDanhSachSachMuon.Location = new System.Drawing.Point(351, 9);
-            this.lbDanhSachSachMuon.Name = "lbDanhSachSachMuon";
-            this.lbDanhSachSachMuon.Size = new System.Drawing.Size(192, 39);
-            this.lbDanhSachSachMuon.TabIndex = 15;
-            this.lbDanhSachSachMuon.Text = "Sách mượn";
+            this.lbDanhSachSachTra.AutoSize = true;
+            this.lbDanhSachSachTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhSachSachTra.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbDanhSachSachTra.Location = new System.Drawing.Point(292, 28);
+            this.lbDanhSachSachTra.Name = "lbDanhSachSachTra";
+            this.lbDanhSachSachTra.Size = new System.Drawing.Size(315, 39);
+            this.lbDanhSachSachTra.TabIndex = 15;
+            this.lbDanhSachSachTra.Text = "Danh sách sách trả";
             // 
             // panel3
             // 
             this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.pnDanhSachSachDangMuon);
+            this.panel3.Controls.Add(this.pnDanhSachSachTra);
             this.panel3.Location = new System.Drawing.Point(4, 140);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(838, 225);
             this.panel3.TabIndex = 18;
             // 
-            // pnDanhSachSachDangMuon
+            // pnDanhSachSachTra
             // 
-            this.pnDanhSachSachDangMuon.AutoSize = true;
-            this.pnDanhSachSachDangMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnDanhSachSachDangMuon.Location = new System.Drawing.Point(3, 3);
-            this.pnDanhSachSachDangMuon.Name = "pnDanhSachSachDangMuon";
-            this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 273);
-            this.pnDanhSachSachDangMuon.TabIndex = 19;
+            this.pnDanhSachSachTra.AutoSize = true;
+            this.pnDanhSachSachTra.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnDanhSachSachTra.Location = new System.Drawing.Point(3, 3);
+            this.pnDanhSachSachTra.Name = "pnDanhSachSachTra";
+            this.pnDanhSachSachTra.Size = new System.Drawing.Size(823, 273);
+            this.pnDanhSachSachTra.TabIndex = 19;
             // 
             // frmPhieuTra
             // 
@@ -293,14 +273,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbThongTinBanDoc;
-        private System.Windows.Forms.TextBox txbCMNDBanDoc;
+        private System.Windows.Forms.TextBox txbMaTheBanDoc;
         private System.Windows.Forms.Label lbTenBanDoc;
         private System.Windows.Forms.TextBox txbTenBanDoc;
         private System.Windows.Forms.Label lbMaTheBanDoc;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lbTimSachTheoMa;
-        private System.Windows.Forms.TextBox txbTimSachTheoMa;
-        private System.Windows.Forms.Button btnTaoPhieuMuon;
+        private System.Windows.Forms.Button btnTaoPhieuTra;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbTinhTrangSach;
         private System.Windows.Forms.Label lbNgayMuonSach;
@@ -308,8 +286,8 @@
         private System.Windows.Forms.Label lbMaSach;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.CheckBox chkChonSach;
-        private System.Windows.Forms.Label lbDanhSachSachMuon;
+        private System.Windows.Forms.Label lbDanhSachSachTra;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel pnDanhSachSachDangMuon;
+        private System.Windows.Forms.Panel pnDanhSachSachTra;
     }
 }

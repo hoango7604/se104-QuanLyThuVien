@@ -14,9 +14,12 @@ namespace QuanLiThuVienGUI
 {
     public partial class frmNhapMaThe : Form
     {
-        public frmNhapMaThe()
+        int codeMuonTra;
+
+        public frmNhapMaThe(int codeMuonTra)
         {
             InitializeComponent();
+            this.codeMuonTra = codeMuonTra;
         }
 
 
@@ -25,7 +28,15 @@ namespace QuanLiThuVienGUI
             if (e.KeyCode == Keys.Enter)
             {
                 QuanLiBanDocBUS quanLiBanDoc = new QuanLiBanDocBUS();
-                frmPhieuMuon f = new frmPhieuMuon(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text,"")[0]);
+                QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
+                if (codeMuonTra == 0)
+                {
+                    frmPhieuMuon f = new frmPhieuMuon(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0]);
+                }
+                else
+                {
+                    frmPhieuTra f = new frmPhieuTra(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0], quan)
+                }
                 f.ShowDialog();
                 this.Close();
             }

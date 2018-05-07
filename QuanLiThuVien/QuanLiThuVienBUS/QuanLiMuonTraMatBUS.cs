@@ -10,6 +10,12 @@ namespace QuanLiThuVienBUS
 {
     public class QuanLiMuonTraMatBUS
     {
+        public enum MuonTraTag
+        {
+            Muon = 0,
+            Tra = 1
+        }
+
         public QuanLiMuonTraMatBUS()
         {
 

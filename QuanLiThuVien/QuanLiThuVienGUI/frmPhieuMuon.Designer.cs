@@ -32,8 +32,8 @@
             this.lbThongTinBanDoc = new System.Windows.Forms.Label();
             this.txbMaTheBanDoc = new System.Windows.Forms.TextBox();
             this.lbTenBanDoc = new System.Windows.Forms.Label();
-            this.txbTenBanDoc = new System.Windows.Forms.TextBox();
             this.lbMaTheBanDoc = new System.Windows.Forms.Label();
+            this.txbTenBanDoc = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTimSachTheoMa = new System.Windows.Forms.Label();
             this.txbTimSachTheoMa = new System.Windows.Forms.TextBox();
@@ -98,14 +98,6 @@
             this.lbTenBanDoc.TabIndex = 6;
             this.lbTenBanDoc.Text = "Tên bạn đọc:";
             // 
-            // txbTenBanDoc
-            // 
-            this.txbTenBanDoc.Enabled = false;
-            this.txbTenBanDoc.Location = new System.Drawing.Point(571, 57);
-            this.txbTenBanDoc.Name = "txbTenBanDoc";
-            this.txbTenBanDoc.Size = new System.Drawing.Size(262, 20);
-            this.txbTenBanDoc.TabIndex = 4;
-            // 
             // lbMaTheBanDoc
             // 
             this.lbMaTheBanDoc.AutoSize = true;
@@ -116,6 +108,14 @@
             this.lbMaTheBanDoc.Size = new System.Drawing.Size(62, 20);
             this.lbMaTheBanDoc.TabIndex = 7;
             this.lbMaTheBanDoc.Text = "Mã thẻ:";
+            // 
+            // txbTenBanDoc
+            // 
+            this.txbTenBanDoc.Enabled = false;
+            this.txbTenBanDoc.Location = new System.Drawing.Point(571, 57);
+            this.txbTenBanDoc.Name = "txbTenBanDoc";
+            this.txbTenBanDoc.Size = new System.Drawing.Size(262, 20);
+            this.txbTenBanDoc.TabIndex = 4;
             // 
             // panel2
             // 
@@ -238,6 +238,7 @@
             this.chkChonSach.Size = new System.Drawing.Size(15, 14);
             this.chkChonSach.TabIndex = 0;
             this.chkChonSach.UseVisualStyleBackColor = true;
+            this.chkChonSach.CheckStateChanged += new System.EventHandler(this.chkChonSach_CheckStateChanged);
             // 
             // lbDanhSachSachMuon
             // 

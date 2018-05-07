@@ -76,5 +76,14 @@ namespace QuanLiThuVienGUI
             }
             
         }
+
+        private void chkChonSach_CheckStateChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            foreach (dongThongTinSach dongThongTin in listDongThongTinSach)
+            {
+                dongThongTin.chkChonSach.CheckState = cb.CheckState;
+            }
+        }
     }
 }
