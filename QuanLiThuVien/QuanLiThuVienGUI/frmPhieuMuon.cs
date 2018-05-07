@@ -26,12 +26,23 @@ namespace QuanLiThuVienGUI
             InitializeComponent();
             this.docgia = docgia;
             initFormPhieuMuon(docgia);
+            LoadList(docgia);
+
         }
 
         private void initFormPhieuMuon(docgiaDTO docgia)
         {
             txbTenBanDoc.Text = docgia.HoTen;
             txbMaTheBanDoc.Text = docgia.MaThe.ToString();
+        }
+
+        private void LoadList(docgiaDTO docgia)
+        {
+            List<sachDTO> listsachdocgiadangmuon = quanLiSach.DanhSachDocGiaDangMuon(docgia);
+            foreach (sachDTO sach in listsachdocgiadangmuon)
+            {
+                initDongThongTinSach(sach);
+            }
         }
 
         private void txbTimSachTheoMa_KeyDown(object sender, KeyEventArgs e)
@@ -84,6 +95,11 @@ namespace QuanLiThuVienGUI
             {
                 dongThongTin.chkChonSach.CheckState = cb.CheckState;
             }
+        }
+
+        private void pnDanhSachSachMuon_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

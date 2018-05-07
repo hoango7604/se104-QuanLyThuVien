@@ -43,12 +43,13 @@ namespace QuanLiThuVienBUS
 
             List<sachDTO> cacSachdangmuon = new List<sachDTO>();
             List<quydinhDTO> cacQuyDinh = new List<quydinhDTO>();
-            List<phieumuonDTO> phieuMuon = new List<phieumuonDTO>();
+            List<phieumuonDTO> danhsachphieuMuon = new List<phieumuonDTO>();
             List<DateTime> danhsachngaymuon = new List<DateTime>();
 
             sachDAL.SachDangMuon(bandoc.MaThe,cacSachdangmuon, danhsachngaymuon);
             
             quyDinhDAL.listquydinh(cacQuyDinh);
+            phieuMuonDAL.danhsachPM(danhsachphieuMuon);
 
             //kiểm tra số luọng sách mươn
             if (cacSachdangmuon.Count  + sachs.Count >  cacQuyDinh[0].Sosachduocmuon )
@@ -59,7 +60,7 @@ namespace QuanLiThuVienBUS
 
             //thêm phiếu mượn
             phieumuonDTO phieumuonDTO = new phieumuonDTO();
-            phieumuonDTO.Mapm = phieuMuon.Count + 1;
+            phieumuonDTO.Mapm = danhsachphieuMuon.Count + 1;
             phieumuonDTO.Mathe = bandoc.MaThe;
             phieumuonDTO.Ngaymuon = DateTime.Now;
             if (!phieuMuonDAL.themPhieuMuon(phieumuonDTO))

@@ -268,6 +268,7 @@
             this.pnDanhSachSachMuon.Name = "pnDanhSachSachMuon";
             this.pnDanhSachSachMuon.Size = new System.Drawing.Size(823, 273);
             this.pnDanhSachSachMuon.TabIndex = 19;
+            this.pnDanhSachSachMuon.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDanhSachSachMuon_Paint);
             // 
             // frmPhieuMuon
             // 

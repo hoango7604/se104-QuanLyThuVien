@@ -29,6 +29,11 @@ namespace QuanLiThuVienDAL
             string query = string.Format("select* from [ct_phieumuon] ");
             SqlParameter[] parm = new SqlParameter[1];
 
+            // ko can thiet nhung phai co 
+            docgiaDTO dg = new docgiaDTO();
+            parm[0] = new SqlParameter("@masach", SqlDbType.Int);
+            parm[0].Value = dg.MaThe;
+
             DataTable datatable = new DataTable();
             datatable = conn.excuteNonQuery(query, parm);
 

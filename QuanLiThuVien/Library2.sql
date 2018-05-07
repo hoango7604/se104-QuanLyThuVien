@@ -505,3 +505,4 @@ VALUES
 )
 
 
+ SELECT s.masach, trangthai ,MAX(ngaymuon) FROM dbo.sach s, dbo.ct_phieumuon ct, dbo.phieumuon pm WHERE s.masach = ct.masach AND s.trangthai = 0  AND ct.mapm = pm.mapm AND pm.mapm IN(  SELECT mapm  FROM dbo.phieumuon pm, dbo.docgia dg   WHERE pm.mathe = dg.mathe ) GROUP BY s.masach ,s.trangthai 

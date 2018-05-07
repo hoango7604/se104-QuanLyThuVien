@@ -138,7 +138,7 @@ namespace QuanLiThuVienDAL
       // update sach 
        public bool suaSach(sachDTO sDTO, int masach)
        {
-           string query = string.Format("  update [sach] set  tensach=@tensach,theloai=@theloai,tacgia=@tacgia, nxb=@nxb,ngaynhap=@ngaynhap,ngayxb=@ngayxb,giatri=@giatri,trangthai=@trangthai where mathe=@masach ");
+           string query = string.Format("  update [sach] set  tensach=@tensach,theloai=@theloai,tacgia=@tacgia, nxb=@nxb,ngaynhap=@ngaynhap,ngayxb=@ngayxb,giatri=@giatri,trangthai=@trangthai where masach=@masach ");
            SqlParameter[] param = new SqlParameter[9];
            param[0] = new SqlParameter("@masach", SqlDbType.Int);
            param[0].Value = Convert.ToString(sDTO.Masach);
@@ -186,7 +186,7 @@ namespace QuanLiThuVienDAL
             List<int> masachLIST =new List<int>() ;  
 
             // ds sach dang muon nhung chua biet ai muon 
-            string query1 = string.Format(" SELECT s.masach, trangthai ,MAX(ngaymuon) FROM dbo.sach s, dbo.ct_phieumuon ct, dbo.phieumuon pm WHERE s.masach = ct.masach AND s.trangthai = 0  AND ct.mapm = pm.mapm AND pm.mapm IN(  SELECT mapm  FROM dbo.phieumuon pm, dbo.docgia dg   WHERE pm.mathe = dg.mathe and mathe=@mathe ) GROUP BY s.masach ,s.trangthai "); 
+            string query1 = string.Format(" SELECT s.masach, trangthai ,MAX(ngaymuon) as ngaymuon FROM dbo.sach s, dbo.ct_phieumuon ct, dbo.phieumuon pm WHERE s.masach = ct.masach AND s.trangthai = 0  AND ct.mapm = pm.mapm AND pm.mapm IN(  SELECT mapm  FROM dbo.phieumuon pm, dbo.docgia dg   WHERE pm.mathe = dg.mathe and dg.mathe=@mathe ) GROUP BY s.masach ,s.trangthai "); 
             SqlParameter[] param1 = new SqlParameter[1];
             param1[0] = new SqlParameter("@mathe", SqlDbType.Int);
             param1[0].Value = Convert.ToString(mathe );
@@ -206,7 +206,7 @@ namespace QuanLiThuVienDAL
 
 
             // ds sach tra cua doc gia 
-            string query2 = string.Format("  SELECT s.masach, MAX(pt.ngaytra) FROM dbo.sach s, dbo.ct_phieutra ct, dbo.phieutra pt  WHERE s.masach = ct.masach  AND ct.mapt = pt.mapt AND pt.mapt IN(  SELECT mapt   FROM dbo.phieutra, dbo.docgia dg   WHERE pt.mathe = dg.mathe and dg.mathe=@mathe ) GROUP BY s.masach    ");
+            string query2 = string.Format("  SELECT s.masach, MAX(pt.ngaytra) as ngaytra FROM dbo.sach s, dbo.ct_phieutra ct, dbo.phieutra pt  WHERE s.masach = ct.masach  AND ct.mapt = pt.mapt AND pt.mapt IN(  SELECT mapt   FROM dbo.phieutra, dbo.docgia dg   WHERE pt.mathe = dg.mathe and dg.mathe=@mathe ) GROUP BY s.masach    ");
             SqlParameter[] param2 = new SqlParameter[1];
             param2[0] = new SqlParameter("@mathe", SqlDbType.Int);
             param2[0].Value = Convert.ToString(mathe);

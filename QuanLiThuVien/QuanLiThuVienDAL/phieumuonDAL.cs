@@ -28,6 +28,11 @@ public    class phieumuonDAL
 
             string query = string.Format("select* from [phieumuon] ");
             SqlParameter[] parm = new SqlParameter[1];
+            // ko can thiet nhung phai co 
+            docgiaDTO dg = new docgiaDTO();
+            parm[0] = new SqlParameter("@masach", SqlDbType.Int);
+            parm[0].Value = dg.MaThe;
+
 
             DataTable datatable = new DataTable();
             datatable = conn.excuteNonQuery(query, parm);
@@ -72,11 +77,11 @@ public    class phieumuonDAL
         {
 
 
-            string query = string.Format("insert into [phieumuon] values (mapm=@mapm,ngaymuon=@ngaymuon,mathe=@mathe)");
+            string query = string.Format("insert into [phieumuon] values (@mapm,@ngaymuon,@mathe)");
             SqlParameter[] param = new SqlParameter[3];
             param[0] = new SqlParameter("@mapm", SqlDbType.Int);
             param[0].Value = Convert.ToString(pmDTO.Mapm);
-            param[1] = new SqlParameter("@ngaymuon", SqlDbType.NVarChar);
+            param[1] = new SqlParameter("@ngaymuon", SqlDbType.DateTime);
             param[1].Value = Convert.ToString(pmDTO.Ngaymuon);
             param[2] = new SqlParameter("@mathe", SqlDbType.Int);
             param[2].Value = Convert.ToString(pmDTO.Mathe);

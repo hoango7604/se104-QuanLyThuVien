@@ -29,6 +29,11 @@ namespace QuanLiThuVienDAL
             string query = string.Format("select* from [ct_phieumuon] ");
             SqlParameter[] parm = new SqlParameter[1];
 
+            // ko can thiet nhung phai co 
+            docgiaDTO dg = new docgiaDTO();
+            parm[0] = new SqlParameter("@masach", SqlDbType.Int);
+            parm[0].Value = dg.MaThe;
+
             DataTable datatable = new DataTable();
             datatable = conn.excuteNonQuery(query, parm);
 
@@ -58,7 +63,7 @@ namespace QuanLiThuVienDAL
         {
 
 
-            string query = string.Format("insert into [ct_phieumuon] value (mapm=@mapm, masach=@masach)");
+            string query = string.Format("insert into [ct_phieumuon] values (@mapm,@masach)");
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@mapm", SqlDbType.Int);
             param[0].Value = Convert.ToString(ctpmDTO.Mapm);
@@ -66,7 +71,7 @@ namespace QuanLiThuVienDAL
             param[1].Value = Convert.ToString(ctpmDTO.Masach);
 
 
-            conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery2(query, param);
 
 
             return true;
