@@ -21,7 +21,7 @@ namespace QuanLiThuVienBUS
         }
 
         /// <summary>
-        /// Muon sach 
+        /// Mượn sách
         /// </summary>
         /// <param name="bandoc">bạn đọc mượn</param>
         /// <param name="sachs">danh sách sách mượn , thông tin đúng </param>
@@ -37,7 +37,8 @@ namespace QuanLiThuVienBUS
             List<quydinhDTO> cacQuyDinh = new List<quydinhDTO>();
             List<phieumuonDTO> phieuMuon = new List<phieumuonDTO>();
 
-            banDocDAL.SachDangMuon(bandoc.MaThe++,cacSachdangmuon);
+            //banDocDAL.SachDangMuon(bandoc.MaThe++,cacSachdangmuon);
+            
             quyDinhDAL.listquydinh(cacQuyDinh);
 
             //kiểm tra số luọng sách mươn
@@ -79,7 +80,16 @@ namespace QuanLiThuVienBUS
 
         }
 
+        /// <summary>
+        /// Trả sách
+        /// </summary>
+        /// <param name="bandoc">số </param>
+        /// <param name="sachs"></param>
+        /// <returns></returns>
+        public bool TraSach(docgiaDTO bandoc, List<sachDTO> sachs)
+        {
 
+        }
 
     }
 }
