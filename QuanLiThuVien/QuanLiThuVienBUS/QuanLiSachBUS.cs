@@ -271,5 +271,48 @@ namespace QuanLiThuVienBUS
              
             return false;
         }
+
+        /// <summary>
+        /// Cập nhật thông tin cho sách đã trả về kho
+        /// </summary>
+        /// <param name="sDTO"></param>
+        /// <returns></returns>
+        internal bool Travekho(sachDTO sDTO)
+        {
+            sachDAL saxDAL = new sachDAL();
+            if (saxDAL.isSach(sDTO.Masach))
+            {
+                sDTO.Trangthai = (int)TrangThaiSach.CoSan;
+                return SuaSach(sDTO);
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Danh sách các tựa sách mà đọc giả đang lượng
+        /// </summary>
+        /// <param name="docgia"></param>
+        /// <returns></returns>
+        public List<sachDTO> DanhSachDocGiaDangMuon(docgiaDTO docgia)
+        {
+            docgiaDAL docGiaDAL = new docgiaDAL();
+            sachDAL saxDAL = new sachDAL();
+
+            List<sachDTO> listsach = new List<sachDTO>();
+            List<DateTime> listngaymuon = new List<DateTime>();
+
+            if (!docGiaDAL.isDocGia(docgia.MaThe))
+            {
+                BUS_notification.mess = "Khôn tồn tại đọc giả";
+                return new List<sachDTO>();
+            }
+
+            if (!saxDAL.SachDangMuon(docgia.MaThe, listsach,listngaymuon))
+            {
+                return new List<sachDTO>();
+            }
+            return listsach;
+        }
     }
 }

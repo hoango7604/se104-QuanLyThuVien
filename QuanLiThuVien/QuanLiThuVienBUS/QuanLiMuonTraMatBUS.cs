@@ -36,7 +36,7 @@ namespace QuanLiThuVienBUS
         /// <returns></returns>
         public bool MuonSach(docgiaDTO bandoc, List<sachDTO> sachs)
         {
-            docgiaDAL banDocDAL = new docgiaDAL();
+            sachDAL sachDAL = new sachDAL();
             quydinhDAL quyDinhDAL = new quydinhDAL();
             phieumuonDAL phieuMuonDAL = new phieumuonDAL();
             ctpmDAL chiTietPhieuMuonDAL = new ctpmDAL();
@@ -44,8 +44,9 @@ namespace QuanLiThuVienBUS
             List<sachDTO> cacSachdangmuon = new List<sachDTO>();
             List<quydinhDTO> cacQuyDinh = new List<quydinhDTO>();
             List<phieumuonDTO> phieuMuon = new List<phieumuonDTO>();
+            List<DateTime> danhsachngaymuon = new List<DateTime>();
 
-            banDocDAL.SachDangMuon(bandoc.MaThe,cacSachdangmuon);
+            sachDAL.SachDangMuon(bandoc.MaThe,cacSachdangmuon, danhsachngaymuon);
             
             quyDinhDAL.listquydinh(cacQuyDinh);
 
@@ -102,6 +103,7 @@ namespace QuanLiThuVienBUS
         public List<ctptDTO> TraSach(docgiaDTO bandoc, List<sachDTO> sachtra)
         {
             docgiaDAL banDocDAL = new docgiaDAL();
+            sachDAL sachDAL = new sachDAL();
             quydinhDAL quyDinhDAL = new quydinhDAL();
             phieutraDAL phieutraDAL = new phieutraDAL();
             ctptDAL ctptDAL = new ctptDAL();
@@ -112,7 +114,7 @@ namespace QuanLiThuVienBUS
             List<phieutraDTO> danhsachphieutra = new List<phieutraDTO>();
             List<ctptDTO> danhsachchitietphieutra = new List<ctptDTO>();
 
-            banDocDAL.SachDangMuon(bandoc.MaThe, sachdangmuon, danhsachngaymuonsach);
+            sachDAL.SachDangMuon(bandoc.MaThe, sachdangmuon, danhsachngaymuonsach);
             phieutraDAL.danhsachPhieuTra(danhsachphieutra);
 
             phieutraDTO phieutra = new phieutraDTO();
@@ -136,7 +138,7 @@ namespace QuanLiThuVienBUS
 
                 ///quẳng sách lại zô kho
                 QuanLiSachBUS qlsachBUS = new QuanLiSachBUS();
-                qlsachBUS.TraSachVeKho(saxtra);
+                qlsachBUS.Travekho(saxtra);
 
                 ///thêm chi tiết phiếu trả
                 ctptDTO ctptra = new ctptDTO();

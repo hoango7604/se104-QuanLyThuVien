@@ -167,28 +167,6 @@ namespace QuanLiThuVienBUS
             return new List<loaidocgiaDTO>();
         }
 
-        /// <summary>
-        /// Danh sách các tựa sách mà đọc giả đang lượng
-        /// </summary>
-        /// <param name="docgia"></param>
-        /// <returns></returns>
-        public List<sachDTO> DanhSachDocGiaDangMuon(docgiaDTO docgia)
-        {
-            docgiaDAL docGiaDAL = new docgiaDAL();
-
-            List<sachDTO> listsach = new List<sachDTO>();
-
-            if (!docGiaDAL.isDocGia(docgia.MaThe))
-            {
-                BUS_notification.mess = "Khôn tồn tại đọc giả";
-                return new List<sachDTO>();
-            }
-
-            if (!docGiaDAL.SachDangMuon(docgia.MaThe, listsach))
-            {
-                return new List<sachDTO>();
-            }
-            return listsach;
-        }
+      
     }
 }

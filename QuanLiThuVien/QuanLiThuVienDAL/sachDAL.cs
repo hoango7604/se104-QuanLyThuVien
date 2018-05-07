@@ -51,6 +51,7 @@ namespace QuanLiThuVienDAL
                 sDTO.Theloai = dr["Theloai"].ToString();
                 sDTO.Tacgia = dr["tacgia"].ToString();
                 sDTO.Nxb = dr["nxb"].ToString();
+                sDTO.Ngaynhap = DateTime.Parse(dr["ngaynhap"].ToString());
                 sDTO.Ngayxb = DateTime.Parse(dr["ngayxb"].ToString());
                 sDTO.Giatri = int.Parse(dr["giatri"].ToString());
                 sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
@@ -181,7 +182,7 @@ namespace QuanLiThuVienDAL
             List<sachdangmuonDTO> Lsdm = new List<sachdangmuonDTO>();
             List<sachdatraDTO> Lsdt = new List<sachdatraDTO>();
 
-
+             
             List<int> masachLIST =new List<int>() ;  
 
             // ds sach dang muon nhung chua biet ai muon 

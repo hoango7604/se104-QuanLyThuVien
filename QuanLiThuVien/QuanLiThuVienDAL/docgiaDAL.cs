@@ -151,14 +151,6 @@ namespace QuanLiThuVienDAL
             return  true ;
         }
 
-        /// <summary>
-        /// M Thêm cái hàm đây nhá Hiếu
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public bool SachDangMuon(int madg,List<sachDTO> list)
-        {
-            return true;
-        }
+     
     }
 }
