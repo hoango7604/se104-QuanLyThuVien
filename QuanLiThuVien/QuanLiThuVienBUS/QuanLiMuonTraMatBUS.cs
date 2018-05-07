@@ -20,6 +20,8 @@ namespace QuanLiThuVienBUS
             return true;
         }
 
+        #region Mượn sách
+
         /// <summary>
         /// Mượn sách
         /// </summary>
@@ -37,14 +39,14 @@ namespace QuanLiThuVienBUS
             List<quydinhDTO> cacQuyDinh = new List<quydinhDTO>();
             List<phieumuonDTO> phieuMuon = new List<phieumuonDTO>();
 
-            //banDocDAL.SachDangMuon(bandoc.MaThe++,cacSachdangmuon);
+            banDocDAL.SachDangMuon(bandoc.MaThe,cacSachdangmuon);
             
             quyDinhDAL.listquydinh(cacQuyDinh);
 
             //kiểm tra số luọng sách mươn
             if (cacSachdangmuon.Count  + sachs.Count >  cacQuyDinh[0].Sosachduocmuon )
             {
-                BUS_notification.mess = "Không thể mượn sách vượt quá số lượng cho phép";
+                BUS_notification.mess = "Không Thể mượn sách vượt quá số lượng cho phép";
                 return false;
             }
 
@@ -80,16 +82,117 @@ namespace QuanLiThuVienBUS
 
         }
 
+        #endregion
+
+        #region Trả sách
+
+
         /// <summary>
         /// Trả sách
         /// </summary>
-        /// <param name="bandoc">số </param>
-        /// <param name="sachs"></param>
+        /// <param name="bandoc">Mã bạn đọc </param>
+        /// <param name="sachs">danh sách các bạn đọc </param>
         /// <returns></returns>
-        public bool TraSach(docgiaDTO bandoc, List<sachDTO> sachs)
+        public List<ctptDTO> TraSach(docgiaDTO bandoc, List<sachDTO> sachtra)
         {
-            return false;
+            docgiaDAL banDocDAL = new docgiaDAL();
+            quydinhDAL quyDinhDAL = new quydinhDAL();
+            phieutraDAL phieutraDAL = new phieutraDAL();
+            ctptDAL ctptDAL = new ctptDAL();
+
+
+            List<sachDTO> sachdangmuon = new List<sachDTO>();
+            List<DateTime> danhsachngaymuonsach = new List<DateTime>();
+            List<phieutraDTO> danhsachphieutra = new List<phieutraDTO>();
+            List<ctptDTO> danhsachchitietphieutra = new List<ctptDTO>();
+
+            banDocDAL.SachDangMuon(bandoc.MaThe, sachdangmuon, danhsachngaymuonsach);
+            phieutraDAL.danhsachPhieuTra(danhsachphieutra);
+
+            phieutraDTO phieutra = new phieutraDTO();
+            phieutra.Mapt = danhsachphieutra.Count + 1;
+            phieutra.Mathe = bandoc.MaThe;
+            phieutra.Ngaytra = DateTime.Now;
+
+            int tienphatkinay = 0;
+
+            foreach (sachDTO saxtra in sachtra )
+            {
+                /// kiễm tra quá hạn
+                DateTime ngaymuonsach = LayDatetimeDcMuonCuaSach(saxtra.Masach, sachdangmuon, danhsachngaymuonsach);
+                int songaydamuon = SoNgayMuon(ngaymuonsach, DateTime.Now);
+                int tienphatsachnay = 0;
+                if (songaydamuon > 14)
+                {
+                    tienphatsachnay = (songaydamuon - 14) * 5000;
+                }
+                tienphatkinay += tienphatsachnay;
+
+                ///quẳng sách lại zô kho
+                QuanLiSachBUS qlsachBUS = new QuanLiSachBUS();
+                qlsachBUS.TraSachVeKho(saxtra);
+
+                ///thêm chi tiết phiếu trả
+                ctptDTO ctptra = new ctptDTO();
+                ctptra.Mapt = phieutra.Mapt;
+                ctptra.Masach = saxtra.Masach;
+                ctptra.Songaydamuon = songaydamuon;
+                ctptra.Tienphatsach = tienphatsachnay;
+
+                ctptDAL.themCTPT(ctptra);
+                danhsachchitietphieutra.Add(ctptra);
+            }
+
+            phieutra.Tienphatkinay = tienphatkinay;
+            phieutraDAL.themPhieuTra(phieutra);
+
+            ///thêm nợ vào bạn đọc
+            bandoc.Tongtienno += tienphatkinay;
+            banDocDAL.suaDocGia(bandoc, bandoc.MaThe);
+
+            return danhsachchitietphieutra;
+
         }
 
+        private DateTime LayDatetimeDcMuonCuaSach(int masach,List<sachDTO> listsach, List<DateTime> listtime)
+        {
+            for (int i = 0; i< listsach.Count; i++)
+            {
+                if (listsach[i].Masach == masach)
+                {
+                    return listtime[i];
+                }
+            }
+            return DateTime.Now;
+        }
+
+        private int SoNgayMuon(DateTime ngaymuon, DateTime ngaytra)
+        {
+            TimeSpan tp = ngaytra.Subtract(ngaymuon);
+            return (int)tp.TotalDays;
+        }
+
+        #endregion
+
+
+        #region Mất sách
+
+        public bool Matsach(docgiaDTO bandoc,sachDTO sachmat)
+        {
+            docgiaDAL BanDocDAL = new docgiaDAL();
+            QuanLiSachBUS qlSachBuss = new QuanLiSachBUS();
+
+
+            bandoc.Tongtienno += sachmat.Giatri;
+            BanDocDAL.suaDocGia(bandoc, bandoc.MaThe);
+
+            if (qlSachBuss.MatSach(sachmat))
+            {
+                return true;
+            }
+            BUS_notification.mess = "Lỗi khi báo mất sách";
+            return false;
+        }
+        #endregion
     }
 }

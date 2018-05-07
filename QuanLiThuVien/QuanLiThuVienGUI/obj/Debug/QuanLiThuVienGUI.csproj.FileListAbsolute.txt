@@ -46,3 +46,6 @@ C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuV
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuMuon.resources
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuTra.resources
 D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmNhapMaThe.resources
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmNhapMaThe.resources
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuMuon.resources
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuTra.resources
