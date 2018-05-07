@@ -58,5 +58,11 @@ namespace QuanLiThuVienGUI
         private void btnLapPhieuTra_Click(object sender, EventArgs e)
         {
         }
+
+        private void btnLapPhieuMuon_Click(object sender, EventArgs e)
+        {
+            frmPhieuMuon f = new frmPhieuMuon();
+            f.ShowDialog();
+        }
     }
 }
