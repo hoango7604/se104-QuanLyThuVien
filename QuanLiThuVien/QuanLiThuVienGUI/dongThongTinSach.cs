@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLiThuVienDTO;
+using QuanLiThuVienBUS;
 
 namespace QuanLiThuVienGUI
 {
@@ -25,8 +26,7 @@ namespace QuanLiThuVienGUI
             lbMaSach.Text = sach.Masach.ToString();
             lbTenSach.Text = sach.Tensach;
             dtpNgayMuonSach.Value = DateTime.Now;
-            cbTinhTrangSach.Text = "Có sẵn";
-            changeEnable_CbTinhTrangSach(false);
+            cbTinhTrangSach.Text = QuanLiSachBUS.DanhSachTrangThaiSach[sach.Trangthai];
         }
 
         public void changeEnable_CbTinhTrangSach(bool var)

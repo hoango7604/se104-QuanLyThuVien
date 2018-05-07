@@ -41,13 +41,14 @@ namespace QuanLiThuVienGUI
                 sachDTO sach = quanLiSach.TimSach(new sachDTO(int.Parse(txbTimSachTheoMa.Text), "", "", "", "", DateTime.Now, DateTime.Now, 0, 0))[0];
                 listSach.Add(sach);
                 initDongThongTinSach(sach);
-
+                txbTimSachTheoMa.Clear();
             }
         }
 
         private void initDongThongTinSach(sachDTO sach)
         {
             dongThongTinSach dongThongTin = new dongThongTinSach(sach);
+            dongThongTin.changeEnable_CbTinhTrangSach(false);
             listDongThongTinSach.Add(dongThongTin);
             dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
             pnDanhSachSachMuon.Controls.Add(dongThongTin);
@@ -55,7 +56,16 @@ namespace QuanLiThuVienGUI
 
         private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
         {
-            if (quanLiMuonTraMat.MuonSach(docgia, listSach))
+            List<sachDTO> listSachMuon = new List<sachDTO>();
+            for (int i = 0; i < listDongThongTinSach.Count; i++)
+            {
+                if (listDongThongTinSach[i].chkChonSach.Checked)
+                {
+                    listSachMuon.Add(listSach[i]);
+                }
+            }
+
+            if (quanLiMuonTraMat.MuonSach(docgia, listSachMuon))
             {
                 MessageBox.Show("Tạo phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK);
                 this.Close();

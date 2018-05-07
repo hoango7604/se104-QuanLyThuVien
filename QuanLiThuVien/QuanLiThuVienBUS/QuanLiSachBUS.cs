@@ -17,6 +17,8 @@ namespace QuanLiThuVienBUS
 
     public class QuanLiSachBUS
     {
+        public static string[] DanhSachTrangThaiSach = new string[3] { "Đã cho mượn", "Có sẵn", "Đã mất"};
+
         public QuanLiSachBUS()
         {
 
