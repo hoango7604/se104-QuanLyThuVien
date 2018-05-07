@@ -32,12 +32,13 @@ namespace QuanLiThuVienGUI
                 if (codeMuonTra == 0)
                 {
                     frmPhieuMuon f = new frmPhieuMuon(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0]);
+                    f.Show();
                 }
                 else
                 {
-                    frmPhieuTra f = new frmPhieuTra(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0], quan)
+                    //frmPhieuTra f = new frmPhieuTra(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0], );
+                    //f.Show();
                 }
-                f.ShowDialog();
                 this.Close();
             }
         }
