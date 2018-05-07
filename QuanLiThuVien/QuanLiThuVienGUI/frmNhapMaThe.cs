@@ -32,7 +32,7 @@ namespace QuanLiThuVienGUI
                 if (codeMuonTra == 0)
                 {
                     frmPhieuMuon f = new frmPhieuMuon(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0]);
-                    f.Show();
+                    f.ShowDialog();
                 }
                 else
                 {
