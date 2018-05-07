@@ -13,8 +13,9 @@ namespace QuanLiThuVienDTO
         }
           
         
-        public quydinhDTO(int tuoimax, int tuoimin,int songayduocmuon, int sosachduocmuon, int kcnamxuatban)
-        {
+        public quydinhDTO(int tienphattrasachtremoingay, int tuoimax, int tuoimin,int songayduocmuon, int sosachduocmuon, int kcnamxuatban)
+        {   
+            Tienphattrasachtremoingay=tienphattrasachtremoingay;
             Tuoimax = tuoimax;
             Tuoimin = tuoimin;
             Songayduocmuon = songayduocmuon;
@@ -22,6 +23,12 @@ namespace QuanLiThuVienDTO
             Kcnamxuatban = kcnamxuatban;
         }
         
+        private int tienphattrasachtremoingay ; 
+        public int Tienphattrasachtremoingay
+        {
+            get { return tienphattrasachtremoingay; }
+            set { tienphattrasachtremoingay = value; }
+        }
         
         private int tuoimax;
 
