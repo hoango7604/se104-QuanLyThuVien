@@ -1,0 +1,1 @@
+SQLCMD -S DESKTOP-IDE56EU\SQLEXPRESS -E -i CreateDatabase.sql
