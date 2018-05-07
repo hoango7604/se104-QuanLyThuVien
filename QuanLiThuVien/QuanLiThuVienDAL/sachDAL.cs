@@ -98,6 +98,7 @@ namespace QuanLiThuVienDAL
             dtb = conn.excuteNonQuery(query, param);
 
 
+<<<<<<< HEAD
             return sDTO; 
          
         
@@ -109,6 +110,19 @@ namespace QuanLiThuVienDAL
        {
            string query = string.Format("insert into [sach] values (@masach,@tensach,@theloai,@tacgia,@nxb,@ngayxb,@giatri,@trangthai)");
            SqlParameter[] param = new SqlParameter[8];
+=======
+            return sDTO; 
+         
+        
+        }
+         
+      // them sach
+
+       public bool themSach(sachDTO sDTO)
+       {
+           string query = string.Format("insert into [sach] values (@masach,@tensach,@theloai,@tacgia,@nxb,@ngaynhap,@ngayxb,@giatri,@trangthai)");
+           SqlParameter[] param = new SqlParameter[9];
+>>>>>>> 658dcdd9cb5ad647c1ff3a68bcf95cc6e875d6c9
            param[0] = new SqlParameter("@masach", SqlDbType.Int);
            param[0].Value = Convert.ToString(sDTO.Masach);
            param[1] = new SqlParameter("@tensach", SqlDbType.NVarChar);
@@ -119,6 +133,7 @@ namespace QuanLiThuVienDAL
            param[3].Value = Convert.ToString(sDTO.Tacgia);
            param[4] = new SqlParameter("@nxb", SqlDbType.NVarChar);
            param[4].Value = Convert.ToString(sDTO.Nxb);
+<<<<<<< HEAD
            param[5] = new SqlParameter("@ngayxb", SqlDbType.DateTime);
            param[5].Value = Convert.ToString(sDTO.Ngayxb);
            param[6] = new SqlParameter("@giatri", SqlDbType.Int);
@@ -164,6 +179,56 @@ namespace QuanLiThuVienDAL
        }
 
 
+=======
+           param[5] = new SqlParameter("@ngaynhap", SqlDbType.DateTime);
+           param[5].Value = Convert.ToString(sDTO.Ngaynhap);
+           param[6] = new SqlParameter("@ngayxb", SqlDbType.DateTime);
+           param[6].Value = Convert.ToString(sDTO.Ngayxb);
+           param[7] = new SqlParameter("@giatri", SqlDbType.Int);
+           param[7].Value = Convert.ToString(sDTO.Giatri);
+           param[8] = new SqlParameter("@trangthai", SqlDbType.Int);
+           param[8].Value = Convert.ToString(sDTO.Trangthai);
+
+           conn.excuteNonQuery2(query, param);
+
+           return true;
+       
+       }
+
+      // update sach 
+       public bool suaSach(sachDTO sDTO, int masach)
+       {
+           string query = string.Format("  update [sach] set  tensach=@tensach,theloai=@theloai,tacgia=@tacgia, nxb=@nxb,ngaynhap=@ngaynhap,ngayxb=@ngayxb,giatri=@giatri,trangthai=@trangthai where mathe=@masach ");
+           SqlParameter[] param = new SqlParameter[9];
+           param[0] = new SqlParameter("@masach", SqlDbType.Int);
+           param[0].Value = Convert.ToString(sDTO.Masach);
+           param[1] = new SqlParameter("@tensach", SqlDbType.NVarChar);
+           param[1].Value = Convert.ToString(sDTO.Tensach);
+           param[2] = new SqlParameter("@theloai", SqlDbType.NVarChar);
+           param[2].Value = Convert.ToString(sDTO.Theloai);
+           param[3] = new SqlParameter("@tacgia", SqlDbType.NVarChar);
+           param[3].Value = Convert.ToString(sDTO.Tacgia);
+           param[4] = new SqlParameter("@nxb", SqlDbType.NVarChar);
+           param[4].Value = Convert.ToString(sDTO.Nxb);
+           param[5] = new SqlParameter("@ngaynhap", SqlDbType.DateTime);
+           param[5].Value = Convert.ToString(sDTO.Ngaynhap);
+           param[6] = new SqlParameter("@ngayxb", SqlDbType.DateTime);
+           param[6].Value = Convert.ToString(sDTO.Ngayxb);
+           param[7] = new SqlParameter("@giatri", SqlDbType.Int);
+           param[7].Value = Convert.ToString(sDTO.Giatri);
+           param[8] = new SqlParameter("@trangthai", SqlDbType.Int);
+           param[8].Value = Convert.ToString(sDTO.Trangthai);
+           
+
+           conn.excuteNonQuery2(query, param);
+
+
+           return true; 
+       
+       }
+
+
+>>>>>>> 658dcdd9cb5ad647c1ff3a68bcf95cc6e875d6c9
     /// <summary>
         /// M Thêm cái hàm đây nhá Hiếu
         /// </summary>
