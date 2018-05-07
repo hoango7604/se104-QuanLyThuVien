@@ -11,17 +11,18 @@ namespace QuanLiThuVienDTO
         {
 
         }
-        public quydinhDTO(int tuoimax, int tuoimin, int sosachduocmuon, int kcnamxuatban)
+          
+        
+        public quydinhDTO(int tuoimax, int tuoimin,int songayduocmuon, int sosachduocmuon, int kcnamxuatban)
         {
             Tuoimax = tuoimax;
-
             Tuoimin = tuoimin;
             Songayduocmuon = songayduocmuon;
-
-
+            Sosachduocmuon = songayduocmuon; 
             Kcnamxuatban = kcnamxuatban;
         }
-
+        
+        
         private int tuoimax;
 
         public int Tuoimax
