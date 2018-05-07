@@ -13,7 +13,7 @@ namespace QuanLiThuVienDTO
 
         }
 
-        public sachdatraDTO(int masach , DateTime ngaytra )
+        public sachdatraDTO()
         {
             Masach = masach;
             Ngaytra = ngaytra; 
