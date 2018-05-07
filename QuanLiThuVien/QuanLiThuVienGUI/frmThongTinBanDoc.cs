@@ -15,10 +15,12 @@ namespace QuanLiThuVienGUI
     public partial class frmThongTinBanDoc : Form
     {
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
+        docgiaDTO docgia;
 
         public frmThongTinBanDoc(docgiaDTO docgia)
         {
             InitializeComponent();
+            this.docgia = docgia;
             initThongTinBanDoc(docgia);
         }
 
@@ -61,7 +63,7 @@ namespace QuanLiThuVienGUI
 
         private void btnLapPhieuMuon_Click(object sender, EventArgs e)
         {
-            frmPhieuMuon f = new frmPhieuMuon();
+            frmPhieuMuon f = new frmPhieuMuon(docgia);
             f.ShowDialog();
         }
     }

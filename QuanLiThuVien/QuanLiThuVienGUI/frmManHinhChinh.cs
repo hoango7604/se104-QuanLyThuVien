@@ -98,7 +98,8 @@ namespace QuanLiThuVienGUI
 
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmNhapMaThe f = new frmNhapMaThe();
+            f.ShowDialog();
         }
 
         private void tạoPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)

@@ -274,6 +274,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmPhieuTra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu trả";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

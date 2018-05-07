@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txbCMNDBanDoc = new System.Windows.Forms.TextBox();
+            this.lbThongTinBanDoc = new System.Windows.Forms.Label();
+            this.txbMaTheBanDoc = new System.Windows.Forms.TextBox();
             this.lbTenBanDoc = new System.Windows.Forms.Label();
             this.txbTenBanDoc = new System.Windows.Forms.TextBox();
-            this.lbCMNDBanDoc = new System.Windows.Forms.Label();
-            this.lbThongTinBanDoc = new System.Windows.Forms.Label();
+            this.lbMaTheBanDoc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTimSachTheoMa = new System.Windows.Forms.Label();
+            this.txbTimSachTheoMa = new System.Windows.Forms.TextBox();
+            this.btnTaoPhieuMuon = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbTinhTrangSach = new System.Windows.Forms.Label();
             this.lbNgayMuonSach = new System.Windows.Forms.Label();
@@ -44,10 +47,7 @@
             this.chkChonSach = new System.Windows.Forms.CheckBox();
             this.lbDanhSachSachMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
-            this.btnTaoPhieuMuon = new System.Windows.Forms.Button();
-            this.lbTimSachTheoMa = new System.Windows.Forms.Label();
-            this.txbTimSachTheoMa = new System.Windows.Forms.TextBox();
+            this.pnDanhSachSachMuon = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -59,52 +59,14 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lbThongTinBanDoc);
-            this.panel1.Controls.Add(this.txbCMNDBanDoc);
+            this.panel1.Controls.Add(this.txbMaTheBanDoc);
             this.panel1.Controls.Add(this.lbTenBanDoc);
+            this.panel1.Controls.Add(this.lbMaTheBanDoc);
             this.panel1.Controls.Add(this.txbTenBanDoc);
-            this.panel1.Controls.Add(this.lbCMNDBanDoc);
             this.panel1.Location = new System.Drawing.Point(13, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(854, 98);
             this.panel1.TabIndex = 0;
-            // 
-            // txbCMNDBanDoc
-            // 
-            this.txbCMNDBanDoc.Enabled = false;
-            this.txbCMNDBanDoc.Location = new System.Drawing.Point(569, 59);
-            this.txbCMNDBanDoc.Name = "txbCMNDBanDoc";
-            this.txbCMNDBanDoc.Size = new System.Drawing.Size(264, 20);
-            this.txbCMNDBanDoc.TabIndex = 5;
-            // 
-            // lbTenBanDoc
-            // 
-            this.lbTenBanDoc.AutoSize = true;
-            this.lbTenBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbTenBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTenBanDoc.Location = new System.Drawing.Point(6, 59);
-            this.lbTenBanDoc.Name = "lbTenBanDoc";
-            this.lbTenBanDoc.Size = new System.Drawing.Size(101, 20);
-            this.lbTenBanDoc.TabIndex = 6;
-            this.lbTenBanDoc.Text = "Tên bạn đọc:";
-            // 
-            // txbTenBanDoc
-            // 
-            this.txbTenBanDoc.Enabled = false;
-            this.txbTenBanDoc.Location = new System.Drawing.Point(111, 59);
-            this.txbTenBanDoc.Name = "txbTenBanDoc";
-            this.txbTenBanDoc.Size = new System.Drawing.Size(262, 20);
-            this.txbTenBanDoc.TabIndex = 4;
-            // 
-            // lbCMNDBanDoc
-            // 
-            this.lbCMNDBanDoc.AutoSize = true;
-            this.lbCMNDBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbCMNDBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbCMNDBanDoc.Location = new System.Drawing.Point(466, 57);
-            this.lbCMNDBanDoc.Name = "lbCMNDBanDoc";
-            this.lbCMNDBanDoc.Size = new System.Drawing.Size(60, 20);
-            this.lbCMNDBanDoc.TabIndex = 7;
-            this.lbCMNDBanDoc.Text = "CMND:";
             // 
             // lbThongTinBanDoc
             // 
@@ -116,6 +78,44 @@
             this.lbThongTinBanDoc.Size = new System.Drawing.Size(291, 39);
             this.lbThongTinBanDoc.TabIndex = 8;
             this.lbThongTinBanDoc.Text = "Thông tin bạn đọc";
+            // 
+            // txbMaTheBanDoc
+            // 
+            this.txbMaTheBanDoc.Enabled = false;
+            this.txbMaTheBanDoc.Location = new System.Drawing.Point(90, 59);
+            this.txbMaTheBanDoc.Name = "txbMaTheBanDoc";
+            this.txbMaTheBanDoc.Size = new System.Drawing.Size(264, 20);
+            this.txbMaTheBanDoc.TabIndex = 5;
+            // 
+            // lbTenBanDoc
+            // 
+            this.lbTenBanDoc.AutoSize = true;
+            this.lbTenBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbTenBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbTenBanDoc.Location = new System.Drawing.Point(466, 57);
+            this.lbTenBanDoc.Name = "lbTenBanDoc";
+            this.lbTenBanDoc.Size = new System.Drawing.Size(101, 20);
+            this.lbTenBanDoc.TabIndex = 6;
+            this.lbTenBanDoc.Text = "Tên bạn đọc:";
+            // 
+            // txbTenBanDoc
+            // 
+            this.txbTenBanDoc.Enabled = false;
+            this.txbTenBanDoc.Location = new System.Drawing.Point(571, 57);
+            this.txbTenBanDoc.Name = "txbTenBanDoc";
+            this.txbTenBanDoc.Size = new System.Drawing.Size(262, 20);
+            this.txbTenBanDoc.TabIndex = 4;
+            // 
+            // lbMaTheBanDoc
+            // 
+            this.lbMaTheBanDoc.AutoSize = true;
+            this.lbMaTheBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbMaTheBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMaTheBanDoc.Location = new System.Drawing.Point(8, 57);
+            this.lbMaTheBanDoc.Name = "lbMaTheBanDoc";
+            this.lbMaTheBanDoc.Size = new System.Drawing.Size(62, 20);
+            this.lbMaTheBanDoc.TabIndex = 7;
+            this.lbMaTheBanDoc.Text = "Mã thẻ:";
             // 
             // panel2
             // 
@@ -131,6 +131,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(854, 372);
             this.panel2.TabIndex = 19;
+            // 
+            // lbTimSachTheoMa
+            // 
+            this.lbTimSachTheoMa.AutoSize = true;
+            this.lbTimSachTheoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimSachTheoMa.Location = new System.Drawing.Point(7, 61);
+            this.lbTimSachTheoMa.Name = "lbTimSachTheoMa";
+            this.lbTimSachTheoMa.Size = new System.Drawing.Size(73, 20);
+            this.lbTimSachTheoMa.TabIndex = 22;
+            this.lbTimSachTheoMa.Text = "Mã sách:";
+            // 
+            // txbTimSachTheoMa
+            // 
+            this.txbTimSachTheoMa.Location = new System.Drawing.Point(90, 61);
+            this.txbTimSachTheoMa.Name = "txbTimSachTheoMa";
+            this.txbTimSachTheoMa.Size = new System.Drawing.Size(262, 20);
+            this.txbTimSachTheoMa.TabIndex = 21;
+            this.txbTimSachTheoMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTimSachTheoMa_KeyDown);
+            // 
+            // btnTaoPhieuMuon
+            // 
+            this.btnTaoPhieuMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoPhieuMuon.Location = new System.Drawing.Point(697, 18);
+            this.btnTaoPhieuMuon.Name = "btnTaoPhieuMuon";
+            this.btnTaoPhieuMuon.Size = new System.Drawing.Size(136, 63);
+            this.btnTaoPhieuMuon.TabIndex = 20;
+            this.btnTaoPhieuMuon.Text = "Tạo phiếu mượn";
+            this.btnTaoPhieuMuon.UseVisualStyleBackColor = true;
+            this.btnTaoPhieuMuon.Click += new System.EventHandler(this.btnTaoPhieuMuon_Click);
             // 
             // panel4
             // 
@@ -224,47 +253,20 @@
             // panel3
             // 
             this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.pnDanhSachSachDangMuon);
+            this.panel3.Controls.Add(this.pnDanhSachSachMuon);
             this.panel3.Location = new System.Drawing.Point(4, 140);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(838, 225);
             this.panel3.TabIndex = 18;
             // 
-            // pnDanhSachSachDangMuon
+            // pnDanhSachSachMuon
             // 
-            this.pnDanhSachSachDangMuon.AutoSize = true;
-            this.pnDanhSachSachDangMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnDanhSachSachDangMuon.Location = new System.Drawing.Point(3, 3);
-            this.pnDanhSachSachDangMuon.Name = "pnDanhSachSachDangMuon";
-            this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 273);
-            this.pnDanhSachSachDangMuon.TabIndex = 19;
-            // 
-            // btnTaoPhieuMuon
-            // 
-            this.btnTaoPhieuMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoPhieuMuon.Location = new System.Drawing.Point(697, 18);
-            this.btnTaoPhieuMuon.Name = "btnTaoPhieuMuon";
-            this.btnTaoPhieuMuon.Size = new System.Drawing.Size(136, 63);
-            this.btnTaoPhieuMuon.TabIndex = 20;
-            this.btnTaoPhieuMuon.Text = "Tạo phiếu mượn";
-            this.btnTaoPhieuMuon.UseVisualStyleBackColor = true;
-            // 
-            // lbTimSachTheoMa
-            // 
-            this.lbTimSachTheoMa.AutoSize = true;
-            this.lbTimSachTheoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimSachTheoMa.Location = new System.Drawing.Point(7, 61);
-            this.lbTimSachTheoMa.Name = "lbTimSachTheoMa";
-            this.lbTimSachTheoMa.Size = new System.Drawing.Size(73, 20);
-            this.lbTimSachTheoMa.TabIndex = 22;
-            this.lbTimSachTheoMa.Text = "Mã sách:";
-            // 
-            // txbTimSachTheoMa
-            // 
-            this.txbTimSachTheoMa.Location = new System.Drawing.Point(111, 61);
-            this.txbTimSachTheoMa.Name = "txbTimSachTheoMa";
-            this.txbTimSachTheoMa.Size = new System.Drawing.Size(262, 20);
-            this.txbTimSachTheoMa.TabIndex = 21;
+            this.pnDanhSachSachMuon.AutoSize = true;
+            this.pnDanhSachSachMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnDanhSachSachMuon.Location = new System.Drawing.Point(3, 3);
+            this.pnDanhSachSachMuon.Name = "pnDanhSachSachMuon";
+            this.pnDanhSachSachMuon.Size = new System.Drawing.Size(823, 273);
+            this.pnDanhSachSachMuon.TabIndex = 19;
             // 
             // frmPhieuMuon
             // 
@@ -274,6 +276,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmPhieuMuon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu mượn";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -291,10 +294,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txbCMNDBanDoc;
+        private System.Windows.Forms.TextBox txbMaTheBanDoc;
         private System.Windows.Forms.Label lbTenBanDoc;
         private System.Windows.Forms.TextBox txbTenBanDoc;
-        private System.Windows.Forms.Label lbCMNDBanDoc;
+        private System.Windows.Forms.Label lbMaTheBanDoc;
         private System.Windows.Forms.Label lbThongTinBanDoc;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnTaoPhieuMuon;
@@ -307,7 +310,7 @@
         private System.Windows.Forms.CheckBox chkChonSach;
         private System.Windows.Forms.Label lbDanhSachSachMuon;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel pnDanhSachSachDangMuon;
+        private System.Windows.Forms.Panel pnDanhSachSachMuon;
         private System.Windows.Forms.Label lbTimSachTheoMa;
         private System.Windows.Forms.TextBox txbTimSachTheoMa;
     }

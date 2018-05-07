@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLiThuVienBUS;
+using QuanLiThuVienDTO;
 
 namespace QuanLiThuVienGUI
 {
@@ -15,6 +17,18 @@ namespace QuanLiThuVienGUI
         public frmNhapMaThe()
         {
             InitializeComponent();
+        }
+
+
+        private void txbMaTheBanDoc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                QuanLiBanDocBUS quanLiBanDoc = new QuanLiBanDocBUS();
+                frmPhieuMuon f = new frmPhieuMuon(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text,"")[0]);
+                f.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

@@ -109,6 +109,9 @@
     <EmbeddedResource Include="frmManHinhChinh.resx">
       <DependentUpon>frmManHinhChinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapMaThe.resx">
+      <DependentUpon>frmNhapMaThe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuMuon.resx">
       <DependentUpon>frmPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>

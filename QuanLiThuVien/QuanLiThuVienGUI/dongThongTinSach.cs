@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLiThuVienDTO;
 
 namespace QuanLiThuVienGUI
 {
@@ -17,7 +18,18 @@ namespace QuanLiThuVienGUI
             InitializeComponent();
         }
 
-        public void changeEnable(bool var)
+        public dongThongTinSach(sachDTO sach)
+        {
+            InitializeComponent();
+            chkChonSach.CheckState = CheckState.Checked;
+            lbMaSach.Text = sach.Masach.ToString();
+            lbTenSach.Text = sach.Tensach;
+            dtpNgayMuonSach.Value = DateTime.Now;
+            cbTinhTrangSach.Text = "Có sẵn";
+            changeEnable_CbTinhTrangSach(false);
+        }
+
+        public void changeEnable_CbTinhTrangSach(bool var)
         {
             this.cbTinhTrangSach.Enabled = var;
         }

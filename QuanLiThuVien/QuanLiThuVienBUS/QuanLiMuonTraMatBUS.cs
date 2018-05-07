@@ -8,7 +8,7 @@ using QuanLiThuVienDTO;
 
 namespace QuanLiThuVienBUS
 {
-    class QuanLiMuonTraMatBUS
+    public class QuanLiMuonTraMatBUS
     {
         public QuanLiMuonTraMatBUS()
         {
@@ -88,7 +88,7 @@ namespace QuanLiThuVienBUS
         /// <returns></returns>
         public bool TraSach(docgiaDTO bandoc, List<sachDTO> sachs)
         {
-
+            return false;
         }
 
     }

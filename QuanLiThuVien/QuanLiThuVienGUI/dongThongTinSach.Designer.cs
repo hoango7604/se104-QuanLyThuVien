@@ -139,7 +139,7 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox chkChonSach;
+        public System.Windows.Forms.CheckBox chkChonSach;
         private System.Windows.Forms.Label lbMaSach;
         private System.Windows.Forms.Label lbTenSach;
         private System.Windows.Forms.Panel panel1;
