@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace QuanLiThuVienDAL
 {
-    class ctptDAL
+    public class ctptDAL
     {
 
         
