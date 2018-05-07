@@ -47,8 +47,6 @@
             this.lbTheLoaiSach = new System.Windows.Forms.Label();
             this.lbTacGiaSach = new System.Windows.Forms.Label();
             this.lbNhaXuatBanSach = new System.Windows.Forms.Label();
-            this.btnHuyCapNhatBanDoc = new System.Windows.Forms.Button();
-            this.btnCapNhatBanDoc = new System.Windows.Forms.Button();
             this.lbThongTinSach = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,12 +71,10 @@
             this.panel1.Controls.Add(this.lbTheLoaiSach);
             this.panel1.Controls.Add(this.lbTacGiaSach);
             this.panel1.Controls.Add(this.lbNhaXuatBanSach);
-            this.panel1.Controls.Add(this.btnHuyCapNhatBanDoc);
-            this.panel1.Controls.Add(this.btnCapNhatBanDoc);
             this.panel1.Controls.Add(this.lbThongTinSach);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 327);
+            this.panel1.Size = new System.Drawing.Size(845, 290);
             this.panel1.TabIndex = 18;
             // 
             // cbTinhTrangSach
@@ -102,6 +98,7 @@
             // 
             // txbGiaTriSach
             // 
+            this.txbGiaTriSach.Enabled = false;
             this.txbGiaTriSach.Location = new System.Drawing.Point(545, 206);
             this.txbGiaTriSach.Name = "txbGiaTriSach";
             this.txbGiaTriSach.Size = new System.Drawing.Size(294, 20);
@@ -139,6 +136,7 @@
             // 
             // txbNamXuatBanSach
             // 
+            this.txbNamXuatBanSach.Enabled = false;
             this.txbNamXuatBanSach.Location = new System.Drawing.Point(545, 155);
             this.txbNamXuatBanSach.Name = "txbNamXuatBanSach";
             this.txbNamXuatBanSach.Size = new System.Drawing.Size(294, 20);
@@ -146,6 +144,7 @@
             // 
             // txbNhaXuatBanSach
             // 
+            this.txbNhaXuatBanSach.Enabled = false;
             this.txbNhaXuatBanSach.Location = new System.Drawing.Point(545, 59);
             this.txbNhaXuatBanSach.Name = "txbNhaXuatBanSach";
             this.txbNhaXuatBanSach.Size = new System.Drawing.Size(294, 20);
@@ -153,6 +152,7 @@
             // 
             // txbTacGiaSach
             // 
+            this.txbTacGiaSach.Enabled = false;
             this.txbTacGiaSach.Location = new System.Drawing.Point(108, 204);
             this.txbTacGiaSach.Name = "txbTacGiaSach";
             this.txbTacGiaSach.Size = new System.Drawing.Size(280, 20);
@@ -160,6 +160,7 @@
             // 
             // cbTheLoaiSach
             // 
+            this.cbTheLoaiSach.Enabled = false;
             this.cbTheLoaiSach.FormattingEnabled = true;
             this.cbTheLoaiSach.Location = new System.Drawing.Point(108, 155);
             this.cbTheLoaiSach.Name = "cbTheLoaiSach";
@@ -168,6 +169,7 @@
             // 
             // txbMaSach
             // 
+            this.txbMaSach.Enabled = false;
             this.txbMaSach.Location = new System.Drawing.Point(108, 108);
             this.txbMaSach.Name = "txbMaSach";
             this.txbMaSach.Size = new System.Drawing.Size(280, 20);
@@ -195,6 +197,7 @@
             // 
             // txbTenSach
             // 
+            this.txbTenSach.Enabled = false;
             this.txbTenSach.Location = new System.Drawing.Point(108, 61);
             this.txbTenSach.Name = "txbTenSach";
             this.txbTenSach.Size = new System.Drawing.Size(280, 20);
@@ -240,28 +243,6 @@
             this.lbNhaXuatBanSach.TabIndex = 32;
             this.lbNhaXuatBanSach.Text = "Nhà xuất bản:";
             // 
-            // btnHuyCapNhatBanDoc
-            // 
-            this.btnHuyCapNhatBanDoc.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuyCapNhatBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnHuyCapNhatBanDoc.Location = new System.Drawing.Point(757, 286);
-            this.btnHuyCapNhatBanDoc.Name = "btnHuyCapNhatBanDoc";
-            this.btnHuyCapNhatBanDoc.Size = new System.Drawing.Size(82, 38);
-            this.btnHuyCapNhatBanDoc.TabIndex = 10;
-            this.btnHuyCapNhatBanDoc.Text = "Hủy";
-            this.btnHuyCapNhatBanDoc.UseVisualStyleBackColor = true;
-            // 
-            // btnCapNhatBanDoc
-            // 
-            this.btnCapNhatBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCapNhatBanDoc.Location = new System.Drawing.Point(669, 286);
-            this.btnCapNhatBanDoc.Name = "btnCapNhatBanDoc";
-            this.btnCapNhatBanDoc.Size = new System.Drawing.Size(82, 38);
-            this.btnCapNhatBanDoc.TabIndex = 9;
-            this.btnCapNhatBanDoc.Text = "Cập nhật";
-            this.btnCapNhatBanDoc.UseVisualStyleBackColor = true;
-            this.btnCapNhatBanDoc.Click += new System.EventHandler(this.btnCapNhatBanDoc_Click);
-            // 
             // lbThongTinSach
             // 
             this.lbThongTinSach.AutoSize = true;
@@ -275,18 +256,16 @@
             // 
             // frmThongTinSach
             // 
-            this.AcceptButton = this.btnCapNhatBanDoc;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnHuyCapNhatBanDoc;
-            this.ClientSize = new System.Drawing.Size(869, 351);
+            this.ClientSize = new System.Drawing.Size(869, 310);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmThongTinSach";
+            this.Text = "Thông tin sách";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -296,8 +275,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnHuyCapNhatBanDoc;
-        private System.Windows.Forms.Button btnCapNhatBanDoc;
         private System.Windows.Forms.Label lbThongTinSach;
         private System.Windows.Forms.ComboBox cbTinhTrangSach;
         private System.Windows.Forms.Label lbTinhTrangSach;

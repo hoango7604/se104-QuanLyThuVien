@@ -44,11 +44,11 @@ namespace QuanLiThuVienBUS
             //kiểm tra số luọng sách mươn
             if (cacSachdangmuon.Count  + sachs.Count >  cacQuyDinh[0].Sosachduocmuon )
             {
-                BUS_notification.mess = "Không Thể mượn sách vượt quá số lưỡn cho phép";
+                BUS_notification.mess = "Không Thể mượn sách vượt quá số lượng cho phép";
                 return false;
             }
 
-            //thêm phiế mượn
+            //thêm phiếu mượn
             phieumuonDTO phieumuonDTO = new phieumuonDTO();
             phieumuonDTO.Mapm = phieuMuon.Count + 1;
             phieumuonDTO.Mathe = bandoc.MaThe;

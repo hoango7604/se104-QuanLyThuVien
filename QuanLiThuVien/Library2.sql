@@ -28,7 +28,7 @@ CREATE TABLE sach (
   ngaynhap DATETIME NOT NULL ,
   ngayxb DATETIME NOT NULL , 
   giatri INT NOT	NULL ,
-  trangthai INT NOT NULL
+  trangthai INT NOT NULL -- 0: dang muon; 1: chua muon 2: mat
  
 )
 GO

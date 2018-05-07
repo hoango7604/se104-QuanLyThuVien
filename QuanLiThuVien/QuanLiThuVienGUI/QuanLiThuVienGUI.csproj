@@ -59,6 +59,24 @@
     <Compile Include="frmManHinhChinh.Designer.cs">
       <DependentUpon>frmManHinhChinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNhapMaThe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapMaThe.Designer.cs">
+      <DependentUpon>frmNhapMaThe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuMuon.Designer.cs">
+      <DependentUpon>frmPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuTra.Designer.cs">
+      <DependentUpon>frmPhieuTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThemBanDoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManHinhChinh.resx">
       <DependentUpon>frmManHinhChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuMuon.resx">
+      <DependentUpon>frmPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuTra.resx">
+      <DependentUpon>frmPhieuTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemBanDoc.resx">
       <DependentUpon>frmThemBanDoc.cs</DependentUpon>
