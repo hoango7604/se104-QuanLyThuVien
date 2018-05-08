@@ -1,3 +1,4 @@
+﻿
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,7 +59,7 @@ namespace QuanLiThuVienDAL
             string query = string.Format("update [giahan] set solangiahan=@solangiahan , masach=@masach");
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@solangiahan", SqlDbType.Int);
-            param[0].Value = ghDTO.Solangiahan;
+            param[0].Value = masach;
             param[1] = new SqlParameter("@masach", SqlDbType.Int);
             param[1].Value = masach;
 
@@ -75,7 +76,7 @@ namespace QuanLiThuVienDAL
             string query = string.Format("insert into [giahan] values (@solangiahan,@masach)");
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@solangiahan", SqlDbType.Int);
-            param[0].Value = ghDTO.Solangiahan;
+            param[0].Value = masach;
             param[1] = new SqlParameter("@masach", SqlDbType.Int);
             param[1].Value = masach;
 

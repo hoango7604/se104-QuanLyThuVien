@@ -91,7 +91,7 @@ namespace QuanLiThuVienBUS
             List<sachDTO> list = new List<sachDTO>();
             List<sachDTO> result = new List<sachDTO>();
            
-            string tensach = sDTO.Tensach;
+            string tensach = sDTO.Tensach; 
             string theloai = sDTO.Theloai;
             string tacgia = sDTO.Tacgia;
             string nhaxuatban = sDTO.Nxb;
