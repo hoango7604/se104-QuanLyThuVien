@@ -46,6 +46,7 @@
     <Compile Include="ctpmDAL.cs" />
     <Compile Include="ctptDAL.cs" />
     <Compile Include="docgiaDAL.cs" />
+    <Compile Include="giahanDAL.cs" />
     <Compile Include="phieumuonDAL.cs" />
     <Compile Include="phieutraDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

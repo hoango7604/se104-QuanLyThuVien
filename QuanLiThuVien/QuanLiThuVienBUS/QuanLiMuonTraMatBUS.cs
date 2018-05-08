@@ -69,6 +69,7 @@ namespace QuanLiThuVienBUS
                 return false;
             }
 
+            //thêm chi tiết phiếu mượn
             foreach (sachDTO sach in sachs)
             {
                 ctpmDTO ctpm = new ctpmDTO();
@@ -84,6 +85,11 @@ namespace QuanLiThuVienBUS
                     QuanLiSachBUS sachBUS = new QuanLiSachBUS();
                     sachBUS.MuonSach(sach);
                 }
+
+                //thêm ngày cho phép mượn sách
+                GiaHanSachBUS ghsax = new GiaHanSachBUS();
+                ghsax.TaoThoigianmuonsach(sach.Masach);
+
             }
             return true;
 
@@ -127,21 +133,34 @@ namespace QuanLiThuVienBUS
 
             foreach (sachDTO saxtra in sachtra )
             {
-                /// kiễm tra quá hạn
+               
+                // kiễm tra quá hạn , tính tiền phạt khi trễ, mất sách
                 DateTime ngaymuonsach = LayDatetimeDcMuonCuaSach(saxtra.Masach, sachdangmuon, danhsachngaymuonsach);
                 int songaydamuon = SoNgayMuon(ngaymuonsach, DateTime.Now);
                 int tienphatsachnay = 0;
+                if (saxtra.Trangthai != (int)TrangThaiSach.DaMat)
+                {
+                    tienphatsachnay = saxtra.Giatri;
+                }
+                else
                 if (songaydamuon > 14)
                 {
                     tienphatsachnay = (songaydamuon - 14) * 5000;
                 }
                 tienphatkinay += tienphatsachnay;
 
-                ///quẳng sách lại zô kho
-                QuanLiSachBUS qlsachBUS = new QuanLiSachBUS();
-                qlsachBUS.Travekho(saxtra);
 
-                ///thêm chi tiết phiếu trả
+                //quẳng sách lại zô kho
+                QuanLiSachBUS qlsachBUS = new QuanLiSachBUS();
+                if (saxtra.Trangthai != (int)TrangThaiSach.DaMat)
+                {
+                    qlsachBUS.Travekho(saxtra);
+                }
+                else qlsachBUS.MatSach(saxtra);
+               
+
+
+                //thêm chi tiết phiếu trả
                 ctptDTO ctptra = new ctptDTO();
                 ctptra.Mapt = phieutra.Mapt;
                 ctptra.Masach = saxtra.Masach;
@@ -150,12 +169,17 @@ namespace QuanLiThuVienBUS
 
                 ctptDAL.themCTPT(ctptra);
                 danhsachchitietphieutra.Add(ctptra);
+
+                //xóa ngày chi phéo giữ sách
+                GiaHanSachBUS ghsax = new GiaHanSachBUS();
+                ghsax.XoaThoiGianMuonSach(saxtra.Masach);
             }
 
+            //Thêm phiếu trả
             phieutra.Tienphatkinay = tienphatkinay;
             phieutraDAL.themPhieuTra(phieutra);
 
-            ///thêm nợ vào bạn đọc
+            //thêm nợ vào bạn đọc
             bandoc.Tongtienno += tienphatkinay;
             banDocDAL.suaDocGia(bandoc, bandoc.MaThe);
 
@@ -184,24 +208,5 @@ namespace QuanLiThuVienBUS
         #endregion
 
 
-        #region Mất sách
-
-        public bool Matsach(docgiaDTO bandoc,sachDTO sachmat)
-        {
-            docgiaDAL BanDocDAL = new docgiaDAL();
-            QuanLiSachBUS qlSachBuss = new QuanLiSachBUS();
-
-
-            bandoc.Tongtienno += sachmat.Giatri;
-            BanDocDAL.suaDocGia(bandoc, bandoc.MaThe);
-
-            if (qlSachBuss.MatSach(sachmat))
-            {
-                return true;
-            }
-            BUS_notification.mess = "Lỗi khi báo mất sách";
-            return false;
-        }
-        #endregion
     }
 }

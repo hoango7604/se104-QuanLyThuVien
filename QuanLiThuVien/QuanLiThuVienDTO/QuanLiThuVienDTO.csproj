@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="giahanDTO.cs" />
     <Compile Include="loaidocgiaDTO.cs" />
     <Compile Include="loaisachDTO.cs" />
     <Compile Include="ctpmDTO.cs" />

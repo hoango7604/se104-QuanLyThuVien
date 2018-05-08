@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_notification.cs" />
+    <Compile Include="GiaHanSachBUS.cs" />
     <Compile Include="Levenshtein_Distance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLiBanDocBUS.cs" />
