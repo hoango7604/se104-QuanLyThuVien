@@ -26,7 +26,7 @@ namespace QuanLiThuVienGUI
             InitializeComponent();
             this.docgia = docgia;
             initThongTinBanDoc(docgia);
-            initDanhSachSachDangMuon(docgia); 
+            initDanhSachSachDangMuon(docgia);
         }
 
         private void initDanhSachSachDangMuon(docgiaDTO docgia)
@@ -82,12 +82,17 @@ namespace QuanLiThuVienGUI
 
         private void btnLapPhieuTra_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnLapPhieuMuon_Click(object sender, EventArgs e)
         {
             frmPhieuMuon f = new frmPhieuMuon(docgia);
-            f.ShowDialog();
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                pnDanhSachSachDangMuon.Controls.Clear();
+                initDanhSachSachDangMuon(docgia);
+            }
         }
     }
 }

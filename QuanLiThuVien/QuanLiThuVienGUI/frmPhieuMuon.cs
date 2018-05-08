@@ -26,7 +26,7 @@ namespace QuanLiThuVienGUI
             InitializeComponent();
             this.docgia = docgia;
             initFormPhieuMuon(docgia);
-            //LoadList(docgia);
+            this.DialogResult = DialogResult.Cancel;
 
         }
 
@@ -80,6 +80,7 @@ namespace QuanLiThuVienGUI
             if (quanLiMuonTraMat.MuonSach(docgia, listSachMuon))
             {
                 MessageBox.Show("Tạo phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK);
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else

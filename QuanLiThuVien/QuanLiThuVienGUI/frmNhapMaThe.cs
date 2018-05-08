@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLiThuVienBUS;
 using QuanLiThuVienDTO;
+using QuanLiThuVienDAL;
 
 namespace QuanLiThuVienGUI
 {
@@ -22,25 +23,38 @@ namespace QuanLiThuVienGUI
             this.codeMuonTra = codeMuonTra;
         }
 
-
         private void txbMaTheBanDoc_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                QuanLiBanDocBUS quanLiBanDoc = new QuanLiBanDocBUS();
-                QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
-                if (codeMuonTra == 0)
+                if (txbMaTheBanDoc.Text != "" && new docgiaDAL().isDocGia(int.Parse(txbMaTheBanDoc.Text)))
                 {
-                    frmPhieuMuon f = new frmPhieuMuon(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0]);
-                    f.ShowDialog();
+                    QuanLiBanDocBUS quanLiBanDoc = new QuanLiBanDocBUS();
+                    QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
+                    if (codeMuonTra == 0)
+                    {
+                        frmPhieuMuon f = new frmPhieuMuon(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0]);
+                        f.ShowDialog();
+                    }
+                    else
+                    {
+                        frmThongTinBanDoc f = new frmThongTinBanDoc(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0]);
+                        f.ShowDialog();
+                    }
+                    this.Close();
                 }
                 else
                 {
-                    //frmPhieuTra f = new frmPhieuTra(quanLiBanDoc.TimDocGia(txbMaTheBanDoc.Text, "")[0], );
-                    //f.Show();
+                    if (txbMaTheBanDoc.Text == "")
+                    {
+                        MessageBox.Show("Vui lòng nhập mã bạn đọc", "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn đọc không tồn tại", "Thông báo", MessageBoxButtons.OK);
+                    }
                 }
-                this.Close();
-            }
+            }    
         }
     }
 }
