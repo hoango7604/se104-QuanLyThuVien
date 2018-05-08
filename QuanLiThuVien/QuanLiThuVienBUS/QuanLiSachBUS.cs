@@ -304,7 +304,7 @@ namespace QuanLiThuVienBUS
 
             if (!docGiaDAL.isDocGia(docgia.MaThe))
             {
-                BUS_notification.mess = "Khôn tồn tại đọc giả";
+                BUS_notification.mess = "Không tồn tại đọc giả";
                 return new List<sachDTO>();
             }
 

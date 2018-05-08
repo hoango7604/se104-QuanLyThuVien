@@ -15,13 +15,34 @@ namespace QuanLiThuVienGUI
     public partial class frmThongTinBanDoc : Form
     {
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
+        QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
         docgiaDTO docgia;
+        List<sachDTO> listSachDocGiaDangMuon = new List<sachDTO>();
+        List<dongThongTinSach> listDongThongTinSach = new List<dongThongTinSach>();
 
         public frmThongTinBanDoc(docgiaDTO docgia)
         {
             InitializeComponent();
             this.docgia = docgia;
             initThongTinBanDoc(docgia);
+            initDanhSachSachDangMuon(docgia);
+        }
+
+        private void initDanhSachSachDangMuon(docgiaDTO docgia)
+        {
+            listSachDocGiaDangMuon = quanLiSachBUS.DanhSachDocGiaDangMuon(docgia);
+            foreach (sachDTO sach in listSachDocGiaDangMuon)
+            {
+                initDongThongTinSach(sach);
+            }
+        }
+
+        private void initDongThongTinSach(sachDTO sach)
+        {
+            dongThongTinSach dongThongTin = new dongThongTinSach(sach);
+            listDongThongTinSach.Add(dongThongTin);
+            dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
+            pnDanhSachSachDangMuon.Controls.Add(dongThongTin);
         }
 
         private void initThongTinBanDoc(docgiaDTO docgia)

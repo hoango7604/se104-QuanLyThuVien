@@ -145,7 +145,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtpNgayMuonSach;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cbTinhTrangSach;
+        public System.Windows.Forms.ComboBox cbTinhTrangSach;
         private System.Windows.Forms.Panel panel3;
     }
 }

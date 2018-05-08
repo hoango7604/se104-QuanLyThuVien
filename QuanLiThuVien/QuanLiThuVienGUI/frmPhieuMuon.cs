@@ -26,7 +26,7 @@ namespace QuanLiThuVienGUI
             InitializeComponent();
             this.docgia = docgia;
             initFormPhieuMuon(docgia);
-            LoadList(docgia);
+            //LoadList(docgia);
 
         }
 
@@ -47,7 +47,7 @@ namespace QuanLiThuVienGUI
 
         private void txbTimSachTheoMa_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && txbTimSachTheoMa.Text != "")
             {
                 sachDTO sach = quanLiSach.TimSach(new sachDTO(int.Parse(txbTimSachTheoMa.Text), "", "", "", "", DateTime.Now, DateTime.Now, 0, 0))[0];
                 listSach.Add(sach);
