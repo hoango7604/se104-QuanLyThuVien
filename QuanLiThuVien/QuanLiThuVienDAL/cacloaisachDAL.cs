@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace QuanLiThuVienDAL
 {
-    class cacloaisachDAL
+    public class cacloaisachDAL
     {
         private dbConnection.dbconnection conn;
 
@@ -38,12 +38,31 @@ namespace QuanLiThuVienDAL
             {
                 loaisachDTO loaisach = new loaisachDTO();
 
-                loaisach.Theloaisach =dr["loaisach"].ToString();
+                loaisach.Theloaisach = dr["loaisach"].ToString();
 
                 list.Add(loaisach);
             }
 
             return true;
+        }
+
+        public DataTable LayDSLoaiSachDuocQuanTam(DateTime thangThongKe)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string query = string.Format("select s.theloai, COUNT(*) as SoLuong from(phieumuon pm inner join ct_phieumuon ctpm on pm.mapm = ctpm.mapm) inner join sach s on s.masach = ctpm.masach where MONTH(pm.ngaymuon) = {0} and YEAR(pm.ngaymuon) = {1} group by(s.theloai) order by SoLuong desc ", thangThongKe.Month, thangThongKe.Year);
+                SqlDataAdapter da = new SqlDataAdapter(query, conn.openConnection());
+              
+                da.Fill(dt);
+
+
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
