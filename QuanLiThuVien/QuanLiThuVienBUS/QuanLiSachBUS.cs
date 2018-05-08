@@ -28,7 +28,7 @@ namespace QuanLiThuVienBUS
         /// Đưa ra danh sách các sách khả dụng trong thư viện
         /// </summary>
         /// <returns></returns>
-        public List<sachDTO> DanhSachSach()
+         public List<sachDTO> DanhSachSachCoSan()
         {
             List<sachDTO> list = new List<sachDTO>();
             List<sachDTO> result = new List<sachDTO>();
@@ -46,6 +46,39 @@ namespace QuanLiThuVienBUS
                 return result;
             }  
             return new List<sachDTO>();
+        }
+
+        /// <summary>
+        /// Đưa ra danh sách sách bao gồm cả sách không khả dụng
+        /// </summary>
+        /// <returns></returns>
+        public List<sachDTO> DanhSachSach()
+        {
+            List<sachDTO> list = new List<sachDTO>();
+            sachDAL saxDAL = new sachDAL();
+            if (saxDAL.tatcaSach(list))
+            {
+                return list;
+            }
+            return new List<sachDTO>();
+        }
+
+        /// <summary>
+        /// Lấy thông tin sách theo mã
+        /// </summary>
+        /// <param name="Masach"></param>
+        /// <returns></returns>
+        public sachDTO Timsachtheoma(int Masach)
+        {
+            List<sachDTO> list = DanhSachSach();
+            foreach (sachDTO sach in list)
+            {
+                if (sach.Masach == Masach)
+                {
+                    return sach;
+                }
+            }
+            return new sachDTO();
         }
 
         /// <summary>
@@ -81,7 +114,7 @@ namespace QuanLiThuVienBUS
 
             sachDAL saxDAL = new sachDAL();
             sachDTO temp = new sachDTO();
-            list = DanhSachSach();
+            list = DanhSachSachCoSan();
 
             //if(masach != "")
             //if (saxDAL.isSach(sDTO.Masach,ref temp))

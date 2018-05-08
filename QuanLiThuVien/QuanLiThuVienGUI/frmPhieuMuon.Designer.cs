@@ -148,6 +148,7 @@
             this.txbTimSachTheoMa.Name = "txbTimSachTheoMa";
             this.txbTimSachTheoMa.Size = new System.Drawing.Size(262, 20);
             this.txbTimSachTheoMa.TabIndex = 21;
+            this.txbTimSachTheoMa.TextChanged += new System.EventHandler(this.txbTimSachTheoMa_TextChanged);
             this.txbTimSachTheoMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTimSachTheoMa_KeyDown);
             // 
             // btnTaoPhieuMuon

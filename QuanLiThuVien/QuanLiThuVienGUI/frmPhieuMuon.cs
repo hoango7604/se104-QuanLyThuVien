@@ -49,7 +49,7 @@ namespace QuanLiThuVienGUI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                sachDTO sach = quanLiSach.TimSach(new sachDTO(int.Parse(txbTimSachTheoMa.Text), "", "", "", "", DateTime.Now, DateTime.Now, 0, 0))[0];
+                sachDTO sach = quanLiSach.Timsachtheoma(int.Parse(txbTimSachTheoMa.Text));
                 listSach.Add(sach);
                 initDongThongTinSach(sach);
                 txbTimSachTheoMa.Clear();
@@ -98,6 +98,11 @@ namespace QuanLiThuVienGUI
         }
 
         private void pnDanhSachSachMuon_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txbTimSachTheoMa_TextChanged(object sender, EventArgs e)
         {
 
         }

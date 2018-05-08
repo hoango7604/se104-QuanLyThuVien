@@ -64,7 +64,7 @@ namespace QuanLiThuVienGUI
 
         public void loadDanhSachSach()
         {
-            listSach = quanLiSachBUS.DanhSachSach();
+            listSach = quanLiSachBUS.DanhSachSachCoSan();
             dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
         }
 
