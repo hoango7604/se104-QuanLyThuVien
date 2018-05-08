@@ -47,7 +47,6 @@
             this.thôngTinPhầnMềmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinPhầnMềmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tcManHinhChinh = new System.Windows.Forms.TabControl();
             this.tpBanDoc = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -137,10 +136,18 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnTaoPhieuThuTienPhat = new System.Windows.Forms.Button();
             this.lbDanhSachPhieuThuTienPhat = new System.Windows.Forms.Label();
+            this.tpThongKe = new System.Windows.Forms.TabPage();
+            this.btnInDanhSach = new System.Windows.Forms.Button();
+            this.btnXemDanhSach = new System.Windows.Forms.Button();
+            this.dtpThongKe = new System.Windows.Forms.DateTimePicker();
+            this.lblThoiGian = new System.Windows.Forms.Label();
+            this.pnlLoaiThongKe = new System.Windows.Forms.Panel();
+            this.lblThongKe = new System.Windows.Forms.Label();
+            this.rdoTheLoai = new System.Windows.Forms.RadioButton();
+            this.rdoTraTre = new System.Windows.Forms.RadioButton();
+            this.dgvThongKe = new System.Windows.Forms.DataGridView();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
             this.tcManHinhChinh.SuspendLayout();
             this.tpBanDoc.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -165,6 +172,12 @@
             this.tpPhieuThuTienPhat.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.tpThongKe.SuspendLayout();
+            this.pnlLoaiThongKe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).BeginInit();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -327,25 +340,6 @@
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
-            // toolStripContainer1
-            // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.AutoScroll = true;
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.tcManHinhChinh);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(970, 549);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(970, 573);
-            this.toolStripContainer1.TabIndex = 2;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
-            // 
             // tcManHinhChinh
             // 
             this.tcManHinhChinh.Controls.Add(this.tpBanDoc);
@@ -353,6 +347,7 @@
             this.tcManHinhChinh.Controls.Add(this.tpPhieuMuon);
             this.tcManHinhChinh.Controls.Add(this.tpPhieuTra);
             this.tcManHinhChinh.Controls.Add(this.tpPhieuThuTienPhat);
+            this.tcManHinhChinh.Controls.Add(this.tpThongKe);
             this.tcManHinhChinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcManHinhChinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcManHinhChinh.ItemSize = new System.Drawing.Size(150, 50);
@@ -397,7 +392,6 @@
             this.dgvThongTinBanDoc.Size = new System.Drawing.Size(475, 480);
             this.dgvThongTinBanDoc.TabIndex = 0;
             this.dgvThongTinBanDoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinBanDoc_CellClick);
-            this.dgvThongTinBanDoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinBanDoc_CellContentClick);
             // 
             // panel1
             // 
@@ -1232,6 +1226,129 @@
             this.lbDanhSachPhieuThuTienPhat.TabIndex = 0;
             this.lbDanhSachPhieuThuTienPhat.Text = "Danh sách các phiếu thu tiền phạt";
             // 
+            // tpThongKe
+            // 
+            this.tpThongKe.Controls.Add(this.btnInDanhSach);
+            this.tpThongKe.Controls.Add(this.btnXemDanhSach);
+            this.tpThongKe.Controls.Add(this.dtpThongKe);
+            this.tpThongKe.Controls.Add(this.lblThoiGian);
+            this.tpThongKe.Controls.Add(this.pnlLoaiThongKe);
+            this.tpThongKe.Controls.Add(this.dgvThongKe);
+            this.tpThongKe.Location = new System.Drawing.Point(4, 54);
+            this.tpThongKe.Name = "tpThongKe";
+            this.tpThongKe.Padding = new System.Windows.Forms.Padding(3);
+            this.tpThongKe.Size = new System.Drawing.Size(962, 491);
+            this.tpThongKe.TabIndex = 5;
+            this.tpThongKe.Text = "  Thống kê  ";
+            this.tpThongKe.UseVisualStyleBackColor = true;
+            // 
+            // btnInDanhSach
+            // 
+            this.btnInDanhSach.Location = new System.Drawing.Point(751, 209);
+            this.btnInDanhSach.Name = "btnInDanhSach";
+            this.btnInDanhSach.Size = new System.Drawing.Size(203, 68);
+            this.btnInDanhSach.TabIndex = 6;
+            this.btnInDanhSach.Text = "In Danh Sach";
+            this.btnInDanhSach.UseVisualStyleBackColor = true;
+            // 
+            // btnXemDanhSach
+            // 
+            this.btnXemDanhSach.Location = new System.Drawing.Point(519, 209);
+            this.btnXemDanhSach.Name = "btnXemDanhSach";
+            this.btnXemDanhSach.Size = new System.Drawing.Size(216, 68);
+            this.btnXemDanhSach.TabIndex = 5;
+            this.btnXemDanhSach.Text = "Xem Danh Sách";
+            this.btnXemDanhSach.UseVisualStyleBackColor = true;
+            this.btnXemDanhSach.Click += new System.EventHandler(this.btnXemDanhSach_Click);
+            // 
+            // dtpThongKe
+            // 
+            this.dtpThongKe.CustomFormat = "MM/yyyy";
+            this.dtpThongKe.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThongKe.Location = new System.Drawing.Point(722, 149);
+            this.dtpThongKe.Name = "dtpThongKe";
+            this.dtpThongKe.Size = new System.Drawing.Size(200, 29);
+            this.dtpThongKe.TabIndex = 4;
+            // 
+            // lblThoiGian
+            // 
+            this.lblThoiGian.AutoSize = true;
+            this.lblThoiGian.Location = new System.Drawing.Point(536, 154);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(148, 24);
+            this.lblThoiGian.TabIndex = 3;
+            this.lblThoiGian.Text = "Chọn Thời Gian:";
+            // 
+            // pnlLoaiThongKe
+            // 
+            this.pnlLoaiThongKe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLoaiThongKe.Controls.Add(this.lblThongKe);
+            this.pnlLoaiThongKe.Controls.Add(this.rdoTheLoai);
+            this.pnlLoaiThongKe.Controls.Add(this.rdoTraTre);
+            this.pnlLoaiThongKe.Location = new System.Drawing.Point(519, 6);
+            this.pnlLoaiThongKe.Name = "pnlLoaiThongKe";
+            this.pnlLoaiThongKe.Size = new System.Drawing.Size(435, 117);
+            this.pnlLoaiThongKe.TabIndex = 1;
+            // 
+            // lblThongKe
+            // 
+            this.lblThongKe.AutoSize = true;
+            this.lblThongKe.Location = new System.Drawing.Point(16, 10);
+            this.lblThongKe.Name = "lblThongKe";
+            this.lblThongKe.Size = new System.Drawing.Size(138, 24);
+            this.lblThongKe.TabIndex = 2;
+            this.lblThongKe.Text = "Thống kê theo:";
+            // 
+            // rdoTheLoai
+            // 
+            this.rdoTheLoai.AutoSize = true;
+            this.rdoTheLoai.Location = new System.Drawing.Point(56, 71);
+            this.rdoTheLoai.Name = "rdoTheLoai";
+            this.rdoTheLoai.Size = new System.Drawing.Size(322, 28);
+            this.rdoTheLoai.TabIndex = 1;
+            this.rdoTheLoai.Text = "Thể loại sách đang được quan tâm";
+            this.rdoTheLoai.UseVisualStyleBackColor = true;
+            // 
+            // rdoTraTre
+            // 
+            this.rdoTraTre.AutoSize = true;
+            this.rdoTraTre.Checked = true;
+            this.rdoTraTre.Location = new System.Drawing.Point(56, 37);
+            this.rdoTraTre.Name = "rdoTraTre";
+            this.rdoTraTre.Size = new System.Drawing.Size(122, 28);
+            this.rdoTraTre.TabIndex = 0;
+            this.rdoTraTre.TabStop = true;
+            this.rdoTraTre.Text = "Sách trả trễ";
+            this.rdoTraTre.UseVisualStyleBackColor = true;
+            // 
+            // dgvThongKe
+            // 
+            this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongKe.Location = new System.Drawing.Point(6, 6);
+            this.dgvThongKe.Name = "dgvThongKe";
+            this.dgvThongKe.ReadOnly = true;
+            this.dgvThongKe.Size = new System.Drawing.Size(507, 477);
+            this.dgvThongKe.TabIndex = 0;
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.tcManHinhChinh);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(970, 549);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(970, 573);
+            this.toolStripContainer1.TabIndex = 2;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            // 
             // frmManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1247,11 +1364,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmManHinhChinh_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
             this.tcManHinhChinh.ResumeLayout(false);
             this.tpBanDoc.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -1283,6 +1395,16 @@
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.tpThongKe.ResumeLayout(false);
+            this.tpThongKe.PerformLayout();
+            this.pnlLoaiThongKe.ResumeLayout(false);
+            this.pnlLoaiThongKe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).EndInit();
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1305,30 +1427,41 @@
         private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêSáchTrảTrễToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêTìnhHìnhMượnSáchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinPhầnMềmToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinPhầnMềmToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.TabControl tcManHinhChinh;
         private System.Windows.Forms.TabPage tpBanDoc;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.DataGridView dgvThongTinBanDoc;
+        private System.Windows.Forms.TabPage tpSach;
+        private System.Windows.Forms.TabPage tpPhieuMuon;
+        private System.Windows.Forms.TabPage tpPhieuTra;
+        private System.Windows.Forms.TabPage tpPhieuThuTienPhat;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinPhầnMềmToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbTimKiemTheoTenBanDoc;
         private System.Windows.Forms.Label lbTimKiemBanDocTheoMa;
         private System.Windows.Forms.Button btnTimKiemBanDoc;
         private System.Windows.Forms.TextBox txbTimKiemTheoTenBanDoc;
         private System.Windows.Forms.TextBox txbTimKiemBanDocTheoMa;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Button btnThemBanDoc;
         private System.Windows.Forms.Button btnSuaThongTinBanDoc;
         private System.Windows.Forms.Button btnXoaBanDoc;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbTimSachTheoTacGia;
+        private System.Windows.Forms.TextBox txbTimSachTheoTacGia;
+        private System.Windows.Forms.Label lbTimSachTheoTheLoai;
+        private System.Windows.Forms.TextBox txbTimSachTheoTheLoai;
+        private System.Windows.Forms.Label lbTimSachTheoTen;
+        private System.Windows.Forms.Label lbTimSachTheoMa;
+        private System.Windows.Forms.Button btnTimSach;
+        private System.Windows.Forms.TextBox txbTimSachTheoTen;
+        private System.Windows.Forms.TextBox txbTimSachTheoMa;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Button btnThemSach;
+        private System.Windows.Forms.Button btnSuaThongTinSach;
+        private System.Windows.Forms.Button btnXoaSach;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DateTimePicker dtpNgayTaoTheBanDoc;
-        private System.Windows.Forms.TextBox txbTongTienNoBanDoc;
-        private System.Windows.Forms.Label lbNgayTaoTheBanDoc;
-        private System.Windows.Forms.Label lbTongTienNoBanDoc;
         private System.Windows.Forms.Button btnHienThongTinChiTietBanDoc;
         private System.Windows.Forms.TextBox txbDiaChiBanDoc;
         private System.Windows.Forms.DateTimePicker dtpNgaySinhBanDoc;
@@ -1342,28 +1475,7 @@
         private System.Windows.Forms.Label lbNgaySinhBanDoc;
         private System.Windows.Forms.Label lbEmailBanDoc;
         private System.Windows.Forms.Label lbDiaChiBanDoc;
-        private System.Windows.Forms.TabPage tpSach;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.DataGridView dgvThongTinSach;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lbTimSachTheoTacGia;
-        private System.Windows.Forms.TextBox txbTimSachTheoTacGia;
-        private System.Windows.Forms.Label lbTimSachTheoTheLoai;
-        private System.Windows.Forms.TextBox txbTimSachTheoTheLoai;
-        private System.Windows.Forms.Label lbTimSachTheoTen;
-        private System.Windows.Forms.Label lbTimSachTheoMa;
-        private System.Windows.Forms.Button btnTimSach;
-        private System.Windows.Forms.TextBox txbTimSachTheoTen;
-        private System.Windows.Forms.TextBox txbTimSachTheoMa;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button btnThemSach;
-        private System.Windows.Forms.Button btnSuaThongTinSach;
-        private System.Windows.Forms.Button btnXoaSach;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox cbTinhTrangSach;
-        private System.Windows.Forms.Label lbTinhTrangSach;
-        private System.Windows.Forms.Button btnHienThongTinChiTietSach;
         private System.Windows.Forms.TextBox txbGiaTriSach;
         private System.Windows.Forms.Label lbGiaTriSach;
         private System.Windows.Forms.DateTimePicker dtpNgayNhapSach;
@@ -1380,23 +1492,43 @@
         private System.Windows.Forms.Label lbTheLoaiSach;
         private System.Windows.Forms.Label lbTacGiaSach;
         private System.Windows.Forms.Label lbNhaXuatBanSach;
-        private System.Windows.Forms.TabPage tpPhieuMuon;
+        private System.Windows.Forms.Button btnHienThongTinChiTietSach;
+        private System.Windows.Forms.TabPage tpThongKe;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ListView lvDanhSachPhieuMuon;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnTaoPhieuMuon;
         private System.Windows.Forms.Label lbDanhSachPhieuMuon;
-        private System.Windows.Forms.TabPage tpPhieuTra;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ListView lvDanhSachPhieuTra;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnPhieuTra;
         private System.Windows.Forms.Label lbDanhSachPhieuTra;
-        private System.Windows.Forms.TabPage tpPhieuThuTienPhat;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ListView lvDanhSachPhieuThuTienPhat;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btnTaoPhieuThuTienPhat;
         private System.Windows.Forms.Label lbDanhSachPhieuThuTienPhat;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinPhầnMềmToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker dtpNgayTaoTheBanDoc;
+        private System.Windows.Forms.TextBox txbTongTienNoBanDoc;
+        private System.Windows.Forms.Label lbNgayTaoTheBanDoc;
+        private System.Windows.Forms.Label lbTongTienNoBanDoc;
+        private System.Windows.Forms.ComboBox cbTinhTrangSach;
+        private System.Windows.Forms.Label lbTinhTrangSach;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.DataGridView dgvThongTinBanDoc;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.DataGridView dgvThongTinSach;
+        private System.Windows.Forms.Button btnInDanhSach;
+        private System.Windows.Forms.Button btnXemDanhSach;
+        private System.Windows.Forms.DateTimePicker dtpThongKe;
+        private System.Windows.Forms.Label lblThoiGian;
+        private System.Windows.Forms.Panel pnlLoaiThongKe;
+        private System.Windows.Forms.Label lblThongKe;
+        private System.Windows.Forms.RadioButton rdoTheLoai;
+        private System.Windows.Forms.RadioButton rdoTraTre;
+        private System.Windows.Forms.DataGridView dgvThongKe;
     }
 }
