@@ -98,12 +98,14 @@ namespace QuanLiThuVienGUI
 
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmNhapMaThe f = new frmNhapMaThe(0);
+            f.ShowDialog();
         }
 
         private void tạoPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmNhapMaThe f = new frmNhapMaThe(1);
+            f.ShowDialog();
         }
 
         private void giaHạnSáchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -373,25 +375,10 @@ namespace QuanLiThuVienGUI
             txbGiaTriSach.Text = listSach[indexSach].Giatri.ToString();
             cbTinhTrangSach.Text = listSach[indexSach].Trangthai.ToString();
         }
-        //
-        //TAB THONG KE
-        //
-        private void btnXemDanhSach_Click(object sender, EventArgs e)
+
+        private void dgvThongTinBanDoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            sachtratreBUS sachtratreBUS = new sachtratreBUS();
-            thongketheloaiBUS theloaiBUS = new thongketheloaiBUS();
 
-            if(rdoTraTre.Checked)
-            {
-                DateTime thangThongKe = dtpThongKe.Value;
-
-                dgvThongKe.DataSource = sachtratreBUS.LayDSSachChuaTra(thangThongKe);
-            }
-            else if(rdoTheLoai.Checked)
-            {
-                DateTime thangThongKe = dtpThongKe.Value;
-                dgvThongKe.DataSource = theloaiBUS.layDSLoaiSachDuocQuanTam(thangThongKe);
-            }
         }
     }
 }
