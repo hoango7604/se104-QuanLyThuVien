@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace QuanLiThuVienDAL
 {
-  public    class sachDAL
+  public class sachDAL 
     {
              private dbconnection conn;
 
@@ -98,7 +98,20 @@ namespace QuanLiThuVienDAL
             DataTable dtb = new DataTable();
             dtb = conn.excuteNonQuery(query, param);
 
+            if (dtb.Rows.Count > 0)
+            {
+                DataRow dr = dtb.Rows[0];
 
+                sDTO.Masach = int.Parse(dr["masach"].ToString());
+                sDTO.Tensach = dr["tensach"].ToString();
+                sDTO.Theloai = dr["Theloai"].ToString();
+                sDTO.Tacgia = dr["tacgia"].ToString();
+                sDTO.Nxb = dr["nxb"].ToString();
+                sDTO.Ngaynhap = DateTime.Parse(dr["ngaynhap"].ToString());
+                sDTO.Ngayxb = DateTime.Parse(dr["ngayxb"].ToString());
+                sDTO.Giatri = int.Parse(dr["giatri"].ToString());
+                sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
+            }
             return sDTO; 
          
         

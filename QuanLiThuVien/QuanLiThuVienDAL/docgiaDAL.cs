@@ -68,7 +68,7 @@ namespace QuanLiThuVienDAL
             param[0].Value=mathe;
 
             DataTable dtb=new DataTable (); 
-            dtb=conn.excuteNonQuery (query,param); 
+            dtb=conn.excuteNonQuery (query,param);  
            
             
             

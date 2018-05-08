@@ -25,7 +25,7 @@ namespace QuanLiThuVienGUI
             InitializeComponent();
             this.docgia = docgia;
             initThongTinBanDoc(docgia);
-            initDanhSachSachDangMuon(docgia);
+            initDanhSachSachDangMuon(docgia); 
         }
 
         private void initDanhSachSachDangMuon(docgiaDTO docgia)

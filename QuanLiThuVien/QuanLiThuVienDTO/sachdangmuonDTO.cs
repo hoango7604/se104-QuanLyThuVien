@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLiThuVienDTO
 {
-   public  class sachdangmuonDTO
+   public class sachdangmuonDTO 
    {
        public sachdangmuonDTO()
        {
