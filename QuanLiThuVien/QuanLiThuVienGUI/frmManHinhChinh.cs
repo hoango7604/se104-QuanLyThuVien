@@ -375,5 +375,10 @@ namespace QuanLiThuVienGUI
             txbGiaTriSach.Text = listSach[indexSach].Giatri.ToString();
             cbTinhTrangSach.Text = listSach[indexSach].Trangthai.ToString();
         }
+
+        private void dgvThongTinBanDoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

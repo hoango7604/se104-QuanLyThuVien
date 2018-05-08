@@ -186,7 +186,7 @@ namespace QuanLiThuVienDAL
             List<int> masachLIST =new List<int>() ;  
 
             // ds sach dang muon nhung chua biet ai muon 
-            string query1 = string.Format(" SELECT s.masach, trangthai ,MAX(ngaymuon) as ngaymuon FROM dbo.sach s, dbo.ct_phieumuon ct, dbo.phieumuon pm WHERE s.masach = ct.masach AND s.trangthai = 0  AND ct.mapm = pm.mapm AND pm.mapm IN(  SELECT mapm  FROM dbo.phieumuon pm, dbo.docgia dg   WHERE pm.mathe = dg.mathe and dg.mathe=@mathe ) GROUP BY s.masach ,s.trangthai "); 
+            string query1 = string.Format(" SELECT s.masach, trangthai ,MAX(ngaymuon) as ngaymuon FROM dbo.sach s, dbo.ct_phieumuon ct, dbo.phieumuon pm WHERE s.masach = ct.masach AND s.trangthai = 0  AND ct.mapm = pm.mapm AND pm.mapm IN(  SELECT mapm  FROM dbo.phieumuon pm, dbo.docgia dg   WHERE pm.mathe = dg.mathe and dg.mathe=6 ) GROUP BY s.masach ,s.trangthai "); 
             SqlParameter[] param1 = new SqlParameter[1];
             param1[0] = new SqlParameter("@mathe", SqlDbType.Int);
             param1[0].Value = Convert.ToString(mathe );
@@ -195,10 +195,8 @@ namespace QuanLiThuVienDAL
             {
                 sachdangmuonDTO sdmDTO = new sachdangmuonDTO();
 
-                sdmDTO.Masach = int.Parse(dr["masach"].ToString());
-               
+                sdmDTO.Masach = int.Parse(dr["masach"].ToString()); 
                 sdmDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
-
                 sdmDTO.Ngaymuon = DateTime.Parse(dr["ngaymuon"].ToString () );
                 Lsdm.Add(sdmDTO); 
 
