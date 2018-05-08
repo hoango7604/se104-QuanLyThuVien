@@ -29,16 +29,16 @@ namespace QuanLiThuVienDAL
             DataTable dtb = new DataTable();
             dtb = conn.excuteNonQuery(query, param);
 
-            if (dtb.Rows.Count > 0)
-            {
+                if (dtb.Rows.Count > 0)
+                {
          
 
-                 DataRow dr = dtb.Rows[0];  
+                     DataRow dr = dtb.Rows[0];  
 
-              //   giahanDTO ghDTO = new giahanDTO(); 
+                  //   giahanDTO ghDTO = new giahanDTO(); 
 
-                ghDTO.Masach = int.Parse(dr["masach"].ToString());
-                ghDTO.Solangiahan = int.Parse(dr["solangiahan"].ToString()); 
+                    ghDTO.Masach = int.Parse(dr["masach"].ToString());
+                    ghDTO.Solangiahan = int.Parse(dr["solangiahan"].ToString()); 
 
 
      return true    ; 
@@ -53,33 +53,53 @@ namespace QuanLiThuVienDAL
         }
 
 
-        public bool sualangiahan (int masach,giahanDTO DTO )
+        public bool sualangiahan(int masach, giahanDTO ghDTO)
         {
-            string query = string.Format("select * from [giahan] where masach=@masach");
-            SqlParameter[] param = new SqlParameter[1];
-            param[0] = new SqlParameter("@masach", SqlDbType.Int);
+            string query = string.Format("update [giahan] set sosachngaymuon=@sosachngaymuon , masach=@ngaymuon");
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@soluongngaymuon", SqlDbType.Int);
             param[0].Value = masach;
-            DataTable dtb = new DataTable();
-            dtb = conn.excuteNonQuery(query, param);
+            param[1] = new SqlParameter("@masach", SqlDbType.Int);
+            param[1].Value = masach;
 
 
+            conn.excuteNonQuery2(query, param); 
 
-          return true    ; 
-
-        
+            return true ;
         }
+
 
         public bool themgiahan (int masach , giahanDTO ghDTO  )
         {
-        
-        
-          return true    ; 
 
+            string query = string.Format("insert into [giahan] values (@soluongngaymuon,@masach)");
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@soluongngaymuon", SqlDbType.Int);
+            param[0].Value = masach;
+            param[1] = new SqlParameter("@masach", SqlDbType.Int);
+            param[1].Value = masach;
+
+       
+            conn.excuteNonQuery2(query, param);
+
+            return true;
         }
 
         public bool xoagiahan (int masach )
         {
-  return true    ; 
+
+
+            string query = string.Format("delete from [giaha] where masach=@masach  ");
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@masach", SqlDbType.Int);
+            param[0].Value = masach;
+          
+
+
+            conn.excuteNonQuery2(query, param);
+
+
+            return true    ; 
         
         }
     }
