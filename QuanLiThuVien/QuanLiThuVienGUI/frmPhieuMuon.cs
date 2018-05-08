@@ -38,7 +38,7 @@ namespace QuanLiThuVienGUI
 
         private void LoadList(docgiaDTO docgia)
         {
-            List<sachDTO> listsachdocgiadangmuon = quanLiSach.DanhSachDocGiaDangMuon(docgia);
+            List<sachDTO> listsachdocgiadangmuon = quanLiSach.DanhSachDocGiaDangMuon(docgia, new List<DateTime>());
             foreach (sachDTO sach in listsachdocgiadangmuon)
             {
                 initDongThongTinSach(sach);
@@ -49,7 +49,7 @@ namespace QuanLiThuVienGUI
         {
             if (e.KeyCode == Keys.Enter && txbTimSachTheoMa.Text != "")
             {
-                sachDTO sach = quanLiSach.TimSach(new sachDTO(int.Parse(txbTimSachTheoMa.Text), "", "", "", "", DateTime.Now, DateTime.Now, 0, 0))[0];
+                sachDTO sach = quanLiSach.Timsachtheoma(int.Parse(txbTimSachTheoMa.Text));
                 listSach.Add(sach);
                 initDongThongTinSach(sach);
                 txbTimSachTheoMa.Clear();
@@ -60,6 +60,7 @@ namespace QuanLiThuVienGUI
         {
             dongThongTinSach dongThongTin = new dongThongTinSach(sach);
             dongThongTin.changeEnable_CbTinhTrangSach(false);
+            dongThongTin.chkChonSach.CheckState = CheckState.Checked;
             listDongThongTinSach.Add(dongThongTin);
             dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
             pnDanhSachSachMuon.Controls.Add(dongThongTin);
@@ -98,6 +99,11 @@ namespace QuanLiThuVienGUI
         }
 
         private void pnDanhSachSachMuon_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txbTimSachTheoMa_TextChanged(object sender, EventArgs e)
         {
 
         }

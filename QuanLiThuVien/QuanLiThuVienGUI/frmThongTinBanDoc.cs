@@ -19,6 +19,7 @@ namespace QuanLiThuVienGUI
         docgiaDTO docgia;
         List<sachDTO> listSachDocGiaDangMuon = new List<sachDTO>();
         List<dongThongTinSach> listDongThongTinSach = new List<dongThongTinSach>();
+        List<DateTime> listngaymuon = new List<DateTime>();
 
         public frmThongTinBanDoc(docgiaDTO docgia)
         {
@@ -30,16 +31,17 @@ namespace QuanLiThuVienGUI
 
         private void initDanhSachSachDangMuon(docgiaDTO docgia)
         {
-            listSachDocGiaDangMuon = quanLiSachBUS.DanhSachDocGiaDangMuon(docgia);
-            foreach (sachDTO sach in listSachDocGiaDangMuon)
+            listSachDocGiaDangMuon = quanLiSachBUS.DanhSachDocGiaDangMuon(docgia, listngaymuon);
+            for (int i = 0; i < listSachDocGiaDangMuon.Count; i++)
             {
-                initDongThongTinSach(sach);
+                initDongThongTinSach(listSachDocGiaDangMuon[i], listngaymuon[i]);
             }
         }
 
-        private void initDongThongTinSach(sachDTO sach)
+        private void initDongThongTinSach(sachDTO sach, DateTime ngaymuon)
         {
-            dongThongTinSach dongThongTin = new dongThongTinSach(sach);
+            dongThongTinSach dongThongTin = new dongThongTinSach(sach, ngaymuon);
+            dongThongTin.cbTinhTrangSach.DataSource = new List<String> { QuanLiSachBUS.DanhSachTrangThaiSach[0], QuanLiSachBUS.DanhSachTrangThaiSach[2] };
             listDongThongTinSach.Add(dongThongTin);
             dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
             pnDanhSachSachDangMuon.Controls.Add(dongThongTin);

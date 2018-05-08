@@ -17,7 +17,7 @@ namespace QuanLiThuVienBUS
 
     public class QuanLiSachBUS
     {
-        public static string[] DanhSachTrangThaiSach = new string[3] { "Đã cho mượn", "Có sẵn", "Đã mất"};
+        public static string[] DanhSachTrangThaiSach = new string[3] { "Đang cho mượn", "Có sẵn", "Đã mất"};
 
         public QuanLiSachBUS()
         {
@@ -194,10 +194,7 @@ namespace QuanLiThuVienBUS
                 }
             }
 
-            if (result.Count == 0)
-            {
-                return list;
-            }
+            
             return result;
         }
 
@@ -327,13 +324,13 @@ namespace QuanLiThuVienBUS
         /// </summary>
         /// <param name="docgia"></param>
         /// <returns></returns>
-        public List<sachDTO> DanhSachDocGiaDangMuon(docgiaDTO docgia)
+        public List<sachDTO> DanhSachDocGiaDangMuon(docgiaDTO docgia, List <DateTime> listngaymuon )
         {
             docgiaDAL docGiaDAL = new docgiaDAL();
             sachDAL saxDAL = new sachDAL();
 
             List<sachDTO> listsach = new List<sachDTO>();
-            List<DateTime> listngaymuon = new List<DateTime>();
+            //List<DateTime> listngaymuon = new List<DateTime>();
 
             if (!docGiaDAL.isDocGia(docgia.MaThe))
             {

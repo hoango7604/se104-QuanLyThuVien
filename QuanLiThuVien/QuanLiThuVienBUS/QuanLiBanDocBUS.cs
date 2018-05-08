@@ -92,11 +92,6 @@ namespace QuanLiThuVienBUS
                 }
             }
 
-            if (result.Count ==0)
-            {
-                return danhsach;
-            }
-
             return result;
 
 

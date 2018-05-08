@@ -22,10 +22,18 @@ namespace QuanLiThuVienGUI
         public dongThongTinSach(sachDTO sach)
         {
             InitializeComponent();
-            chkChonSach.CheckState = CheckState.Checked;
             lbMaSach.Text = sach.Masach.ToString();
             lbTenSach.Text = sach.Tensach;
             dtpNgayMuonSach.Value = DateTime.Now;
+            cbTinhTrangSach.Text = QuanLiSachBUS.DanhSachTrangThaiSach[sach.Trangthai];
+        }
+
+        public dongThongTinSach(sachDTO sach, DateTime date)
+        {
+            InitializeComponent();
+            lbMaSach.Text = sach.Masach.ToString();
+            lbTenSach.Text = sach.Tensach;
+            dtpNgayMuonSach.Value = date;
             cbTinhTrangSach.Text = QuanLiSachBUS.DanhSachTrangThaiSach[sach.Trangthai];
         }
 
