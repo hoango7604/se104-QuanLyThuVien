@@ -9,7 +9,8 @@ using QuanLiThuVienDAL;
 namespace QuanLiThuVienBUS
 {
     public class sachtratreBUS
-    {sachtratreDAL dalSachTraTre = new sachtratreDAL();
+    {
+        sachtratreDAL dalSachTraTre = new sachtratreDAL();
         public DataTable LayDSSachChuaTra(DateTime thangThongKe)
         {
             DataTable dt = dalSachTraTre.LayDSSachChuaTra(thangThongKe);
