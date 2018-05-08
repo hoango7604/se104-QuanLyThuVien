@@ -51,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="quydinhDAL.cs" />
     <Compile Include="sachDAL.cs" />
+    <Compile Include="sachtratreDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dbConnection\dbConnection.csproj">
