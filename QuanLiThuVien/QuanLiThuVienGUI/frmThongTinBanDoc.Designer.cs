@@ -47,6 +47,7 @@
             this.lbEmailBanDoc = new System.Windows.Forms.Label();
             this.lbDiaChiBanDoc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLapPhieuMuon = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbTinhTrangSach = new System.Windows.Forms.Label();
             this.lbNgayMuonSach = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
-            this.btnLapPhieuMuon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -275,6 +275,17 @@
             this.panel2.Size = new System.Drawing.Size(845, 306);
             this.panel2.TabIndex = 18;
             // 
+            // btnLapPhieuMuon
+            // 
+            this.btnLapPhieuMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapPhieuMuon.Location = new System.Drawing.Point(456, 5);
+            this.btnLapPhieuMuon.Name = "btnLapPhieuMuon";
+            this.btnLapPhieuMuon.Size = new System.Drawing.Size(136, 41);
+            this.btnLapPhieuMuon.TabIndex = 17;
+            this.btnLapPhieuMuon.Text = "Lập phiếu mượn";
+            this.btnLapPhieuMuon.UseVisualStyleBackColor = true;
+            this.btnLapPhieuMuon.Click += new System.EventHandler(this.btnLapPhieuMuon_Click);
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lbTinhTrangSach);
@@ -359,7 +370,7 @@
             this.btnGiaHanSach.Location = new System.Drawing.Point(718, 5);
             this.btnGiaHanSach.Name = "btnGiaHanSach";
             this.btnGiaHanSach.Size = new System.Drawing.Size(114, 41);
-            this.btnGiaHanSach.TabIndex = 17;
+            this.btnGiaHanSach.TabIndex = 19;
             this.btnGiaHanSach.Text = "Gia hạn sách";
             this.btnGiaHanSach.UseVisualStyleBackColor = true;
             // 
@@ -369,7 +380,7 @@
             this.btnLapPhieuTra.Location = new System.Drawing.Point(598, 5);
             this.btnLapPhieuTra.Name = "btnLapPhieuTra";
             this.btnLapPhieuTra.Size = new System.Drawing.Size(114, 41);
-            this.btnLapPhieuTra.TabIndex = 16;
+            this.btnLapPhieuTra.TabIndex = 18;
             this.btnLapPhieuTra.Text = "Lập phiếu trả";
             this.btnLapPhieuTra.UseVisualStyleBackColor = true;
             this.btnLapPhieuTra.Click += new System.EventHandler(this.btnLapPhieuTra_Click);
@@ -402,17 +413,6 @@
             this.pnDanhSachSachDangMuon.Name = "pnDanhSachSachDangMuon";
             this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 211);
             this.pnDanhSachSachDangMuon.TabIndex = 19;
-            // 
-            // btnLapPhieuMuon
-            // 
-            this.btnLapPhieuMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapPhieuMuon.Location = new System.Drawing.Point(456, 5);
-            this.btnLapPhieuMuon.Name = "btnLapPhieuMuon";
-            this.btnLapPhieuMuon.Size = new System.Drawing.Size(136, 41);
-            this.btnLapPhieuMuon.TabIndex = 20;
-            this.btnLapPhieuMuon.Text = "Lập phiếu mượn";
-            this.btnLapPhieuMuon.UseVisualStyleBackColor = true;
-            this.btnLapPhieuMuon.Click += new System.EventHandler(this.btnLapPhieuMuon_Click);
             // 
             // frmThongTinBanDoc
             // 

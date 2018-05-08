@@ -16,10 +16,12 @@ namespace QuanLiThuVienGUI
     {
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
         QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
+
         docgiaDTO docgia;
         List<sachDTO> listSachDocGiaDangMuon = new List<sachDTO>();
         List<dongThongTinSach> listDongThongTinSach = new List<dongThongTinSach>();
         List<DateTime> listngaymuon = new List<DateTime>();
+        List<sachDTO> listSachDocGiaMuonTra = new List<sachDTO>();
 
         public frmThongTinBanDoc(docgiaDTO docgia)
         {
@@ -42,8 +44,8 @@ namespace QuanLiThuVienGUI
         {
             dongThongTinSach dongThongTin = new dongThongTinSach(sach, ngaymuon);
             dongThongTin.cbTinhTrangSach.DataSource = new List<String> { QuanLiSachBUS.DanhSachTrangThaiSach[0], QuanLiSachBUS.DanhSachTrangThaiSach[2] };
-            listDongThongTinSach.Add(dongThongTin);
             dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
+            listDongThongTinSach.Add(dongThongTin);
             pnDanhSachSachDangMuon.Controls.Add(dongThongTin);
         }
 
@@ -80,11 +82,6 @@ namespace QuanLiThuVienGUI
             }
         }
 
-        private void btnLapPhieuTra_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLapPhieuMuon_Click(object sender, EventArgs e)
         {
             frmPhieuMuon f = new frmPhieuMuon(docgia);
@@ -93,6 +90,28 @@ namespace QuanLiThuVienGUI
                 pnDanhSachSachDangMuon.Controls.Clear();
                 initDanhSachSachDangMuon(docgia);
             }
+        }
+
+        private void btnLapPhieuTra_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < listDongThongTinSach.Count; i++)
+            {
+                if (listDongThongTinSach[i].chkChonSach.CheckState == CheckState.Checked)
+                {
+                    listSachDocGiaMuonTra.Add(listSachDocGiaDangMuon[i]);
+                    if (listDongThongTinSach[i].cbTinhTrangSach.SelectedItem.ToString() == QuanLiSachBUS.DanhSachTrangThaiSach[0])
+                    {
+                        listSachDocGiaDangMuon[i].Trangthai = 0;
+                    }
+                    else
+                    {
+                        listSachDocGiaDangMuon[i].Trangthai = 2;
+                    }
+                }
+            }
+
+            frmPhieuTra f = new frmPhieuTra(docgia, listSachDocGiaMuonTra);
+            f.ShowDialog();
         }
     }
 }
