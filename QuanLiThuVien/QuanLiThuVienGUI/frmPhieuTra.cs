@@ -24,9 +24,13 @@ namespace QuanLiThuVienGUI
         public frmPhieuTra(docgiaDTO docgia, List<sachDTO> listSach)
         {
             InitializeComponent();
+            initFormPhieuTra(docgia);
             this.docgia = docgia;
             this.listSach = listSach;
-            initFormPhieuTra(docgia);
+            foreach (sachDTO sach in listSach)
+            {
+                initDongThongTinSach(sach);
+            }
         }
 
         private void initFormPhieuTra(docgiaDTO docgia)
@@ -39,6 +43,7 @@ namespace QuanLiThuVienGUI
         {
             dongThongTinSach dongThongTin = new dongThongTinSach(sach);
             dongThongTin.changeEnable_CbTinhTrangSach(false);
+            dongThongTin.chkChonSach.Enabled = false;
             listDongThongTinSach.Add(dongThongTin);
             dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
             pnDanhSachSachTra.Controls.Add(dongThongTin);

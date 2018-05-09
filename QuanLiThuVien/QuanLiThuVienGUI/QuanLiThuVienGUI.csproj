@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dongPhieuTra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="dongPhieuTra.Designer.cs">
+      <DependentUpon>dongPhieuTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="dongThongTinSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="dongPhieuTra.resx">
+      <DependentUpon>dongPhieuTra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dongThongTinSach.resx">
       <DependentUpon>dongThongTinSach.cs</DependentUpon>
     </EmbeddedResource>

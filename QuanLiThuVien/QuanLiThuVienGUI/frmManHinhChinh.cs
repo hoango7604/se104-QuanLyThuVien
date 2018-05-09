@@ -301,7 +301,8 @@ namespace QuanLiThuVienGUI
         /// <param name="e"></param>
         private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
         {
-
+            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 0);
+            f.ShowDialog();
         }
 
         /// <summary>
@@ -311,12 +312,8 @@ namespace QuanLiThuVienGUI
         /// <param name="e"></param>
         private void btnPhieuTra_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void lvDanhSachBanDoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
+            f.ShowDialog();
         }
 
         /// <summary>
@@ -391,11 +388,6 @@ namespace QuanLiThuVienGUI
             txbNamXuatBanSach.Text = listSach[indexSach].Ngayxb.Year.ToString();
             txbGiaTriSach.Text = listSach[indexSach].Giatri.ToString();
             cbTinhTrangSach.Text = listSach[indexSach].Trangthai.ToString();
-        }
-
-        private void dgvThongTinBanDoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
         //
         //TAB THONG KE

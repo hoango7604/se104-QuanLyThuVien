@@ -43,9 +43,9 @@ namespace QuanLiThuVienGUI
         private void initDongThongTinSach(sachDTO sach, DateTime ngaymuon)
         {
             dongThongTinSach dongThongTin = new dongThongTinSach(sach, ngaymuon);
-            dongThongTin.cbTinhTrangSach.DataSource = new List<String> { QuanLiSachBUS.DanhSachTrangThaiSach[0], QuanLiSachBUS.DanhSachTrangThaiSach[2] };
-            dongThongTin.Location = new Point(3, 3 + 3 * dongThongTin.Height * (listSachDocGiaDangMuon.Count() - 1));
             listDongThongTinSach.Add(dongThongTin);
+            dongThongTin.cbTinhTrangSach.DataSource = new List<String> { QuanLiSachBUS.DanhSachTrangThaiSach[0], QuanLiSachBUS.DanhSachTrangThaiSach[2] };
+            dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
             pnDanhSachSachDangMuon.Controls.Add(dongThongTin);
         }
 
