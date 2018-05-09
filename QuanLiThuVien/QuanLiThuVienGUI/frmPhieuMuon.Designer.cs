@@ -35,8 +35,8 @@
             this.lbMaTheBanDoc = new System.Windows.Forms.Label();
             this.txbTenBanDoc = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbTimSachTheoMa = new System.Windows.Forms.ComboBox();
             this.lbTimSachTheoMa = new System.Windows.Forms.Label();
-            this.txbTimSachTheoMa = new System.Windows.Forms.TextBox();
             this.btnTaoPhieuMuon = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbTinhTrangSach = new System.Windows.Forms.Label();
@@ -121,8 +121,8 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.cbTimSachTheoMa);
             this.panel2.Controls.Add(this.lbTimSachTheoMa);
-            this.panel2.Controls.Add(this.txbTimSachTheoMa);
             this.panel2.Controls.Add(this.btnTaoPhieuMuon);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.lbDanhSachSachMuon);
@@ -131,6 +131,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(854, 372);
             this.panel2.TabIndex = 19;
+            // 
+            // cbTimSachTheoMa
+            // 
+            this.cbTimSachTheoMa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTimSachTheoMa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTimSachTheoMa.FormattingEnabled = true;
+            this.cbTimSachTheoMa.Location = new System.Drawing.Point(90, 60);
+            this.cbTimSachTheoMa.Name = "cbTimSachTheoMa";
+            this.cbTimSachTheoMa.Size = new System.Drawing.Size(264, 21);
+            this.cbTimSachTheoMa.TabIndex = 23;
+            this.cbTimSachTheoMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbTimSachTheoMa_KeyDown);
             // 
             // lbTimSachTheoMa
             // 
@@ -141,14 +152,6 @@
             this.lbTimSachTheoMa.Size = new System.Drawing.Size(73, 20);
             this.lbTimSachTheoMa.TabIndex = 22;
             this.lbTimSachTheoMa.Text = "Mã sách:";
-            // 
-            // txbTimSachTheoMa
-            // 
-            this.txbTimSachTheoMa.Location = new System.Drawing.Point(90, 61);
-            this.txbTimSachTheoMa.Name = "txbTimSachTheoMa";
-            this.txbTimSachTheoMa.Size = new System.Drawing.Size(262, 20);
-            this.txbTimSachTheoMa.TabIndex = 21;
-            this.txbTimSachTheoMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbTimSachTheoMa_KeyDown);
             // 
             // btnTaoPhieuMuon
             // 
@@ -268,7 +271,6 @@
             this.pnDanhSachSachMuon.Name = "pnDanhSachSachMuon";
             this.pnDanhSachSachMuon.Size = new System.Drawing.Size(823, 273);
             this.pnDanhSachSachMuon.TabIndex = 19;
-            this.pnDanhSachSachMuon.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDanhSachSachMuon_Paint);
             // 
             // frmPhieuMuon
             // 
@@ -314,6 +316,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pnDanhSachSachMuon;
         private System.Windows.Forms.Label lbTimSachTheoMa;
-        private System.Windows.Forms.TextBox txbTimSachTheoMa;
+        private System.Windows.Forms.ComboBox cbTimSachTheoMa;
     }
 }

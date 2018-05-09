@@ -18,14 +18,16 @@ namespace QuanLiThuVienGUI
         List<sachDTO> listSach;
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
         QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
-        int indexBanDoc = -1;
-        int indexSach = -1;
+        int indexBanDoc = 0;
+        int indexSach = 0;
 
         public frmManHinhChinh()
         {
             InitializeComponent();
             initDataGridViewBanDoc();
             initDataGridViewSach();
+            anhXaThongTinBanDoc(indexBanDoc);
+            anhXaThongTinSach(indexSach);
         }
 
         private void initDataGridViewBanDoc()
@@ -146,7 +148,14 @@ namespace QuanLiThuVienGUI
 
         private void btnTimKiemBanDoc_Click(object sender, EventArgs e)
         {
-            listDocGia = quanLiBanDocBUS.TimDocGia(txbTimKiemBanDocTheoMa.Text, txbTimKiemTheoTenBanDoc.Text);
+            if (txbTimKiemBanDocTheoMa.Text == "" && txbTimKiemTheoTenBanDoc.Text == "")
+            {
+                listDocGia = quanLiBanDocBUS.DanhSachDocGia();
+            }
+            else
+            {
+                listDocGia = quanLiBanDocBUS.TimDocGia(txbTimKiemBanDocTheoMa.Text, txbTimKiemTheoTenBanDoc.Text);
+            }
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
         }
 
@@ -216,15 +225,23 @@ namespace QuanLiThuVienGUI
      
         private void btnTimSach_Click(object sender, EventArgs e)
         {
-            string masach = txbTimSachTheoMa.Text;
-            int resultCMND;
-            if (!int.TryParse(masach,out resultCMND))
+            if (txbTimSachTheoMa.Text == "" && txbTimSachTheoTacGia.Text == "" && txbTimSachTheoTen.Text == "" && txbTimSachTheoTheLoai.Text == "")
             {
-                resultCMND = -1;
+                listSach = quanLiSachBUS.DanhSachSach();
             }
+            else
+            {
+                string masach = txbTimSachTheoMa.Text;
+                int resultCMND;
+                if (!int.TryParse(masach, out resultCMND))
+                {
+                    resultCMND = -1;
+                }
 
-            sachDTO sDTO = new sachDTO(resultCMND, txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
-            listSach = quanLiSachBUS.TimSach(sDTO);
+                sachDTO sDTO = new sachDTO(resultCMND, txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
+                listSach = quanLiSachBUS.TimSach(sDTO);
+            }
+            
             dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, colum4 = o.Nxb}).ToList();
      
         }

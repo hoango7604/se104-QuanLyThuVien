@@ -363,6 +363,7 @@
             this.chkChonSach.Size = new System.Drawing.Size(15, 14);
             this.chkChonSach.TabIndex = 0;
             this.chkChonSach.UseVisualStyleBackColor = true;
+            this.chkChonSach.CheckedChanged += new System.EventHandler(this.chkChonSach_CheckedChanged);
             // 
             // btnGiaHanSach
             // 

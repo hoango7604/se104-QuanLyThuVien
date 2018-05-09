@@ -44,7 +44,7 @@ namespace QuanLiThuVienGUI
         {
             dongThongTinSach dongThongTin = new dongThongTinSach(sach, ngaymuon);
             dongThongTin.cbTinhTrangSach.DataSource = new List<String> { QuanLiSachBUS.DanhSachTrangThaiSach[0], QuanLiSachBUS.DanhSachTrangThaiSach[2] };
-            dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
+            dongThongTin.Location = new Point(3, 3 + 3 * dongThongTin.Height * (listSachDocGiaDangMuon.Count() - 1));
             listDongThongTinSach.Add(dongThongTin);
             pnDanhSachSachDangMuon.Controls.Add(dongThongTin);
         }
@@ -143,6 +143,15 @@ namespace QuanLiThuVienGUI
                else
                     MessageBox.Show("gia hạn thất cmn bại liệt " + sach.Tensach + BUS_notification.mess);
 
+            }
+        }
+
+        private void chkChonSach_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            foreach (dongThongTinSach dongThongTin in listDongThongTinSach)
+            {
+                dongThongTin.chkChonSach.CheckState = cb.CheckState;
             }
         }
     }

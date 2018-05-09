@@ -17,6 +17,7 @@ namespace QuanLiThuVienGUI
 
         docgiaDTO docgia;
         List<sachDTO> listSach = new List<sachDTO>();
+        List<sachDTO> listSachCoSan = new List<sachDTO>();
         QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
         QuanLiMuonTraMatBUS quanLiMuonTraMat = new QuanLiMuonTraMatBUS();
         List<dongThongTinSach> listDongThongTinSach = new List<dongThongTinSach>();
@@ -27,7 +28,16 @@ namespace QuanLiThuVienGUI
             this.docgia = docgia;
             initFormPhieuMuon(docgia);
             this.DialogResult = DialogResult.Cancel;
+            listSachCoSan = quanLiSach.DanhSachSachCoSan();
+            initComboBoxListItems();
+        }
 
+        private void initComboBoxListItems()
+        {
+            foreach (sachDTO sach in listSachCoSan)
+            {
+                cbTimSachTheoMa.Items.Add(sach.Masach + " - " + sach.Tensach);
+            }
         }
 
         private void initFormPhieuMuon(docgiaDTO docgia)
@@ -45,14 +55,17 @@ namespace QuanLiThuVienGUI
             }
         }
 
-        private void txbTimSachTheoMa_KeyDown(object sender, KeyEventArgs e)
+        private void cbTimSachTheoMa_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && txbTimSachTheoMa.Text != "")
+            if (e.KeyCode == Keys.Enter && cbTimSachTheoMa.Text != "")
             {
-                sachDTO sach = quanLiSach.Timsachtheoma(int.Parse(txbTimSachTheoMa.Text));
+                sachDTO sach = quanLiSach.Timsachtheoma(listSachCoSan[cbTimSachTheoMa.SelectedIndex].Masach);
                 listSach.Add(sach);
+                listSachCoSan.RemoveAt(cbTimSachTheoMa.SelectedIndex);
                 initDongThongTinSach(sach);
-                txbTimSachTheoMa.Clear();
+                cbTimSachTheoMa.Items.Clear();
+                initComboBoxListItems();
+                cbTimSachTheoMa.DroppedDown = false;
             }
         }
 
@@ -62,7 +75,7 @@ namespace QuanLiThuVienGUI
             dongThongTin.changeEnable_CbTinhTrangSach(false);
             dongThongTin.chkChonSach.CheckState = CheckState.Checked;
             listDongThongTinSach.Add(dongThongTin);
-            dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
+            dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listSach.Count() - 1));
             pnDanhSachSachMuon.Controls.Add(dongThongTin);
         }
 
@@ -97,16 +110,6 @@ namespace QuanLiThuVienGUI
             {
                 dongThongTin.chkChonSach.CheckState = cb.CheckState;
             }
-        }
-
-        private void pnDanhSachSachMuon_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txbTimSachTheoMa_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
