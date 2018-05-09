@@ -30,6 +30,7 @@ namespace QuanLiThuVienGUI
             this.DialogResult = DialogResult.Cancel;
             listSachCoSan = quanLiSach.DanhSachSachCoSan();
             initComboBoxListItems();
+            cbTimSachTheoMa.Select();
         }
 
         private void initComboBoxListItems()
@@ -67,6 +68,9 @@ namespace QuanLiThuVienGUI
                 initComboBoxListItems();
                 cbTimSachTheoMa.DroppedDown = false;
             }
+
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
         }
 
         private void initDongThongTinSach(sachDTO sach)

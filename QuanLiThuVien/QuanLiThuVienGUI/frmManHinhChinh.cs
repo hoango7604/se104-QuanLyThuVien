@@ -100,13 +100,13 @@ namespace QuanLiThuVienGUI
 
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe(0);
+            frmNhapMaThe f = new frmNhapMaThe(listDocGia ,0);
             f.ShowDialog();
         }
 
         private void tạoPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe(1);
+            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
             f.ShowDialog();
         }
 
@@ -419,6 +419,19 @@ namespace QuanLiThuVienGUI
                
                 
                 dgvThongKe.DataSource = theloaiBUS.layDSLoaiSachDuocQuanTam(thangThongKe);
+            }
+        }
+
+        private void tcManHinhChinh_Selected(object sender, TabControlEventArgs e)
+        {
+            switch (tcManHinhChinh.SelectedIndex)
+            {
+                case 0:
+                    txbTimKiemBanDocTheoMa.Focus();
+                    break;
+                case 1:
+                    txbTimSachTheoMa.Focus();
+                    break;
             }
         }
     }

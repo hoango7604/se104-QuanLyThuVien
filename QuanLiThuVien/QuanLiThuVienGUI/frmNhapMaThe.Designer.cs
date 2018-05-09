@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lbMaTheBanDoc = new System.Windows.Forms.Label();
-            this.txbMaTheBanDoc = new System.Windows.Forms.TextBox();
+            this.cbNhapMaTheBanDoc = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbMaTheBanDoc
@@ -41,20 +41,23 @@
             this.lbMaTheBanDoc.TabIndex = 0;
             this.lbMaTheBanDoc.Text = "Nhập mã thẻ bạn đọc:";
             // 
-            // txbMaTheBanDoc
+            // cbNhapMaTheBanDoc
             // 
-            this.txbMaTheBanDoc.Location = new System.Drawing.Point(134, 29);
-            this.txbMaTheBanDoc.Name = "txbMaTheBanDoc";
-            this.txbMaTheBanDoc.Size = new System.Drawing.Size(267, 20);
-            this.txbMaTheBanDoc.TabIndex = 1;
-            this.txbMaTheBanDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbMaTheBanDoc_KeyDown);
+            this.cbNhapMaTheBanDoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbNhapMaTheBanDoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbNhapMaTheBanDoc.FormattingEnabled = true;
+            this.cbNhapMaTheBanDoc.Location = new System.Drawing.Point(133, 26);
+            this.cbNhapMaTheBanDoc.Name = "cbNhapMaTheBanDoc";
+            this.cbNhapMaTheBanDoc.Size = new System.Drawing.Size(268, 21);
+            this.cbNhapMaTheBanDoc.TabIndex = 2;
+            this.cbNhapMaTheBanDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbNhapMaTheBanDoc_KeyDown);
             // 
             // frmNhapMaThe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 76);
-            this.Controls.Add(this.txbMaTheBanDoc);
+            this.Controls.Add(this.cbNhapMaTheBanDoc);
             this.Controls.Add(this.lbMaTheBanDoc);
             this.Name = "frmNhapMaThe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -67,6 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbMaTheBanDoc;
-        private System.Windows.Forms.TextBox txbMaTheBanDoc;
+        private System.Windows.Forms.ComboBox cbNhapMaTheBanDoc;
     }
 }

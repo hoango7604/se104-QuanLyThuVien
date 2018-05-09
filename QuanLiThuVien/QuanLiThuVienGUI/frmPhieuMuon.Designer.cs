@@ -86,6 +86,7 @@
             this.txbMaTheBanDoc.Name = "txbMaTheBanDoc";
             this.txbMaTheBanDoc.Size = new System.Drawing.Size(264, 20);
             this.txbMaTheBanDoc.TabIndex = 5;
+            this.txbMaTheBanDoc.TabStop = false;
             // 
             // lbTenBanDoc
             // 
@@ -116,6 +117,7 @@
             this.txbTenBanDoc.Name = "txbTenBanDoc";
             this.txbTenBanDoc.Size = new System.Drawing.Size(262, 20);
             this.txbTenBanDoc.TabIndex = 4;
+            this.txbTenBanDoc.TabStop = false;
             // 
             // panel2
             // 
@@ -140,7 +142,7 @@
             this.cbTimSachTheoMa.Location = new System.Drawing.Point(90, 60);
             this.cbTimSachTheoMa.Name = "cbTimSachTheoMa";
             this.cbTimSachTheoMa.Size = new System.Drawing.Size(264, 21);
-            this.cbTimSachTheoMa.TabIndex = 23;
+            this.cbTimSachTheoMa.TabIndex = 0;
             this.cbTimSachTheoMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbTimSachTheoMa_KeyDown);
             // 
             // lbTimSachTheoMa
@@ -159,7 +161,7 @@
             this.btnTaoPhieuMuon.Location = new System.Drawing.Point(697, 18);
             this.btnTaoPhieuMuon.Name = "btnTaoPhieuMuon";
             this.btnTaoPhieuMuon.Size = new System.Drawing.Size(136, 63);
-            this.btnTaoPhieuMuon.TabIndex = 20;
+            this.btnTaoPhieuMuon.TabIndex = 1;
             this.btnTaoPhieuMuon.Text = "Tạo phiếu mượn";
             this.btnTaoPhieuMuon.UseVisualStyleBackColor = true;
             this.btnTaoPhieuMuon.Click += new System.EventHandler(this.btnTaoPhieuMuon_Click);
@@ -240,6 +242,7 @@
             this.chkChonSach.Name = "chkChonSach";
             this.chkChonSach.Size = new System.Drawing.Size(15, 14);
             this.chkChonSach.TabIndex = 0;
+            this.chkChonSach.TabStop = false;
             this.chkChonSach.UseVisualStyleBackColor = true;
             this.chkChonSach.CheckStateChanged += new System.EventHandler(this.chkChonSach_CheckStateChanged);
             // 
