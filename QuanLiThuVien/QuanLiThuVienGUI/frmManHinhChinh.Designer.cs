@@ -137,6 +137,16 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnTaoPhieuThuTienPhat = new System.Windows.Forms.Button();
             this.lbDanhSachPhieuThuTienPhat = new System.Windows.Forms.Label();
+            this.tpThongKe = new System.Windows.Forms.TabPage();
+            this.dgvThongKe = new System.Windows.Forms.DataGridView();
+            this.pnlLoaiThongKe = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rdoSachTraTre = new System.Windows.Forms.RadioButton();
+            this.rdoTheLoai = new System.Windows.Forms.RadioButton();
+            this.dtmThongKe = new System.Windows.Forms.DateTimePicker();
+            this.lblThoiGian = new System.Windows.Forms.Label();
+            this.btnXemDS = new System.Windows.Forms.Button();
+            this.btnInDS = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -165,6 +175,9 @@
             this.tpPhieuThuTienPhat.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.tpThongKe.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).BeginInit();
+            this.pnlLoaiThongKe.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -353,6 +366,7 @@
             this.tcManHinhChinh.Controls.Add(this.tpPhieuMuon);
             this.tcManHinhChinh.Controls.Add(this.tpPhieuTra);
             this.tcManHinhChinh.Controls.Add(this.tpPhieuThuTienPhat);
+            this.tcManHinhChinh.Controls.Add(this.tpThongKe);
             this.tcManHinhChinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcManHinhChinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcManHinhChinh.ItemSize = new System.Drawing.Size(150, 50);
@@ -1232,6 +1246,110 @@
             this.lbDanhSachPhieuThuTienPhat.TabIndex = 0;
             this.lbDanhSachPhieuThuTienPhat.Text = "Danh sách các phiếu thu tiền phạt";
             // 
+            // tpThongKe
+            // 
+            this.tpThongKe.Controls.Add(this.btnInDS);
+            this.tpThongKe.Controls.Add(this.btnXemDS);
+            this.tpThongKe.Controls.Add(this.lblThoiGian);
+            this.tpThongKe.Controls.Add(this.dtmThongKe);
+            this.tpThongKe.Controls.Add(this.pnlLoaiThongKe);
+            this.tpThongKe.Controls.Add(this.dgvThongKe);
+            this.tpThongKe.Location = new System.Drawing.Point(4, 54);
+            this.tpThongKe.Name = "tpThongKe";
+            this.tpThongKe.Padding = new System.Windows.Forms.Padding(3);
+            this.tpThongKe.Size = new System.Drawing.Size(962, 491);
+            this.tpThongKe.TabIndex = 5;
+            this.tpThongKe.Text = "Thống Kê";
+            this.tpThongKe.UseVisualStyleBackColor = true;
+            // 
+            // dgvThongKe
+            // 
+            this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongKe.Location = new System.Drawing.Point(6, 6);
+            this.dgvThongKe.Name = "dgvThongKe";
+            this.dgvThongKe.Size = new System.Drawing.Size(507, 477);
+            this.dgvThongKe.TabIndex = 0;
+            // 
+            // pnlLoaiThongKe
+            // 
+            this.pnlLoaiThongKe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLoaiThongKe.Controls.Add(this.rdoTheLoai);
+            this.pnlLoaiThongKe.Controls.Add(this.rdoSachTraTre);
+            this.pnlLoaiThongKe.Controls.Add(this.label1);
+            this.pnlLoaiThongKe.Location = new System.Drawing.Point(519, 6);
+            this.pnlLoaiThongKe.Name = "pnlLoaiThongKe";
+            this.pnlLoaiThongKe.Size = new System.Drawing.Size(435, 122);
+            this.pnlLoaiThongKe.TabIndex = 1;
+            
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 13);
+            this.label1.Name = "lblThoiGian";
+            this.label1.Size = new System.Drawing.Size(138, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Thống kê theo:";
+            // 
+            // rdoSachTraTre
+            // 
+            this.rdoSachTraTre.AutoSize = true;
+            this.rdoSachTraTre.Checked = true;
+            this.rdoSachTraTre.Location = new System.Drawing.Point(62, 40);
+            this.rdoSachTraTre.Name = "rdoSachTraTre";
+            this.rdoSachTraTre.Size = new System.Drawing.Size(122, 28);
+            this.rdoSachTraTre.TabIndex = 1;
+            this.rdoSachTraTre.TabStop = true;
+            this.rdoSachTraTre.Text = "Sách trả trễ";
+            this.rdoSachTraTre.UseVisualStyleBackColor = true;
+            // 
+            // rdoTheLoai
+            // 
+            this.rdoTheLoai.AutoSize = true;
+            this.rdoTheLoai.Location = new System.Drawing.Point(62, 74);
+            this.rdoTheLoai.Name = "rdoTheLoai";
+            this.rdoTheLoai.Size = new System.Drawing.Size(338, 28);
+            this.rdoTheLoai.TabIndex = 2;
+            this.rdoTheLoai.Text = "Thể loại sách được mượn nhiều nhất";
+            this.rdoTheLoai.UseVisualStyleBackColor = true;
+            // 
+            // dtmThongKe
+            // 
+            this.dtmThongKe.Location = new System.Drawing.Point(720, 147);
+            this.dtmThongKe.Name = "dtmThongKe";
+            this.dtmThongKe.Size = new System.Drawing.Size(234, 29);
+            this.dtmThongKe.TabIndex = 2;
+            this.dtmThongKe.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmThongKe.CustomFormat = "MM/yyyy";
+            // 
+            // lblThoiGian
+            // 
+            this.lblThoiGian.AutoSize = true;
+            this.lblThoiGian.Location = new System.Drawing.Point(537, 151);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(172, 24);
+            this.lblThoiGian.TabIndex = 3;
+            this.lblThoiGian.Text = "Thời gian thống kê:\r\n";
+            // 
+            // btnXemDS
+            // 
+            this.btnXemDS.Location = new System.Drawing.Point(541, 210);
+            this.btnXemDS.Name = "btnXemDS";
+            this.btnXemDS.Size = new System.Drawing.Size(188, 57);
+            this.btnXemDS.TabIndex = 4;
+            this.btnXemDS.Text = "Xem Danh Sách";
+            this.btnXemDS.UseVisualStyleBackColor = true;
+            this.btnXemDS.Click += new System.EventHandler(this.btnXemDS_Click);
+            // 
+            // btnInDS
+            // 
+            this.btnInDS.Location = new System.Drawing.Point(766, 210);
+            this.btnInDS.Name = "btnInDS";
+            this.btnInDS.Size = new System.Drawing.Size(188, 57);
+            this.btnInDS.TabIndex = 5;
+            this.btnInDS.Text = "In Danh Sách";
+            this.btnInDS.UseVisualStyleBackColor = true;
+            // 
             // frmManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1283,6 +1401,11 @@
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.tpThongKe.ResumeLayout(false);
+            this.tpThongKe.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).EndInit();
+            this.pnlLoaiThongKe.ResumeLayout(false);
+            this.pnlLoaiThongKe.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1398,5 +1521,15 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btnTaoPhieuThuTienPhat;
         private System.Windows.Forms.Label lbDanhSachPhieuThuTienPhat;
+        private System.Windows.Forms.TabPage tpThongKe;
+        private System.Windows.Forms.Button btnInDS;
+        private System.Windows.Forms.Button btnXemDS;
+        private System.Windows.Forms.Label lblThoiGian;
+        private System.Windows.Forms.DateTimePicker dtmThongKe;
+        private System.Windows.Forms.Panel pnlLoaiThongKe;
+        private System.Windows.Forms.RadioButton rdoTheLoai;
+        private System.Windows.Forms.RadioButton rdoSachTraTre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvThongKe;
     }
 }

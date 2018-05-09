@@ -21,3 +21,15 @@ C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuV
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb

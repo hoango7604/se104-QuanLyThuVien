@@ -380,5 +380,29 @@ namespace QuanLiThuVienGUI
         {
 
         }
+        //
+        //TAB THONG KE
+        //
+        private void btnXemDS_Click(object sender, EventArgs e)
+        {
+            sachtratreBUS sachtratreBUS = new sachtratreBUS();
+            thongketheloaiBUS theloaiBUS = new thongketheloaiBUS();
+
+            if (rdoSachTraTre.Checked)
+            {
+                DateTime thangThongKe = dtmThongKe.Value;
+                
+
+
+                dgvThongKe.DataSource = sachtratreBUS.LayDSSachChuaTra(thangThongKe);
+            }
+            else if (rdoTheLoai.Checked)
+            {
+                DateTime thangThongKe = dtmThongKe.Value;
+               
+                
+                dgvThongKe.DataSource = theloaiBUS.layDSLoaiSachDuocQuanTam(thangThongKe);
+            }
+        }
     }
 }

@@ -49,3 +49,29 @@ D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\Q
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmNhapMaThe.resources
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuMuon.resources
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuTra.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe.config
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienBUS.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienDAL.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienDTO.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\dbConnection.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienBUS.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienDAL.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienDTO.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\dbConnection.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csprojResolveAssemblyReference.cache
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.dongThongTinSach.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmManHinhChinh.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmNhapMaThe.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuMuon.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuTra.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThemBanDoc.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThemSach.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThongTinBanDoc.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThongTinSach.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.Properties.Resources.resources
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.GenerateResource.Cache
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.CoreCompileInputs.cache
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.pdb
