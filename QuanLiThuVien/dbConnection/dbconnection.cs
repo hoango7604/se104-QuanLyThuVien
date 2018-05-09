@@ -66,11 +66,6 @@ namespace dbConnection
             myAdapter.SelectCommand = comm;
          
             myAdapter.Fill(datatable);
-
-
-
-         //   conn.Close();
-
             return datatable  ; 
 
         }

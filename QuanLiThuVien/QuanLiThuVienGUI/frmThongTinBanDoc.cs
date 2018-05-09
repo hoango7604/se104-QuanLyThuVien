@@ -113,5 +113,37 @@ namespace QuanLiThuVienGUI
             frmPhieuTra f = new frmPhieuTra(docgia, listSachDocGiaMuonTra);
             f.ShowDialog();
         }
+
+        private void btnGiaHanSach_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < listDongThongTinSach.Count; i++)
+            {
+                if (listDongThongTinSach[i].chkChonSach.CheckState == CheckState.Checked)
+                {
+                    listSachDocGiaMuonTra.Add(listSachDocGiaDangMuon[i]);
+                    if (listDongThongTinSach[i].cbTinhTrangSach.SelectedItem.ToString() == QuanLiSachBUS.DanhSachTrangThaiSach[0])
+                    {
+                        listSachDocGiaDangMuon[i].Trangthai = 0;
+                    }
+                    else
+                    {
+                        listSachDocGiaDangMuon[i].Trangthai = 2;
+                    }
+                }
+            }
+
+            GiaHanSachBUS gh = new GiaHanSachBUS();
+            foreach (sachDTO sach in listSachDocGiaMuonTra)
+            {
+               if(gh.GiaHan(sach.Masach))
+                {
+                    MessageBox.Show("gia hạn thành cmn công cuốn " + sach.Tensach);
+                }
+               else
+                    MessageBox.Show("gia hạn thất cmn bại liệt " + sach.Tensach + BUS_notification.mess);
+
+            }
+        }
     }
 }

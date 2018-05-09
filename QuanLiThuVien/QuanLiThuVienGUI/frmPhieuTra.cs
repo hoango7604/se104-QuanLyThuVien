@@ -45,8 +45,9 @@ namespace QuanLiThuVienGUI
         }
 
         private void btnTaoPhieuTra_Click(object sender, EventArgs e)
-        {
-
+        { // 21 13 14
+            QuanLiMuonTraMatBUS mBus = new QuanLiMuonTraMatBUS();
+            mBus.TraSach(docgia, listSach);
         }
 
         private void chkChonSach_CheckStateChanged(object sender, EventArgs e)

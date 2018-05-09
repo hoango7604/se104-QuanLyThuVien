@@ -16,10 +16,12 @@ namespace QuanLiThuVienDAL
         private dbconnection conn ;
 
         public giahanDAL()
-        { 
-        
-        
+        {
+            conn = new dbconnection(); 
+
         }
+
+
 
         public bool laygiahancuasach(int masach, giahanDTO ghDTO)
         {
@@ -56,10 +58,10 @@ namespace QuanLiThuVienDAL
 
         public bool sualangiahan(int masach, giahanDTO ghDTO)
         {
-            string query = string.Format("update [giahan] set solangiahan=@solangiahan , masach=@masach");
+            string query = string.Format("update [giahan] set solangiahan=@solangiahan  where masach=@masach ");
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@solangiahan", SqlDbType.Int);
-            param[0].Value = masach;
+            param[0].Value = ghDTO.Solangiahan ;
             param[1] = new SqlParameter("@masach", SqlDbType.Int);
             param[1].Value = masach;
 
@@ -76,7 +78,7 @@ namespace QuanLiThuVienDAL
             string query = string.Format("insert into [giahan] values (@solangiahan,@masach)");
             SqlParameter[] param = new SqlParameter[2];
             param[0] = new SqlParameter("@solangiahan", SqlDbType.Int);
-            param[0].Value = masach;
+            param[0].Value = ghDTO.Solangiahan;
             param[1] = new SqlParameter("@masach", SqlDbType.Int);
             param[1].Value = masach;
 
@@ -90,7 +92,7 @@ namespace QuanLiThuVienDAL
         {
 
 
-            string query = string.Format("delete from [giaha] where masach=@masach  ");
+            string query = string.Format("delete from [giahan] where masach=@masach  ");
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@masach", SqlDbType.Int);
             param[0].Value = masach;

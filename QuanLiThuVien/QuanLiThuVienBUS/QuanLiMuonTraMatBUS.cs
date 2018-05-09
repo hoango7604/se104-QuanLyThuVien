@@ -86,9 +86,9 @@ namespace QuanLiThuVienBUS
                     sachBUS.MuonSach(sach);
                 }
 
-                //thêm ngày cho phép mượn sách
+                //thêm vao bang gia han cho sach 
                 GiaHanSachBUS ghsax = new GiaHanSachBUS();
-                ghsax.TaoThoigianmuonsach(sach.Masach);
+                ghsax.TaoSoLanmuonsach(sach.Masach);
 
             }
             return true;
@@ -124,10 +124,13 @@ namespace QuanLiThuVienBUS
             sachDAL.SachDangMuon(bandoc.MaThe, sachdangmuon, danhsachngaymuonsach);
             phieutraDAL.danhsachPhieuTra(danhsachphieutra);
 
+            //Thêm phiếu trả
             phieutraDTO phieutra = new phieutraDTO();
             phieutra.Mapt = danhsachphieutra.Count + 1;
             phieutra.Mathe = bandoc.MaThe;
             phieutra.Ngaytra = DateTime.Now;
+            phieutra.Tienphatkinay = 0;
+            phieutraDAL.themPhieuTra(phieutra);
 
             int tienphatkinay = 0;
 
@@ -138,7 +141,7 @@ namespace QuanLiThuVienBUS
                 DateTime ngaymuonsach = LayDatetimeDcMuonCuaSach(saxtra.Masach, sachdangmuon, danhsachngaymuonsach);
                 int songaydamuon = SoNgayMuon(ngaymuonsach, DateTime.Now);
                 int tienphatsachnay = 0;
-                if (saxtra.Trangthai != (int)TrangThaiSach.DaMat)
+                if (saxtra.Trangthai == (int)TrangThaiSach.DaMat)
                 {
                     tienphatsachnay = saxtra.Giatri;
                 }
@@ -150,18 +153,8 @@ namespace QuanLiThuVienBUS
                 tienphatkinay += tienphatsachnay;
 
 
-                //quẳng sách lại zô kho
-                QuanLiSachBUS qlsachBUS = new QuanLiSachBUS();
-                if (saxtra.Trangthai != (int)TrangThaiSach.DaMat)
-                {
-                    qlsachBUS.Travekho(saxtra);
-                }
-                else qlsachBUS.MatSach(saxtra);
-               
-
-
                 //thêm chi tiết phiếu trả
-                ctptDTO ctptra = new ctptDTO();
+                 ctptDTO ctptra = new ctptDTO();
                 ctptra.Mapt = phieutra.Mapt;
                 ctptra.Masach = saxtra.Masach;
                 ctptra.Songaydamuon = songaydamuon;
@@ -170,14 +163,24 @@ namespace QuanLiThuVienBUS
                 ctptDAL.themCTPT(ctptra);
                 danhsachchitietphieutra.Add(ctptra);
 
-                //xóa ngày chi phéo giữ sách
+                //quẳng sách lại zô kho
+                QuanLiSachBUS qlsachBUS = new QuanLiSachBUS();
+                if (saxtra.Trangthai != (int)TrangThaiSach.DaMat)
+                {
+                    qlsachBUS.Travekho(saxtra);
+                }
+                else qlsachBUS.MatSach(saxtra);
+
+
+                //xóa ngày cho phép giữ sách
                 GiaHanSachBUS ghsax = new GiaHanSachBUS();
-                ghsax.XoaThoiGianMuonSach(saxtra.Masach);
+                ghsax.XoaSoLanMuonSach(saxtra.Masach);
             }
 
-            //Thêm phiếu trả
+            //sửa thông tin phiếu trả
             phieutra.Tienphatkinay = tienphatkinay;
-            phieutraDAL.themPhieuTra(phieutra);
+            phieutraDAL.suaPhieuTra(phieutra);
+          
 
             //thêm nợ vào bạn đọc
             bandoc.Tongtienno += tienphatkinay;

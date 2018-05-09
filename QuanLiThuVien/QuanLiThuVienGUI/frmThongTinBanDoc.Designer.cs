@@ -373,6 +373,7 @@
             this.btnGiaHanSach.TabIndex = 19;
             this.btnGiaHanSach.Text = "Gia hạn sách";
             this.btnGiaHanSach.UseVisualStyleBackColor = true;
+            this.btnGiaHanSach.Click += new System.EventHandler(this.btnGiaHanSach_Click);
             // 
             // btnLapPhieuTra
             // 

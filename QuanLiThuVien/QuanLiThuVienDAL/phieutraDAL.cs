@@ -60,7 +60,7 @@ namespace QuanLiThuVienDAL
         {
 
 
-            string query = string.Format("insert into [phieutra] values (mapt=@mapt,ngaytra=@ngaytra,tienphatkinay=@tienphatkinay,mathe=@mathe)");
+            string query = string.Format("insert into [phieutra] values (@mapt,@ngaytra,@tienphatkinay,@mathe)");
             SqlParameter[] param = new SqlParameter[4];
             param[0] = new SqlParameter("@mapt", SqlDbType.Int);
             param[0].Value = Convert.ToString(ptDTO.Mapt);
@@ -77,6 +77,26 @@ namespace QuanLiThuVienDAL
             return true;
         }
 
-    
+        public bool suaPhieuTra(phieutraDTO ptDTO)
+        {
+
+
+            string query = string.Format(" update [phieutra] set ngaytra=@ngaytra,tienphatkinay=@tienphatkinay,mathe=@mathe where mapt=@mapt ");
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@mapt", SqlDbType.Int);
+            param[0].Value = Convert.ToString(ptDTO.Mapt);
+            param[1] = new SqlParameter("@ngaytra", SqlDbType.DateTime);
+            param[1].Value = Convert.ToString(ptDTO.Ngaytra);
+            param[2] = new SqlParameter("@tienphatkinay", SqlDbType.Int);
+            param[2].Value = Convert.ToString(ptDTO.Tienphatkinay);
+            param[3] = new SqlParameter("@mathe", SqlDbType.Int);
+            param[3].Value = Convert.ToString(ptDTO.Mathe);
+
+            conn.excuteNonQuery2(query, param);
+
+
+            return true;
+        }
+
     }
 }

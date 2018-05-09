@@ -78,35 +78,25 @@ GO
  CREATE TABLE ct_phieutra (
  songaydamuon INT NOT NULL , 
  tienphatsach INT NOT NULL ,
-
+ 
  mapt INT NOT NULL FOREIGN KEY REFERENCES dbo.phieutra (mapt), 
  masach INT NOT NULL  FOREIGN KEY REFERENCES dbo.sach (masach),
 
-
+ PRIMARY KEY (mapt,masach)
  )
+
+
  GO
 
  
 
+CREATE TABLE giahan (
 
-INSERT INTO dbo.quydinh
-        ( tuoimax ,
-          tuoimin ,
-          songayduocmuon ,
-          sosachduocmuon ,
-          kcnamxuatban
-        )
-VALUES  ( 50 , -- tuoimax - int
-          18 , -- tuoimin - int
-          14 , -- songayduocmuon - int
-          3 , -- sosachduocmuon - int
-          8  -- kcnamxuatban - int
-        ) 
+solangiahan INT NOT NULL ,
+masach INT NOT NULL FOREIGN KEY REFERENCES dbo.sach (masach)  
 
-INSERT INTO	dbo.cacloaidocgia 
-        ( loaidg )
-VALUES  ( 2  -- loaidg - int
-          )
+)
+
 
 --constrant 
  --tb [quydinh][docgia] :ngaysinh-ngayhientai >= tuoimin  and <=50  them dg 

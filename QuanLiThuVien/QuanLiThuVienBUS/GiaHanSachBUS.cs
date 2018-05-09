@@ -10,8 +10,19 @@ namespace QuanLiThuVienBUS
 {
     public class GiaHanSachBUS
     {
-        public bool TaoThoigianmuonsach(int masach)
+
+        public bool TaoSoLanmuonsach(int masach)
         {
+            giahanDAL giahanDAL = new giahanDAL();
+            giahanDTO giahanDTO = new giahanDTO();
+            giahanDTO.Masach = masach;
+            giahanDTO.Solangiahan = 0;
+            
+            if (!giahanDAL.themgiahan(masach, giahanDTO))
+            {
+                BUS_notification.mess = "Không thể mượn sách. Vui lòng kiểm tra Database  ";
+                return false;
+            }
             return true;
         }
 
@@ -19,9 +30,9 @@ namespace QuanLiThuVienBUS
         {
             giahanDAL giahanDAL = new giahanDAL();
             quydinhDAL quydinhDAL = new quydinhDAL();
-
             giahanDTO giahanDTO = new giahanDTO();
             quydinhDTO quydinhDTO = new quydinhDTO();
+
             List<quydinhDTO> list = new List<quydinhDTO>();
 
             quydinhDAL.listquydinh(list);
@@ -51,7 +62,7 @@ namespace QuanLiThuVienBUS
 
         }
 
-        public bool XoaThoiGianMuonSach(int masach)
+        public bool XoaSoLanMuonSach(int masach)
         {
             giahanDAL giahanDAL = new giahanDAL();
             giahanDTO giahanDTO = new giahanDTO();

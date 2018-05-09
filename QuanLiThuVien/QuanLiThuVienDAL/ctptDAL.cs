@@ -61,7 +61,7 @@ namespace QuanLiThuVienDAL
         {
 
 
-            string query = string.Format("insert into [ct_phieutra] value (songaydamuon=@songaydamuon,tienphatsach=@songaydamuon, mapt=@mapt, masach=@masach)");
+            string query = string.Format("insert into [ct_phieutra] values( @songaydamuon,@tienphatsach, @mapt, @masach)");
             SqlParameter[] param = new SqlParameter[4];
 
             param[0] = new SqlParameter("@songaydamuon", SqlDbType.Int);
@@ -75,7 +75,7 @@ namespace QuanLiThuVienDAL
             param[3].Value = Convert.ToString(ctptDTO.Masach);
 
 
-            conn.excuteNonQuery(query, param);
+            conn.excuteNonQuery2(query, param);
 
 
             return true;
@@ -84,5 +84,31 @@ namespace QuanLiThuVienDAL
 
 
         }
+        
+        //chưa kiểm duyệt
+        //public bool suaCTPT(ctptDTO ctptDTO)
+        //{
+
+
+        //    string query = string.Format("update [ (songaydamuon=@songaydamuon,tienphatsach=@tienphatsach, mapt=@mapt, masach=@masach)");
+        //    SqlParameter[] param = new SqlParameter[4];
+
+        //    param[0] = new SqlParameter("@songaydamuon", SqlDbType.Int);
+        //    param[0].Value = Convert.ToString(ctptDTO.Songaydamuon);
+        //    param[1] = new SqlParameter("@tienphatsach", SqlDbType.Int);
+        //    param[1].Value = Convert.ToString(ctptDTO.Tienphatsach);
+
+        //    param[2] = new SqlParameter("@mapt", SqlDbType.Int);
+        //    param[2].Value = Convert.ToString(ctptDTO.Mapt);
+        //    param[3] = new SqlParameter("@masach", SqlDbType.Int);
+        //    param[3].Value = Convert.ToString(ctptDTO.Masach);
+
+
+        //    conn.excuteNonQuery2(query, param);
+
+
+        //    return true;
+        //}
+
     }
 }
