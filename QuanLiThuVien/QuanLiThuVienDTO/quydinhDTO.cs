@@ -13,7 +13,7 @@ namespace QuanLiThuVienDTO
         }
           
         
-        public quydinhDTO(int tienphattrasachtremoingay, int tuoimax, int tuoimin,int songayduocmuon, int sosachduocmuon, int kcnamxuatban)
+        public quydinhDTO(int tienphattrasach0tremoingay, int tuoimax, int tuoimin,int songayduocmuon, int sosachduocmuon, int kcnamxuatban)
         {   
             Tienphattrasachtremoingay=tienphattrasachtremoingay;
             Tuoimax = tuoimax;

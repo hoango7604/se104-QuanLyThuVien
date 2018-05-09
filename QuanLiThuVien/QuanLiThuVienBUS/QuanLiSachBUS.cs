@@ -114,7 +114,7 @@ namespace QuanLiThuVienBUS
 
             sachDAL saxDAL = new sachDAL();
             sachDTO temp = new sachDTO();
-            list = DanhSachSachCoSan();
+            list = DanhSachSach();
 
             //if(masach != "")
             //if (saxDAL.isSach(sDTO.Masach,ref temp))
@@ -128,7 +128,7 @@ namespace QuanLiThuVienBUS
                 {
                     foreach (sachDTO sax in list)
                     {
-                        if (sax.Masach == int.Parse(masach) && sax.Trangthai == (int)TrangThaiSach.CoSan)
+                        if (sax.Masach == int.Parse(masach) )
                         {
                             result.Add(sax);
                             return result;
@@ -142,7 +142,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if ( sach.Trangthai == (int)TrangThaiSach.CoSan && Levenshtein_Distance.Distance(sach.Tensach,tensach) <= max_name_distance)
+                    if (  Levenshtein_Distance.Distance(sach.Tensach,tensach) <= max_name_distance)
                     {
                         if (result.IndexOf(sach)==-1)
                         {
@@ -156,7 +156,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (sach.Trangthai == (int)TrangThaiSach.CoSan  && sach.Theloai == theloai)
+                    if (sach.Theloai == theloai)
                     {
                         if (result.IndexOf(sach) == -1)
                         {
@@ -170,7 +170,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (sach.Trangthai == (int)TrangThaiSach.CoSan && Levenshtein_Distance.Distance(sach.Tacgia,tacgia)<=max_author_distance)
+                    if (Levenshtein_Distance.Distance(sach.Tacgia,tacgia)<=max_author_distance)
                     {
                         if (result.IndexOf(sach) == -1)
                         {
@@ -184,7 +184,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (sach.Trangthai == (int)TrangThaiSach.CoSan  && Levenshtein_Distance.Distance(sach.Nxb,nhaxuatban)<= max_publishcompany_distance)
+                    if ( Levenshtein_Distance.Distance(sach.Nxb,nhaxuatban)<= max_publishcompany_distance)
                     {
                         if (result.IndexOf(sach)==-1)
                         {

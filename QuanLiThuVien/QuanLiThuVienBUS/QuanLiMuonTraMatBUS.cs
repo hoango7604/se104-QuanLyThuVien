@@ -114,15 +114,23 @@ namespace QuanLiThuVienBUS
             quydinhDAL quyDinhDAL = new quydinhDAL();
             phieutraDAL phieutraDAL = new phieutraDAL();
             ctptDAL ctptDAL = new ctptDAL();
-
+            giahanDAL giaHanDAL = new giahanDAL();
 
             List<sachDTO> sachdangmuon = new List<sachDTO>();
             List<DateTime> danhsachngaymuonsach = new List<DateTime>();
             List<phieutraDTO> danhsachphieutra = new List<phieutraDTO>();
             List<ctptDTO> danhsachchitietphieutra = new List<ctptDTO>();
+            List<quydinhDTO> danhsachquydinh = new List<quydinhDTO>();
+
+            quydinhDTO quydinh = new quydinhDTO();
+
+            quyDinhDAL.listquydinh(danhsachquydinh);
+            quydinh = danhsachquydinh[0];
 
             sachDAL.SachDangMuon(bandoc.MaThe, sachdangmuon, danhsachngaymuonsach);
             phieutraDAL.danhsachPhieuTra(danhsachphieutra);
+
+        
 
             //Thêm phiếu trả
             phieutraDTO phieutra = new phieutraDTO();
@@ -136,19 +144,23 @@ namespace QuanLiThuVienBUS
 
             foreach (sachDTO saxtra in sachtra )
             {
-               
+                giahanDTO giaHanDTO = new giahanDTO();
+                giaHanDAL.laygiahancuasach(saxtra.Masach, giaHanDTO);
+
+
                 // kiễm tra quá hạn , tính tiền phạt khi trễ, mất sách
                 DateTime ngaymuonsach = LayDatetimeDcMuonCuaSach(saxtra.Masach, sachdangmuon, danhsachngaymuonsach);
                 int songaydamuon = SoNgayMuon(ngaymuonsach, DateTime.Now);
                 int tienphatsachnay = 0;
+
                 if (saxtra.Trangthai == (int)TrangThaiSach.DaMat)
                 {
                     tienphatsachnay = saxtra.Giatri;
                 }
-                else
-                if (songaydamuon > 14)
+             
+                if (songaydamuon > quydinh.Songayduocmuon + giaHanDTO.Solangiahan * 7)
                 {
-                    tienphatsachnay = (songaydamuon - 14) * 5000;
+                    tienphatsachnay = (songaydamuon - (quydinh.Songayduocmuon + giaHanDTO.Solangiahan * 7)) * quydinh.Tienphattrasachtremoingay;
                 }
                 tienphatkinay += tienphatsachnay;
 
