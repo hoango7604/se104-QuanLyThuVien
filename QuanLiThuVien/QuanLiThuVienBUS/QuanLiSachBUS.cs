@@ -261,12 +261,37 @@ namespace QuanLiThuVienBUS
         {
             return false;
         }
-       
 
+        /// Danh sách các tựa sách mà đọc giả đang lượng
+        /// </summary>
+        /// <param name="docgia"></param>
+        /// <returns></returns>
+        public List<sachDTO> DanhSachDocGiaDangMuon(docgiaDTO docgia, List<DateTime> listngaymuon)
+        {
+            docgiaDAL docGiaDAL = new docgiaDAL();
+            sachDAL saxDAL = new sachDAL();
+
+            List<sachDTO> listsach = new List<sachDTO>();
+            //List<DateTime> listngaymuon = new List<DateTime>();
+
+            if (!docGiaDAL.isDocGia(docgia.MaThe))
+            {
+                BUS_notification.mess = "Không tồn tại đọc giả";
+                return new List<sachDTO>();
+            }
+
+            if (!saxDAL.SachDangMuon(docgia.MaThe, listsach, listngaymuon))
+            {
+                return new List<sachDTO>();
+            }
+            return listsach;
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////// Khu vực Internal ///////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////
+
+        #region Internal
 
         /// <summary>
         /// cập nhật thông tin cho sách đã mất
@@ -320,29 +345,7 @@ namespace QuanLiThuVienBUS
         }
 
         /// <summary>
-        /// Danh sách các tựa sách mà đọc giả đang lượng
-        /// </summary>
-        /// <param name="docgia"></param>
-        /// <returns></returns>
-        public List<sachDTO> DanhSachDocGiaDangMuon(docgiaDTO docgia, List <DateTime> listngaymuon )
-        {
-            docgiaDAL docGiaDAL = new docgiaDAL();
-            sachDAL saxDAL = new sachDAL();
 
-            List<sachDTO> listsach = new List<sachDTO>();
-            //List<DateTime> listngaymuon = new List<DateTime>();
-
-            if (!docGiaDAL.isDocGia(docgia.MaThe))
-            {
-                BUS_notification.mess = "Không tồn tại đọc giả";
-                return new List<sachDTO>();
-            }
-
-            if (!saxDAL.SachDangMuon(docgia.MaThe, listsach,listngaymuon))
-            {
-                return new List<sachDTO>();
-            }
-            return listsach;
-        }
+        #endregion
     }
 }

@@ -9,7 +9,7 @@ namespace QuanLiThuVienDTO
     public class loaisachDTO
     {
         public loaisachDTO() { }
-
+       
         private string loaisach;
 
         public string Theloaisach

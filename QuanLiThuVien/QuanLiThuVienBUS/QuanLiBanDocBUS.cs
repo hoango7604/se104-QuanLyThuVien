@@ -10,7 +10,7 @@ namespace QuanLiThuVienBUS
 {
     public class QuanLiBanDocBUS
     {
-        const int MAX_LEVENSTEIN_DISTANCE = 5;
+        const int MAX_LEVENSTEIN_DISTANCE = 8;
 
         public QuanLiBanDocBUS()
         {

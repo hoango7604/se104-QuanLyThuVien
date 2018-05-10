@@ -21,7 +21,7 @@ namespace QuanLiThuVienDAL
 
         public bool danhsachloaisach(List<loaisachDTO> list)
         {
-            string query = string.Format("select* from [cacloaisach] ");
+            string query = string.Format("select* from [cacloaisach] order by loaisach  asc ");
             SqlParameter[] parm = new SqlParameter[1];
 
             // ko can thiet nhung phai co 
@@ -63,6 +63,24 @@ namespace QuanLiThuVienDAL
             {
                 return null;
             }
+        }
+         
+        
+        public bool themTheLoai (loaisachDTO lsDTO)
+        {
+
+
+            string query = string.Format("insert into [cacloaisach] values (@loaisach)");
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@loaisach", SqlDbType.NVarChar);
+            param[0].Value = Convert.ToString(lsDTO.Theloaisach);
+
+            conn.excuteNonQuery2(query, param);
+
+
+            return true;
+
+
         }
     }
 }
