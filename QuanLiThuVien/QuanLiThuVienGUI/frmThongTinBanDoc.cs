@@ -16,6 +16,7 @@ namespace QuanLiThuVienGUI
     {
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
         QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
+        QuanLiMuonTraMatBUS quanLiMuonTraMatBUS = new QuanLiMuonTraMatBUS();
 
         docgiaDTO docgia;
         List<sachDTO> listSachDocGiaDangMuon = new List<sachDTO>();
@@ -46,7 +47,17 @@ namespace QuanLiThuVienGUI
             listDongThongTinSach.Add(dongThongTin);
             dongThongTin.cbTinhTrangSach.DataSource = new List<String> { QuanLiSachBUS.DanhSachTrangThaiSach[0], QuanLiSachBUS.DanhSachTrangThaiSach[2] };
             dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
+            dongThongTin.cbTinhTrangSach.SelectedValueChanged += CbTinhTrangSach_SelectedValueChanged;
             pnDanhSachSachDangMuon.Controls.Add(dongThongTin);
+        }
+
+        private void CbTinhTrangSach_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = (ComboBox)sender;
+            if (cb.SelectedValue.ToString() == QuanLiSachBUS.DanhSachTrangThaiSach[2])
+            {
+                
+            }
         }
 
         private void initThongTinBanDoc(docgiaDTO docgia)
@@ -110,8 +121,18 @@ namespace QuanLiThuVienGUI
                 }
             }
 
-            frmPhieuTra f = new frmPhieuTra(docgia, listSachDocGiaMuonTra);
-            f.ShowDialog();
+            if (listSachDocGiaMuonTra.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn sách để tạo phiếu trả", "Thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                frmPhieuTra f = new frmPhieuTra(docgia, quanLiMuonTraMatBUS.TraSach(docgia, listSachDocGiaMuonTra));
+                f.ShowDialog();
+                pnDanhSachSachDangMuon.Controls.Clear();
+                initDanhSachSachDangMuon(docgia);
+            }
+            
         }
 
         private void btnGiaHanSach_Click(object sender, EventArgs e)

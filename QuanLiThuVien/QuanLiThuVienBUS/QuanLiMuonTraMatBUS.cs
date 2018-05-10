@@ -21,11 +21,6 @@ namespace QuanLiThuVienBUS
 
         }
 
-        public bool BaoMatSach(docgiaDTO bandoc, sachDTO sach)
-        {
-            return true;
-        }
-
         #region Mượn sách
 
         /// <summary>

@@ -32,7 +32,7 @@
             this.lbMaSach = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkChonSach = new System.Windows.Forms.CheckBox();
-            this.lbSoNgayTraTre = new System.Windows.Forms.Label();
+            this.lbSoNgayDaMuon = new System.Windows.Forms.Label();
             this.lbTienPhatChoSach = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -79,17 +79,17 @@
             this.chkChonSach.TabIndex = 0;
             this.chkChonSach.UseVisualStyleBackColor = true;
             // 
-            // lbSoNgayTraTre
+            // lbSoNgayDaMuon
             // 
-            this.lbSoNgayTraTre.AutoEllipsis = true;
-            this.lbSoNgayTraTre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbSoNgayTraTre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoNgayTraTre.Location = new System.Drawing.Point(416, 0);
-            this.lbSoNgayTraTre.Name = "lbSoNgayTraTre";
-            this.lbSoNgayTraTre.Size = new System.Drawing.Size(209, 70);
-            this.lbSoNgayTraTre.TabIndex = 10;
-            this.lbSoNgayTraTre.Text = "Số ngày trả trễ";
-            this.lbSoNgayTraTre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbSoNgayDaMuon.AutoEllipsis = true;
+            this.lbSoNgayDaMuon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSoNgayDaMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoNgayDaMuon.Location = new System.Drawing.Point(416, 0);
+            this.lbSoNgayDaMuon.Name = "lbSoNgayDaMuon";
+            this.lbSoNgayDaMuon.Size = new System.Drawing.Size(209, 70);
+            this.lbSoNgayDaMuon.TabIndex = 10;
+            this.lbSoNgayDaMuon.Text = "Số ngày đã mượn";
+            this.lbSoNgayDaMuon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbTienPhatChoSach
             // 
@@ -109,7 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.lbTienPhatChoSach);
-            this.Controls.Add(this.lbSoNgayTraTre);
+            this.Controls.Add(this.lbSoNgayDaMuon);
             this.Controls.Add(this.lbTenSach);
             this.Controls.Add(this.lbMaSach);
             this.Controls.Add(this.panel3);
@@ -127,7 +127,7 @@
         private System.Windows.Forms.Label lbMaSach;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.CheckBox chkChonSach;
-        private System.Windows.Forms.Label lbSoNgayTraTre;
+        private System.Windows.Forms.Label lbSoNgayDaMuon;
         private System.Windows.Forms.Label lbTienPhatChoSach;
     }
 }

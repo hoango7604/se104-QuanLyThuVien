@@ -12,12 +12,12 @@ namespace QuanLiThuVienDTO
         {
 
         }
-        public ctptDTO(int map, int masach, int tienphatsach, int songaydamuon)
+        public ctptDTO(int mapt, int masach, int tienphatsach, int songaydamuon)
         {
             Mapt = mapt;
             Masach = masach;
             Tienphatsach = tienphatsach;
-             Songaydamuon = songaydamuon;
+            Songaydamuon = songaydamuon;
         }
         private int mapt;
 
@@ -41,8 +41,6 @@ namespace QuanLiThuVienDTO
             set { tienphatsach = value; }
         }   
         private int songaydamuon;
-
-     
 
         public int Songaydamuon
         {

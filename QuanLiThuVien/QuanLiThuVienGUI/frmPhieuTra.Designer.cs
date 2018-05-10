@@ -35,20 +35,20 @@
             this.txbTenBanDoc = new System.Windows.Forms.TextBox();
             this.lbMaTheBanDoc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbTongTienPhat = new System.Windows.Forms.Label();
+            this.lbNgayTra = new System.Windows.Forms.Label();
+            this.txbTongTienPhat = new System.Windows.Forms.TextBox();
+            this.dtbNgayTra = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbTienPhatChoSach = new System.Windows.Forms.Label();
-            this.lbSoNgayTraTre = new System.Windows.Forms.Label();
+            this.lbSoNgayDaMuon = new System.Windows.Forms.Label();
             this.lbTenSach = new System.Windows.Forms.Label();
             this.lbMaSach = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.chkChonSach = new System.Windows.Forms.CheckBox();
             this.lbDanhSachSachTra = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachTra = new System.Windows.Forms.Panel();
-            this.dtbNgayTra = new System.Windows.Forms.DateTimePicker();
-            this.txbTongTienPhat = new System.Windows.Forms.TextBox();
-            this.lbNgayTra = new System.Windows.Forms.Label();
-            this.lbTongTienPhat = new System.Windows.Forms.Label();
-            this.chkChonSach = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -136,10 +136,50 @@
             this.panel2.Size = new System.Drawing.Size(854, 372);
             this.panel2.TabIndex = 20;
             // 
+            // lbTongTienPhat
+            // 
+            this.lbTongTienPhat.AutoSize = true;
+            this.lbTongTienPhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbTongTienPhat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbTongTienPhat.Location = new System.Drawing.Point(466, 58);
+            this.lbTongTienPhat.Name = "lbTongTienPhat";
+            this.lbTongTienPhat.Size = new System.Drawing.Size(115, 20);
+            this.lbTongTienPhat.TabIndex = 23;
+            this.lbTongTienPhat.Text = "Tổng tiền phạt:";
+            // 
+            // lbNgayTra
+            // 
+            this.lbNgayTra.AutoSize = true;
+            this.lbNgayTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbNgayTra.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbNgayTra.Location = new System.Drawing.Point(7, 60);
+            this.lbNgayTra.Name = "lbNgayTra";
+            this.lbNgayTra.Size = new System.Drawing.Size(72, 20);
+            this.lbNgayTra.TabIndex = 9;
+            this.lbNgayTra.Text = "Ngày trả:";
+            // 
+            // txbTongTienPhat
+            // 
+            this.txbTongTienPhat.Enabled = false;
+            this.txbTongTienPhat.Location = new System.Drawing.Point(587, 58);
+            this.txbTongTienPhat.Name = "txbTongTienPhat";
+            this.txbTongTienPhat.Size = new System.Drawing.Size(246, 20);
+            this.txbTongTienPhat.TabIndex = 22;
+            this.txbTongTienPhat.TabStop = false;
+            // 
+            // dtbNgayTra
+            // 
+            this.dtbNgayTra.Enabled = false;
+            this.dtbNgayTra.Location = new System.Drawing.Point(86, 60);
+            this.dtbNgayTra.Name = "dtbNgayTra";
+            this.dtbNgayTra.Size = new System.Drawing.Size(200, 20);
+            this.dtbNgayTra.TabIndex = 21;
+            this.dtbNgayTra.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.lbTienPhatChoSach);
-            this.panel4.Controls.Add(this.lbSoNgayTraTre);
+            this.panel4.Controls.Add(this.lbSoNgayDaMuon);
             this.panel4.Controls.Add(this.lbTenSach);
             this.panel4.Controls.Add(this.lbMaSach);
             this.panel4.Controls.Add(this.panel6);
@@ -160,17 +200,17 @@
             this.lbTienPhatChoSach.Text = "Tiền phạt cho sách";
             this.lbTienPhatChoSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbSoNgayTraTre
+            // lbSoNgayDaMuon
             // 
-            this.lbSoNgayTraTre.AutoEllipsis = true;
-            this.lbSoNgayTraTre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbSoNgayTraTre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSoNgayTraTre.Location = new System.Drawing.Point(419, 3);
-            this.lbSoNgayTraTre.Name = "lbSoNgayTraTre";
-            this.lbSoNgayTraTre.Size = new System.Drawing.Size(210, 35);
-            this.lbSoNgayTraTre.TabIndex = 29;
-            this.lbSoNgayTraTre.Text = "Số ngày trễ";
-            this.lbSoNgayTraTre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbSoNgayDaMuon.AutoEllipsis = true;
+            this.lbSoNgayDaMuon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSoNgayDaMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoNgayDaMuon.Location = new System.Drawing.Point(419, 3);
+            this.lbSoNgayDaMuon.Name = "lbSoNgayDaMuon";
+            this.lbSoNgayDaMuon.Size = new System.Drawing.Size(210, 35);
+            this.lbSoNgayDaMuon.TabIndex = 29;
+            this.lbSoNgayDaMuon.Text = "Số ngày đã mượn";
+            this.lbSoNgayDaMuon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbTenSach
             // 
@@ -205,6 +245,16 @@
             this.panel6.Size = new System.Drawing.Size(38, 35);
             this.panel6.TabIndex = 28;
             // 
+            // chkChonSach
+            // 
+            this.chkChonSach.AutoSize = true;
+            this.chkChonSach.Enabled = false;
+            this.chkChonSach.Location = new System.Drawing.Point(11, 9);
+            this.chkChonSach.Name = "chkChonSach";
+            this.chkChonSach.Size = new System.Drawing.Size(15, 14);
+            this.chkChonSach.TabIndex = 1;
+            this.chkChonSach.UseVisualStyleBackColor = true;
+            // 
             // lbDanhSachSachTra
             // 
             this.lbDanhSachSachTra.AutoSize = true;
@@ -233,57 +283,6 @@
             this.pnDanhSachSachTra.Name = "pnDanhSachSachTra";
             this.pnDanhSachSachTra.Size = new System.Drawing.Size(823, 273);
             this.pnDanhSachSachTra.TabIndex = 19;
-            // 
-            // dtbNgayTra
-            // 
-            this.dtbNgayTra.Enabled = false;
-            this.dtbNgayTra.Location = new System.Drawing.Point(86, 60);
-            this.dtbNgayTra.Name = "dtbNgayTra";
-            this.dtbNgayTra.Size = new System.Drawing.Size(200, 20);
-            this.dtbNgayTra.TabIndex = 21;
-            this.dtbNgayTra.TabStop = false;
-            // 
-            // txbTongTienPhat
-            // 
-            this.txbTongTienPhat.Enabled = false;
-            this.txbTongTienPhat.Location = new System.Drawing.Point(587, 58);
-            this.txbTongTienPhat.Name = "txbTongTienPhat";
-            this.txbTongTienPhat.Size = new System.Drawing.Size(246, 20);
-            this.txbTongTienPhat.TabIndex = 22;
-            this.txbTongTienPhat.TabStop = false;
-            // 
-            // lbNgayTra
-            // 
-            this.lbNgayTra.AutoSize = true;
-            this.lbNgayTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbNgayTra.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbNgayTra.Location = new System.Drawing.Point(7, 60);
-            this.lbNgayTra.Name = "lbNgayTra";
-            this.lbNgayTra.Size = new System.Drawing.Size(72, 20);
-            this.lbNgayTra.TabIndex = 9;
-            this.lbNgayTra.Text = "Ngày trả:";
-            // 
-            // lbTongTienPhat
-            // 
-            this.lbTongTienPhat.AutoSize = true;
-            this.lbTongTienPhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbTongTienPhat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTongTienPhat.Location = new System.Drawing.Point(466, 58);
-            this.lbTongTienPhat.Name = "lbTongTienPhat";
-            this.lbTongTienPhat.Size = new System.Drawing.Size(115, 20);
-            this.lbTongTienPhat.TabIndex = 23;
-            this.lbTongTienPhat.Text = "Tổng tiền phạt:";
-            // 
-            // chkChonSach
-            // 
-            this.chkChonSach.AutoSize = true;
-            this.chkChonSach.Enabled = false;
-            this.chkChonSach.Location = new System.Drawing.Point(11, 9);
-            this.chkChonSach.Name = "chkChonSach";
-            this.chkChonSach.Size = new System.Drawing.Size(15, 14);
-            this.chkChonSach.TabIndex = 1;
-            this.chkChonSach.UseVisualStyleBackColor = true;
-            this.chkChonSach.CheckStateChanged += new System.EventHandler(this.chkChonSach_CheckStateChanged);
             // 
             // frmPhieuTra
             // 
@@ -319,7 +318,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbTienPhatChoSach;
-        private System.Windows.Forms.Label lbSoNgayTraTre;
+        private System.Windows.Forms.Label lbSoNgayDaMuon;
         private System.Windows.Forms.Label lbTenSach;
         private System.Windows.Forms.Label lbMaSach;
         private System.Windows.Forms.Panel panel6;

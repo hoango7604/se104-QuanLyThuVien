@@ -19,13 +19,13 @@ namespace QuanLiThuVienGUI
             InitializeComponent();
         }
 
-        public dongPhieuTra(sachDTO sach, DateTime ngaymuon)
+        public dongPhieuTra(ctptDTO ctpt)
         {
             InitializeComponent();
-            lbMaSach.Text = sach.Masach.ToString();
-            lbTenSach.Text = sach.Tensach;
-            lbSoNgayTraTre.Text = (DateTime.Now - ngaymuon).TotalDays.ToString();
-
+            lbMaSach.Text = ctpt.Masach.ToString();
+            lbTenSach.Text = new QuanLiSachBUS().Timsachtheoma(ctpt.Masach).ToString();
+            lbSoNgayDaMuon.Text = ctpt.Songaydamuon.ToString();
+            lbTienPhatChoSach.Text = ctpt.Tienphatsach.ToString();
         }
     }
 }

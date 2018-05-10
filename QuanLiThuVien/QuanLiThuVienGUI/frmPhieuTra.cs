@@ -14,54 +14,40 @@ namespace QuanLiThuVienGUI
 {
     public partial class frmPhieuTra : Form
     {
-
+        int tongTienPhat = 0;
         docgiaDTO docgia;
-        List<sachDTO> listSach = new List<sachDTO>();
+        List<ctptDTO> listCTPT = new List<ctptDTO>();
         QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
         QuanLiMuonTraMatBUS quanLiMuonTraMat = new QuanLiMuonTraMatBUS();
-        List<dongThongTinSach> listDongThongTinSach = new List<dongThongTinSach>();
+        List<dongPhieuTra> listDongPhieuTra = new List<dongPhieuTra>();
 
-        public frmPhieuTra(docgiaDTO docgia, List<sachDTO> listSach)
+        public frmPhieuTra(docgiaDTO docgia, List<ctptDTO> listCTPT)
         {
             InitializeComponent();
-            initFormPhieuTra(docgia);
             this.docgia = docgia;
-            this.listSach = listSach;
-            foreach (sachDTO sach in listSach)
+            this.listCTPT = listCTPT;
+            foreach (ctptDTO ctpt in listCTPT)
             {
-                initDongThongTinSach(sach);
+                tongTienPhat += ctpt.Tienphatsach;
+                initDongPhieuTra(ctpt);
             }
+            initFormPhieuTra(docgia);
         }
 
         private void initFormPhieuTra(docgiaDTO docgia)
         {
             txbTenBanDoc.Text = docgia.HoTen;
             txbMaTheBanDoc.Text = docgia.MaThe.ToString();
+            txbTongTienPhat.Text = tongTienPhat.ToString();
         }
 
-        private void initDongThongTinSach(sachDTO sach)
+        private void initDongPhieuTra(ctptDTO ctpt)
         {
-            dongThongTinSach dongThongTin = new dongThongTinSach(sach);
-            dongThongTin.changeEnable_CbTinhTrangSach(false);
-            dongThongTin.chkChonSach.Enabled = false;
-            listDongThongTinSach.Add(dongThongTin);
-            dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
-            pnDanhSachSachTra.Controls.Add(dongThongTin);
-        }
-
-        private void btnTaoPhieuTra_Click(object sender, EventArgs e)
-        { // 21 13 14
-            QuanLiMuonTraMatBUS mBus = new QuanLiMuonTraMatBUS();
-            mBus.TraSach(docgia, listSach);
-        }
-
-        private void chkChonSach_CheckStateChanged(object sender, EventArgs e)
-        {
-            CheckBox cb = (CheckBox)sender;
-            foreach (dongThongTinSach dongThongTin in listDongThongTinSach)
-            {
-                dongThongTin.chkChonSach.CheckState = cb.CheckState;
-            }
+            dongPhieuTra dongPhieuTra = new dongPhieuTra(ctpt);
+            dongPhieuTra.chkChonSach.Enabled = false;
+            listDongPhieuTra.Add(dongPhieuTra);
+            dongPhieuTra.Location = new Point(3, 3 + dongPhieuTra.Height * (listDongPhieuTra.Count() - 1));
+            pnDanhSachSachTra.Controls.Add(dongPhieuTra);
         }
     }
 }
