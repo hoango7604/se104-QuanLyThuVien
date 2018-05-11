@@ -46,7 +46,7 @@ namespace QuanLiThuVienBUS
             }
             if (solangiahan == 2 )
             {
-                BUS_notification.mess = "Đã gia hạn quá số lần cho phép";
+                BUS_notification.mess = "Đã quá số lần gia hạn cho phép";
                 return false;
             }
 

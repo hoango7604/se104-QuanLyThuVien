@@ -25,9 +25,7 @@ namespace QuanLiThuVienGUI
         {
             this.Close();
         }
-
-
-
+        
         private void btnThemBanDoc_Click(object sender, EventArgs e)
         {
             if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
@@ -49,14 +47,6 @@ namespace QuanLiThuVienGUI
             else
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
-            }
-        }
-
-        private void frmThemBanDoc_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn hủy lệnh thêm bạn đọc?", "Hủy thêm bạn đọc", MessageBoxButtons.OKCancel) != DialogResult.OK)
-            {
-                e.Cancel = true;
             }
         }
     }

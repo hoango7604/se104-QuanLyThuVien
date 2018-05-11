@@ -34,6 +34,9 @@ namespace QuanLiThuVienGUI
 
         private void initDanhSachSachDangMuon(docgiaDTO docgia)
         {
+            pnDanhSachSachDangMuon.Controls.Clear();
+            listDongThongTinSach.Clear();
+            listngaymuon.Clear();
             listSachDocGiaDangMuon = quanLiSachBUS.DanhSachDocGiaDangMuon(docgia, listngaymuon);
             for (int i = 0; i < listSachDocGiaDangMuon.Count; i++)
             {
@@ -86,8 +89,9 @@ namespace QuanLiThuVienGUI
         private void btnLapPhieuMuon_Click(object sender, EventArgs e)
         {
             frmPhieuMuon f = new frmPhieuMuon(docgia);
-            this.Close();
-            f.Show();
+            f.ShowDialog();
+            initDanhSachSachDangMuon(docgia);
+            chkChonSach.CheckState = CheckState.Unchecked;
         }
 
         private void btnLapPhieuTra_Click(object sender, EventArgs e)
@@ -116,15 +120,17 @@ namespace QuanLiThuVienGUI
             {
                 frmPhieuTra f = new frmPhieuTra(docgia, quanLiMuonTraMatBUS.TraSach(docgia, listSachDocGiaMuonTra));
                 f.ShowDialog();
-                pnDanhSachSachDangMuon.Controls.Clear();
+                listSachDocGiaMuonTra.Clear();
+                docgia = quanLiBanDocBUS.TimDocGia(docgia.MaThe.ToString(), docgia.HoTen)[0];
+                initThongTinBanDoc(docgia);
                 initDanhSachSachDangMuon(docgia);
+                chkChonSach.CheckState = CheckState.Unchecked;
             }
             
         }
 
         private void btnGiaHanSach_Click(object sender, EventArgs e)
         {
-
             for (int i = 0; i < listDongThongTinSach.Count; i++)
             {
                 if (listDongThongTinSach[i].chkChonSach.CheckState == CheckState.Checked)
@@ -141,17 +147,27 @@ namespace QuanLiThuVienGUI
                 }
             }
 
-            GiaHanSachBUS gh = new GiaHanSachBUS();
-            foreach (sachDTO sach in listSachDocGiaMuonTra)
+            if (listSachDocGiaMuonTra.Count > 0)
             {
-               if(gh.GiaHan(sach.Masach))
+                GiaHanSachBUS gh = new GiaHanSachBUS();
+                foreach (sachDTO sach in listSachDocGiaMuonTra)
                 {
-                    MessageBox.Show("gia hạn thành cmn công cuốn " + sach.Tensach);
-                }
-               else
-                    MessageBox.Show("gia hạn thất cmn bại liệt " + sach.Tensach + BUS_notification.mess);
+                    if (gh.GiaHan(sach.Masach))
+                    {
+                        MessageBox.Show("Gia hạn thành công cuốn " + sach.Tensach, "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                        MessageBox.Show("Gia hạn thất bại " + sach.Tensach + "\n" + BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
 
+                }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn sách để gia hạn", "Thông báo", MessageBoxButtons.OK);
+            }
+
+            listSachDocGiaMuonTra.Clear();
+            chkChonSach.CheckState = CheckState.Unchecked;
         }
 
         private void chkChonSach_CheckedChanged(object sender, EventArgs e)

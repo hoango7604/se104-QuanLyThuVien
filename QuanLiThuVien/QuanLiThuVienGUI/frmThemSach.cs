@@ -50,13 +50,5 @@ namespace QuanLiThuVienGUI
 
             frmChinh.loadDanhSachSach();
         }
-
-        private void frmThemSach_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn hủy lệnh thêm sách?", "Hủy thêm sách", MessageBoxButtons.OKCancel) != DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
     }
 }

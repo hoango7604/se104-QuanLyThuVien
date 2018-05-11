@@ -16,6 +16,8 @@ namespace QuanLiThuVienGUI
     {
         List<docgiaDTO> listDocGia;
         List<sachDTO> listSach;
+        List<loaidocgiaDTO> listLoaiDocGia;
+        List<loaisachDTO> listLoaiSach;
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
         QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
         int indexBanDoc = 0;
@@ -24,10 +26,20 @@ namespace QuanLiThuVienGUI
         public frmManHinhChinh()
         {
             InitializeComponent();
+            initComboBox();
             initDataGridViewBanDoc();
             initDataGridViewSach();
             anhXaThongTinBanDoc(indexBanDoc);
             anhXaThongTinSach(indexSach);
+        }
+
+        private void initComboBox()
+        {
+            listLoaiDocGia = quanLiBanDocBUS.CacLoaiDocGia();
+            foreach (loaidocgiaDTO loaidocgia in listLoaiDocGia)
+            {
+                cbLoaiDocGia.Items.Add(loaidocgia.Cacloai);
+            }
         }
 
         private void initDataGridViewBanDoc()
@@ -79,13 +91,13 @@ namespace QuanLiThuVienGUI
         private void thêmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThemBanDoc f = new frmThemBanDoc(this);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void thêmSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThemSach f = new frmThemSach(this);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void tìmKiếmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,13 +113,13 @@ namespace QuanLiThuVienGUI
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia ,0);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void tạoPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void giaHạnSáchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,9 +176,7 @@ namespace QuanLiThuVienGUI
             if (indexBanDoc >= 0)
             {
                 frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[indexBanDoc]);
-                f.Show();
-                loadDanhSachBanDoc();
-                loadDanhSachSach();
+                f.ShowDialog();
             }
             else
             {
@@ -177,7 +187,7 @@ namespace QuanLiThuVienGUI
         private void btnThemBanDoc_Click(object sender, EventArgs e)
         {
             frmThemBanDoc f = new frmThemBanDoc(this);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void btnSuaThongTinBanDoc_Click(object sender, EventArgs e)
@@ -253,7 +263,7 @@ namespace QuanLiThuVienGUI
             if (indexSach >= 0)
             {
                 frmThongTinSach f = new frmThongTinSach(listSach[indexSach]);
-                f.Show();
+                f.ShowDialog();
             }
             else
             {
@@ -264,7 +274,7 @@ namespace QuanLiThuVienGUI
         private void btnThemSach_Click(object sender, EventArgs e)
         {
             frmThemSach f = new frmThemSach(this);
-            f.Show();
+            f.ShowDialog();
         }
 
         private void btnSuaThongTinSach_Click(object sender, EventArgs e)
@@ -304,7 +314,7 @@ namespace QuanLiThuVienGUI
         private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia, 0);
-            f.Show();
+            f.ShowDialog();
         }
 
         /// <summary>
@@ -315,7 +325,7 @@ namespace QuanLiThuVienGUI
         private void btnPhieuTra_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
-            f.Show();
+            f.ShowDialog();
         }
 
         /// <summary>

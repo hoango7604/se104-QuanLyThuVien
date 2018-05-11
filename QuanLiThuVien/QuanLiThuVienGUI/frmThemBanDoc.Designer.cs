@@ -160,7 +160,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThemBanDoc";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmThemBanDoc_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
