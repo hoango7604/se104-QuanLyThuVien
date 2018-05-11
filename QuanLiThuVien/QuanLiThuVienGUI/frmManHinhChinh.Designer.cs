@@ -277,7 +277,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(159, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 6);
             // 
             // xuấtPhiếuThuToolStripMenuItem
             // 
@@ -1259,7 +1259,7 @@
             this.tpThongKe.Padding = new System.Windows.Forms.Padding(3);
             this.tpThongKe.Size = new System.Drawing.Size(962, 491);
             this.tpThongKe.TabIndex = 5;
-            this.tpThongKe.Text = "Thống Kê";
+            this.tpThongKe.Text = "  Thống Kê  ";
             this.tpThongKe.UseVisualStyleBackColor = true;
             // 
             // btnInDS

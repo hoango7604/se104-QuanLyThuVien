@@ -79,13 +79,13 @@ namespace QuanLiThuVienGUI
         private void thêmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThemBanDoc f = new frmThemBanDoc(this);
-            f.ShowDialog();
+            f.Show();
         }
 
         private void thêmSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThemSach f = new frmThemSach(this);
-            f.ShowDialog();
+            f.Show();
         }
 
         private void tìmKiếmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,13 +101,13 @@ namespace QuanLiThuVienGUI
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia ,0);
-            f.ShowDialog();
+            f.Show();
         }
 
         private void tạoPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
-            f.ShowDialog();
+            f.Show();
         }
 
         private void giaHạnSáchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,7 +164,9 @@ namespace QuanLiThuVienGUI
             if (indexBanDoc >= 0)
             {
                 frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[indexBanDoc]);
-                f.ShowDialog();
+                f.Show();
+                loadDanhSachBanDoc();
+                loadDanhSachSach();
             }
             else
             {
@@ -175,7 +177,7 @@ namespace QuanLiThuVienGUI
         private void btnThemBanDoc_Click(object sender, EventArgs e)
         {
             frmThemBanDoc f = new frmThemBanDoc(this);
-            f.ShowDialog();
+            f.Show();
         }
 
         private void btnSuaThongTinBanDoc_Click(object sender, EventArgs e)
@@ -251,7 +253,7 @@ namespace QuanLiThuVienGUI
             if (indexSach >= 0)
             {
                 frmThongTinSach f = new frmThongTinSach(listSach[indexSach]);
-                f.ShowDialog();
+                f.Show();
             }
             else
             {
@@ -262,7 +264,7 @@ namespace QuanLiThuVienGUI
         private void btnThemSach_Click(object sender, EventArgs e)
         {
             frmThemSach f = new frmThemSach(this);
-            f.ShowDialog();
+            f.Show();
         }
 
         private void btnSuaThongTinSach_Click(object sender, EventArgs e)
@@ -302,7 +304,7 @@ namespace QuanLiThuVienGUI
         private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia, 0);
-            f.ShowDialog();
+            f.Show();
         }
 
         /// <summary>
@@ -313,7 +315,7 @@ namespace QuanLiThuVienGUI
         private void btnPhieuTra_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
-            f.ShowDialog();
+            f.Show();
         }
 
         /// <summary>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLiThuVienGUI;
 using QuanLiThuVienBUS;
 using QuanLiThuVienDTO;
 
@@ -98,7 +99,9 @@ namespace QuanLiThuVienGUI
             {
                 MessageBox.Show("Tạo phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK);
                 this.DialogResult = DialogResult.OK;
+                frmThongTinBanDoc f = new frmThongTinBanDoc(new QuanLiBanDocBUS().TimDocGia(docgia.MaThe.ToString(), docgia.HoTen)[0]);
                 this.Close();
+                f.Show();
             }
             else
             {

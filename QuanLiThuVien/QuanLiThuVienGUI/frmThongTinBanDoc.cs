@@ -47,17 +47,7 @@ namespace QuanLiThuVienGUI
             listDongThongTinSach.Add(dongThongTin);
             dongThongTin.cbTinhTrangSach.DataSource = new List<String> { QuanLiSachBUS.DanhSachTrangThaiSach[0], QuanLiSachBUS.DanhSachTrangThaiSach[2] };
             dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
-            dongThongTin.cbTinhTrangSach.SelectedValueChanged += CbTinhTrangSach_SelectedValueChanged;
             pnDanhSachSachDangMuon.Controls.Add(dongThongTin);
-        }
-
-        private void CbTinhTrangSach_SelectedValueChanged(object sender, EventArgs e)
-        {
-            ComboBox cb = (ComboBox)sender;
-            if (cb.SelectedValue.ToString() == QuanLiSachBUS.DanhSachTrangThaiSach[2])
-            {
-                
-            }
         }
 
         private void initThongTinBanDoc(docgiaDTO docgia)
@@ -96,11 +86,8 @@ namespace QuanLiThuVienGUI
         private void btnLapPhieuMuon_Click(object sender, EventArgs e)
         {
             frmPhieuMuon f = new frmPhieuMuon(docgia);
-            if (f.ShowDialog() == DialogResult.OK)
-            {
-                pnDanhSachSachDangMuon.Controls.Clear();
-                initDanhSachSachDangMuon(docgia);
-            }
+            this.Close();
+            f.Show();
         }
 
         private void btnLapPhieuTra_Click(object sender, EventArgs e)
