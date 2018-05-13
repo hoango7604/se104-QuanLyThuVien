@@ -438,5 +438,139 @@ namespace QuanLiThuVienGUI
                     break;
             }
         }
+
+        private void btnInDS_Click(object sender, EventArgs e)
+        {
+            pvdInDanhSach.Document = pdInDanhSach;
+            pvdInDanhSach.ShowDialog();
+        }
+
+        private void pdInDanhSach_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            if(rdoSachTraTre.Checked)
+            {
+                sachtratreBUS busSachTraTre = new sachtratreBUS();
+                DataTable dt = busSachTraTre.LayDSSachChuaTra(dtmThongKe.Value);
+
+                e.Graphics.DrawString("THỐNG KÊ SÁCH TRẢ TRỄ", new Font("Arial", 26, FontStyle.Bold), Brushes.Black, new Point(25, 100));
+
+                e.Graphics.DrawString(dtmThongKe.Value.Month.ToString() + "/" + dtmThongKe.Value.Year.ToString(), new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new Point(25, 150));
+
+
+                e.Graphics.DrawString("STT", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(25, 250));
+                e.Graphics.DrawString("Tên Sách", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(90, 250));
+                e.Graphics.DrawString("Ngày Mượn", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(500, 250));
+                e.Graphics.DrawString("Số Ngày Trễ", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(700, 250));
+
+                int y = 300;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string TheLoai = dt.Rows[i]["Tên Sách"].ToString() + " ";
+
+                    List<String> listTuKhoa = new List<string>();
+                    for (int j = 0; j < TheLoai.Length; j++)
+                    {
+                        if (TheLoai[j] == ' ')
+                        {
+                            listTuKhoa.Add(TheLoai.Substring(0, j));
+                            TheLoai = TheLoai.Substring(j + 1);
+                            j = 0;
+                        }
+                    }
+
+                    string ngayMuon = dt.Rows[i]["Ngày Mượn"].ToString();
+
+                    e.Graphics.DrawString((i + 1).ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(25, y));
+                    e.Graphics.DrawString(ngayMuon.Substring(0, 10), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(500, y));
+                    e.Graphics.DrawString(dt.Rows[i]["Số Ngày Trễ"].ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(700, y));
+
+
+
+                    while (listTuKhoa.Count >= 6)
+                    {
+                        string showTheLoai = "";
+                        for (int count = 0; count < 6; count++)
+                        {
+                            showTheLoai += listTuKhoa[count] + " ";
+                        }
+                        e.Graphics.DrawString(showTheLoai, new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(90, y));
+
+                        listTuKhoa.RemoveRange(0, 6);
+                        y += 30;
+                    }
+                    if (listTuKhoa.Count < 6)
+                    {
+                        string showTheLoai = "";
+                        for (int count = 0; count < listTuKhoa.Count; count++)
+                        {
+                            showTheLoai += listTuKhoa[count] + " ";
+                        }
+                        e.Graphics.DrawString(showTheLoai, new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(90, y));
+                    }
+                    y += 50;
+                }
+            }
+
+            if (rdoTheLoai.Checked)
+            {
+                thongketheloaiBUS busTheLoai = new thongketheloaiBUS();
+                DataTable dt = busTheLoai.layDSLoaiSachDuocQuanTam(dtmThongKe.Value);
+
+                e.Graphics.DrawString("THỐNG KÊ THỂ LOẠI ĐANG ĐƯỢC MƯỢN NHIỀU", new Font("Arial", 20, FontStyle.Bold), Brushes.Black, new Point(25, 100));
+
+                e.Graphics.DrawString(dtmThongKe.Value.Month.ToString() + "/" + dtmThongKe.Value.Year.ToString(), new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new Point(25, 150));
+
+                
+                e.Graphics.DrawString("STT", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(25, 250));
+                e.Graphics.DrawString("Thể Loại", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(90, 250));
+                e.Graphics.DrawString("Số Lượt Mượn", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(400, 250));
+               
+                int y = 300;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string TheLoai = dt.Rows[i]["Thể Loại"].ToString() + " ";
+                    
+                    List<String> listTuKhoa = new List<string>();
+                    for(int j = 0; j < TheLoai.Length; j++)
+                    {
+                        if(TheLoai[j] == ' ')
+                        {
+                            listTuKhoa.Add(TheLoai.Substring(0, j));
+                            TheLoai = TheLoai.Substring(j + 1);
+                            j = 0;
+                        }
+                    }
+
+
+                    e.Graphics.DrawString((i + 1).ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(25, y));
+                    e.Graphics.DrawString(dt.Rows[i]["Số Lượt Mượn"].ToString(), new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(400, y));
+
+                    
+                    while (listTuKhoa.Count >= 5)
+                    {
+                        string showTheLoai = "";
+                        for (int count = 0; count < 5; count++)
+                        {
+                            showTheLoai += listTuKhoa[count] + " ";
+                        }
+                        e.Graphics.DrawString(showTheLoai, new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(90, y));
+
+                        listTuKhoa.RemoveRange(0, 5);
+                        y += 30;
+                    }
+                    if (listTuKhoa.Count < 5)
+                    {
+                        string showTheLoai = "";
+                        for (int count = 0; count < listTuKhoa.Count; count++)
+                        {
+                            showTheLoai += listTuKhoa[count] + " ";
+                        }
+                        e.Graphics.DrawString(showTheLoai, new Font("Arial", 14, FontStyle.Regular), Brushes.Black, new Point(90, y));
+                    }
+                    y += 50;
+                }
+            }
+
+        }
     }
 }

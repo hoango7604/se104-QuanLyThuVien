@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManHinhChinh));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmBạnĐọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,6 +147,8 @@
             this.rdoSachTraTre = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvThongKe = new System.Windows.Forms.DataGridView();
+            this.pvdInDanhSach = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdInDanhSach = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -401,6 +404,7 @@
             // 
             this.dgvThongTinBanDoc.AllowUserToAddRows = false;
             this.dgvThongTinBanDoc.AllowUserToDeleteRows = false;
+            this.dgvThongTinBanDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvThongTinBanDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThongTinBanDoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvThongTinBanDoc.Location = new System.Drawing.Point(0, 0);
@@ -725,6 +729,7 @@
             // 
             this.dgvThongTinSach.AllowUserToAddRows = false;
             this.dgvThongTinSach.AllowUserToDeleteRows = false;
+            this.dgvThongTinSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvThongTinSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThongTinSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvThongTinSach.Location = new System.Drawing.Point(0, 0);
@@ -1270,6 +1275,7 @@
             this.btnInDS.TabIndex = 5;
             this.btnInDS.Text = "In Danh Sách";
             this.btnInDS.UseVisualStyleBackColor = true;
+            this.btnInDS.Click += new System.EventHandler(this.btnInDS_Click);
             // 
             // btnXemDS
             // 
@@ -1343,11 +1349,28 @@
             // 
             // dgvThongKe
             // 
+            this.dgvThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThongKe.Location = new System.Drawing.Point(6, 6);
             this.dgvThongKe.Name = "dgvThongKe";
+            this.dgvThongKe.ReadOnly = true;
             this.dgvThongKe.Size = new System.Drawing.Size(507, 477);
             this.dgvThongKe.TabIndex = 0;
+            // 
+            // pvdInDanhSach
+            // 
+            this.pvdInDanhSach.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.pvdInDanhSach.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.pvdInDanhSach.ClientSize = new System.Drawing.Size(400, 300);
+            this.pvdInDanhSach.Enabled = true;
+            this.pvdInDanhSach.Icon = ((System.Drawing.Icon)(resources.GetObject("pvdInDanhSach.Icon")));
+            this.pvdInDanhSach.Name = "pvdInDanhSach";
+            this.pvdInDanhSach.Visible = false;
+            // 
+            // pdInDanhSach
+            // 
+            this.pdInDanhSach.DocumentName = " ";
+            this.pdInDanhSach.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdInDanhSach_PrintPage);
             // 
             // frmManHinhChinh
             // 
@@ -1529,5 +1552,7 @@
         private System.Windows.Forms.RadioButton rdoSachTraTre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvThongKe;
+        private System.Windows.Forms.PrintPreviewDialog pvdInDanhSach;
+        private System.Drawing.Printing.PrintDocument pdInDanhSach;
     }
 }
