@@ -1000,6 +1000,8 @@
             // 
             // cbTheLoaiSach
             // 
+            this.cbTheLoaiSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTheLoaiSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTheLoaiSach.FormattingEnabled = true;
             this.cbTheLoaiSach.Location = new System.Drawing.Point(108, 156);
             this.cbTheLoaiSach.Name = "cbTheLoaiSach";

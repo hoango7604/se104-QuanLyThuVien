@@ -50,6 +50,7 @@ namespace QuanLiThuVienGUI
             listDongThongTinSach.Add(dongThongTin);
             dongThongTin.cbTinhTrangSach.DataSource = new List<String> { QuanLiSachBUS.DanhSachTrangThaiSach[0], QuanLiSachBUS.DanhSachTrangThaiSach[2] };
             dongThongTin.Location = new Point(3, 3 + dongThongTin.Height * (listDongThongTinSach.Count() - 1));
+            dongThongTin.chkChonSach.CheckState = CheckState.Unchecked;
             dongThongTin.Click += DongThongTin_Click;
             pnDanhSachSachDangMuon.Controls.Add(dongThongTin);
         }
@@ -133,13 +134,20 @@ namespace QuanLiThuVienGUI
             }
             else
             {
-                frmPhieuTra f = new frmPhieuTra(docgia, quanLiMuonTraMatBUS.TraSach(docgia, listSachDocGiaMuonTra));
-                f.ShowDialog();
-                listSachDocGiaMuonTra.Clear();
-                docgia = quanLiBanDocBUS.TimDocGia(docgia.MaThe.ToString(), docgia.HoTen)[0];
-                initThongTinBanDoc(docgia);
-                initDanhSachSachDangMuon(docgia);
-                chkChonSach.CheckState = CheckState.Unchecked;
+                try
+                {
+                    frmPhieuTra f = new frmPhieuTra(docgia, quanLiMuonTraMatBUS.TraSach(docgia, listSachDocGiaMuonTra));
+                    f.ShowDialog();
+                    listSachDocGiaMuonTra.Clear();
+                    docgia = quanLiBanDocBUS.TimDocGia(docgia.MaThe.ToString(), docgia.HoTen)[0];
+                    initThongTinBanDoc(docgia);
+                    initDanhSachSachDangMuon(docgia);
+                    chkChonSach.CheckState = CheckState.Unchecked;
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Tạo phiếu trả thất bại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK);
+                }
             }
             
         }

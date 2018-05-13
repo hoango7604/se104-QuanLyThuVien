@@ -62,12 +62,12 @@ namespace QuanLiThuVienBUS
                 }
                 else
                 {
-                  
+
                     foreach (docgiaDTO dg in danhsach)
                     {
-                        if (Levenshtein_Distance.Distance(dg.MaThe.ToString(), cmnd) <= (MAX_LEVENSTEIN_DISTANCE / 2)) 
+                        if (Levenshtein_Distance.Distance(dg.MaThe.ToString(), cmnd) <= (MAX_LEVENSTEIN_DISTANCE / 2))
                         {
-                            if (result.IndexOf(dg)==-1)
+                            if (result.IndexOf(dg) == -1)
                             {
                                 result.Add(dg);
                             }

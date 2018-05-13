@@ -20,6 +20,7 @@ namespace QuanLiThuVienGUI
         List<loaisachDTO> listLoaiSach;
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
         QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
+        QuanLiTheLoaiSachBUS quanLiTheLoaiSachBUS = new QuanLiTheLoaiSachBUS();
         int indexBanDoc = 0;
         int indexSach = 0;
 
@@ -39,6 +40,12 @@ namespace QuanLiThuVienGUI
             foreach (loaidocgiaDTO loaidocgia in listLoaiDocGia)
             {
                 cbLoaiDocGia.Items.Add(loaidocgia.Cacloai);
+            }
+
+            listLoaiSach = quanLiTheLoaiSachBUS.LayDanhSachCacTheLoai();
+            foreach (loaisachDTO loaisach in listLoaiSach)
+            {
+                cbTheLoaiSach.Items.Add(loaisach.Theloaisach);
             }
         }
 
@@ -124,7 +131,8 @@ namespace QuanLiThuVienGUI
 
         private void giaHạnSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
+            f.ShowDialog();
         }
 
         private void xuấtPhiếuThuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,7 +174,14 @@ namespace QuanLiThuVienGUI
             }
             else
             {
-                listDocGia = quanLiBanDocBUS.TimDocGia(txbTimKiemBanDocTheoMa.Text, txbTimKiemTheoTenBanDoc.Text);
+                try
+                {
+                    listDocGia = quanLiBanDocBUS.TimDocGia(txbTimKiemBanDocTheoMa.Text, txbTimKiemTheoTenBanDoc.Text);
+                }
+                catch (FormatException error)
+                {
+                    MessageBox.Show("Lỗi định dạng. Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
+                }
             }
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
         }
@@ -243,15 +258,15 @@ namespace QuanLiThuVienGUI
             }
             else
             {
-                string masach = txbTimSachTheoMa.Text;
-                int resultCMND;
-                if (!int.TryParse(masach, out resultCMND))
+                try
                 {
-                    resultCMND = -1;
+                    sachDTO sDTO = new sachDTO(int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
+                    listSach = quanLiSachBUS.TimSach(sDTO);
                 }
-
-                sachDTO sDTO = new sachDTO(resultCMND, txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
-                listSach = quanLiSachBUS.TimSach(sDTO);
+                catch (FormatException error)
+                {
+                    MessageBox.Show("Lỗi định dạng. Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
+                }
             }
             
             dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, colum4 = o.Nxb}).ToList();
@@ -283,8 +298,30 @@ namespace QuanLiThuVienGUI
             {
                 DateTime datebyYear = new DateTime(int.Parse(txbNamXuatBanSach.Text),1,1);
                 sachDTO sach = new sachDTO(int.Parse( txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, dtpNgayNhapSach.Value, datebyYear, int.Parse(txbGiaTriSach.Text), int.Parse( cbTinhTrangSach.Text));
-                QuanLiSachBUS qlSach = new QuanLiSachBUS();
-                if (qlSach.SuaSach(sach))
+
+                bool isExistTheLoaiSach = false;
+                foreach (loaisachDTO loaisach in listLoaiSach)
+                {
+                    if (cbTheLoaiSach.Text == loaisach.Theloaisach)
+                    {
+                        isExistTheLoaiSach = true;
+                    }
+                }
+                if (isExistTheLoaiSach == false)
+                {
+                    quanLiTheLoaiSachBUS.ThemTheLoaisach(new loaisachDTO(cbTheLoaiSach.Text));
+
+                    listLoaiSach.Clear();
+                    listLoaiSach = quanLiTheLoaiSachBUS.LayDanhSachCacTheLoai();
+
+                    cbTheLoaiSach.Items.Clear();
+                    foreach (loaisachDTO loaisach in listLoaiSach)
+                    {
+                        cbTheLoaiSach.Items.Add(loaisach.Theloaisach);
+                    }
+                }
+
+                if (quanLiSachBUS.SuaSach(sach))
                 {
                     MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
                     loadDanhSachSach();
@@ -399,7 +436,7 @@ namespace QuanLiThuVienGUI
             dtpNgayNhapSach.Value = listSach[indexSach].Ngaynhap;
             txbNamXuatBanSach.Text = listSach[indexSach].Ngayxb.Year.ToString();
             txbGiaTriSach.Text = listSach[indexSach].Giatri.ToString();
-            cbTinhTrangSach.Text = listSach[indexSach].Trangthai.ToString();
+            cbTinhTrangSach.Text = QuanLiSachBUS.DanhSachTrangThaiSach[listSach[indexSach].Trangthai];
         }
         //
         //TAB THONG KE
