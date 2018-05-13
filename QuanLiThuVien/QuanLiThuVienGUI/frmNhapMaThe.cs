@@ -35,16 +35,25 @@ namespace QuanLiThuVienGUI
             {
                 if (cbNhapMaTheBanDoc.Text != "" && new docgiaDAL().isDocGia(listDocGia[cbNhapMaTheBanDoc.SelectedIndex].MaThe))
                 {
+                    Hide();
                     QuanLiBanDocBUS quanLiBanDoc = new QuanLiBanDocBUS();
                     QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
+                    docgiaDTO docgia = listDocGia[cbNhapMaTheBanDoc.SelectedIndex];
                     if (codeMuonTra == 0)
                     {
-                        frmPhieuMuon f = new frmPhieuMuon(listDocGia[cbNhapMaTheBanDoc.SelectedIndex]);
+                        frmPhieuMuon f = new frmPhieuMuon(docgia);
+                        f.ShowDialog();
+                        frmThongTinBanDoc f2 = new frmThongTinBanDoc(docgia);
+                        f2.ShowDialog();
+                    }
+                    else if (codeMuonTra == 1)
+                    {
+                        frmThongTinBanDoc f = new frmThongTinBanDoc(docgia);
                         f.ShowDialog();
                     }
-                    else
+                    else if (codeMuonTra == 2)
                     {
-                        frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[cbNhapMaTheBanDoc.SelectedIndex]);
+                        frmPhieuThuTienPhat f = new frmPhieuThuTienPhat(docgia);
                         f.ShowDialog();
                     }
                     this.Close();

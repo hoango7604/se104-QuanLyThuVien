@@ -129,15 +129,10 @@ namespace QuanLiThuVienGUI
             f.ShowDialog();
         }
 
-        private void giaHạnSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thuTiềnPhạtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
+            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 2);
             f.ShowDialog();
-        }
-
-        private void xuấtPhiếuThuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void thốngKêSáchTrảTrễToolStripMenuItem_Click(object sender, EventArgs e)
