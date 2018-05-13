@@ -15,10 +15,15 @@ namespace QuanLiThuVienGUI
     public partial class frmThemSach : Form
     {
         frmManHinhChinh frmChinh;
+        List<loaisachDTO> listLoaiSach = new List<loaisachDTO>();
         public frmThemSach(frmManHinhChinh main)
         {
             this.frmChinh = main;
             InitializeComponent();
+            foreach (loaisachDTO loaisach in listLoaiSach)
+            {
+                cbTheLoaiSach.Items.Add(loaisach.Theloaisach);
+            }
         }
 
         private void btnHuySach_Click(object sender, EventArgs e)
@@ -37,6 +42,11 @@ namespace QuanLiThuVienGUI
                 if (qlsBUSS.ThemSach(sach)) 
                 {
                     MessageBox.Show("Thêm sách thành công");
+
+                    if (!listLoaiSach.Contains(new loaisachDTO(cbTheLoaiSach.Text)))
+                    {
+                        new QuanLiTheLoaiSachBUS().ThemTheLoaisach(new loaisachDTO(cbTheLoaiSach.Text));
+                    }
                 }
                 else
                 {
@@ -49,6 +59,11 @@ namespace QuanLiThuVienGUI
             }
 
             frmChinh.loadDanhSachSach();
+        }
+
+        private void cbTheLoaiSach_Enter(object sender, EventArgs e)
+        {
+            cbTheLoaiSach.DroppedDown = true;
         }
     }
 }

@@ -129,6 +129,7 @@
             this.cbLoaiDocGia.FormattingEnabled = true;
             resources.ApplyResources(this.cbLoaiDocGia, "cbLoaiDocGia");
             this.cbLoaiDocGia.Name = "cbLoaiDocGia";
+            this.cbLoaiDocGia.Enter += new System.EventHandler(this.cbLoaiDocGia_Enter);
             // 
             // panel1
             // 
