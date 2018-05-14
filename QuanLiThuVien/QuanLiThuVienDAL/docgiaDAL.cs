@@ -196,7 +196,7 @@ namespace QuanLiThuVienDAL
 
             //string searchStr2=ConvertToUnSign(Searchstr); 
 
-            string query = string.Format("select * from [docgia] where hoten like N'@hoten'");
+            string query = string.Format("select * from [docgia] where hoten like 'N@hoten'");
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@hoten", SqlDbType.NVarChar);
             param[0].Value = Searchstr;
@@ -204,13 +204,28 @@ namespace QuanLiThuVienDAL
             DataTable dtb = new DataTable();
             dtb = conn.excuteNonQuery(query, param);
 
-  
-            if (dtb.Rows.Count > 0) 
+            foreach (DataRow dr in dtb.Rows)
+            {
+                docgiaDTO tdgDTO = new docgiaDTO();
+
+                tdgDTO.MaThe = Int32.Parse(dr["mathe"].ToString());
+                tdgDTO.HoTen = dr["hoten"].ToString();
+                tdgDTO.Email = dr["email"].ToString();
+                tdgDTO.Loaidocgia = Int32.Parse(dr["loaidocgia"].ToString());
+                tdgDTO.NgaySinh = DateTime.Parse(dr["ngaysinh"].ToString());
+                tdgDTO.Ngaydk = DateTime.Parse(dr["ngaydk"].ToString());
+                tdgDTO.DiaChi = dr["diachi"].ToString();
+                tdgDTO.Tongtienno = Int32.Parse(dr["tongtienno"].ToString());
+
+                ldgDTO.Add(tdgDTO);
+            }
 
 
-
-            return true;
-
+            if (dtb.Rows.Count > 0)
+            {
+                return true;
+            }
+                
             return false; 
         
         }
