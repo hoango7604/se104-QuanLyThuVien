@@ -30,12 +30,17 @@ namespace QuanLiThuVienGUI
             dtpNgayNhapSach.Value = sach.Ngaynhap;
             txbNamXuatBanSach.Text = sach.Ngayxb.Year.ToString();
             txbGiaTriSach.Text = sach.Giatri.ToString();
-            cbTinhTrangSach.Text = sach.Trangthai.ToString();
+            cbTinhTrangSach.Text = QuanLiSachBUS.DanhSachTrangThaiSach[sach.Trangthai];
         }
 
         private void btnCapNhatBanDoc_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

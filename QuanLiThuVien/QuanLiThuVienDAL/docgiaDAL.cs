@@ -8,6 +8,7 @@ using dbConnection;
 using QuanLiThuVienDTO;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions; 
 
 namespace QuanLiThuVienDAL
 {
@@ -151,6 +152,83 @@ namespace QuanLiThuVienDAL
             return  true ;
         }
 
+                  public  string ConvertToUnSign(string text) 
+    {
+        for (int i = 33; i < 48; i++)
+        {
+            text = text.Replace(((char)i).ToString(), "");
+        }
+
+        for (int i = 58; i < 65; i++)
+        {
+            text = text.Replace(((char)i).ToString(), "");
+        }
+
+        for (int i = 91; i < 97; i++)
+        {
+            text = text.Replace(((char)i).ToString(), "");
+        }
+         for (int i = 123; i < 127; i++)
+        {
+            text = text.Replace(((char)i).ToString(), "");
+        }
+        text = text.Replace(" ", "-");
+        Regex regex = new Regex(@"\p{IsCombiningDiacriticalMarks}+");
+        string strFormD = text.Normalize(System.Text.NormalizationForm.FormD);
+        return regex.Replace(strFormD, String.Empty).Replace('\u0111','d').Replace('\u0110', 'D');
+    }
+
+
+        // tim kiem doc gia theo ten 
+        public bool timkiemDG(string Searchstr, List<docgiaDTO> ldgDTO)
+        {   
+             //****** ưu tiên chuỗi đầu tien hơn 
+
+
+            // tìm vs chuỗi vào có dấu 
+            // thêm vào list 
+            // tạo một list tạm 
+            // chuyển tất cả các tên trong list thành không dấu vào list tạm 
+            // chuyển searchstr thành ko dấu 
+            // tim trong list ko dấu vs str ko dau
+
+            // add
+
+            //string searchStr2=ConvertToUnSign(Searchstr); 
+
+            string query = string.Format("select * from [docgia] where hoten like @hoten");
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@hoten", SqlDbType.NVarChar);
+            param[0].Value = Convert.ToString("%" + Searchstr + "%");
+
+            DataTable dtb = new DataTable();
+            dtb = conn.excuteNonQuery(query, param);
+
+            foreach (DataRow dr in dtb.Rows)
+            {
+                docgiaDTO tdgDTO = new docgiaDTO();
+
+                tdgDTO.MaThe = Int32.Parse(dr["mathe"].ToString());
+                tdgDTO.HoTen = dr["hoten"].ToString();
+                tdgDTO.Email = dr["email"].ToString();
+                tdgDTO.Loaidocgia = Int32.Parse(dr["loaidocgia"].ToString());
+                tdgDTO.NgaySinh = DateTime.Parse(dr["ngaysinh"].ToString());
+                tdgDTO.Ngaydk = DateTime.Parse(dr["ngaydk"].ToString());
+                tdgDTO.DiaChi = dr["diachi"].ToString();
+                tdgDTO.Tongtienno = Int32.Parse(dr["tongtienno"].ToString());
+
+                ldgDTO.Add(tdgDTO);
+            }
+
+
+            if (dtb.Rows.Count > 0)
+            {
+                return true;
+            }
+                
+            return false; 
+        
+        }
      
     }
 }

@@ -49,6 +49,7 @@
             this.chkChonSach.Size = new System.Drawing.Size(15, 14);
             this.chkChonSach.TabIndex = 0;
             this.chkChonSach.UseVisualStyleBackColor = true;
+            this.chkChonSach.CheckStateChanged += new System.EventHandler(this.chkChonSach_CheckStateChanged);
             // 
             // lbMaSach
             // 
@@ -61,6 +62,7 @@
             this.lbMaSach.TabIndex = 1;
             this.lbMaSach.Text = "Mã sách";
             this.lbMaSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbMaSach.Click += new System.EventHandler(this.myClick);
             // 
             // lbTenSach
             // 
@@ -73,6 +75,7 @@
             this.lbTenSach.TabIndex = 2;
             this.lbTenSach.Text = "Tên sách";
             this.lbTenSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTenSach.Click += new System.EventHandler(this.myClick);
             // 
             // panel1
             // 
@@ -82,6 +85,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 70);
             this.panel1.TabIndex = 3;
+            this.panel1.Click += new System.EventHandler(this.myClick);
             // 
             // dtpNgayMuonSach
             // 
@@ -99,6 +103,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(192, 70);
             this.panel2.TabIndex = 5;
+            this.panel2.Click += new System.EventHandler(this.myClick);
             // 
             // cbTinhTrangSach
             // 
@@ -107,6 +112,7 @@
             this.cbTinhTrangSach.Name = "cbTinhTrangSach";
             this.cbTinhTrangSach.Size = new System.Drawing.Size(183, 21);
             this.cbTinhTrangSach.TabIndex = 0;
+            this.cbTinhTrangSach.TextChanged += new System.EventHandler(this.cbTinhTrangSach_TextChanged);
             // 
             // panel3
             // 
@@ -121,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbTenSach);

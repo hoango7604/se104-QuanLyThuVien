@@ -49,5 +49,10 @@ namespace QuanLiThuVienGUI
             dongPhieuTra.Location = new Point(3, 3 + dongPhieuTra.Height * (listDongPhieuTra.Count() - 1));
             pnDanhSachSachTra.Controls.Add(dongPhieuTra);
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

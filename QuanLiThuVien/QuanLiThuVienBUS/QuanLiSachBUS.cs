@@ -97,7 +97,7 @@ namespace QuanLiThuVienBUS
             string nhaxuatban = sDTO.Nxb;
             string masach;
 
-            if (sDTO.Masach == -1 || sDTO.Masach == null)
+            if (sDTO.Masach == -1)
             {
                 masach = "";
             }
@@ -140,30 +140,34 @@ namespace QuanLiThuVienBUS
 
             if (tensach!="")
             {
-                foreach (sachDTO sach in list)
-                {
-                    if (  Levenshtein_Distance.Distance(sach.Tensach,tensach) <= max_name_distance)
-                    {
-                        if (result.IndexOf(sach)==-1)
-                        {
-                            result.Add(sach);
-                        }
-                    }
-                }
+                //foreach (sachDTO sach in list)
+                //{
+                //    if (  Levenshtein_Distance.Distance(sach.Tensach,tensach) <= max_name_distance)
+                //    {
+                //        if (result.IndexOf(sach)==-1)
+                //        {
+                //            result.Add(sach);
+                //        }
+                //    }
+                //}
+
+                saxDAL.timkiemsach("tensach", tensach, result);
             }
 
             if (theloai != "")
             {
-                foreach (sachDTO sach in list)
-                {
-                    if (sach.Theloai == theloai)
-                    {
-                        if (result.IndexOf(sach) == -1)
-                        {
-                            result.Add(sach);
-                        }
-                    }
-                }
+                //foreach (sachDTO sach in list)
+                //{
+                //    if (sach.Theloai == theloai)
+                //    {
+                //        if (result.IndexOf(sach) == -1)
+                //        {
+                //            result.Add(sach);
+                //        }
+                //    }
+                //}
+
+                saxDAL.timkiemsach("theloai", theloai, result);
             }
 
             if (tacgia != "")
@@ -182,16 +186,18 @@ namespace QuanLiThuVienBUS
 
             if (nhaxuatban != "" )
             {
-                foreach (sachDTO sach in list)
-                {
-                    if ( Levenshtein_Distance.Distance(sach.Nxb,nhaxuatban)<= max_publishcompany_distance)
-                    {
-                        if (result.IndexOf(sach)==-1)
-                        {
-                            result.Add(sach);
-                        }
-                    }
-                }
+                //foreach (sachDTO sach in list)
+                //{
+                //    if ( Levenshtein_Distance.Distance(sach.Nxb,nhaxuatban)<= max_publishcompany_distance)
+                //    {
+                //        if (result.IndexOf(sach)==-1)
+                //        {
+                //            result.Add(sach);
+                //        }
+                //    }
+                //}
+
+                saxDAL.timkiemsach("nxb", nhaxuatban, result);
             }
 
             

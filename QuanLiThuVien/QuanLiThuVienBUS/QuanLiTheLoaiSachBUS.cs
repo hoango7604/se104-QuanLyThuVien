@@ -16,7 +16,7 @@ namespace QuanLiThuVienBUS
         /// Danh sách các loại sách
         /// </summary>
         /// <returns></returns>
-        public List<loaisachDTO> LayDanhSachCacTHeLoai()
+        public List<loaisachDTO> LayDanhSachCacTheLoai()
         {
             cacloaisachDAL loaiSachDAL = new cacloaisachDAL();
 

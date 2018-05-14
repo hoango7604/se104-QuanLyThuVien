@@ -157,11 +157,14 @@
             // 
             // cbTheLoaiSach
             // 
+            this.cbTheLoaiSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTheLoaiSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTheLoaiSach.FormattingEnabled = true;
             this.cbTheLoaiSach.Location = new System.Drawing.Point(108, 184);
             this.cbTheLoaiSach.Name = "cbTheLoaiSach";
             this.cbTheLoaiSach.Size = new System.Drawing.Size(200, 21);
             this.cbTheLoaiSach.TabIndex = 2;
+            this.cbTheLoaiSach.Enter += new System.EventHandler(this.cbTheLoaiSach_Enter);
             // 
             // txbMaSach
             // 

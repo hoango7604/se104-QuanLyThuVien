@@ -48,6 +48,7 @@
             this.lbDanhSachSachMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachMuon = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -58,6 +59,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Controls.Add(this.lbThongTinBanDoc);
             this.panel1.Controls.Add(this.txbMaTheBanDoc);
             this.panel1.Controls.Add(this.lbTenBanDoc);
@@ -275,14 +277,28 @@
             this.pnDanhSachSachMuon.Size = new System.Drawing.Size(823, 273);
             this.pnDanhSachSachMuon.TabIndex = 19;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 9;
+            this.btnHuy.Text = "button1";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // frmPhieuMuon
             // 
             this.AcceptButton = this.btnTaoPhieuMuon;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(877, 500);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPhieuMuon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu mượn";
@@ -321,5 +337,6 @@
         private System.Windows.Forms.Panel pnDanhSachSachMuon;
         private System.Windows.Forms.Label lbTimSachTheoMa;
         private System.Windows.Forms.ComboBox cbTimSachTheoMa;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

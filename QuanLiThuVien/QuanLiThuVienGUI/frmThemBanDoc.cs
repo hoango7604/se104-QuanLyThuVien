@@ -15,10 +15,16 @@ namespace QuanLiThuVienGUI
     public partial class frmThemBanDoc : Form
     {
         private Form mainForm;
+        List<loaidocgiaDTO> listLoaiDocGia;
         public frmThemBanDoc(Form parent)
         {
-            this.mainForm = parent;
             InitializeComponent();
+            this.mainForm = parent;
+            listLoaiDocGia = new QuanLiBanDocBUS().CacLoaiDocGia();
+            foreach (loaidocgiaDTO loaidocgia in listLoaiDocGia)
+            {
+                cbLoaiDocGia.Items.Add(loaidocgia.Cacloai);
+            }
         }
 
         private void btnHuyBanDoc_Click(object sender, EventArgs e)
@@ -48,6 +54,11 @@ namespace QuanLiThuVienGUI
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
             }
+        }
+
+        private void cbLoaiDocGia_Enter(object sender, EventArgs e)
+        {
+            cbLoaiDocGia.DroppedDown = true;
         }
     }
 }

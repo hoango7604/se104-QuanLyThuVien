@@ -23,7 +23,7 @@ namespace QuanLiThuVienGUI
         {
             InitializeComponent();
             lbMaSach.Text = ctpt.Masach.ToString();
-            lbTenSach.Text = new QuanLiSachBUS().Timsachtheoma(ctpt.Masach).ToString();
+            lbTenSach.Text = new QuanLiSachBUS().Timsachtheoma(ctpt.Masach).Tensach;
             lbSoNgayDaMuon.Text = ctpt.Songaydamuon.ToString();
             lbTienPhatChoSach.Text = ctpt.Tienphatsach.ToString();
         }

@@ -41,5 +41,27 @@ namespace QuanLiThuVienGUI
         {
             this.cbTinhTrangSach.Enabled = var;
         }
+
+        private void cbTinhTrangSach_TextChanged(object sender, EventArgs e)
+        {
+            this.chkChonSach.CheckState = CheckState.Checked;
+        }
+
+        private void myClick(object sender, EventArgs e)
+        {
+            chkChonSach.Checked = !chkChonSach.Checked;
+        }
+
+        private void chkChonSach_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (chkChonSach.CheckState == CheckState.Checked)
+            {
+                BackColor = Color.SteelBlue;
+            }
+            else
+            {
+                BackColor = Color.White;
+            }
+        }
     }
 }

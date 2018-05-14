@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutocompleteAdress.cs" />
     <Compile Include="BUS_notification.cs" />
     <Compile Include="GiaHanSachBUS.cs" />
     <Compile Include="Levenshtein_Distance.cs" />
@@ -48,6 +50,7 @@
     <Compile Include="QuanLiBanDocBUS.cs" />
     <Compile Include="QuanLiMuonTraMatBUS.cs" />
     <Compile Include="QuanLiSachBUS.cs" />
+    <Compile Include="QuanLiTheLoaiSachBUS.cs" />
     <Compile Include="sachtratreBUS.cs" />
     <Compile Include="thongketheloaiBUS.cs" />
   </ItemGroup>

@@ -49,6 +49,7 @@
             this.lbDanhSachSachTra = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachTra = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -124,6 +125,7 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnHuy);
             this.panel2.Controls.Add(this.lbTongTienPhat);
             this.panel2.Controls.Add(this.lbNgayTra);
             this.panel2.Controls.Add(this.txbTongTienPhat);
@@ -284,10 +286,23 @@
             this.pnDanhSachSachTra.Size = new System.Drawing.Size(823, 273);
             this.pnDanhSachSachTra.TabIndex = 19;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 24;
+            this.btnHuy.Text = "button1";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // frmPhieuTra
             // 
+            this.AcceptButton = this.btnHuy;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(877, 500);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -330,5 +345,6 @@
         private System.Windows.Forms.TextBox txbTongTienPhat;
         private System.Windows.Forms.DateTimePicker dtbNgayTra;
         private System.Windows.Forms.CheckBox chkChonSach;
+        private System.Windows.Forms.Button btnHuy;
     }
 }
