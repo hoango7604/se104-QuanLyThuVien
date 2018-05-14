@@ -202,5 +202,10 @@ namespace QuanLiThuVienGUI
                 dongThongTin.chkChonSach.CheckState = cb.CheckState;
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

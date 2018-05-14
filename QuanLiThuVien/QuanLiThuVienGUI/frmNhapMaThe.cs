@@ -18,9 +18,10 @@ namespace QuanLiThuVienGUI
         List<docgiaDTO> listDocGia = new List<docgiaDTO>();
         int codeMuonTra;
 
-        public frmNhapMaThe(List<docgiaDTO> listDocGia, int codeMuonTra)
+        public frmNhapMaThe(string title, List<docgiaDTO> listDocGia, int codeMuonTra)
         {
             InitializeComponent();
+            this.Text = title;
             this.listDocGia = listDocGia;
             this.codeMuonTra = codeMuonTra;
             foreach (docgiaDTO docgia in listDocGia)

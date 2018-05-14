@@ -48,6 +48,7 @@
             this.lbTacGiaSach = new System.Windows.Forms.Label();
             this.lbNhaXuatBanSach = new System.Windows.Forms.Label();
             this.lbThongTinSach = new System.Windows.Forms.Label();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -254,11 +255,24 @@
             this.lbThongTinSach.TabIndex = 20;
             this.lbThongTinSach.Text = "Thông tin sách";
             // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 38;
+            this.btnHuy.Text = "button2";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // frmThongTinSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(869, 310);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -294,5 +308,6 @@
         private System.Windows.Forms.Label lbTheLoaiSach;
         private System.Windows.Forms.Label lbTacGiaSach;
         private System.Windows.Forms.Label lbNhaXuatBanSach;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

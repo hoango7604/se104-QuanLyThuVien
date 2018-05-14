@@ -60,6 +60,7 @@
             this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -70,6 +71,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Controls.Add(this.dtpNgayTaoTheBanDoc);
             this.panel1.Controls.Add(this.txbTongTienNoBanDoc);
             this.panel1.Controls.Add(this.lbNgayTaoTheBanDoc);
@@ -416,10 +418,22 @@
             this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 211);
             this.pnDanhSachSachDangMuon.TabIndex = 19;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 19;
+            this.btnHuy.Text = "button2";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // frmThongTinBanDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(869, 547);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -475,5 +489,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.CheckBox chkChonSach;
         private System.Windows.Forms.Button btnLapPhieuMuon;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

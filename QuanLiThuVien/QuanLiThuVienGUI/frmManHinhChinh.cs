@@ -32,6 +32,12 @@ namespace QuanLiThuVienGUI
             initDataGridViewSach();
             anhXaThongTinBanDoc(indexBanDoc);
             anhXaThongTinSach(indexSach);
+            anhXaQuyDinh();
+        }
+
+        private void anhXaQuyDinh()
+        {
+
         }
 
         private void initComboBox()
@@ -109,19 +115,19 @@ namespace QuanLiThuVienGUI
 
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe(listDocGia ,0);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu mượn", listDocGia ,0);
             f.ShowDialog();
         }
 
         private void tạoPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu trả", listDocGia, 1);
             f.ShowDialog();
         }
 
         private void thuTiềnPhạtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 2);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu thu tiền phạt", listDocGia, 2);
             f.ShowDialog();
         }
 
@@ -327,7 +333,7 @@ namespace QuanLiThuVienGUI
         /// <param name="e"></param>
         private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 0);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu mượn", listDocGia, 0);
             f.ShowDialog();
         }
 
@@ -338,7 +344,7 @@ namespace QuanLiThuVienGUI
         /// <param name="e"></param>
         private void btnPhieuTra_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe(listDocGia, 1);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu trả", listDocGia, 1);
             f.ShowDialog();
         }
 
@@ -585,6 +591,27 @@ namespace QuanLiThuVienGUI
                 }
             }
 
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void searchBanDocTheoMa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnTimKiemBanDoc_Click(sender, e);
+            }
+        }
+
+        private void editThongTinBanDoc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSuaThongTinBanDoc_Click(sender, e);
+            }
         }
     }
 }
