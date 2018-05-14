@@ -147,6 +147,7 @@ namespace QuanLiThuVienGUI
                 catch (Exception error)
                 {
                     MessageBox.Show("Tạo phiếu trả thất bại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK);
+                    Console.WriteLine(error.ToString());
                 }
             }
             

@@ -62,7 +62,7 @@
             this.lbMaSach.TabIndex = 1;
             this.lbMaSach.Text = "Mã sách";
             this.lbMaSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbMaSach.Click += new System.EventHandler(this.Click);
+            this.lbMaSach.Click += new System.EventHandler(this.myClick);
             // 
             // lbTenSach
             // 
@@ -75,7 +75,7 @@
             this.lbTenSach.TabIndex = 2;
             this.lbTenSach.Text = "Tên sách";
             this.lbTenSach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbTenSach.Click += new System.EventHandler(this.Click);
+            this.lbTenSach.Click += new System.EventHandler(this.myClick);
             // 
             // panel1
             // 
@@ -85,7 +85,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 70);
             this.panel1.TabIndex = 3;
-            this.panel1.Click += new System.EventHandler(this.Click);
+            this.panel1.Click += new System.EventHandler(this.myClick);
             // 
             // dtpNgayMuonSach
             // 
@@ -103,7 +103,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(192, 70);
             this.panel2.TabIndex = 5;
-            this.panel2.Click += new System.EventHandler(this.Click);
+            this.panel2.Click += new System.EventHandler(this.myClick);
             // 
             // cbTinhTrangSach
             // 

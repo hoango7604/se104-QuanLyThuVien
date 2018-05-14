@@ -47,7 +47,7 @@ namespace QuanLiThuVienGUI
             this.chkChonSach.CheckState = CheckState.Checked;
         }
 
-        private void Click(object sender, EventArgs e)
+        private void myClick(object sender, EventArgs e)
         {
             chkChonSach.Checked = !chkChonSach.Checked;
         }

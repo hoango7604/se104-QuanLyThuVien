@@ -167,6 +167,7 @@
             // 
             // btnHuy
             // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuy.Location = new System.Drawing.Point(294, 3);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
@@ -177,8 +178,10 @@
             // 
             // frmPhieuThuTienPhat
             // 
+            this.AcceptButton = this.btnTaoPhieu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(397, 252);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

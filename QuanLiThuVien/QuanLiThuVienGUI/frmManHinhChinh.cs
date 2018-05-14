@@ -156,6 +156,7 @@ namespace QuanLiThuVienGUI
                 catch (FormatException error)
                 {
                     MessageBox.Show("Lỗi định dạng. Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
+                    Console.WriteLine(error.ToString());
                 }
             }
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
@@ -241,6 +242,7 @@ namespace QuanLiThuVienGUI
                 catch (FormatException error)
                 {
                     MessageBox.Show("Lỗi định dạng. Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
+                    Console.WriteLine(error.ToString());
                 }
             }
             

@@ -47,10 +47,12 @@ namespace QuanLiThuVienGUI
             catch (FormatException error)
             {
                 MessageBox.Show("Lỗi định dạng. Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
+                Console.WriteLine(error.ToString());
             }
             catch (Exception error)
             {
                 MessageBox.Show("Thu tiền thất bại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK);
+                Console.WriteLine(error.ToString());
             }
         }
     }
