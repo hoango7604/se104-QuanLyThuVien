@@ -96,7 +96,17 @@ solangiahan INT NOT NULL ,
 masach INT NOT NULL FOREIGN KEY REFERENCES dbo.sach (masach)  
 
 )
+ GO
+ 
+CREATE TABLE phieuthutienphat 
+(
+  maphieuthu INT NOT NULL PRIMARY KEY ,
+  ngaythu DATETIME NOT NULL , 
+  tienthu INT NOT NULL , 
+  mathe INT NOT NULL FOREIGN KEY REFERENCES dbo.docgia(mathe) 
 
+
+)
 
 --constrant 
  --tb [quydinh][docgia] :ngaysinh-ngayhientai >= tuoimin  and <=50  them dg 
