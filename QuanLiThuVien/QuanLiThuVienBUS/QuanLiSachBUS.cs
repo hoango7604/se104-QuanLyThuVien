@@ -97,7 +97,7 @@ namespace QuanLiThuVienBUS
             string nhaxuatban = sDTO.Nxb;
             string masach;
 
-            if (sDTO.Masach == -1 || sDTO.Masach == null)
+            if (sDTO.Masach == -1)
             {
                 masach = "";
             }

@@ -107,16 +107,6 @@ namespace QuanLiThuVienGUI
             f.ShowDialog();
         }
 
-        private void tìmKiếmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            tcManHinhChinh.SelectTab(tpBanDoc);
-        }
-
-        private void tìmKiếmSáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            tcManHinhChinh.SelectTab(tpSach);
-        }
-
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia ,0);
@@ -133,16 +123,6 @@ namespace QuanLiThuVienGUI
         {
             frmNhapMaThe f = new frmNhapMaThe(listDocGia, 2);
             f.ShowDialog();
-        }
-
-        private void thốngKêSáchTrảTrễToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void thốngKêTìnhHìnhMượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void thôngTinPhầnMềmToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -255,7 +235,7 @@ namespace QuanLiThuVienGUI
             {
                 try
                 {
-                    sachDTO sDTO = new sachDTO(int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
+                    sachDTO sDTO = new sachDTO(txbTimSachTheoMa.Text == "" ? -1 : int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
                     listSach = quanLiSachBUS.TimSach(sDTO);
                 }
                 catch (FormatException error)
