@@ -196,10 +196,10 @@ namespace QuanLiThuVienDAL
 
             //string searchStr2=ConvertToUnSign(Searchstr); 
 
-            string query = string.Format("select * from [docgia] where hoten like 'N@hoten'");
+            string query = string.Format("select * from [docgia] where hoten like @hoten");
             SqlParameter[] param = new SqlParameter[1];
             param[0] = new SqlParameter("@hoten", SqlDbType.NVarChar);
-            param[0].Value = Searchstr;
+            param[0].Value = Convert.ToString("%" + Searchstr + "%");
 
             DataTable dtb = new DataTable();
             dtb = conn.excuteNonQuery(query, param);

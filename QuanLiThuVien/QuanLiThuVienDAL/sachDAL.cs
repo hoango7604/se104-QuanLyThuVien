@@ -286,7 +286,57 @@ namespace QuanLiThuVienDAL
             return true; 
         }
 
+        // tim kiem doc gia theo ten 
+        public bool timkiemsach(string field, string Searchstr, List<sachDTO> listSach)
+        {
+            //****** ưu tiên chuỗi đầu tien hơn 
 
+
+            // tìm vs chuỗi vào có dấu 
+            // thêm vào list 
+            // tạo một list tạm 
+            // chuyển tất cả các tên trong list thành không dấu vào list tạm 
+            // chuyển searchstr thành ko dấu 
+            // tim trong list ko dấu vs str ko dau
+
+            // add
+
+            //string searchStr2=ConvertToUnSign(Searchstr); 
+
+            string query = string.Format("select * from [sach] where " + field + " like @" + field);
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@" + field, SqlDbType.NVarChar);
+            param[0].Value = Convert.ToString("%" + Searchstr + "%");
+
+            DataTable dtb = new DataTable();
+            dtb = conn.excuteNonQuery(query, param);
+
+            foreach (DataRow dr in dtb.Rows)
+            {
+                sachDTO sDTO = new sachDTO();
+
+                sDTO.Masach = int.Parse(dr["masach"].ToString());
+                sDTO.Tensach = dr["tensach"].ToString();
+                sDTO.Theloai = dr["Theloai"].ToString();
+                sDTO.Tacgia = dr["tacgia"].ToString();
+                sDTO.Nxb = dr["nxb"].ToString();
+                sDTO.Ngaynhap = DateTime.Parse(dr["ngaynhap"].ToString());
+                sDTO.Ngayxb = DateTime.Parse(dr["ngayxb"].ToString());
+                sDTO.Giatri = int.Parse(dr["giatri"].ToString());
+                sDTO.Trangthai = int.Parse(dr["trangthai"].ToString());
+
+                listSach.Add(sDTO);
+            }
+
+
+            if (dtb.Rows.Count > 0)
+            {
+                return true;
+            }
+
+            return false;
+
+        }
 
     }
 }
