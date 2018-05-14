@@ -12,6 +12,10 @@
 - Nguyễn Minh Hiếu  - 16520400
 - Bùi Trung Tín     - 16521239
 3. CÔNG NGHỆ SỬ DỤNG:
-- Phần mềm Quản Lý Thư Viện được lập trình bằng ngôn ngữ C# trên nền tảng .NET phiên bản 4.7
+- Phần mềm Quản Lý Thư Viện sử dụng các công nghệ liệt kê dưới đây:
+  + Design Pattern: Mô hình 3 lớp 1 tầng
+  + Lập trình bằng ngôn ngữ C# trên nền tảng .NET phiên bản 4.7
+  + Quản lý database bằng MS SQL Server phiên bản 2012
+  + Sử dụng API Place Autocomplete Address của Google
 4. MÔI TRƯỜNG CÀI ĐẶT VÀ SỬ DỤNG PHẦN MỀM:
-- Cài đặt và sử dụng trên môi trường HĐH Windows từ phiên bản Windows XP trở về sau
+- Cài đặt và sử dụng trên môi trường HĐH Windows từ phiên bản Windows 7 trở về sau
