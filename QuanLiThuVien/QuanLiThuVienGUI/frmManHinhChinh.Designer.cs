@@ -210,32 +210,6 @@
             this.thêmSáchToolStripMenuItem.Text = "Thêm sách";
             this.thêmSáchToolStripMenuItem.Click += new System.EventHandler(this.thêmSáchToolStripMenuItem_Click);
             // 
-            // xửLýToolStripMenuItem
-            // 
-            this.xửLýToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tìmKiếmBạnĐọcToolStripMenuItem,
-            this.tìmKiếmSáchToolStripMenuItem});
-            this.xửLýToolStripMenuItem.Name = "xửLýToolStripMenuItem";
-            this.xửLýToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.xửLýToolStripMenuItem.Text = "Tìm kiếm";
-            // 
-            // tìmKiếmBạnĐọcToolStripMenuItem
-            // 
-            this.tìmKiếmBạnĐọcToolStripMenuItem.Name = "tìmKiếmBạnĐọcToolStripMenuItem";
-            this.tìmKiếmBạnĐọcToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.tìmKiếmBạnĐọcToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.tìmKiếmBạnĐọcToolStripMenuItem.Text = "Tìm kiếm bạn đọc";
-            this.tìmKiếmBạnĐọcToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmBạnĐọcToolStripMenuItem_Click);
-            // 
-            // tìmKiếmSáchToolStripMenuItem
-            // 
-            this.tìmKiếmSáchToolStripMenuItem.Name = "tìmKiếmSáchToolStripMenuItem";
-            this.tìmKiếmSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.F)));
-            this.tìmKiếmSáchToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.tìmKiếmSáchToolStripMenuItem.Text = "Tìm kiếm sách";
-            this.tìmKiếmSáchToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmSáchToolStripMenuItem_Click);
-            // 
             // quảnLýMượntrảToolStripMenuItem
             // 
             this.quảnLýMượntrảToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -276,32 +250,6 @@
             this.thuTiềnPhạtToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.thuTiềnPhạtToolStripMenuItem.Text = "Thu tiền phạt";
             this.thuTiềnPhạtToolStripMenuItem.Click += new System.EventHandler(this.thuTiềnPhạtToolStripMenuItem_Click);
-            // 
-            // thốngKêToolStripMenuItem
-            // 
-            this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thốngKêSáchTrảTrễToolStripMenuItem,
-            this.thốngKêTìnhHìnhMượnSáchToolStripMenuItem});
-            this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.thốngKêToolStripMenuItem.Text = "Thống kê";
-            // 
-            // thốngKêSáchTrảTrễToolStripMenuItem
-            // 
-            this.thốngKêSáchTrảTrễToolStripMenuItem.Name = "thốngKêSáchTrảTrễToolStripMenuItem";
-            this.thốngKêSáchTrảTrễToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.thốngKêSáchTrảTrễToolStripMenuItem.Size = new System.Drawing.Size(310, 22);
-            this.thốngKêSáchTrảTrễToolStripMenuItem.Text = "Thống kê sách trả trễ";
-            this.thốngKêSáchTrảTrễToolStripMenuItem.Click += new System.EventHandler(this.thốngKêSáchTrảTrễToolStripMenuItem_Click);
-            // 
-            // thốngKêTìnhHìnhMượnSáchToolStripMenuItem
-            // 
-            this.thốngKêTìnhHìnhMượnSáchToolStripMenuItem.Name = "thốngKêTìnhHìnhMượnSáchToolStripMenuItem";
-            this.thốngKêTìnhHìnhMượnSáchToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.T)));
-            this.thốngKêTìnhHìnhMượnSáchToolStripMenuItem.Size = new System.Drawing.Size(310, 22);
-            this.thốngKêTìnhHìnhMượnSáchToolStripMenuItem.Text = "Thống kê tình hình mượn sách";
-            this.thốngKêTìnhHìnhMượnSáchToolStripMenuItem.Click += new System.EventHandler(this.thốngKêTìnhHìnhMượnSáchToolStripMenuItem_Click);
             // 
             // thôngTinPhầnMềmToolStripMenuItem
             // 
