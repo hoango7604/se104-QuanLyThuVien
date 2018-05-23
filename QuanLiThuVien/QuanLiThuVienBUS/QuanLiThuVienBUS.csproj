@@ -53,6 +53,7 @@
     <Compile Include="QuanLiTheLoaiSachBUS.cs" />
     <Compile Include="sachtratreBUS.cs" />
     <Compile Include="thongketheloaiBUS.cs" />
+    <Compile Include="TimKiemBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuanLiThuVienDAL\QuanLiThuVienDAL.csproj">

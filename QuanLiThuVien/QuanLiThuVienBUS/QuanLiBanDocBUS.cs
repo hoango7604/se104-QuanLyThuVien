@@ -8,9 +8,10 @@ using QuanLiThuVienDAL;
 
 namespace QuanLiThuVienBUS
 {
+
     public class QuanLiBanDocBUS
     {
-        const int MAX_LEVENSTEIN_DISTANCE = 8;
+        const int MAX_LEVENSTEIN_DISTANCE = 12;
 
         public QuanLiBanDocBUS()
         {
@@ -61,7 +62,7 @@ namespace QuanLiThuVienBUS
                     }
                 }
                 else
-                {
+                { 
 
                     foreach (docgiaDTO dg in danhsach)
                     {
@@ -80,17 +81,23 @@ namespace QuanLiThuVienBUS
 
             if (name != "")
             {
-                //foreach (docgiaDTO dg in danhsach)
-                //{
-                //    if (Levenshtein_Distance.Distance(dg.HoTen,name) <= MAX_LEVENSTEIN_DISTANCE)
-                //    {
-                //        if (result.IndexOf(dg) == -1)
-                //        {
-                //            result.Add(dg);
-                //        }                      
-                //    }
-                //}
-                docgiaDAL.timkiemDG(name, result);
+                List<ResultItem> item = new List<ResultItem>();
+                foreach (docgiaDTO dg in danhsach)
+                {
+                    int check = TimKiemBUS.CheckisAvaiable(name, dg.HoTen);
+                    if (check!= -1)
+                    {
+                        ResultItem rItem;
+                        rItem.mark = check;
+                        rItem.docgia = dg;
+                        item.Add(rItem);
+                    }
+                }
+                item.Sort((s1,s2)=> s1.mark.CompareTo(s2.mark));
+                foreach (ResultItem i in item)
+                {
+                    result.Add(i.docgia);
+                }
             }
 
             return result;
@@ -163,6 +170,12 @@ namespace QuanLiThuVienBUS
             return new List<loaidocgiaDTO>();
         }
 
-      
+
+        private struct ResultItem
+        {
+            public int mark;
+            public docgiaDTO docgia;
+        }
     }
+
 }
