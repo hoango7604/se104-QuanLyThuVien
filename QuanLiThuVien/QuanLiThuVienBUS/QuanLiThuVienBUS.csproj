@@ -51,6 +51,7 @@
     <Compile Include="QuanLiMuonTraMatBUS.cs" />
     <Compile Include="QuanLiSachBUS.cs" />
     <Compile Include="QuanLiTheLoaiSachBUS.cs" />
+    <Compile Include="quydinhBUS.cs" />
     <Compile Include="sachtratreBUS.cs" />
     <Compile Include="thongketheloaiBUS.cs" />
     <Compile Include="TimKiemBUS.cs" />
