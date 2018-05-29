@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.lbThongTinBanDoc = new System.Windows.Forms.Label();
             this.txbMaTheBanDoc = new System.Windows.Forms.TextBox();
             this.lbTenBanDoc = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.lbDanhSachSachMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachMuon = new System.Windows.Forms.Panel();
-            this.btnHuy = new System.Windows.Forms.Button();
+            this.lbError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -69,6 +70,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(854, 98);
             this.panel1.TabIndex = 0;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 9;
+            this.btnHuy.Text = "button1";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // lbThongTinBanDoc
             // 
@@ -125,6 +137,7 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbError);
             this.panel2.Controls.Add(this.cbTimSachTheoMa);
             this.panel2.Controls.Add(this.lbTimSachTheoMa);
             this.panel2.Controls.Add(this.btnTaoPhieuMuon);
@@ -141,17 +154,16 @@
             this.cbTimSachTheoMa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbTimSachTheoMa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTimSachTheoMa.FormattingEnabled = true;
-            this.cbTimSachTheoMa.Location = new System.Drawing.Point(90, 60);
+            this.cbTimSachTheoMa.Location = new System.Drawing.Point(90, 49);
             this.cbTimSachTheoMa.Name = "cbTimSachTheoMa";
             this.cbTimSachTheoMa.Size = new System.Drawing.Size(264, 21);
             this.cbTimSachTheoMa.TabIndex = 0;
-            this.cbTimSachTheoMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbTimSachTheoMa_KeyDown);
             // 
             // lbTimSachTheoMa
             // 
             this.lbTimSachTheoMa.AutoSize = true;
             this.lbTimSachTheoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimSachTheoMa.Location = new System.Drawing.Point(7, 61);
+            this.lbTimSachTheoMa.Location = new System.Drawing.Point(7, 50);
             this.lbTimSachTheoMa.Name = "lbTimSachTheoMa";
             this.lbTimSachTheoMa.Size = new System.Drawing.Size(73, 20);
             this.lbTimSachTheoMa.TabIndex = 22;
@@ -277,16 +289,14 @@
             this.pnDanhSachSachMuon.Size = new System.Drawing.Size(823, 273);
             this.pnDanhSachSachMuon.TabIndex = 19;
             // 
-            // btnHuy
+            // lbError
             // 
-            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 9;
-            this.btnHuy.Text = "button1";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            this.lbError.AutoSize = true;
+            this.lbError.ForeColor = System.Drawing.Color.Red;
+            this.lbError.Location = new System.Drawing.Point(11, 74);
+            this.lbError.Name = "lbError";
+            this.lbError.Size = new System.Drawing.Size(0, 13);
+            this.lbError.TabIndex = 23;
             // 
             // frmPhieuMuon
             // 
@@ -338,5 +348,6 @@
         private System.Windows.Forms.Label lbTimSachTheoMa;
         private System.Windows.Forms.ComboBox cbTimSachTheoMa;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Label lbError;
     }
 }

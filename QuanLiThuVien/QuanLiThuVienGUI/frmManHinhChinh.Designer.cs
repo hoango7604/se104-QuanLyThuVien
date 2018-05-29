@@ -614,6 +614,9 @@
             // 
             // cbLoaiDocGia
             // 
+            this.cbLoaiDocGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbLoaiDocGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbLoaiDocGia.Enabled = false;
             this.cbLoaiDocGia.FormattingEnabled = true;
             this.cbLoaiDocGia.Location = new System.Drawing.Point(108, 294);
             this.cbLoaiDocGia.Name = "cbLoaiDocGia";

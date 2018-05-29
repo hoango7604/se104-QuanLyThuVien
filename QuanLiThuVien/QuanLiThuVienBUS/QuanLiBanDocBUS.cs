@@ -13,6 +13,8 @@ namespace QuanLiThuVienBUS
     {
         const int MAX_LEVENSTEIN_DISTANCE = 12;
 
+        public static string[] LoaiDocGia = new string[3] { "Học sinh", "Sinh viên", "Người đi làm" };
+
         public QuanLiBanDocBUS()
         {
             
