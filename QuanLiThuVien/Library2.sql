@@ -34,6 +34,7 @@ CREATE TABLE sach (
 GO
 
 CREATE TABLE quydinh (
+  tienphattrasachtremoingay INT NOT NULL,
   tuoimax INT NOT NULL ,
   tuoimin INT NOT NULL , 
   songayduocmuon INT NOT NULL ,
