@@ -32,6 +32,12 @@ namespace QuanLiThuVienGUI
             initDanhSachSachDangMuon(docgia);
         }
 
+        private void resizeSttErrorLabel()
+        {
+            this.sttError.Size = new Size(48, 22);
+            this.Size = new Size(885, 604);
+        }
+
         private void initDanhSachSachDangMuon(docgiaDTO docgia)
         {
             pnDanhSachSachDangMuon.Controls.Clear();
@@ -76,34 +82,17 @@ namespace QuanLiThuVienGUI
             dtpNgaySinhBanDoc.Value = docgia.NgaySinh;
             txbEmailBanDoc.Text = docgia.Email;
             txbDiaChiBanDoc.Text = docgia.DiaChi;
-            cbLoaiDocGia.Text = docgia.Loaidocgia.ToString();
+            cbLoaiDocGia.Text = QuanLiBanDocBUS.LoaiDocGia[docgia.Loaidocgia];
             txbTongTienNoBanDoc.Text = docgia.Tongtienno.ToString();
             dtpNgayTaoTheBanDoc.Value = docgia.Ngaydk;
         }
 
-        private void btnCapNhatBanDoc_Click(object sender, EventArgs e)
-        {
-            if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
-            {
-                if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, DateTime.Now, 0, int.Parse(cbLoaiDocGia.Text))))
-                {
-                    MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
-
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thông tin thất bại. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
-
-            }
-        }
-
         private void btnLapPhieuMuon_Click(object sender, EventArgs e)
         {
+            lbError.Text = "";
+            sttErrorLabel.Text = "";
+            resizeSttErrorLabel();
+
             frmPhieuMuon f = new frmPhieuMuon(docgia);
             f.ShowDialog();
             initDanhSachSachDangMuon(docgia);
@@ -112,6 +101,10 @@ namespace QuanLiThuVienGUI
 
         private void btnLapPhieuTra_Click(object sender, EventArgs e)
         {
+            lbError.Text = "";
+            sttErrorLabel.Text = "";
+            resizeSttErrorLabel();
+
             for (int i = 0; i < listDongThongTinSach.Count; i++)
             {
                 if (listDongThongTinSach[i].chkChonSach.CheckState == CheckState.Checked)
@@ -130,7 +123,7 @@ namespace QuanLiThuVienGUI
 
             if (listSachDocGiaMuonTra.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn sách để tạo phiếu trả", "Thông báo", MessageBoxButtons.OK);
+                lbError.Text = "Vui lòng chọn sách để tạo phiếu trả";
             }
             else
             {
@@ -146,7 +139,7 @@ namespace QuanLiThuVienGUI
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show("Tạo phiếu trả thất bại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK);
+                    sttErrorLabel.Text = "Tạo phiếu trả thất bại. Vui lòng thử lại";
                     Console.WriteLine(error.ToString());
                 }
             }
@@ -155,43 +148,55 @@ namespace QuanLiThuVienGUI
 
         private void btnGiaHanSach_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < listDongThongTinSach.Count; i++)
+            lbError.Text = "";
+            sttErrorLabel.Text = "";
+
+            if (listSachDocGiaDangMuon.Count > 0)
             {
-                if (listDongThongTinSach[i].chkChonSach.CheckState == CheckState.Checked)
+                for (int i = 0; i < listDongThongTinSach.Count; i++)
                 {
-                    listSachDocGiaMuonTra.Add(listSachDocGiaDangMuon[i]);
-                    if (listDongThongTinSach[i].cbTinhTrangSach.SelectedItem.ToString() == QuanLiSachBUS.DanhSachTrangThaiSach[0])
+                    if (listDongThongTinSach[i].chkChonSach.CheckState == CheckState.Checked)
                     {
-                        listSachDocGiaDangMuon[i].Trangthai = 0;
-                    }
-                    else
-                    {
-                        listSachDocGiaDangMuon[i].Trangthai = 2;
+                        listSachDocGiaMuonTra.Add(listSachDocGiaDangMuon[i]);
+                        if (listDongThongTinSach[i].cbTinhTrangSach.SelectedItem.ToString() == QuanLiSachBUS.DanhSachTrangThaiSach[0])
+                        {
+                            listSachDocGiaDangMuon[i].Trangthai = 0;
+                        }
+                        else
+                        {
+                            listSachDocGiaDangMuon[i].Trangthai = 2;
+                        }
                     }
                 }
-            }
 
-            if (listSachDocGiaMuonTra.Count > 0)
-            {
-                GiaHanSachBUS gh = new GiaHanSachBUS();
-                foreach (sachDTO sach in listSachDocGiaMuonTra)
+                if (listSachDocGiaMuonTra.Count > 0)
                 {
-                    if (gh.GiaHan(sach.Masach))
+                    sttErrorLabel.Text = "";
+                    resizeSttErrorLabel();
+                    GiaHanSachBUS gh = new GiaHanSachBUS();
+                    foreach (sachDTO sach in listSachDocGiaMuonTra)
                     {
-                        MessageBox.Show("Gia hạn thành công cuốn " + sach.Tensach, "Thông báo", MessageBoxButtons.OK);
-                    }
-                    else
-                        MessageBox.Show("Gia hạn thất bại " + sach.Tensach + "\n" + BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
+                        if (gh.GiaHan(sach.Masach))
+                        {
+                            sttErrorLabel.Text += "Gia hạn thành công cuốn " + sach.Tensach + "\n";
+                        }
+                        else
+                            sttErrorLabel.Text += "Gia hạn thất bại " + sach.Tensach + ". " + BUS_notification.mess + "\n";
 
+                    }
                 }
+                else
+                {
+                    lbError.Text = "Vui lòng chọn sách để gia hạn";
+                }
+
+                listSachDocGiaMuonTra.Clear();
+                chkChonSach.CheckState = CheckState.Unchecked;
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn sách để gia hạn", "Thông báo", MessageBoxButtons.OK);
+                lbError.Text = "Không có sách để gia hạn";
             }
-
-            listSachDocGiaMuonTra.Clear();
-            chkChonSach.CheckState = CheckState.Unchecked;
         }
 
         private void chkChonSach_CheckedChanged(object sender, EventArgs e)
@@ -207,5 +212,5 @@ namespace QuanLiThuVienGUI
         {
             Close();
         }
-    }
+        }
 }

@@ -45,7 +45,7 @@ namespace QuanLiThuVienGUI
             listLoaiDocGia = quanLiBanDocBUS.CacLoaiDocGia();
             foreach (loaidocgiaDTO loaidocgia in listLoaiDocGia)
             {
-                cbLoaiDocGia.Items.Add(loaidocgia.Cacloai);
+                cbLoaiDocGia.Items.Add(QuanLiBanDocBUS.LoaiDocGia[loaidocgia.Cacloai]);
             }
 
             listLoaiSach = quanLiTheLoaiSachBUS.LayDanhSachCacTheLoai();
@@ -280,7 +280,15 @@ namespace QuanLiThuVienGUI
             if (txbTenSach.Text != "" && cbTheLoaiSach.Text != "" && txbTacGiaSach.Text != "" && txbNhaXuatBanSach.Text != "" && txbNamXuatBanSach.Text != "" && txbGiaTriSach.Text != "")
             {
                 DateTime datebyYear = new DateTime(int.Parse(txbNamXuatBanSach.Text),1,1);
-                sachDTO sach = new sachDTO(int.Parse( txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, dtpNgayNhapSach.Value, datebyYear, int.Parse(txbGiaTriSach.Text), int.Parse( cbTinhTrangSach.Text));
+                int trangThaiSach = 0;
+                for (int i = 0; i < QuanLiSachBUS.DanhSachTrangThaiSach.Length; i++)
+                {
+                    if (cbTinhTrangSach.Text == QuanLiSachBUS.DanhSachTrangThaiSach[i])
+                    {
+                        trangThaiSach = i;
+                    }
+                }
+                sachDTO sach = new sachDTO(int.Parse( txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, dtpNgayNhapSach.Value, datebyYear, int.Parse(txbGiaTriSach.Text), trangThaiSach);
 
                 bool isExistTheLoaiSach = false;
                 foreach (loaisachDTO loaisach in listLoaiSach)
@@ -394,7 +402,7 @@ namespace QuanLiThuVienGUI
             dtpNgaySinhBanDoc.Value = listDocGia[indexBanDoc].NgaySinh;
             txbEmailBanDoc.Text = listDocGia[indexBanDoc].Email;
             txbDiaChiBanDoc.Text = listDocGia[indexBanDoc].DiaChi;
-            cbLoaiDocGia.Text = listDocGia[indexBanDoc].Loaidocgia.ToString();
+            cbLoaiDocGia.Text = QuanLiBanDocBUS.LoaiDocGia[listDocGia[indexBanDoc].Loaidocgia];
             txbTongTienNoBanDoc.Text = listDocGia[indexBanDoc].Tongtienno.ToString();
             dtpNgayTaoTheBanDoc.Value = listDocGia[indexBanDoc].Ngaydk;
         }

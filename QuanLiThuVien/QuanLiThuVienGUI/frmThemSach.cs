@@ -15,11 +15,12 @@ namespace QuanLiThuVienGUI
     public partial class frmThemSach : Form
     {
         frmManHinhChinh frmChinh;
-        List<loaisachDTO> listLoaiSach = new List<loaisachDTO>();
+        List<loaisachDTO> listLoaiSach = new QuanLiTheLoaiSachBUS().LayDanhSachCacTheLoai();
         public frmThemSach(frmManHinhChinh main)
         {
             this.frmChinh = main;
             InitializeComponent();
+
             foreach (loaisachDTO loaisach in listLoaiSach)
             {
                 cbTheLoaiSach.Items.Add(loaisach.Theloaisach);
@@ -42,6 +43,7 @@ namespace QuanLiThuVienGUI
                 if (qlsBUSS.ThemSach(sach)) 
                 {
                     MessageBox.Show("Thêm sách thành công");
+                    refresh();
 
                     if (!listLoaiSach.Contains(new loaisachDTO(cbTheLoaiSach.Text)))
                     {
@@ -50,7 +52,7 @@ namespace QuanLiThuVienGUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm sách thất bại ."+BUS_notification.mess );
+                    MessageBox.Show("Thêm sách thất bại. " + BUS_notification.mess);
                 }
             }
             else
@@ -59,6 +61,19 @@ namespace QuanLiThuVienGUI
             }
 
             frmChinh.loadDanhSachSach();
+        }
+
+        private void refresh()
+        {
+            txbGiaTriSach.Text = "";
+            txbMaSach.Text = "";
+            txbNamXuatBanSach.Text = "";
+            txbNhaXuatBanSach.Text = "";
+            txbTacGiaSach.Text = "";
+            txbTenSach.Text = "";
+            dtpNgayNhapSach.Text = "";
+            cbTheLoaiSach.Text = "";
+            txbTenSach.Focus();
         }
 
         private void cbTheLoaiSach_Enter(object sender, EventArgs e)

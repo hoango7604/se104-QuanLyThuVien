@@ -42,8 +42,6 @@
             this.dtpNgaySinhBanDoc = new System.Windows.Forms.DateTimePicker();
             this.btnThemBanDoc = new System.Windows.Forms.Button();
             this.btnHuyBanDoc = new System.Windows.Forms.Button();
-            this.lbLoaiDocGia = new System.Windows.Forms.Label();
-            this.cbLoaiDocGia = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -119,18 +117,6 @@
             this.btnHuyBanDoc.UseVisualStyleBackColor = true;
             this.btnHuyBanDoc.Click += new System.EventHandler(this.btnHuyBanDoc_Click);
             // 
-            // lbLoaiDocGia
-            // 
-            resources.ApplyResources(this.lbLoaiDocGia, "lbLoaiDocGia");
-            this.lbLoaiDocGia.Name = "lbLoaiDocGia";
-            // 
-            // cbLoaiDocGia
-            // 
-            this.cbLoaiDocGia.FormattingEnabled = true;
-            resources.ApplyResources(this.cbLoaiDocGia, "cbLoaiDocGia");
-            this.cbLoaiDocGia.Name = "cbLoaiDocGia";
-            this.cbLoaiDocGia.Enter += new System.EventHandler(this.cbLoaiDocGia_Enter);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txbDiaChiBanDoc);
@@ -138,10 +124,8 @@
             this.panel1.Controls.Add(this.txbEmailBanDoc);
             this.panel1.Controls.Add(this.btnHuyBanDoc);
             this.panel1.Controls.Add(this.btnThemBanDoc);
-            this.panel1.Controls.Add(this.cbLoaiDocGia);
             this.panel1.Controls.Add(this.txbCMNDBanDoc);
             this.panel1.Controls.Add(this.lbThemBanDoc);
-            this.panel1.Controls.Add(this.lbLoaiDocGia);
             this.panel1.Controls.Add(this.lbTenBanDoc);
             this.panel1.Controls.Add(this.txbTenBanDoc);
             this.panel1.Controls.Add(this.lbCMNDBanDoc);
@@ -182,8 +166,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgaySinhBanDoc;
         private System.Windows.Forms.Button btnThemBanDoc;
         private System.Windows.Forms.Button btnHuyBanDoc;
-        private System.Windows.Forms.Label lbLoaiDocGia;
-        private System.Windows.Forms.ComboBox cbLoaiDocGia;
         private System.Windows.Forms.Panel panel1;
     }
 }

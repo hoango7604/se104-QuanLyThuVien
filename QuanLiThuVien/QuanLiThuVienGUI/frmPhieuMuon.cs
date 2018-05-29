@@ -57,23 +57,6 @@ namespace QuanLiThuVienGUI
             }
         }
 
-        private void cbTimSachTheoMa_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter && cbTimSachTheoMa.Text != "")
-            {
-                sachDTO sach = quanLiSach.Timsachtheoma(listSachCoSan[cbTimSachTheoMa.SelectedIndex].Masach);
-                listSach.Add(sach);
-                listSachCoSan.RemoveAt(cbTimSachTheoMa.SelectedIndex);
-                initDongThongTinSach(sach);
-                cbTimSachTheoMa.Items.Clear();
-                initComboBoxListItems();
-                cbTimSachTheoMa.DroppedDown = false;
-            }
-
-            if (e.KeyCode == Keys.Escape)
-                this.Close();
-        }
-
         private void initDongThongTinSach(sachDTO sach)
         {
             dongThongTinSach dongThongTin = new dongThongTinSach(sach);
@@ -86,25 +69,54 @@ namespace QuanLiThuVienGUI
 
         private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
         {
-            List<sachDTO> listSachMuon = new List<sachDTO>();
-            for (int i = 0; i < listDongThongTinSach.Count; i++)
+            lbError.Text = "";
+            if (cbTimSachTheoMa.Text != "")
             {
-                if (listDongThongTinSach[i].chkChonSach.Checked)
+                if (cbTimSachTheoMa.SelectedIndex >= 0)
                 {
-                    listSachMuon.Add(listSach[i]);
+                    sachDTO sach = quanLiSach.Timsachtheoma(listSachCoSan[cbTimSachTheoMa.SelectedIndex].Masach);
+                    listSach.Add(sach);
+                    listSachCoSan.RemoveAt(cbTimSachTheoMa.SelectedIndex);
+                    initDongThongTinSach(sach);
+                    cbTimSachTheoMa.Items.Clear();
+                    initComboBoxListItems();
+                    cbTimSachTheoMa.DroppedDown = false;
                 }
-            }
+                else
+                {
+                    lbError.Text = "Mã sách không tồn tại";
+                }
 
-            if (quanLiMuonTraMat.MuonSach(docgia, listSachMuon))
-            {
-                MessageBox.Show("Tạo phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK);
-                this.DialogResult = DialogResult.OK;
+                cbTimSachTheoMa.Text = "";
             }
             else
             {
-                MessageBox.Show(BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
+                List<sachDTO> listSachMuon = new List<sachDTO>();
+                for (int i = 0; i < listDongThongTinSach.Count; i++)
+                {
+                    if (listDongThongTinSach[i].chkChonSach.Checked)
+                    {
+                        listSachMuon.Add(listSach[i]);
+                    }
+                }
+
+                if (listSachMuon.Count != 0)
+                {
+                    if (quanLiMuonTraMat.MuonSach(docgia, listSachMuon))
+                    {
+                        MessageBox.Show("Tạo phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show(BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    lbError.Text = "Chưa nhập mã sách";
+                }
             }
-            
         }
 
         private void chkChonSach_CheckStateChanged(object sender, EventArgs e)

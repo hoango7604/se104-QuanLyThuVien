@@ -15,16 +15,10 @@ namespace QuanLiThuVienGUI
     public partial class frmThemBanDoc : Form
     {
         private Form mainForm;
-        List<loaidocgiaDTO> listLoaiDocGia;
         public frmThemBanDoc(Form parent)
         {
             InitializeComponent();
             this.mainForm = parent;
-            listLoaiDocGia = new QuanLiBanDocBUS().CacLoaiDocGia();
-            foreach (loaidocgiaDTO loaidocgia in listLoaiDocGia)
-            {
-                cbLoaiDocGia.Items.Add(loaidocgia.Cacloai);
-            }
         }
 
         private void btnHuyBanDoc_Click(object sender, EventArgs e)
@@ -34,21 +28,37 @@ namespace QuanLiThuVienGUI
         
         private void btnThemBanDoc_Click(object sender, EventArgs e)
         {
-            if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
+            int loaiDocGia = 0;
+            int tuoi = 0;
+
+            if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && dtpNgaySinhBanDoc.Text != "")
             {
                 QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
-                docgiaDTO dgDTO = new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, DateTime.Now, 0, int.Parse(cbLoaiDocGia.Text));
+                tuoi = DateTime.Now.Year - dtpNgaySinhBanDoc.Value.Year;
+                if (tuoi < 18)
+                {
+                    loaiDocGia = 0;
+                }
+                else if (tuoi >= 18 && tuoi <= 22)
+                {
+                    loaiDocGia = 1;
+                }
+                else if (tuoi > 22)
+                {
+                    loaiDocGia = 3;
+                }
+
+                docgiaDTO dgDTO = new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, DateTime.Now, 0, loaiDocGia);
                 if (quanLiBanDocBUS.ThemDocGia(dgDTO))
                 {
                     MessageBox.Show("Đã thêm bạn đọc thành công", "Thông báo", MessageBoxButtons.OK);
+                    refresh();
                     (mainForm as frmManHinhChinh).loadDanhSachBanDoc();
                 }
                 else
                 {
                     MessageBox.Show("Thêm bạn đọc thất bại. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
                 }
-                
-                //this.Close();
             }
             else
             {
@@ -56,9 +66,14 @@ namespace QuanLiThuVienGUI
             }
         }
 
-        private void cbLoaiDocGia_Enter(object sender, EventArgs e)
+        private void refresh()
         {
-            cbLoaiDocGia.DroppedDown = true;
+            txbCMNDBanDoc.Text = "";
+            txbDiaChiBanDoc.Text = "";
+            txbEmailBanDoc.Text = "";
+            txbTenBanDoc.Text = "";
+            dtpNgaySinhBanDoc.Text = "";
+            txbTenBanDoc.Focus();
         }
     }
 }

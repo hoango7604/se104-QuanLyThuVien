@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.dtpNgayTaoTheBanDoc = new System.Windows.Forms.DateTimePicker();
             this.txbTongTienNoBanDoc = new System.Windows.Forms.TextBox();
             this.lbNgayTaoTheBanDoc = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.lbEmailBanDoc = new System.Windows.Forms.Label();
             this.lbDiaChiBanDoc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbError = new System.Windows.Forms.Label();
             this.btnLapPhieuMuon = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbTinhTrangSach = new System.Windows.Forms.Label();
@@ -60,12 +62,14 @@
             this.lbDanhSachSachDangMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachDangMuon = new System.Windows.Forms.Panel();
-            this.btnHuy = new System.Windows.Forms.Button();
+            this.sttError = new System.Windows.Forms.StatusStrip();
+            this.sttErrorLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.sttError.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +97,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(845, 227);
             this.panel1.TabIndex = 17;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 19;
+            this.btnHuy.Text = "button2";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // dtpNgayTaoTheBanDoc
             // 
@@ -266,6 +281,7 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lbError);
             this.panel2.Controls.Add(this.btnLapPhieuMuon);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.btnGiaHanSach);
@@ -276,6 +292,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(845, 306);
             this.panel2.TabIndex = 18;
+            // 
+            // lbError
+            // 
+            this.lbError.AutoSize = true;
+            this.lbError.ForeColor = System.Drawing.Color.Red;
+            this.lbError.Location = new System.Drawing.Point(230, 23);
+            this.lbError.Name = "lbError";
+            this.lbError.Size = new System.Drawing.Size(0, 13);
+            this.lbError.TabIndex = 20;
             // 
             // btnLapPhieuMuon
             // 
@@ -392,13 +417,13 @@
             // lbDanhSachSachDangMuon
             // 
             this.lbDanhSachSachDangMuon.AutoSize = true;
-            this.lbDanhSachSachDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhSachSachDangMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDanhSachSachDangMuon.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbDanhSachSachDangMuon.Location = new System.Drawing.Point(10, 5);
+            this.lbDanhSachSachDangMuon.Location = new System.Drawing.Point(10, 10);
             this.lbDanhSachSachDangMuon.Name = "lbDanhSachSachDangMuon";
-            this.lbDanhSachSachDangMuon.Size = new System.Drawing.Size(446, 39);
+            this.lbDanhSachSachDangMuon.Size = new System.Drawing.Size(217, 31);
             this.lbDanhSachSachDangMuon.TabIndex = 15;
-            this.lbDanhSachSachDangMuon.Text = "Danh sách sách đang mượn";
+            this.lbDanhSachSachDangMuon.Text = "Sách đang mượn";
             // 
             // panel3
             // 
@@ -418,23 +443,32 @@
             this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 211);
             this.pnDanhSachSachDangMuon.TabIndex = 19;
             // 
-            // btnHuy
+            // sttError
             // 
-            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 19;
-            this.btnHuy.Text = "button2";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            this.sttError.Dock = System.Windows.Forms.DockStyle.None;
+            this.sttError.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sttErrorLabel});
+            this.sttError.Location = new System.Drawing.Point(9, 538);
+            this.sttError.Name = "sttError";
+            this.sttError.Size = new System.Drawing.Size(17, 22);
+            this.sttError.TabIndex = 19;
+            this.sttError.Text = "statusStrip1";
+            // 
+            // sttErrorLabel
+            // 
+            this.sttErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.sttErrorLabel.Name = "sttErrorLabel";
+            this.sttErrorLabel.Size = new System.Drawing.Size(0, 17);
+            this.sttErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmThongTinBanDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.CancelButton = this.btnHuy;
-            this.ClientSize = new System.Drawing.Size(869, 547);
+            this.ClientSize = new System.Drawing.Size(869, 566);
+            this.Controls.Add(this.sttError);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -451,7 +485,10 @@
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.sttError.ResumeLayout(false);
+            this.sttError.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -490,5 +527,8 @@
         private System.Windows.Forms.CheckBox chkChonSach;
         private System.Windows.Forms.Button btnLapPhieuMuon;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.StatusStrip sttError;
+        private System.Windows.Forms.ToolStripStatusLabel sttErrorLabel;
     }
 }
