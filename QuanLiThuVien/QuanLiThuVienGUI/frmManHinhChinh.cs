@@ -33,6 +33,7 @@ namespace QuanLiThuVienGUI
             anhXaThongTinBanDoc(indexBanDoc);
             anhXaThongTinSach(indexSach);
             anhXaQuyDinh();
+            LoadQuyDinh();
         }
 
         private void anhXaQuyDinh()
@@ -613,5 +614,39 @@ namespace QuanLiThuVienGUI
                 btnSuaThongTinBanDoc_Click(sender, e);
             }
         }
+
+        //
+        //TAB QUY DINH
+        //
+
+        void LoadQuyDinh()
+        {
+            quydinhBUS quydinhBUS = new quydinhBUS();
+            quydinhDTO quydinhDTO = new quydinhDTO();
+
+            if(quydinhBUS.ListQuyDinh(quydinhDTO))
+            {
+                txbQuyDinhTienPhat.Text = quydinhDTO.Tienphattrasachtremoingay.ToString();
+                txbQuyDinhTuoiToiThieu.Text = quydinhDTO.Tuoimin.ToString();
+                txbQuyDinhTuoiToiDa.Text = quydinhDTO.Tuoimax.ToString();
+                txbQuyDinhSoSachDuocMuon.Text = quydinhDTO.Sosachduocmuon.ToString();
+                txbQuyDinhSoNgayDuocMuon.Text = quydinhDTO.Songayduocmuon.ToString();
+                txbQuyDinhKhoangCachNamXB.Text = quydinhDTO.Kcnamxuatban.ToString();
+            }
+
+
+        }
+
+        private void btnCapNhatQuyDinh_Click(object sender, EventArgs e)
+        {
+            quydinhBUS quydinhBUS = new quydinhBUS();
+            quydinhDTO quydinhDTO = new quydinhDTO(int.Parse(txbQuyDinhTienPhat.Text), int.Parse(txbQuyDinhTuoiToiDa.Text), int.Parse(txbQuyDinhTuoiToiThieu.Text), int.Parse(txbQuyDinhSoNgayDuocMuon.Text), int.Parse(txbQuyDinhSoSachDuocMuon.Text), int.Parse(txbQuyDinhKhoangCachNamXB.Text));
+
+            quydinhBUS.SuaQuyDinh(quydinhDTO);
+
+            LoadQuyDinh();
+        }
+
+        
     }
 }

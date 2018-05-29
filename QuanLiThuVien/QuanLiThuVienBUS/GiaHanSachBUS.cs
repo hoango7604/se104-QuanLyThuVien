@@ -33,7 +33,7 @@ namespace QuanLiThuVienBUS
             giahanDTO giahanDTO = new giahanDTO();
             quydinhDTO quydinhDTO = new quydinhDTO();
 
-            List<quydinhDTO> list = new List<quydinhDTO>();
+            quydinhDTO list = new quydinhDTO();
 
             quydinhDAL.listquydinh(list);
 

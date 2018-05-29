@@ -309,3 +309,4 @@ C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGU
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\ja\DevExpress.Pdf.v17.2.Core.resources.dll
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\ru\DevExpress.Pdf.v17.2.Core.resources.dll
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe.licenses
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmPhieuThuTienPhat.resources

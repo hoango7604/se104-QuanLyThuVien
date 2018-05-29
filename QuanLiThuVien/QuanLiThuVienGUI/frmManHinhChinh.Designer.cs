@@ -134,6 +134,8 @@
             this.btnCapNhatQuyDinh = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.txbQuyDinhTienPhat = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txbQuyDinhKhoangCachNamXB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -1203,6 +1205,7 @@
             this.btnCapNhatQuyDinh.TabIndex = 1;
             this.btnCapNhatQuyDinh.Text = "Cập nhật quy định";
             this.btnCapNhatQuyDinh.UseVisualStyleBackColor = true;
+            this.btnCapNhatQuyDinh.Click += new System.EventHandler(this.btnCapNhatQuyDinh_Click);
             // 
             // panel5
             // 
@@ -1216,6 +1219,8 @@
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.txbQuyDinhTienPhat);
+            this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.txbQuyDinhKhoangCachNamXB);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.label7);
@@ -1223,6 +1228,22 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(457, 239);
             this.panel7.TabIndex = 1;
+            // 
+            // txbQuyDinhTienPhat
+            // 
+            this.txbQuyDinhTienPhat.Location = new System.Drawing.Point(213, 109);
+            this.txbQuyDinhTienPhat.Name = "txbQuyDinhTienPhat";
+            this.txbQuyDinhTienPhat.Size = new System.Drawing.Size(231, 29);
+            this.txbQuyDinhTienPhat.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 112);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(145, 24);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Tiền phạt trả trễ:";
             // 
             // txbQuyDinhKhoangCachNamXB
             // 
@@ -1533,5 +1554,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCapNhatQuyDinh;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.TextBox txbQuyDinhTienPhat;
+        private System.Windows.Forms.Label label9;
     }
 }

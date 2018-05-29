@@ -222,14 +222,14 @@ namespace QuanLiThuVienBUS
                 return false;
             }
             quydinhDAL quydinh = new quydinhDAL();
-            List<quydinhDTO> listquydinh = new List<quydinhDTO>();
+            quydinhDTO listquydinh = new quydinhDTO();
             if (!quydinh.listquydinh(listquydinh))
             {
                 return false;
             }
             System.DateTime date = DateTime.Now;
             int curyear = date.Year;
-            if (curyear - sDTO.Ngayxb.Year > listquydinh[0].Kcnamxuatban)
+            if (curyear - sDTO.Ngayxb.Year > listquydinh.Kcnamxuatban)
             {
                 return false;
             }

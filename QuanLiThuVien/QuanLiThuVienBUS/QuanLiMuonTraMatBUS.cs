@@ -37,7 +37,7 @@ namespace QuanLiThuVienBUS
             ctpmDAL chiTietPhieuMuonDAL = new ctpmDAL();
 
             List<sachDTO> cacSachdangmuon = new List<sachDTO>();
-            List<quydinhDTO> cacQuyDinh = new List<quydinhDTO>();
+            quydinhDTO cacQuyDinh = new quydinhDTO();
             List<phieumuonDTO> danhsachphieuMuon = new List<phieumuonDTO>();
             List<DateTime> danhsachngaymuon = new List<DateTime>();
 
@@ -47,7 +47,7 @@ namespace QuanLiThuVienBUS
             phieuMuonDAL.danhsachPM(danhsachphieuMuon);
 
             //kiểm tra số luọng sách mươn
-            if (cacSachdangmuon.Count  + sachs.Count >  cacQuyDinh[0].Sosachduocmuon )
+            if (cacSachdangmuon.Count  + sachs.Count >  cacQuyDinh.Sosachduocmuon )
             {
                 BUS_notification.mess = "Không thể mượn sách vượt quá số lượng cho phép";
                 return false;
@@ -115,12 +115,12 @@ namespace QuanLiThuVienBUS
             List<DateTime> danhsachngaymuonsach = new List<DateTime>();
             List<phieutraDTO> danhsachphieutra = new List<phieutraDTO>();
             List<ctptDTO> danhsachchitietphieutra = new List<ctptDTO>();
-            List<quydinhDTO> danhsachquydinh = new List<quydinhDTO>();
+            quydinhDTO danhsachquydinh = new quydinhDTO();
 
             quydinhDTO quydinh = new quydinhDTO();
 
             quyDinhDAL.listquydinh(danhsachquydinh);
-            quydinh = danhsachquydinh[0];
+            quydinh = danhsachquydinh;
 
             sachDAL.SachDangMuon(bandoc.MaThe, sachdangmuon, danhsachngaymuonsach);
             phieutraDAL.danhsachPhieuTra(danhsachphieutra);
