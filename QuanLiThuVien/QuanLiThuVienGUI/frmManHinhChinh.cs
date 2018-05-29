@@ -647,14 +647,15 @@ namespace QuanLiThuVienGUI
 
         private void btnCapNhatQuyDinh_Click(object sender, EventArgs e)
         {
-            quydinhBUS quydinhBUS = new quydinhBUS();
-            quydinhDTO quydinhDTO = new quydinhDTO(int.Parse(txbQuyDinhTienPhat.Text), int.Parse(txbQuyDinhTuoiToiDa.Text), int.Parse(txbQuyDinhTuoiToiThieu.Text), int.Parse(txbQuyDinhSoNgayDuocMuon.Text), int.Parse(txbQuyDinhSoSachDuocMuon.Text), int.Parse(txbQuyDinhKhoangCachNamXB.Text));
+            if (txbQuyDinhKhoangCachNamXB.Text != "" && txbQuyDinhSoNgayDuocMuon.Text != "" && txbQuyDinhSoSachDuocMuon.Text != "" && txbQuyDinhTienPhat.Text != "" && txbQuyDinhTuoiToiDa.Text != "" && txbQuyDinhTuoiToiThieu.Text != "")
+            {
+                quydinhBUS quydinhBUS = new quydinhBUS();
+                quydinhDTO quydinhDTO = new quydinhDTO(int.Parse(txbQuyDinhTienPhat.Text), int.Parse(txbQuyDinhTuoiToiDa.Text), int.Parse(txbQuyDinhTuoiToiThieu.Text), int.Parse(txbQuyDinhSoNgayDuocMuon.Text), int.Parse(txbQuyDinhSoSachDuocMuon.Text), int.Parse(txbQuyDinhKhoangCachNamXB.Text));
 
-            quydinhBUS.SuaQuyDinh(quydinhDTO);
+                quydinhBUS.SuaQuyDinh(quydinhDTO);
 
-            LoadQuyDinh();
+                LoadQuyDinh();
+            }
         }
-
-        
     }
 }
