@@ -652,7 +652,10 @@ namespace QuanLiThuVienGUI
                 quydinhBUS quydinhBUS = new quydinhBUS();
                 quydinhDTO quydinhDTO = new quydinhDTO(int.Parse(txbQuyDinhTienPhat.Text), int.Parse(txbQuyDinhTuoiToiDa.Text), int.Parse(txbQuyDinhTuoiToiThieu.Text), int.Parse(txbQuyDinhSoNgayDuocMuon.Text), int.Parse(txbQuyDinhSoSachDuocMuon.Text), int.Parse(txbQuyDinhKhoangCachNamXB.Text));
 
-                quydinhBUS.SuaQuyDinh(quydinhDTO);
+                if (quydinhBUS.SuaQuyDinh(quydinhDTO))
+                {
+
+                }
 
                 LoadQuyDinh();
             }

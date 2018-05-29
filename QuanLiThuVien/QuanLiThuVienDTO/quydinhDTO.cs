@@ -19,7 +19,7 @@ namespace QuanLiThuVienDTO
             Tuoimax = tuoimax;
             Tuoimin = tuoimin;
             Songayduocmuon = songayduocmuon;
-            Sosachduocmuon = songayduocmuon; 
+            Sosachduocmuon = sosachduocmuon; 
             Kcnamxuatban = kcnamxuatban;
         }
         
