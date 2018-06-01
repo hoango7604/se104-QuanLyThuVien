@@ -8,7 +8,6 @@ C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuV
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.dll
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.pdb
 C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.csprojResolveAssemblyReference.cache
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\bin\Debug\dbConnection.dll
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\bin\Debug\dbConnection.pdb
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache

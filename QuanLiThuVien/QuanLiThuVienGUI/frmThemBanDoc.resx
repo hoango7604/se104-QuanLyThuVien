@@ -147,7 +147,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lbThemBanDoc.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="lbTenBanDoc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -177,7 +177,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lbTenBanDoc.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="txbTenBanDoc.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 90</value>
@@ -198,7 +198,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txbTenBanDoc.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="txbCMNDBanDoc.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 137</value>
@@ -219,7 +219,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txbCMNDBanDoc.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="lbCMNDBanDoc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -249,7 +249,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lbCMNDBanDoc.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="lbNgaySinhBanDoc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -258,7 +258,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="lbNgaySinhBanDoc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 179</value>
+    <value>3, 184</value>
   </data>
   <data name="lbNgaySinhBanDoc.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 20</value>
@@ -279,7 +279,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lbNgaySinhBanDoc.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="txbEmailBanDoc.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 227</value>
@@ -300,7 +300,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txbEmailBanDoc.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="lbEmailBanDoc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -330,7 +330,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lbEmailBanDoc.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>14</value>
   </data>
   <data name="txbDiaChiBanDoc.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 274</value>
@@ -351,7 +351,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;txbDiaChiBanDoc.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="lbDiaChiBanDoc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -381,13 +381,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lbDiaChiBanDoc.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>15</value>
   </data>
   <data name="dtpNgaySinhBanDoc.CustomFormat" xml:space="preserve">
     <value>dd/MM/yyyy</value>
   </data>
   <data name="dtpNgaySinhBanDoc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 179</value>
+    <value>108, 184</value>
   </data>
   <data name="dtpNgaySinhBanDoc.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 20</value>
@@ -405,7 +405,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;dtpNgaySinhBanDoc.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="btnThemBanDoc.Location" type="System.Drawing.Point, System.Drawing">
     <value>290, 300</value>
@@ -429,7 +429,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnThemBanDoc.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="btnHuyBanDoc.Location" type="System.Drawing.Point, System.Drawing">
     <value>384, 300</value>
@@ -453,7 +453,79 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnHuyBanDoc.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
+  </data>
+  <data name="lbEmailEX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbEmailEX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>111, 253</value>
+  </data>
+  <data name="lbEmailEX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lbEmailEX.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbEmailEX.Name" xml:space="preserve">
+    <value>lbEmailEX</value>
+  </data>
+  <data name="&gt;&gt;lbEmailEX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbEmailEX.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lbEmailEX.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbCmndEX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCmndEX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 164</value>
+  </data>
+  <data name="lbCmndEX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lbCmndEX.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbCmndEX.Name" xml:space="preserve">
+    <value>lbCmndEX</value>
+  </data>
+  <data name="&gt;&gt;lbCmndEX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCmndEX.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lbCmndEX.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbTenbandocEX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbTenbandocEX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 116</value>
+  </data>
+  <data name="lbTenbandocEX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lbTenbandocEX.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbTenbandocEX.Name" xml:space="preserve">
+    <value>lbTenbandocEX</value>
+  </data>
+  <data name="&gt;&gt;lbTenbandocEX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTenbandocEX.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lbTenbandocEX.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
