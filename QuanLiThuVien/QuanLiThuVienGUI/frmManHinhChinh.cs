@@ -33,12 +33,6 @@ namespace QuanLiThuVienGUI
             anhXaThongTinBanDoc(indexBanDoc);
             anhXaThongTinSach(indexSach);
             anhXaQuyDinh();
-            LoadQuyDinh();
-        }
-
-        private void anhXaQuyDinh()
-        {
-
         }
 
         private void initComboBox()
@@ -74,6 +68,16 @@ namespace QuanLiThuVienGUI
         {
             listDocGia = quanLiBanDocBUS.DanhSachDocGia();
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
+        }
+
+        public void loadDanhSachBanDoc(int index)
+        {
+            listDocGia = quanLiBanDocBUS.DanhSachDocGia();
+            dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
+            dgvThongTinBanDoc.Rows[0].Selected = false;
+            dgvThongTinBanDoc.Rows[index].Selected = true;
+            dgvThongTinBanDoc.CurrentCell = dgvThongTinBanDoc.Rows[index].Cells[0];
+            anhXaThongTinBanDoc(index);
         }
 
         private void initDataGridViewSach()
@@ -116,19 +120,19 @@ namespace QuanLiThuVienGUI
 
         private void tạoPhiếuMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu mượn", listDocGia ,0);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu mượn", listDocGia ,0, this);
             f.ShowDialog();
         }
 
         private void tạoPhiếuTrảToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu trả", listDocGia, 1);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu trả", listDocGia, 1, this);
             f.ShowDialog();
         }
 
         private void thuTiềnPhạtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu thu tiền phạt", listDocGia, 2);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu thu tiền phạt", listDocGia, 2, this);
             f.ShowDialog();
         }
 
@@ -169,17 +173,22 @@ namespace QuanLiThuVienGUI
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
         }
 
-        private void btnHienThongTinChiTietBanDoc_Click(object sender, EventArgs e)
+        public void ShowThongTinBanDoc(int index)
         {
-            if (indexBanDoc >= 0)
+            if (index >= 0)
             {
-                frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[indexBanDoc]);
+                frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[index], this);
                 f.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn thông tin bạn đọc để hiển thị", "Thông báo", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnHienThongTinChiTietBanDoc_Click(object sender, EventArgs e)
+        {
+            ShowThongTinBanDoc(indexBanDoc);
         }
 
         private void btnThemBanDoc_Click(object sender, EventArgs e)
@@ -190,12 +199,29 @@ namespace QuanLiThuVienGUI
 
         private void btnSuaThongTinBanDoc_Click(object sender, EventArgs e)
         {
+            int loaiDocGia = 0;
+            int tuoi = 0;
+
             if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
             {
-                if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, dtpNgayTaoTheBanDoc.Value, 8,8)))
+                tuoi = DateTime.Now.Year - dtpNgaySinhBanDoc.Value.Year;
+                if (tuoi < 18)
+                {
+                    loaiDocGia = 0;
+                }
+                else if (tuoi >= 18 && tuoi <= 22)
+                {
+                    loaiDocGia = 1;
+                }
+                else if (tuoi > 22)
+                {
+                    loaiDocGia = 2;
+                }
+
+                if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, dtpNgayTaoTheBanDoc.Value, int.Parse(txbTongTienNoBanDoc.Text),loaiDocGia)))
                 {
                     MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
-                    loadDanhSachBanDoc();
+                    loadDanhSachBanDoc(dgvThongTinBanDoc.SelectedRows[0].Index);
                 }
                 else
                 {
@@ -342,7 +368,7 @@ namespace QuanLiThuVienGUI
         /// <param name="e"></param>
         private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu mượn", listDocGia, 0);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu mượn", listDocGia, 0, this);
             f.ShowDialog();
         }
 
@@ -353,7 +379,7 @@ namespace QuanLiThuVienGUI
         /// <param name="e"></param>
         private void btnPhieuTra_Click(object sender, EventArgs e)
         {
-            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu trả", listDocGia, 1);
+            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu trả", listDocGia, 1, this);
             f.ShowDialog();
         }
 
@@ -441,16 +467,11 @@ namespace QuanLiThuVienGUI
             if (rdoSachTraTre.Checked)
             {
                 DateTime thangThongKe = dtmThongKe.Value;
-                
-
-
                 dgvThongKe.DataSource = sachtratreBUS.LayDSSachChuaTra(thangThongKe);
             }
             else if (rdoTheLoai.Checked)
             {
                 DateTime thangThongKe = dtmThongKe.Value;
-               
-                
                 dgvThongKe.DataSource = theloaiBUS.layDSLoaiSachDuocQuanTam(thangThongKe);
             }
         }
@@ -627,7 +648,7 @@ namespace QuanLiThuVienGUI
         //TAB QUY DINH
         //
 
-        void LoadQuyDinh()
+        private void anhXaQuyDinh()
         {
             quydinhBUS quydinhBUS = new quydinhBUS();
             quydinhDTO quydinhDTO = new quydinhDTO();
@@ -657,8 +678,125 @@ namespace QuanLiThuVienGUI
 
                 }
 
-                LoadQuyDinh();
+                anhXaQuyDinh();
             }
+        }
+
+        private void txbTenBanDoc_TextChanged(object sender, EventArgs e)
+        {
+            string Name = txbTenBanDoc.Text;
+
+            if (Name.Length <= 3 && Name != "")
+            {
+                lbTenbandocEX.Text = "Vui lòng nhập tên nhiều hơn 3 kí tự!";
+                btnThemBanDoc.Enabled = false;
+            }
+            else
+            {
+                lbTenbandocEX.Text = "";
+                btnThemBanDoc.Enabled = true;
+
+            }
+
+        }
+
+        private void txbCMNDBanDoc_TextChanged(object sender, EventArgs e)
+        {
+            string cmnd = txbCMNDBanDoc.Text;
+
+            int check;
+            Int32.TryParse(cmnd, out check);
+            if (check == 0 && cmnd != "")
+            {
+                lbCmndEX.Text = "Vui lòng chỉ nhập số!";
+                btnThemBanDoc.Enabled = false;
+            }
+            else
+            {
+                lbCmndEX.Text = "";
+                btnThemBanDoc.Enabled = true;
+
+            }
+        }
+
+        private void txbEmailBanDoc_TextChanged(object sender, EventArgs e)
+        {
+            string email = txbEmailBanDoc.Text;
+            if ((email.Contains(".com") || email.Contains(".vn")) && email.Contains("@"))
+            {
+                lbEmailEX.Text = "";
+                btnThemBanDoc.Enabled = true;
+
+            }
+            else
+            {
+                if (email != "")
+                {
+                    lbEmailEX.Text = "Vui lòng nhập đúng địa chỉ Email!";
+                }
+                else
+                {
+                    lbEmailEX.Text = "";
+                }
+
+                btnThemBanDoc.Enabled = false;
+            }
+        }
+
+        private void txbNamXuatBanSach_TextChanged(object sender, EventArgs e)
+        {
+            string namxb = txbNamXuatBanSach.Text;
+            int check;
+            Int32.TryParse(namxb, out check);
+            if (check == 0 && namxb != "")
+            {
+                lbNamxbEX.Text = "Vui lòng chỉ nhập số!";
+                btnThemSach.Enabled = false;
+            }
+            else
+            {
+                lbNamxbEX.Text = "";
+                btnThemSach.Enabled = true;
+            }
+        }
+
+        private void txbGiaTriSach_TextChanged(object sender, EventArgs e)
+        {
+            string giatri = txbGiaTriSach.Text;
+            int check;
+            Int32.TryParse(giatri, out check);
+            if (check == 0 && giatri != "")
+            {
+                lbGiaTriEX.Text = "Vui lòng chỉ nhập số!";
+                btnThemSach.Enabled = false;
+            }
+            else
+            {
+                lbGiaTriEX.Text = "";
+                btnThemSach.Enabled = true;
+            }
+        }
+
+        private void txbMaSach_TextChanged(object sender, EventArgs e)
+        {
+            string masach = txbMaSach.Text;
+            int check;
+            Int32.TryParse(masach, out check);
+            if (check == 0 && masach != "")
+            {
+                lbMasSachEX.Text = "Vui lòng chỉ nhập số !";
+                btnThemSach.Enabled = false;
+            }
+            else
+            {
+                lbMasSachEX.Text = "";
+                btnThemSach.Enabled = true;
+            }
+        }
+
+        private void cbTheLoaiSach_Enter(object sender, EventArgs e)
+        {
+            cbTheLoaiSach.DroppedDown = true;
         }
     }
 }

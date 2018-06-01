@@ -41,12 +41,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTaoPhieu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.lbSoTienThuEx = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbSoTienThuEx);
             this.panel1.Controls.Add(this.txbSoTienConLai);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txbSoTienThu);
@@ -58,13 +60,13 @@
             this.panel1.Controls.Add(this.txbTenBanDoc);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(372, 195);
+            this.panel1.Size = new System.Drawing.Size(372, 196);
             this.panel1.TabIndex = 0;
             // 
             // txbSoTienConLai
             // 
             this.txbSoTienConLai.Enabled = false;
-            this.txbSoTienConLai.Location = new System.Drawing.Point(108, 165);
+            this.txbSoTienConLai.Location = new System.Drawing.Point(108, 168);
             this.txbSoTienConLai.Name = "txbSoTienConLai";
             this.txbSoTienConLai.Size = new System.Drawing.Size(261, 20);
             this.txbSoTienConLai.TabIndex = 26;
@@ -74,7 +76,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(3, 165);
+            this.label3.Location = new System.Drawing.Point(3, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 27;
@@ -86,6 +88,7 @@
             this.txbSoTienThu.Name = "txbSoTienThu";
             this.txbSoTienThu.Size = new System.Drawing.Size(261, 20);
             this.txbSoTienThu.TabIndex = 24;
+            this.txbSoTienThu.TextChanged += new System.EventHandler(this.txbSoTienThu_TextChanged);
             // 
             // label2
             // 
@@ -157,6 +160,7 @@
             // 
             // btnTaoPhieu
             // 
+            this.btnTaoPhieu.Enabled = false;
             this.btnTaoPhieu.Location = new System.Drawing.Point(213, 3);
             this.btnTaoPhieu.Name = "btnTaoPhieu";
             this.btnTaoPhieu.Size = new System.Drawing.Size(75, 23);
@@ -176,13 +180,23 @@
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
+            // lbSoTienThuEx
+            // 
+            this.lbSoTienThuEx.AutoSize = true;
+            this.lbSoTienThuEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoTienThuEx.ForeColor = System.Drawing.Color.Red;
+            this.lbSoTienThuEx.Location = new System.Drawing.Point(108, 150);
+            this.lbSoTienThuEx.Name = "lbSoTienThuEx";
+            this.lbSoTienThuEx.Size = new System.Drawing.Size(0, 15);
+            this.lbSoTienThuEx.TabIndex = 28;
+            // 
             // frmPhieuThuTienPhat
             // 
             this.AcceptButton = this.btnTaoPhieu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnHuy;
-            this.ClientSize = new System.Drawing.Size(397, 252);
+            this.ClientSize = new System.Drawing.Size(397, 253);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmPhieuThuTienPhat";
@@ -210,5 +224,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnTaoPhieu;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Label lbSoTienThuEx;
     }
 }

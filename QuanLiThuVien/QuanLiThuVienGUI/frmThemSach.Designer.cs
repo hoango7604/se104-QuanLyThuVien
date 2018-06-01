@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbMasSachEX = new System.Windows.Forms.Label();
+            this.lbGiaTriEX = new System.Windows.Forms.Label();
+            this.lbNamxbEX = new System.Windows.Forms.Label();
             this.txbGiaTriSach = new System.Windows.Forms.TextBox();
             this.lbGiaTriSach = new System.Windows.Forms.Label();
             this.dtpNgayNhapSach = new System.Windows.Forms.DateTimePicker();
@@ -53,6 +56,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbMasSachEX);
+            this.panel1.Controls.Add(this.lbGiaTriEX);
+            this.panel1.Controls.Add(this.lbNamxbEX);
             this.panel1.Controls.Add(this.txbGiaTriSach);
             this.panel1.Controls.Add(this.lbGiaTriSach);
             this.panel1.Controls.Add(this.dtpNgayNhapSach);
@@ -77,12 +83,40 @@
             this.panel1.Size = new System.Drawing.Size(468, 504);
             this.panel1.TabIndex = 17;
             // 
+            // lbMasSachEX
+            // 
+            this.lbMasSachEX.AutoSize = true;
+            this.lbMasSachEX.ForeColor = System.Drawing.Color.Red;
+            this.lbMasSachEX.Location = new System.Drawing.Point(108, 165);
+            this.lbMasSachEX.Name = "lbMasSachEX";
+            this.lbMasSachEX.Size = new System.Drawing.Size(0, 13);
+            this.lbMasSachEX.TabIndex = 22;
+            // 
+            // lbGiaTriEX
+            // 
+            this.lbGiaTriEX.AutoSize = true;
+            this.lbGiaTriEX.ForeColor = System.Drawing.Color.Red;
+            this.lbGiaTriEX.Location = new System.Drawing.Point(112, 457);
+            this.lbGiaTriEX.Name = "lbGiaTriEX";
+            this.lbGiaTriEX.Size = new System.Drawing.Size(0, 13);
+            this.lbGiaTriEX.TabIndex = 21;
+            // 
+            // lbNamxbEX
+            // 
+            this.lbNamxbEX.AutoSize = true;
+            this.lbNamxbEX.ForeColor = System.Drawing.Color.Red;
+            this.lbNamxbEX.Location = new System.Drawing.Point(108, 403);
+            this.lbNamxbEX.Name = "lbNamxbEX";
+            this.lbNamxbEX.Size = new System.Drawing.Size(0, 13);
+            this.lbNamxbEX.TabIndex = 20;
+            // 
             // txbGiaTriSach
             // 
             this.txbGiaTriSach.Location = new System.Drawing.Point(108, 430);
             this.txbGiaTriSach.Name = "txbGiaTriSach";
             this.txbGiaTriSach.Size = new System.Drawing.Size(348, 20);
             this.txbGiaTriSach.TabIndex = 7;
+            this.txbGiaTriSach.TextChanged += new System.EventHandler(this.txbGiaTriSach_TextChanged);
             // 
             // lbGiaTriSach
             // 
@@ -119,6 +153,7 @@
             this.txbNamXuatBanSach.Name = "txbNamXuatBanSach";
             this.txbNamXuatBanSach.Size = new System.Drawing.Size(348, 20);
             this.txbNamXuatBanSach.TabIndex = 6;
+            this.txbNamXuatBanSach.TextChanged += new System.EventHandler(this.txbNamXuatBanSach_TextChanged);
             // 
             // txbNhaXuatBanSach
             // 
@@ -172,6 +207,7 @@
             this.txbMaSach.Name = "txbMaSach";
             this.txbMaSach.Size = new System.Drawing.Size(348, 20);
             this.txbMaSach.TabIndex = 1;
+            this.txbMaSach.TextChanged += new System.EventHandler(this.txbMaSach_TextChanged);
             // 
             // lbThemSach
             // 
@@ -257,7 +293,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnHuySach;
-            this.ClientSize = new System.Drawing.Size(505, 422);
+            this.ClientSize = new System.Drawing.Size(522, 422);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -292,5 +328,8 @@
         private System.Windows.Forms.Label lbNgayNhapSach;
         private System.Windows.Forms.TextBox txbGiaTriSach;
         private System.Windows.Forms.Label lbGiaTriSach;
+        private System.Windows.Forms.Label lbNamxbEX;
+        private System.Windows.Forms.Label lbGiaTriEX;
+        private System.Windows.Forms.Label lbMasSachEX;
     }
 }

@@ -15,7 +15,6 @@ namespace QuanLiThuVienGUI
 {
     public partial class frmPhieuMuon : Form
     {
-
         docgiaDTO docgia;
         List<sachDTO> listSach = new List<sachDTO>();
         List<sachDTO> listSachCoSan = new List<sachDTO>();

@@ -14,6 +14,8 @@ namespace QuanLiThuVienGUI
 {
     public partial class frmThongTinBanDoc : Form
     {
+        Form mainForm;
+
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
         QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
         QuanLiMuonTraMatBUS quanLiMuonTraMatBUS = new QuanLiMuonTraMatBUS();
@@ -24,10 +26,11 @@ namespace QuanLiThuVienGUI
         List<DateTime> listngaymuon = new List<DateTime>();
         List<sachDTO> listSachDocGiaMuonTra = new List<sachDTO>();
 
-        public frmThongTinBanDoc(docgiaDTO docgia)
+        public frmThongTinBanDoc(docgiaDTO docgia, Form parent)
         {
             InitializeComponent();
             this.docgia = docgia;
+            this.mainForm = parent;
             initThongTinBanDoc(docgia);
             initDanhSachSachDangMuon(docgia);
         }
@@ -87,11 +90,16 @@ namespace QuanLiThuVienGUI
             dtpNgayTaoTheBanDoc.Value = docgia.Ngaydk;
         }
 
-        private void btnLapPhieuMuon_Click(object sender, EventArgs e)
+        private void refreshError()
         {
             lbError.Text = "";
             sttErrorLabel.Text = "";
             resizeSttErrorLabel();
+        }
+
+        private void btnLapPhieuMuon_Click(object sender, EventArgs e)
+        {
+            refreshError();
 
             frmPhieuMuon f = new frmPhieuMuon(docgia);
             f.ShowDialog();
@@ -101,9 +109,7 @@ namespace QuanLiThuVienGUI
 
         private void btnLapPhieuTra_Click(object sender, EventArgs e)
         {
-            lbError.Text = "";
-            sttErrorLabel.Text = "";
-            resizeSttErrorLabel();
+            refreshError();
 
             for (int i = 0; i < listDongThongTinSach.Count; i++)
             {
@@ -136,6 +142,7 @@ namespace QuanLiThuVienGUI
                     initThongTinBanDoc(docgia);
                     initDanhSachSachDangMuon(docgia);
                     chkChonSach.CheckState = CheckState.Unchecked;
+                    sttErrorLabel.Text = "Tạo phiếu trả thành công";
                 }
                 catch (Exception error)
                 {
@@ -148,8 +155,7 @@ namespace QuanLiThuVienGUI
 
         private void btnGiaHanSach_Click(object sender, EventArgs e)
         {
-            lbError.Text = "";
-            sttErrorLabel.Text = "";
+            refreshError();
 
             if (listSachDocGiaDangMuon.Count > 0)
             {
@@ -212,5 +218,18 @@ namespace QuanLiThuVienGUI
         {
             Close();
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            int index = 0;
+            for (int i = 0; i < quanLiBanDocBUS.DanhSachDocGia().Count; i++)
+            {
+                if (docgia.MaThe == quanLiBanDocBUS.DanhSachDocGia()[i].MaThe)
+                {
+                    index = i;
+                }
+            }
+            (mainForm as frmManHinhChinh).loadDanhSachBanDoc(index);
         }
+    }
 }

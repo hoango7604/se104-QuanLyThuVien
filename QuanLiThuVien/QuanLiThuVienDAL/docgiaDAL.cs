@@ -113,10 +113,10 @@ namespace QuanLiThuVienDAL
 
 
        // update  bool ,dto 
-        public bool suaDocGia(docgiaDTO dgDTO,int mathe )
+        public bool suaDocGia(docgiaDTO dgDTO, int mathe)
         {
 
-            string query = string.Format("update [docgia] set mathe=@mathe, hoten=@hoten,email=@email,ngaysinh=@ngaysinh,ngaydk=@ngaydk,diachi=@diachi, tongtienno=@tongtienno,loaidocgia=@loaidocgia where mathe=@mathe ");
+            string query = string.Format("update [docgia] set mathe=@mathe, hoten=@hoten,email=@email,ngaysinh=@ngaysinh,ngaydk=@ngaydk,diachi=@diachi, tongtienno=@tongtienno, loaidocgia=@loaidocgia where mathe=@mathe ");
             SqlParameter[] param = new SqlParameter[8];
             param[0] = new SqlParameter("@mathe", SqlDbType.Int);
             param[0].Value = Convert.ToString(mathe);

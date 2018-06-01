@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLiThuVienDTO;
 using QuanLiThuVienBUS;
@@ -61,6 +55,57 @@ namespace QuanLiThuVienGUI
             }
 
             frmChinh.loadDanhSachSach();
+        }
+
+        private void txbNamXuatBanSach_TextChanged(object sender, EventArgs e)
+        {
+            string namxb = txbNamXuatBanSach.Text;
+            int check;
+            Int32.TryParse(namxb, out check);
+            if (check == 0 && namxb != "")
+            {
+                lbNamxbEX.Text = "Vui lòng chỉ nhập số!";
+                btnThemSach.Enabled = false;
+            }
+            else
+            {
+                lbNamxbEX.Text = "";
+                btnThemSach.Enabled = true;
+            }
+        }
+
+        private void txbGiaTriSach_TextChanged(object sender, EventArgs e)
+        {
+            string giatri = txbGiaTriSach.Text;
+            int check;
+            Int32.TryParse(giatri, out check);
+            if (check == 0 && giatri != "")
+            {
+                lbGiaTriEX.Text = "Vui lòng chỉ nhập số!";
+                btnThemSach.Enabled = false;
+            }
+            else
+            {
+                lbGiaTriEX.Text = "";
+                btnThemSach.Enabled = true;
+            }
+        }
+
+        private void txbMaSach_TextChanged(object sender, EventArgs e)
+        {
+            string masach = txbMaSach.Text;
+            int check;
+            Int32.TryParse(masach, out check);
+            if (check == 0 && masach != "")
+            {
+                lbMasSachEX.Text = "Vui lòng chỉ nhập số !";
+                btnThemSach.Enabled = false;
+            }
+            else
+            {
+                lbMasSachEX.Text = "";
+                btnThemSach.Enabled = true;
+            }
         }
 
         private void refresh()

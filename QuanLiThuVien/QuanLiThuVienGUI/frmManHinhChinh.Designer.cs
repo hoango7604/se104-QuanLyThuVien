@@ -51,7 +51,6 @@
             this.tcManHinhChinh = new System.Windows.Forms.TabControl();
             this.tpBanDoc = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.dgvThongTinBanDoc = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTimKiemTheoTenBanDoc = new System.Windows.Forms.Label();
@@ -149,8 +148,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.pvdInDanhSach = new System.Windows.Forms.PrintPreviewDialog();
             this.pdInDanhSach = new System.Drawing.Printing.PrintDocument();
+            this.lbCmndEX = new System.Windows.Forms.Label();
+            this.lbEmailEX = new System.Windows.Forms.Label();
+            this.lbTenbandocEX = new System.Windows.Forms.Label();
+            this.lbGiaTriEX = new System.Windows.Forms.Label();
+            this.lbMasSachEX = new System.Windows.Forms.Label();
+            this.lbNamxbEX = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -367,23 +373,11 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.btnHuy);
             this.panel11.Controls.Add(this.dgvThongTinBanDoc);
             this.panel11.Location = new System.Drawing.Point(3, 3);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(475, 480);
             this.panel11.TabIndex = 3;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 4;
-            this.btnHuy.Text = "button1";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // dgvThongTinBanDoc
             // 
@@ -512,6 +506,9 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbTenbandocEX);
+            this.panel3.Controls.Add(this.lbEmailEX);
+            this.panel3.Controls.Add(this.lbCmndEX);
             this.panel3.Controls.Add(this.dtpNgayTaoTheBanDoc);
             this.panel3.Controls.Add(this.txbTongTienNoBanDoc);
             this.panel3.Controls.Add(this.lbNgayTaoTheBanDoc);
@@ -531,7 +528,7 @@
             this.panel3.Controls.Add(this.lbDiaChiBanDoc);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(445, 448);
+            this.panel3.Size = new System.Drawing.Size(445, 492);
             this.panel3.TabIndex = 3;
             // 
             // dtpNgayTaoTheBanDoc
@@ -539,7 +536,7 @@
             this.dtpNgayTaoTheBanDoc.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayTaoTheBanDoc.Enabled = false;
             this.dtpNgayTaoTheBanDoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayTaoTheBanDoc.Location = new System.Drawing.Point(108, 405);
+            this.dtpNgayTaoTheBanDoc.Location = new System.Drawing.Point(108, 451);
             this.dtpNgayTaoTheBanDoc.Name = "dtpNgayTaoTheBanDoc";
             this.dtpNgayTaoTheBanDoc.Size = new System.Drawing.Size(200, 29);
             this.dtpNgayTaoTheBanDoc.TabIndex = 19;
@@ -548,7 +545,7 @@
             // txbTongTienNoBanDoc
             // 
             this.txbTongTienNoBanDoc.Enabled = false;
-            this.txbTongTienNoBanDoc.Location = new System.Drawing.Point(108, 351);
+            this.txbTongTienNoBanDoc.Location = new System.Drawing.Point(108, 397);
             this.txbTongTienNoBanDoc.Name = "txbTongTienNoBanDoc";
             this.txbTongTienNoBanDoc.Size = new System.Drawing.Size(325, 29);
             this.txbTongTienNoBanDoc.TabIndex = 20;
@@ -559,7 +556,7 @@
             this.lbNgayTaoTheBanDoc.AutoSize = true;
             this.lbNgayTaoTheBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbNgayTaoTheBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbNgayTaoTheBanDoc.Location = new System.Drawing.Point(3, 405);
+            this.lbNgayTaoTheBanDoc.Location = new System.Drawing.Point(3, 451);
             this.lbNgayTaoTheBanDoc.Name = "lbNgayTaoTheBanDoc";
             this.lbNgayTaoTheBanDoc.Size = new System.Drawing.Size(103, 20);
             this.lbNgayTaoTheBanDoc.TabIndex = 21;
@@ -570,7 +567,7 @@
             this.lbTongTienNoBanDoc.AutoSize = true;
             this.lbTongTienNoBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbTongTienNoBanDoc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbTongTienNoBanDoc.Location = new System.Drawing.Point(5, 351);
+            this.lbTongTienNoBanDoc.Location = new System.Drawing.Point(5, 397);
             this.lbTongTienNoBanDoc.Name = "lbTongTienNoBanDoc";
             this.lbTongTienNoBanDoc.Size = new System.Drawing.Size(101, 20);
             this.lbTongTienNoBanDoc.TabIndex = 22;
@@ -588,7 +585,7 @@
             // 
             // txbDiaChiBanDoc
             // 
-            this.txbDiaChiBanDoc.Location = new System.Drawing.Point(108, 243);
+            this.txbDiaChiBanDoc.Location = new System.Drawing.Point(108, 289);
             this.txbDiaChiBanDoc.Name = "txbDiaChiBanDoc";
             this.txbDiaChiBanDoc.Size = new System.Drawing.Size(325, 29);
             this.txbDiaChiBanDoc.TabIndex = 5;
@@ -598,7 +595,7 @@
             // 
             this.dtpNgaySinhBanDoc.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinhBanDoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinhBanDoc.Location = new System.Drawing.Point(108, 148);
+            this.dtpNgaySinhBanDoc.Location = new System.Drawing.Point(108, 180);
             this.dtpNgaySinhBanDoc.Name = "dtpNgaySinhBanDoc";
             this.dtpNgaySinhBanDoc.Size = new System.Drawing.Size(200, 29);
             this.dtpNgaySinhBanDoc.TabIndex = 3;
@@ -606,10 +603,11 @@
             // 
             // txbEmailBanDoc
             // 
-            this.txbEmailBanDoc.Location = new System.Drawing.Point(108, 196);
+            this.txbEmailBanDoc.Location = new System.Drawing.Point(108, 228);
             this.txbEmailBanDoc.Name = "txbEmailBanDoc";
             this.txbEmailBanDoc.Size = new System.Drawing.Size(325, 29);
             this.txbEmailBanDoc.TabIndex = 4;
+            this.txbEmailBanDoc.TextChanged += new System.EventHandler(this.txbEmailBanDoc_TextChanged);
             this.txbEmailBanDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.editThongTinBanDoc_KeyDown);
             // 
             // cbLoaiDocGia
@@ -618,7 +616,7 @@
             this.cbLoaiDocGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbLoaiDocGia.Enabled = false;
             this.cbLoaiDocGia.FormattingEnabled = true;
-            this.cbLoaiDocGia.Location = new System.Drawing.Point(108, 294);
+            this.cbLoaiDocGia.Location = new System.Drawing.Point(108, 340);
             this.cbLoaiDocGia.Name = "cbLoaiDocGia";
             this.cbLoaiDocGia.Size = new System.Drawing.Size(200, 32);
             this.cbLoaiDocGia.TabIndex = 6;
@@ -627,17 +625,18 @@
             // txbCMNDBanDoc
             // 
             this.txbCMNDBanDoc.Enabled = false;
-            this.txbCMNDBanDoc.Location = new System.Drawing.Point(108, 106);
+            this.txbCMNDBanDoc.Location = new System.Drawing.Point(108, 120);
             this.txbCMNDBanDoc.Name = "txbCMNDBanDoc";
             this.txbCMNDBanDoc.Size = new System.Drawing.Size(325, 29);
             this.txbCMNDBanDoc.TabIndex = 2;
+            this.txbCMNDBanDoc.TextChanged += new System.EventHandler(this.txbCMNDBanDoc_TextChanged);
             this.txbCMNDBanDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.editThongTinBanDoc_KeyDown);
             // 
             // lbLoaiDocGia
             // 
             this.lbLoaiDocGia.AutoSize = true;
             this.lbLoaiDocGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoaiDocGia.Location = new System.Drawing.Point(3, 295);
+            this.lbLoaiDocGia.Location = new System.Drawing.Point(3, 341);
             this.lbLoaiDocGia.Name = "lbLoaiDocGia";
             this.lbLoaiDocGia.Size = new System.Drawing.Size(98, 20);
             this.lbLoaiDocGia.TabIndex = 14;
@@ -659,13 +658,14 @@
             this.txbTenBanDoc.Name = "txbTenBanDoc";
             this.txbTenBanDoc.Size = new System.Drawing.Size(325, 29);
             this.txbTenBanDoc.TabIndex = 1;
+            this.txbTenBanDoc.TextChanged += new System.EventHandler(this.txbTenBanDoc_TextChanged);
             this.txbTenBanDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.editThongTinBanDoc_KeyDown);
             // 
             // lbCMNDBanDoc
             // 
             this.lbCMNDBanDoc.AutoSize = true;
             this.lbCMNDBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCMNDBanDoc.Location = new System.Drawing.Point(3, 104);
+            this.lbCMNDBanDoc.Location = new System.Drawing.Point(3, 118);
             this.lbCMNDBanDoc.Name = "lbCMNDBanDoc";
             this.lbCMNDBanDoc.Size = new System.Drawing.Size(60, 20);
             this.lbCMNDBanDoc.TabIndex = 3;
@@ -675,7 +675,7 @@
             // 
             this.lbNgaySinhBanDoc.AutoSize = true;
             this.lbNgaySinhBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgaySinhBanDoc.Location = new System.Drawing.Point(3, 148);
+            this.lbNgaySinhBanDoc.Location = new System.Drawing.Point(3, 180);
             this.lbNgaySinhBanDoc.Name = "lbNgaySinhBanDoc";
             this.lbNgaySinhBanDoc.Size = new System.Drawing.Size(82, 20);
             this.lbNgaySinhBanDoc.TabIndex = 5;
@@ -685,7 +685,7 @@
             // 
             this.lbEmailBanDoc.AutoSize = true;
             this.lbEmailBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmailBanDoc.Location = new System.Drawing.Point(3, 196);
+            this.lbEmailBanDoc.Location = new System.Drawing.Point(3, 228);
             this.lbEmailBanDoc.Name = "lbEmailBanDoc";
             this.lbEmailBanDoc.Size = new System.Drawing.Size(52, 20);
             this.lbEmailBanDoc.TabIndex = 7;
@@ -695,7 +695,7 @@
             // 
             this.lbDiaChiBanDoc.AutoSize = true;
             this.lbDiaChiBanDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiaChiBanDoc.Location = new System.Drawing.Point(3, 243);
+            this.lbDiaChiBanDoc.Location = new System.Drawing.Point(3, 289);
             this.lbDiaChiBanDoc.Name = "lbDiaChiBanDoc";
             this.lbDiaChiBanDoc.Size = new System.Drawing.Size(61, 20);
             this.lbDiaChiBanDoc.TabIndex = 9;
@@ -846,7 +846,7 @@
             this.btnThemSach.Location = new System.Drawing.Point(3, 3);
             this.btnThemSach.Name = "btnThemSach";
             this.btnThemSach.Size = new System.Drawing.Size(151, 90);
-            this.btnThemSach.TabIndex = 15;
+            this.btnThemSach.TabIndex = 5;
             this.btnThemSach.Text = "Thêm sách";
             this.btnThemSach.UseVisualStyleBackColor = true;
             this.btnThemSach.Click += new System.EventHandler(this.btnThemSach_Click);
@@ -856,7 +856,7 @@
             this.btnSuaThongTinSach.Location = new System.Drawing.Point(160, 3);
             this.btnSuaThongTinSach.Name = "btnSuaThongTinSach";
             this.btnSuaThongTinSach.Size = new System.Drawing.Size(151, 90);
-            this.btnSuaThongTinSach.TabIndex = 16;
+            this.btnSuaThongTinSach.TabIndex = 100;
             this.btnSuaThongTinSach.Text = "Sửa thông tin";
             this.btnSuaThongTinSach.UseVisualStyleBackColor = true;
             this.btnSuaThongTinSach.Click += new System.EventHandler(this.btnSuaThongTinSach_Click);
@@ -885,6 +885,9 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.lbNamxbEX);
+            this.panel4.Controls.Add(this.lbMasSachEX);
+            this.panel4.Controls.Add(this.lbGiaTriEX);
             this.panel4.Controls.Add(this.cbTinhTrangSach);
             this.panel4.Controls.Add(this.lbTinhTrangSach);
             this.panel4.Controls.Add(this.btnHienThongTinChiTietSach);
@@ -906,14 +909,14 @@
             this.panel4.Controls.Add(this.lbNhaXuatBanSach);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(445, 497);
-            this.panel4.TabIndex = 18;
+            this.panel4.Size = new System.Drawing.Size(445, 532);
+            this.panel4.TabIndex = 6;
             // 
             // cbTinhTrangSach
             // 
             this.cbTinhTrangSach.Enabled = false;
             this.cbTinhTrangSach.FormattingEnabled = true;
-            this.cbTinhTrangSach.Location = new System.Drawing.Point(108, 452);
+            this.cbTinhTrangSach.Location = new System.Drawing.Point(108, 487);
             this.cbTinhTrangSach.Name = "cbTinhTrangSach";
             this.cbTinhTrangSach.Size = new System.Drawing.Size(200, 32);
             this.cbTinhTrangSach.TabIndex = 14;
@@ -922,7 +925,7 @@
             // 
             this.lbTinhTrangSach.AutoSize = true;
             this.lbTinhTrangSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTinhTrangSach.Location = new System.Drawing.Point(3, 453);
+            this.lbTinhTrangSach.Location = new System.Drawing.Point(3, 488);
             this.lbTinhTrangSach.Name = "lbTinhTrangSach";
             this.lbTinhTrangSach.Size = new System.Drawing.Size(84, 20);
             this.lbTinhTrangSach.TabIndex = 39;
@@ -940,16 +943,17 @@
             // 
             // txbGiaTriSach
             // 
-            this.txbGiaTriSach.Location = new System.Drawing.Point(108, 402);
+            this.txbGiaTriSach.Location = new System.Drawing.Point(108, 426);
             this.txbGiaTriSach.Name = "txbGiaTriSach";
             this.txbGiaTriSach.Size = new System.Drawing.Size(327, 29);
             this.txbGiaTriSach.TabIndex = 13;
+            this.txbGiaTriSach.TextChanged += new System.EventHandler(this.txbGiaTriSach_TextChanged);
             // 
             // lbGiaTriSach
             // 
             this.lbGiaTriSach.AutoSize = true;
             this.lbGiaTriSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGiaTriSach.Location = new System.Drawing.Point(4, 402);
+            this.lbGiaTriSach.Location = new System.Drawing.Point(4, 426);
             this.lbGiaTriSach.Name = "lbGiaTriSach";
             this.lbGiaTriSach.Size = new System.Drawing.Size(55, 20);
             this.lbGiaTriSach.TabIndex = 19;
@@ -960,7 +964,7 @@
             this.dtpNgayNhapSach.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayNhapSach.Enabled = false;
             this.dtpNgayNhapSach.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayNhapSach.Location = new System.Drawing.Point(108, 302);
+            this.dtpNgayNhapSach.Location = new System.Drawing.Point(108, 313);
             this.dtpNgayNhapSach.Name = "dtpNgayNhapSach";
             this.dtpNgayNhapSach.Size = new System.Drawing.Size(200, 29);
             this.dtpNgayNhapSach.TabIndex = 11;
@@ -969,7 +973,7 @@
             // 
             this.lbNgayNhapSach.AutoSize = true;
             this.lbNgayNhapSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgayNhapSach.Location = new System.Drawing.Point(3, 302);
+            this.lbNgayNhapSach.Location = new System.Drawing.Point(3, 313);
             this.lbNgayNhapSach.Name = "lbNgayNhapSach";
             this.lbNgayNhapSach.Size = new System.Drawing.Size(89, 20);
             this.lbNgayNhapSach.TabIndex = 17;
@@ -977,21 +981,22 @@
             // 
             // txbNamXuatBanSach
             // 
-            this.txbNamXuatBanSach.Location = new System.Drawing.Point(108, 351);
+            this.txbNamXuatBanSach.Location = new System.Drawing.Point(108, 362);
             this.txbNamXuatBanSach.Name = "txbNamXuatBanSach";
             this.txbNamXuatBanSach.Size = new System.Drawing.Size(327, 29);
             this.txbNamXuatBanSach.TabIndex = 12;
+            this.txbNamXuatBanSach.TextChanged += new System.EventHandler(this.txbNamXuatBanSach_TextChanged);
             // 
             // txbNhaXuatBanSach
             // 
-            this.txbNhaXuatBanSach.Location = new System.Drawing.Point(108, 255);
+            this.txbNhaXuatBanSach.Location = new System.Drawing.Point(108, 266);
             this.txbNhaXuatBanSach.Name = "txbNhaXuatBanSach";
             this.txbNhaXuatBanSach.Size = new System.Drawing.Size(327, 29);
             this.txbNhaXuatBanSach.TabIndex = 10;
             // 
             // txbTacGiaSach
             // 
-            this.txbTacGiaSach.Location = new System.Drawing.Point(108, 205);
+            this.txbTacGiaSach.Location = new System.Drawing.Point(108, 216);
             this.txbTacGiaSach.Name = "txbTacGiaSach";
             this.txbTacGiaSach.Size = new System.Drawing.Size(327, 29);
             this.txbTacGiaSach.TabIndex = 9;
@@ -1001,10 +1006,11 @@
             this.cbTheLoaiSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbTheLoaiSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTheLoaiSach.FormattingEnabled = true;
-            this.cbTheLoaiSach.Location = new System.Drawing.Point(108, 156);
+            this.cbTheLoaiSach.Location = new System.Drawing.Point(108, 167);
             this.cbTheLoaiSach.Name = "cbTheLoaiSach";
             this.cbTheLoaiSach.Size = new System.Drawing.Size(200, 32);
             this.cbTheLoaiSach.TabIndex = 8;
+            this.cbTheLoaiSach.Enter += new System.EventHandler(this.cbTheLoaiSach_Enter);
             // 
             // txbMaSach
             // 
@@ -1013,12 +1019,13 @@
             this.txbMaSach.Name = "txbMaSach";
             this.txbMaSach.Size = new System.Drawing.Size(327, 29);
             this.txbMaSach.TabIndex = 7;
+            this.txbMaSach.TextChanged += new System.EventHandler(this.txbMaSach_TextChanged);
             // 
             // lbNamXuatBanSach
             // 
             this.lbNamXuatBanSach.AutoSize = true;
             this.lbNamXuatBanSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNamXuatBanSach.Location = new System.Drawing.Point(4, 351);
+            this.lbNamXuatBanSach.Location = new System.Drawing.Point(4, 362);
             this.lbNamXuatBanSach.Name = "lbNamXuatBanSach";
             this.lbNamXuatBanSach.Size = new System.Drawing.Size(111, 20);
             this.lbNamXuatBanSach.TabIndex = 14;
@@ -1055,7 +1062,7 @@
             // 
             this.lbTheLoaiSach.AutoSize = true;
             this.lbTheLoaiSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTheLoaiSach.Location = new System.Drawing.Point(3, 157);
+            this.lbTheLoaiSach.Location = new System.Drawing.Point(3, 168);
             this.lbTheLoaiSach.Name = "lbTheLoaiSach";
             this.lbTheLoaiSach.Size = new System.Drawing.Size(64, 20);
             this.lbTheLoaiSach.TabIndex = 5;
@@ -1065,7 +1072,7 @@
             // 
             this.lbTacGiaSach.AutoSize = true;
             this.lbTacGiaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTacGiaSach.Location = new System.Drawing.Point(3, 205);
+            this.lbTacGiaSach.Location = new System.Drawing.Point(3, 216);
             this.lbTacGiaSach.Name = "lbTacGiaSach";
             this.lbTacGiaSach.Size = new System.Drawing.Size(64, 20);
             this.lbTacGiaSach.TabIndex = 7;
@@ -1075,7 +1082,7 @@
             // 
             this.lbNhaXuatBanSach.AutoSize = true;
             this.lbNhaXuatBanSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNhaXuatBanSach.Location = new System.Drawing.Point(3, 255);
+            this.lbNhaXuatBanSach.Location = new System.Drawing.Point(3, 266);
             this.lbNhaXuatBanSach.Name = "lbNhaXuatBanSach";
             this.lbNhaXuatBanSach.Size = new System.Drawing.Size(107, 20);
             this.lbNhaXuatBanSach.TabIndex = 9;
@@ -1365,6 +1372,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Quy định bạn đọc:";
             // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 4;
+            this.btnHuy.Text = "button1";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // pvdInDanhSach
             // 
             this.pvdInDanhSach.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -1380,12 +1398,79 @@
             this.pdInDanhSach.DocumentName = " ";
             this.pdInDanhSach.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdInDanhSach_PrintPage);
             // 
+            // lbCmndEX
+            // 
+            this.lbCmndEX.AutoSize = true;
+            this.lbCmndEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCmndEX.ForeColor = System.Drawing.Color.Red;
+            this.lbCmndEX.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbCmndEX.Location = new System.Drawing.Point(110, 153);
+            this.lbCmndEX.Name = "lbCmndEX";
+            this.lbCmndEX.Size = new System.Drawing.Size(0, 15);
+            this.lbCmndEX.TabIndex = 23;
+            // 
+            // lbEmailEX
+            // 
+            this.lbEmailEX.AutoSize = true;
+            this.lbEmailEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmailEX.ForeColor = System.Drawing.Color.Red;
+            this.lbEmailEX.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbEmailEX.Location = new System.Drawing.Point(110, 260);
+            this.lbEmailEX.Name = "lbEmailEX";
+            this.lbEmailEX.Size = new System.Drawing.Size(0, 15);
+            this.lbEmailEX.TabIndex = 24;
+            // 
+            // lbTenbandocEX
+            // 
+            this.lbTenbandocEX.AutoSize = true;
+            this.lbTenbandocEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTenbandocEX.ForeColor = System.Drawing.Color.Red;
+            this.lbTenbandocEX.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbTenbandocEX.Location = new System.Drawing.Point(110, 91);
+            this.lbTenbandocEX.Name = "lbTenbandocEX";
+            this.lbTenbandocEX.Size = new System.Drawing.Size(0, 15);
+            this.lbTenbandocEX.TabIndex = 25;
+            // 
+            // lbGiaTriEX
+            // 
+            this.lbGiaTriEX.AutoSize = true;
+            this.lbGiaTriEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGiaTriEX.ForeColor = System.Drawing.Color.Red;
+            this.lbGiaTriEX.Location = new System.Drawing.Point(107, 458);
+            this.lbGiaTriEX.Name = "lbGiaTriEX";
+            this.lbGiaTriEX.Size = new System.Drawing.Size(17, 15);
+            this.lbGiaTriEX.TabIndex = 40;
+            this.lbGiaTriEX.Text = "te";
+            // 
+            // lbMasSachEX
+            // 
+            this.lbMasSachEX.AutoSize = true;
+            this.lbMasSachEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMasSachEX.ForeColor = System.Drawing.Color.Red;
+            this.lbMasSachEX.Location = new System.Drawing.Point(107, 141);
+            this.lbMasSachEX.Name = "lbMasSachEX";
+            this.lbMasSachEX.Size = new System.Drawing.Size(17, 15);
+            this.lbMasSachEX.TabIndex = 41;
+            this.lbMasSachEX.Text = "te";
+            // 
+            // lbNamxbEX
+            // 
+            this.lbNamxbEX.AutoSize = true;
+            this.lbNamxbEX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNamxbEX.ForeColor = System.Drawing.Color.Red;
+            this.lbNamxbEX.Location = new System.Drawing.Point(107, 395);
+            this.lbNamxbEX.Name = "lbNamxbEX";
+            this.lbNamxbEX.Size = new System.Drawing.Size(17, 15);
+            this.lbNamxbEX.TabIndex = 42;
+            this.lbNamxbEX.Text = "te";
+            // 
             // frmManHinhChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnHuy;
             this.ClientSize = new System.Drawing.Size(970, 573);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
@@ -1559,5 +1644,11 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.TextBox txbQuyDinhTienPhat;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbCmndEX;
+        private System.Windows.Forms.Label lbEmailEX;
+        private System.Windows.Forms.Label lbTenbandocEX;
+        private System.Windows.Forms.Label lbGiaTriEX;
+        private System.Windows.Forms.Label lbMasSachEX;
+        private System.Windows.Forms.Label lbNamxbEX;
     }
 }

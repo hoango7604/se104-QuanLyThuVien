@@ -43,6 +43,9 @@
             this.btnThemBanDoc = new System.Windows.Forms.Button();
             this.btnHuyBanDoc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbEmailEX = new System.Windows.Forms.Label();
+            this.lbCmndEX = new System.Windows.Forms.Label();
+            this.lbTenbandocEX = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,11 +63,13 @@
             // 
             resources.ApplyResources(this.txbTenBanDoc, "txbTenBanDoc");
             this.txbTenBanDoc.Name = "txbTenBanDoc";
+            this.txbTenBanDoc.TextChanged += new System.EventHandler(this.txbTenBanDoc_TextChanged);
             // 
             // txbCMNDBanDoc
             // 
             resources.ApplyResources(this.txbCMNDBanDoc, "txbCMNDBanDoc");
             this.txbCMNDBanDoc.Name = "txbCMNDBanDoc";
+            this.txbCMNDBanDoc.TextChanged += new System.EventHandler(this.txbCMNDBanDoc_TextChanged);
             // 
             // lbCMNDBanDoc
             // 
@@ -80,6 +85,7 @@
             // 
             resources.ApplyResources(this.txbEmailBanDoc, "txbEmailBanDoc");
             this.txbEmailBanDoc.Name = "txbEmailBanDoc";
+            this.txbEmailBanDoc.TextChanged += new System.EventHandler(this.txbEmailBanDoc_TextChanged);
             // 
             // lbEmailBanDoc
             // 
@@ -119,6 +125,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbEmailEX);
+            this.panel1.Controls.Add(this.lbCmndEX);
+            this.panel1.Controls.Add(this.lbTenbandocEX);
             this.panel1.Controls.Add(this.txbDiaChiBanDoc);
             this.panel1.Controls.Add(this.dtpNgaySinhBanDoc);
             this.panel1.Controls.Add(this.txbEmailBanDoc);
@@ -134,6 +143,24 @@
             this.panel1.Controls.Add(this.lbDiaChiBanDoc);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // lbEmailEX
+            // 
+            resources.ApplyResources(this.lbEmailEX, "lbEmailEX");
+            this.lbEmailEX.ForeColor = System.Drawing.Color.Red;
+            this.lbEmailEX.Name = "lbEmailEX";
+            // 
+            // lbCmndEX
+            // 
+            resources.ApplyResources(this.lbCmndEX, "lbCmndEX");
+            this.lbCmndEX.ForeColor = System.Drawing.Color.Red;
+            this.lbCmndEX.Name = "lbCmndEX";
+            // 
+            // lbTenbandocEX
+            // 
+            resources.ApplyResources(this.lbTenbandocEX, "lbTenbandocEX");
+            this.lbTenbandocEX.ForeColor = System.Drawing.Color.Red;
+            this.lbTenbandocEX.Name = "lbTenbandocEX";
             // 
             // frmThemBanDoc
             // 
@@ -167,6 +194,9 @@
         private System.Windows.Forms.Button btnThemBanDoc;
         private System.Windows.Forms.Button btnHuyBanDoc;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbTenbandocEX;
+        private System.Windows.Forms.Label lbCmndEX;
+        private System.Windows.Forms.Label lbEmailEX;
     }
 }
 

@@ -133,9 +133,9 @@ namespace QuanLiThuVienBUS
             docgiaDAL dgDAL = new docgiaDAL();
             if (dgDAL.isDocGia(docgia.MaThe))
             {
-                BUS_notification.mess = "Khôn tồn tại mã thẻ";
                 return dgDAL.suaDocGia(docgia, docgia.MaThe);
             }
+            BUS_notification.mess = "Không tồn tại mã thẻ";
             return false;
         }
          

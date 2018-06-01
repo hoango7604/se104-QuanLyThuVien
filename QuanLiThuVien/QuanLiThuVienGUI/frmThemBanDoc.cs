@@ -45,15 +45,25 @@ namespace QuanLiThuVienGUI
                 }
                 else if (tuoi > 22)
                 {
-                    loaiDocGia = 3;
+                    loaiDocGia = 2;
                 }
 
                 docgiaDTO dgDTO = new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, DateTime.Now, 0, loaiDocGia);
                 if (quanLiBanDocBUS.ThemDocGia(dgDTO))
                 {
                     MessageBox.Show("Đã thêm bạn đọc thành công", "Thông báo", MessageBoxButtons.OK);
+
+                    int index = 0;
+                    for (int i = 0; i < quanLiBanDocBUS.DanhSachDocGia().Count; i++)
+                    {
+                        if (int.Parse(txbCMNDBanDoc.Text) == quanLiBanDocBUS.DanhSachDocGia()[i].MaThe)
+                        {
+                            index = i;
+                        }
+                    }
+
                     refresh();
-                    (mainForm as frmManHinhChinh).loadDanhSachBanDoc();
+                    (mainForm as frmManHinhChinh).loadDanhSachBanDoc(index);
                 }
                 else
                 {
@@ -63,6 +73,67 @@ namespace QuanLiThuVienGUI
             else
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void txbTenBanDoc_TextChanged(object sender, EventArgs e)
+        {
+            string Name = txbTenBanDoc.Text;
+
+            if (Name.Length <= 3 && Name != "")
+            {
+                lbTenbandocEX.Text = "Vui lòng nhập tên nhiều hơn 3 kí tự!";
+                btnThemBanDoc.Enabled = false;
+            }
+            else
+            {
+                lbTenbandocEX.Text = "";
+                btnThemBanDoc.Enabled = true;
+
+            }
+
+        }
+
+        private void txbCMNDBanDoc_TextChanged(object sender, EventArgs e)
+        {
+            string cmnd = txbCMNDBanDoc.Text;
+
+            int check;
+            Int32.TryParse(cmnd, out check);
+            if (check == 0 && cmnd != "")
+            {
+                lbCmndEX.Text = "Vui lòng chỉ nhập số!";
+                btnThemBanDoc.Enabled = false;
+            }
+            else
+            {
+                lbCmndEX.Text = "";
+                btnThemBanDoc.Enabled = true;
+
+            }
+        }
+
+        private void txbEmailBanDoc_TextChanged(object sender, EventArgs e)
+        {
+            string email = txbEmailBanDoc.Text;
+            if ((email.Contains(".com") || email.Contains(".vn")) && email.Contains("@"))
+            {
+                lbEmailEX.Text = "";
+                btnThemBanDoc.Enabled = true;
+
+            }
+            else
+            {
+                if (email != "")
+                {
+                    lbEmailEX.Text = "Vui lòng nhập đúng địa chỉ Email!";
+                }
+                else
+                {
+                    lbEmailEX.Text = "";
+                }
+
+                btnThemBanDoc.Enabled = false;
             }
         }
 

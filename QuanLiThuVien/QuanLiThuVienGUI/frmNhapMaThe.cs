@@ -15,15 +15,17 @@ namespace QuanLiThuVienGUI
 {
     public partial class frmNhapMaThe : Form
     {
+        Form mainForm;
         List<docgiaDTO> listDocGia = new List<docgiaDTO>();
         int codeMuonTra;
 
-        public frmNhapMaThe(string title, List<docgiaDTO> listDocGia, int codeMuonTra)
+        public frmNhapMaThe(string title, List<docgiaDTO> listDocGia, int codeMuonTra, Form parent)
         {
             InitializeComponent();
             this.Text = title;
             this.listDocGia = listDocGia;
             this.codeMuonTra = codeMuonTra;
+            this.mainForm = parent;
             foreach (docgiaDTO docgia in listDocGia)
             {
                 cbNhapMaTheBanDoc.Items.Add(docgia.MaThe + " - " + docgia.HoTen);
@@ -36,25 +38,33 @@ namespace QuanLiThuVienGUI
             {
                 if (cbNhapMaTheBanDoc.Text != "" && new docgiaDAL().isDocGia(listDocGia[cbNhapMaTheBanDoc.SelectedIndex].MaThe))
                 {
-                    Hide();
                     QuanLiBanDocBUS quanLiBanDoc = new QuanLiBanDocBUS();
                     QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
                     docgiaDTO docgia = listDocGia[cbNhapMaTheBanDoc.SelectedIndex];
+
+                    int index = 0;
+                    for (int i = 0; i < quanLiBanDoc.DanhSachDocGia().Count; i++)
+                    {
+                        if (docgia.MaThe == quanLiBanDoc.DanhSachDocGia()[i].MaThe)
+                        {
+                            index = i;
+                        }
+                    }
+
                     if (codeMuonTra == 0)
                     {
                         frmPhieuMuon f = new frmPhieuMuon(docgia);
                         f.ShowDialog();
-                        frmThongTinBanDoc f2 = new frmThongTinBanDoc(docgia);
-                        f2.ShowDialog();
+                        (mainForm as frmManHinhChinh).ShowThongTinBanDoc(index);
                     }
                     else if (codeMuonTra == 1)
                     {
-                        frmThongTinBanDoc f = new frmThongTinBanDoc(docgia);
+                        frmThongTinBanDoc f = new frmThongTinBanDoc(docgia, mainForm);
                         f.ShowDialog();
                     }
                     else if (codeMuonTra == 2)
                     {
-                        frmPhieuThuTienPhat f = new frmPhieuThuTienPhat(docgia);
+                        frmPhieuThuTienPhat f = new frmPhieuThuTienPhat(docgia, mainForm);
                         f.ShowDialog();
                     }
                     this.Close();
