@@ -55,6 +55,7 @@ namespace QuanLiThuVienGUI
             foreach (loaisachDTO loaisach in listLoaiSach)
             {
                 cbTheLoaiSach.Items.Add(loaisach.Theloaisach);
+                cbTimSachTheoTheLoai.Items.Add(loaisach.Theloaisach);
             }
         }
 
@@ -170,6 +171,8 @@ namespace QuanLiThuVienGUI
 
         private void btnTimKiemBanDoc_Click(object sender, EventArgs e)
         {
+            resizeSttErrorLabel();
+
             if (txbTimKiemBanDocTheoMa.Text == "" && txbTimKiemTheoTenBanDoc.Text == "")
             {
                 listDocGia = quanLiBanDocBUS.DanhSachDocGia();
@@ -182,7 +185,7 @@ namespace QuanLiThuVienGUI
                 }
                 catch (FormatException error)
                 {
-                    MessageBox.Show("Lỗi định dạng. Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
+                    sttErrorLabel.Text = "Lỗi định dạng. Vui lòng nhập lại";
                     Console.WriteLine(error.ToString());
                 }
             }
@@ -191,6 +194,8 @@ namespace QuanLiThuVienGUI
 
         public void ShowThongTinBanDoc(int index)
         {
+            resizeSttErrorLabel();
+
             if (index >= 0)
             {
                 frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[index], this);
@@ -198,7 +203,7 @@ namespace QuanLiThuVienGUI
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn thông tin bạn đọc để hiển thị", "Thông báo", MessageBoxButtons.OK);
+                sttErrorLabel.Text = "Vui lòng chọn thông tin bạn đọc để hiển thị";
             }
         }
 
@@ -218,6 +223,8 @@ namespace QuanLiThuVienGUI
             int loaiDocGia = 0;
             int tuoi = 0;
 
+            resizeSttErrorLabel();
+
             if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
             {
                 tuoi = DateTime.Now.Year - dtpNgaySinhBanDoc.Value.Year;
@@ -236,48 +243,52 @@ namespace QuanLiThuVienGUI
 
                 if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, dtpNgayTaoTheBanDoc.Value, int.Parse(txbTongTienNoBanDoc.Text),loaiDocGia)))
                 {
-                    MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
+                    sttErrorLabel.Text = "Cập nhật thông tin thành công";
                     loadDanhSachBanDoc(dgvThongTinBanDoc.SelectedRows[0].Index);
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thông tin thất bại. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
+                    sttErrorLabel.Text = "Cập nhật thông tin thất bại. Vui lòng kiểm tra lại";
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
+                sttErrorLabel.Text = "Vui lòng điền đầy đủ thông tin";
 
             }
         }
 
         private void btnXoaBanDoc_Click(object sender, EventArgs e)
         {
+            resizeSttErrorLabel();
+
             if (indexBanDoc >= 0)
             {
                 if (MessageBox.Show("Bạn có muốn xóa bạn đọc " + listDocGia[indexBanDoc].HoTen + "?", "Xóa bạn đọc", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     if (quanLiBanDocBUS.XoaDocGia(listDocGia[indexBanDoc]))
                     {
-                        MessageBox.Show("Xóa bạn đọc thành công", "Thông báo", MessageBoxButtons.OK);
-                        loadDanhSachBanDoc();
+                        sttErrorLabel.Text = "Xóa bạn đọc thành công";
+                        initDataGridViewBanDoc();
+                        loadDanhSachBanDoc(indexBanDoc >= listDocGia.Count - 1 ? indexBanDoc - 1 : indexBanDoc);
                     }
                     else
                     {
-                        MessageBox.Show("Xóa bạn đọc thất bại. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
+                        sttErrorLabel.Text = "Xóa bạn đọc thất bại. Vui lòng kiểm tra lại";
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một bạn đọc", "Thông báo", MessageBoxButtons.OK);
+                sttErrorLabel.Text = "Vui lòng chọn một bạn đọc";
             }
         }
-
-     
+        
         private void btnTimSach_Click(object sender, EventArgs e)
         {
-            if (txbTimSachTheoMa.Text == "" && txbTimSachTheoTacGia.Text == "" && txbTimSachTheoTen.Text == "" && txbTimSachTheoTheLoai.Text == "")
+            resizeSttErrorLabel();
+
+            if (txbTimSachTheoMa.Text == "" && txbTimSachTheoTacGia.Text == "" && txbTimSachTheoTen.Text == "" && cbTimSachTheoTheLoai.Text == "")
             {
                 listSach = quanLiSachBUS.DanhSachSach();
             }
@@ -285,12 +296,12 @@ namespace QuanLiThuVienGUI
             {
                 try
                 {
-                    sachDTO sDTO = new sachDTO(txbTimSachTheoMa.Text == "" ? -1 : int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, txbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
+                    sachDTO sDTO = new sachDTO(txbTimSachTheoMa.Text == "" ? -1 : int.Parse(txbTimSachTheoMa.Text), txbTimSachTheoTen.Text, cbTimSachTheoTheLoai.Text, txbTimSachTheoTacGia.Text, "", DateTime.Now, DateTime.Now, 0, 0);
                     listSach = quanLiSachBUS.TimSach(sDTO);
                 }
                 catch (FormatException error)
                 {
-                    MessageBox.Show("Lỗi định dạng. Vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
+                    sttErrorLabel.Text = "Lỗi định dạng. Vui lòng nhập lại";
                     Console.WriteLine(error.ToString());
                 }
             }
@@ -301,6 +312,8 @@ namespace QuanLiThuVienGUI
 
         private void btnHienThongTinChiTietSach_Click(object sender, EventArgs e)
         {
+            resizeSttErrorLabel();
+
             if (indexSach >= 0)
             {
                 frmThongTinSach f = new frmThongTinSach(listSach[indexSach]);
@@ -308,7 +321,7 @@ namespace QuanLiThuVienGUI
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn thông tin sách để hiển thị", "Thông báo", MessageBoxButtons.OK);
+                sttErrorLabel.Text = "Vui lòng chọn thông tin sách để hiển thị";
             }
         }
 
@@ -320,6 +333,8 @@ namespace QuanLiThuVienGUI
 
         private void btnSuaThongTinSach_Click(object sender, EventArgs e)
         {
+            resizeSttErrorLabel();
+
             if (txbTenSach.Text != "" && cbTheLoaiSach.Text != "" && txbTacGiaSach.Text != "" && txbNhaXuatBanSach.Text != "" && txbNamXuatBanSach.Text != "" && txbGiaTriSach.Text != "")
             {
                 DateTime datebyYear = new DateTime(int.Parse(txbNamXuatBanSach.Text),1,1);
@@ -349,32 +364,29 @@ namespace QuanLiThuVienGUI
                     listLoaiSach = quanLiTheLoaiSachBUS.LayDanhSachCacTheLoai();
 
                     cbTheLoaiSach.Items.Clear();
+                    cbTimSachTheoTheLoai.Items.Clear();
                     foreach (loaisachDTO loaisach in listLoaiSach)
                     {
                         cbTheLoaiSach.Items.Add(loaisach.Theloaisach);
+                        cbTimSachTheoTheLoai.Items.Add(loaisach.Theloaisach);
                     }
                 }
 
                 if (quanLiSachBUS.SuaSach(sach))
                 {
-                    MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
+                    sttErrorLabel.Text = "Cập nhật thông tin thành công";
                     loadDanhSachSach(dgvThongTinSach.SelectedRows[0].Index);
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thông tin thất bại. "+BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
+                    sttErrorLabel.Text = "Cập nhật thông tin thất bại. " + BUS_notification.mess;
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
+                sttErrorLabel.Text = "Vui lòng điền đầy đủ thông tin";
 
             }
-        }
-
-        private void btnXoaSach_Click(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>
@@ -692,6 +704,8 @@ namespace QuanLiThuVienGUI
 
         private void btnCapNhatQuyDinh_Click(object sender, EventArgs e)
         {
+            resizeSttErrorLabel();
+
             if (txbQuyDinhKhoangCachNamXB.Text != "" && txbQuyDinhSoNgayDuocMuon.Text != "" && txbQuyDinhSoSachDuocMuon.Text != "" && txbQuyDinhTienPhat.Text != "" && txbQuyDinhTuoiToiDa.Text != "" && txbQuyDinhTuoiToiThieu.Text != "")
             {
                 quydinhBUS quydinhBUS = new quydinhBUS();
@@ -699,7 +713,7 @@ namespace QuanLiThuVienGUI
 
                 if (quydinhBUS.SuaQuyDinh(quydinhDTO))
                 {
-
+                    sttErrorLabel.Text = "Cập nhật quy định thành công!";
                 }
 
                 anhXaQuyDinh();
@@ -719,9 +733,7 @@ namespace QuanLiThuVienGUI
             {
                 lbTenbandocEX.Text = "";
                 btnThemBanDoc.Enabled = true;
-
             }
-
         }
 
         private void txbCMNDBanDoc_TextChanged(object sender, EventArgs e)
@@ -821,6 +833,31 @@ namespace QuanLiThuVienGUI
         private void cbTheLoaiSach_Enter(object sender, EventArgs e)
         {
             cbTheLoaiSach.DroppedDown = true;
+        }
+
+        private void cbTimSachTheoTheLoai_Enter(object sender, EventArgs e)
+        {
+            cbTimSachTheoTheLoai.DroppedDown = true;
+        }
+
+        private void refreshError()
+        {
+            sttErrorLabel.Text = "";
+            resizeSttErrorLabel();
+        }
+
+        private void resizeSttErrorLabel()
+        {
+            this.sttError.Size = new Size(48, 22);
+            this.Size = new Size(990, 640);
+        }
+
+        private void editThongTinSach_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSuaThongTinSach_Click(sender, e);
+            }
         }
     }
 }
