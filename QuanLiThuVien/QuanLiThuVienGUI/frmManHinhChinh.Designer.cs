@@ -771,6 +771,7 @@
             this.txbTimSachTheoTacGia.Name = "txbTimSachTheoTacGia";
             this.txbTimSachTheoTacGia.Size = new System.Drawing.Size(250, 29);
             this.txbTimSachTheoTacGia.TabIndex = 3;
+            this.txbTimSachTheoTacGia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchSachTheoMa_KeyDown);
             // 
             // lbTimSachTheoTheLoai
             // 
@@ -787,6 +788,7 @@
             this.txbTimSachTheoTheLoai.Name = "txbTimSachTheoTheLoai";
             this.txbTimSachTheoTheLoai.Size = new System.Drawing.Size(250, 29);
             this.txbTimSachTheoTheLoai.TabIndex = 2;
+            this.txbTimSachTheoTheLoai.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchSachTheoMa_KeyDown);
             // 
             // lbTimSachTheoTen
             // 
@@ -822,6 +824,7 @@
             this.txbTimSachTheoTen.Name = "txbTimSachTheoTen";
             this.txbTimSachTheoTen.Size = new System.Drawing.Size(250, 29);
             this.txbTimSachTheoTen.TabIndex = 1;
+            this.txbTimSachTheoTen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchSachTheoMa_KeyDown);
             // 
             // txbTimSachTheoMa
             // 
@@ -829,6 +832,7 @@
             this.txbTimSachTheoMa.Name = "txbTimSachTheoMa";
             this.txbTimSachTheoMa.Size = new System.Drawing.Size(250, 29);
             this.txbTimSachTheoMa.TabIndex = 0;
+            this.txbTimSachTheoMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchSachTheoMa_KeyDown);
             // 
             // flowLayoutPanel2
             // 

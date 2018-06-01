@@ -27,11 +27,19 @@ namespace QuanLiThuVienGUI
         public frmManHinhChinh()
         {
             InitializeComponent();
+
             initComboBox();
+
+            loadDanhSachBanDoc();
             initDataGridViewBanDoc();
+
+            loadDanhSachSach();
             initDataGridViewSach();
+
             anhXaThongTinBanDoc(indexBanDoc);
+
             anhXaThongTinSach(indexSach);
+
             anhXaQuyDinh();
         }
 
@@ -52,7 +60,7 @@ namespace QuanLiThuVienGUI
 
         private void initDataGridViewBanDoc()
         {
-            loadDanhSachBanDoc();
+            dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
             dgvThongTinBanDoc.Columns[0].HeaderText = "Mã thẻ";
             dgvThongTinBanDoc.Columns[0].Width = 80;
             dgvThongTinBanDoc.Columns[1].HeaderText = "Họ tên";
@@ -67,7 +75,6 @@ namespace QuanLiThuVienGUI
         public void loadDanhSachBanDoc()
         {
             listDocGia = quanLiBanDocBUS.DanhSachDocGia();
-            dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
         }
 
         public void loadDanhSachBanDoc(int index)
@@ -82,7 +89,7 @@ namespace QuanLiThuVienGUI
 
         private void initDataGridViewSach()
         {
-            loadDanhSachSach();
+            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
             dgvThongTinSach.Columns[0].HeaderText = "Mã sách";
             dgvThongTinSach.Columns[0].Width = 80;
             dgvThongTinSach.Columns[1].HeaderText = "Tên sách";
@@ -97,7 +104,16 @@ namespace QuanLiThuVienGUI
         public void loadDanhSachSach()
         {
             listSach = quanLiSachBUS.DanhSachSach();
+        }
+
+        public void loadDanhSachSach(int index)
+        {
+            listSach = quanLiSachBUS.DanhSachSach();
             dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, Column4 = o.Nxb }).ToList();
+            dgvThongTinSach.Rows[0].Selected = false;
+            dgvThongTinSach.Rows[index].Selected = true;
+            dgvThongTinSach.CurrentCell = dgvThongTinSach.Rows[index].Cells[0];
+            anhXaThongTinSach(index);
         }
 
         /// <summary>
@@ -170,7 +186,7 @@ namespace QuanLiThuVienGUI
                     Console.WriteLine(error.ToString());
                 }
             }
-            dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
+            initDataGridViewBanDoc();
         }
 
         public void ShowThongTinBanDoc(int index)
@@ -278,8 +294,8 @@ namespace QuanLiThuVienGUI
                     Console.WriteLine(error.ToString());
                 }
             }
-            
-            dgvThongTinSach.DataSource = listSach.Select(o => new { Column1 = o.Masach, Column2 = o.Tensach, Column3 = o.Tacgia, colum4 = o.Nxb}).ToList();
+
+            initDataGridViewSach();
      
         }
 
@@ -342,7 +358,7 @@ namespace QuanLiThuVienGUI
                 if (quanLiSachBUS.SuaSach(sach))
                 {
                     MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
-                    loadDanhSachSach();
+                    loadDanhSachSach(dgvThongTinSach.SelectedRows[0].Index);
                 }
                 else
                 {
@@ -633,6 +649,14 @@ namespace QuanLiThuVienGUI
             if (e.KeyCode == Keys.Enter)
             {
                 btnTimKiemBanDoc_Click(sender, e);
+            }
+        }
+        
+        private void searchSachTheoMa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnTimSach_Click(sender, e);
             }
         }
 
