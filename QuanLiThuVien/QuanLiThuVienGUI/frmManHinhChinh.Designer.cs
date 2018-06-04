@@ -46,6 +46,8 @@
             this.thốngKêSáchTrảTrễToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêTìnhHìnhMượnSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.sttError = new System.Windows.Forms.StatusStrip();
+            this.sttErrorLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tcManHinhChinh = new System.Windows.Forms.TabControl();
             this.tpBanDoc = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -83,8 +85,6 @@
             this.lbEmailBanDoc = new System.Windows.Forms.Label();
             this.lbDiaChiBanDoc = new System.Windows.Forms.Label();
             this.tpSach = new System.Windows.Forms.TabPage();
-            this.sttError = new System.Windows.Forms.StatusStrip();
-            this.sttErrorLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.dgvThongTinSach = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -161,6 +161,7 @@
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.sttError.SuspendLayout();
             this.tcManHinhChinh.SuspendLayout();
             this.tpBanDoc.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -170,7 +171,6 @@
             this.flowLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tpSach.SuspendLayout();
-            this.sttError.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSach)).BeginInit();
             this.panel2.SuspendLayout();
@@ -330,6 +330,24 @@
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            // 
+            // sttError
+            // 
+            this.sttError.Dock = System.Windows.Forms.DockStyle.None;
+            this.sttError.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sttErrorLabel});
+            this.sttError.Location = new System.Drawing.Point(5, 549);
+            this.sttError.Name = "sttError";
+            this.sttError.Size = new System.Drawing.Size(17, 22);
+            this.sttError.TabIndex = 20;
+            this.sttError.Text = "statusStrip1";
+            // 
+            // sttErrorLabel
+            // 
+            this.sttErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.sttErrorLabel.Name = "sttErrorLabel";
+            this.sttErrorLabel.Size = new System.Drawing.Size(0, 17);
+            this.sttErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tcManHinhChinh
             // 
@@ -737,24 +755,6 @@
             this.tpSach.TabIndex = 1;
             this.tpSach.Text = "    Sách   ";
             this.tpSach.UseVisualStyleBackColor = true;
-            // 
-            // sttError
-            // 
-            this.sttError.Dock = System.Windows.Forms.DockStyle.None;
-            this.sttError.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sttErrorLabel});
-            this.sttError.Location = new System.Drawing.Point(5, 549);
-            this.sttError.Name = "sttError";
-            this.sttError.Size = new System.Drawing.Size(17, 22);
-            this.sttError.TabIndex = 20;
-            this.sttError.Text = "statusStrip1";
-            // 
-            // sttErrorLabel
-            // 
-            this.sttErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.sttErrorLabel.Name = "sttErrorLabel";
-            this.sttErrorLabel.Size = new System.Drawing.Size(0, 17);
-            this.sttErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel12
             // 
@@ -1186,7 +1186,7 @@
             this.tpThongKe.Location = new System.Drawing.Point(4, 54);
             this.tpThongKe.Name = "tpThongKe";
             this.tpThongKe.Padding = new System.Windows.Forms.Padding(3);
-            this.tpThongKe.Size = new System.Drawing.Size(962, 516);
+            this.tpThongKe.Size = new System.Drawing.Size(962, 491);
             this.tpThongKe.TabIndex = 5;
             this.tpThongKe.Text = "  Thống Kê  ";
             this.tpThongKe.UseVisualStyleBackColor = true;
@@ -1288,7 +1288,7 @@
             this.tpQuyDinh.Location = new System.Drawing.Point(4, 54);
             this.tpQuyDinh.Name = "tpQuyDinh";
             this.tpQuyDinh.Padding = new System.Windows.Forms.Padding(3);
-            this.tpQuyDinh.Size = new System.Drawing.Size(962, 516);
+            this.tpQuyDinh.Size = new System.Drawing.Size(962, 491);
             this.tpQuyDinh.TabIndex = 6;
             this.tpQuyDinh.Text = "  Quy định  ";
             this.tpQuyDinh.UseVisualStyleBackColor = true;
@@ -1508,6 +1508,8 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.sttError.ResumeLayout(false);
+            this.sttError.PerformLayout();
             this.tcManHinhChinh.ResumeLayout(false);
             this.tpBanDoc.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -1519,8 +1521,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tpSach.ResumeLayout(false);
-            this.sttError.ResumeLayout(false);
-            this.sttError.PerformLayout();
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinSach)).EndInit();
             this.panel2.ResumeLayout(false);

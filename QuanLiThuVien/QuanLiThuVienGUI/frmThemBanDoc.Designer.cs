@@ -46,6 +46,7 @@
             this.lbEmailEX = new System.Windows.Forms.Label();
             this.lbCmndEX = new System.Windows.Forms.Label();
             this.lbTenbandocEX = new System.Windows.Forms.Label();
+            this.lbNgaySinhEX = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +108,7 @@
             resources.ApplyResources(this.dtpNgaySinhBanDoc, "dtpNgaySinhBanDoc");
             this.dtpNgaySinhBanDoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinhBanDoc.Name = "dtpNgaySinhBanDoc";
+            this.dtpNgaySinhBanDoc.ValueChanged += new System.EventHandler(this.dtpNgaySinhBanDoc_ValueChanged);
             // 
             // btnThemBanDoc
             // 
@@ -125,6 +127,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbNgaySinhEX);
             this.panel1.Controls.Add(this.lbEmailEX);
             this.panel1.Controls.Add(this.lbCmndEX);
             this.panel1.Controls.Add(this.lbTenbandocEX);
@@ -162,6 +165,12 @@
             this.lbTenbandocEX.ForeColor = System.Drawing.Color.Red;
             this.lbTenbandocEX.Name = "lbTenbandocEX";
             // 
+            // lbNgaySinhEX
+            // 
+            resources.ApplyResources(this.lbNgaySinhEX, "lbNgaySinhEX");
+            this.lbNgaySinhEX.ForeColor = System.Drawing.Color.Red;
+            this.lbNgaySinhEX.Name = "lbNgaySinhEX";
+            // 
             // frmThemBanDoc
             // 
             this.AcceptButton = this.btnThemBanDoc;
@@ -197,6 +206,7 @@
         private System.Windows.Forms.Label lbTenbandocEX;
         private System.Windows.Forms.Label lbCmndEX;
         private System.Windows.Forms.Label lbEmailEX;
+        private System.Windows.Forms.Label lbNgaySinhEX;
     }
 }
 

@@ -28,19 +28,35 @@ namespace QuanLiThuVienGUI
         {
             InitializeComponent();
 
-            initComboBox();
+            resizeSttErrorLabel();
 
-            loadDanhSachBanDoc();
-            initDataGridViewBanDoc();
+            try
+            {
+                initComboBox();
 
-            loadDanhSachSach();
-            initDataGridViewSach();
+                loadDanhSachBanDoc();
+                initDataGridViewBanDoc();
 
-            anhXaThongTinBanDoc(indexBanDoc);
+                loadDanhSachSach();
+                initDataGridViewSach();
 
-            anhXaThongTinSach(indexSach);
+                anhXaThongTinBanDoc(indexBanDoc);
 
-            anhXaQuyDinh();
+                anhXaThongTinSach(indexSach);
+
+                anhXaQuyDinh();
+            }
+            catch (Exception e)
+            {
+                ConnectionError();
+            }
+        }
+
+        private void ConnectionError()
+        {
+            cậpNhậtToolStripMenuItem.Enabled = false;
+            quảnLýMượntrảToolStripMenuItem.Enabled = false;
+            sttErrorLabel.Text = "Không kết nối được với dữ liệu. Vui lòng thử lại!";
         }
 
         private void initComboBox()
@@ -86,6 +102,7 @@ namespace QuanLiThuVienGUI
             dgvThongTinBanDoc.Rows[index].Selected = true;
             dgvThongTinBanDoc.CurrentCell = dgvThongTinBanDoc.Rows[index].Cells[0];
             anhXaThongTinBanDoc(index);
+            indexBanDoc = index;
         }
 
         private void initDataGridViewSach()
@@ -171,7 +188,7 @@ namespace QuanLiThuVienGUI
 
         private void btnTimKiemBanDoc_Click(object sender, EventArgs e)
         {
-            resizeSttErrorLabel();
+            refreshError();
 
             if (txbTimKiemBanDocTheoMa.Text == "" && txbTimKiemTheoTenBanDoc.Text == "")
             {
@@ -194,7 +211,7 @@ namespace QuanLiThuVienGUI
 
         public void ShowThongTinBanDoc(int index)
         {
-            resizeSttErrorLabel();
+            refreshError();
 
             if (index >= 0)
             {
@@ -223,7 +240,7 @@ namespace QuanLiThuVienGUI
             int loaiDocGia = 0;
             int tuoi = 0;
 
-            resizeSttErrorLabel();
+            refreshError();
 
             if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
             {
@@ -260,7 +277,7 @@ namespace QuanLiThuVienGUI
 
         private void btnXoaBanDoc_Click(object sender, EventArgs e)
         {
-            resizeSttErrorLabel();
+            refreshError();
 
             if (indexBanDoc >= 0)
             {
@@ -286,7 +303,7 @@ namespace QuanLiThuVienGUI
         
         private void btnTimSach_Click(object sender, EventArgs e)
         {
-            resizeSttErrorLabel();
+            refreshError();
 
             if (txbTimSachTheoMa.Text == "" && txbTimSachTheoTacGia.Text == "" && txbTimSachTheoTen.Text == "" && cbTimSachTheoTheLoai.Text == "")
             {
@@ -312,7 +329,7 @@ namespace QuanLiThuVienGUI
 
         private void btnHienThongTinChiTietSach_Click(object sender, EventArgs e)
         {
-            resizeSttErrorLabel();
+            refreshError();
 
             if (indexSach >= 0)
             {
@@ -333,7 +350,7 @@ namespace QuanLiThuVienGUI
 
         private void btnSuaThongTinSach_Click(object sender, EventArgs e)
         {
-            resizeSttErrorLabel();
+            refreshError();
 
             if (txbTenSach.Text != "" && cbTheLoaiSach.Text != "" && txbTacGiaSach.Text != "" && txbNhaXuatBanSach.Text != "" && txbNamXuatBanSach.Text != "" && txbGiaTriSach.Text != "")
             {
@@ -698,13 +715,11 @@ namespace QuanLiThuVienGUI
                 txbQuyDinhSoNgayDuocMuon.Text = quydinhDTO.Songayduocmuon.ToString();
                 txbQuyDinhKhoangCachNamXB.Text = quydinhDTO.Kcnamxuatban.ToString();
             }
-
-
         }
 
         private void btnCapNhatQuyDinh_Click(object sender, EventArgs e)
         {
-            resizeSttErrorLabel();
+            refreshError();
 
             if (txbQuyDinhKhoangCachNamXB.Text != "" && txbQuyDinhSoNgayDuocMuon.Text != "" && txbQuyDinhSoSachDuocMuon.Text != "" && txbQuyDinhTienPhat.Text != "" && txbQuyDinhTuoiToiDa.Text != "" && txbQuyDinhTuoiToiThieu.Text != "")
             {
@@ -717,6 +732,10 @@ namespace QuanLiThuVienGUI
                 }
 
                 anhXaQuyDinh();
+            }
+            else
+            {
+                sttErrorLabel.Text = "Vui lòng điền đầy đủ các ô quy định";
             }
         }
 

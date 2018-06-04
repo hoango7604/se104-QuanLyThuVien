@@ -33,3 +33,16 @@ C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBU
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojAssemblyReference.cache
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CopyComplete
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb

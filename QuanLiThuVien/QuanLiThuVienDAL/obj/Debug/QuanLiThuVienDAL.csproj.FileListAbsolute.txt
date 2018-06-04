@@ -27,3 +27,14 @@ C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDA
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csproj.CoreCompileInputs.cache
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\dbConnection.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDTO.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\dbConnection.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDTO.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csprojAssemblyReference.cache
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csproj.CoreCompileInputs.cache
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csproj.CopyComplete
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb

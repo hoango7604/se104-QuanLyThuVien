@@ -14,3 +14,9 @@ C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\ob
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.dll
 C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\bin\Debug\dbConnection.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\bin\Debug\dbConnection.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csprojAssemblyReference.cache
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.pdb

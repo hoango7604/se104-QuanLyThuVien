@@ -19,6 +19,7 @@ namespace QuanLiThuVienBUS
         {
             
         }
+
         /// <summary>
         /// Trả về sanh sách độc giả
         /// </summary>
@@ -117,7 +118,7 @@ namespace QuanLiThuVienBUS
             docgiaDAL dgDAL = new docgiaDAL();
             if (dgDAL.isDocGia(docgia.MaThe))
             {
-                BUS_notification.mess = "Đã tồn tại mã thẻ";
+                BUS_notification.mess = "Đã tạo thẻ với số CMND này. Vui lòng chọn số CMND khác";
                 return false;
             }
             return dgDAL.themDocGia(docgia);

@@ -25,7 +25,7 @@ namespace QuanLiThuVienGUI
         {
             this.Close();
         }
-        
+
         private void btnThemBanDoc_Click(object sender, EventArgs e)
         {
             int loaiDocGia = 0;
@@ -67,7 +67,7 @@ namespace QuanLiThuVienGUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm bạn đọc thất bại. Vui lòng kiểm tra lại", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show(BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
                 }
             }
             else
@@ -145,6 +145,26 @@ namespace QuanLiThuVienGUI
             txbTenBanDoc.Text = "";
             dtpNgaySinhBanDoc.Text = "";
             txbTenBanDoc.Focus();
+        }
+
+        private void dtpNgaySinhBanDoc_ValueChanged(object sender, EventArgs e)
+        {
+            quydinhBUS quydinhBUS = new quydinhBUS();
+            quydinhDTO quydinhDTO = new quydinhDTO();
+            quydinhBUS.ListQuyDinh(quydinhDTO);
+            int namSinh = dtpNgaySinhBanDoc.Value.Year;
+            int tuoiMin = quydinhDTO.Tuoimin;
+            int tuoiMax = quydinhDTO.Tuoimax;
+            if (DateTime.Now.Year - namSinh < tuoiMin || DateTime.Now.Year - namSinh > tuoiMax)
+            {
+                lbNgaySinhEX.Text = "Tuổi tối thiểu: " + tuoiMin + " - Tuổi tối đa: " + tuoiMax;
+                btnThemBanDoc.Enabled = false;
+            }
+            else
+            {
+                lbNgaySinhEX.Text = "";
+                btnThemBanDoc.Enabled = true;
+            }
         }
     }
 }
