@@ -178,7 +178,7 @@ namespace QuanLiThuVienBUS
             {
                 foreach (sachDTO sach in list)
                 {
-                    if (Levenshtein_Distance.Distance(sach.Tacgia,tacgia)<=max_author_distance)
+                    if (TimKiemBUS.CheckisAvaiable(tacgia,sach.Tacgia)!= -1)
                     {
                         if (result.IndexOf(sach) == -1)
                         {
