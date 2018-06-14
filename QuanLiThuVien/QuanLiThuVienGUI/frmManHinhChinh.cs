@@ -501,11 +501,16 @@ namespace QuanLiThuVienGUI
             {
                 DateTime thangThongKe = dtmThongKe.Value;
                 dgvThongKe.DataSource = sachtratreBUS.LayDSSachChuaTra(thangThongKe);
+                dgvThongKe.Columns[0].Width = dgvThongKe.Size.Width / 3;
+                dgvThongKe.Columns[1].Width = dgvThongKe.Size.Width / 3;
+                dgvThongKe.Columns[2].Width = dgvThongKe.Size.Width / 3;
             }
             else if (rdoTheLoai.Checked)
             {
                 DateTime thangThongKe = dtmThongKe.Value;
                 dgvThongKe.DataSource = theloaiBUS.layDSLoaiSachDuocQuanTam(thangThongKe);
+                dgvThongKe.Columns[0].Width = dgvThongKe.Size.Width / 2;
+                dgvThongKe.Columns[1].Width = dgvThongKe.Size.Width / 2;
             }
         }
 

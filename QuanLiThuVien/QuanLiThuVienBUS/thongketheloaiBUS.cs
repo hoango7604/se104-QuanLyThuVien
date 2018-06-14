@@ -21,8 +21,6 @@ namespace QuanLiThuVienBUS
             {
                 dt.Columns["theloai"].ColumnName = "Thể Loại";
                 dt.Columns["soluong"].ColumnName = "Số Lượt Mượn";
-
-
                 return dt;
             }
         }
