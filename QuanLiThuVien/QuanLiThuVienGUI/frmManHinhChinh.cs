@@ -18,9 +18,14 @@ namespace QuanLiThuVienGUI
         List<sachDTO> listSach;
         List<loaidocgiaDTO> listLoaiDocGia;
         List<loaisachDTO> listLoaiSach;
+
         QuanLiBanDocBUS quanLiBanDocBUS = new QuanLiBanDocBUS();
         QuanLiSachBUS quanLiSachBUS = new QuanLiSachBUS();
         QuanLiTheLoaiSachBUS quanLiTheLoaiSachBUS = new QuanLiTheLoaiSachBUS();
+
+        docgiaDTO docgia;
+        sachDTO sach;
+
         int indexBanDoc = 0;
         int indexSach = 0;
 
@@ -92,6 +97,8 @@ namespace QuanLiThuVienGUI
         public void loadDanhSachBanDoc()
         {
             listDocGia = quanLiBanDocBUS.DanhSachDocGia();
+            docgia = listDocGia[0];
+            anhXaThongTinBanDoc(0);
         }
 
         public void loadDanhSachBanDoc(int index)
@@ -103,6 +110,7 @@ namespace QuanLiThuVienGUI
             dgvThongTinBanDoc.CurrentCell = dgvThongTinBanDoc.Rows[index].Cells[0];
             anhXaThongTinBanDoc(index);
             indexBanDoc = index;
+            docgia = listDocGia[indexBanDoc];
         }
 
         private void initDataGridViewSach()
@@ -122,6 +130,8 @@ namespace QuanLiThuVienGUI
         public void loadDanhSachSach()
         {
             listSach = quanLiSachBUS.DanhSachSach();
+            sach = listSach[0];
+            anhXaThongTinSach(0);
         }
 
         public void loadDanhSachSach(int index)
@@ -132,6 +142,8 @@ namespace QuanLiThuVienGUI
             dgvThongTinSach.Rows[index].Selected = true;
             dgvThongTinSach.CurrentCell = dgvThongTinSach.Rows[index].Cells[0];
             anhXaThongTinSach(index);
+            indexSach = index;
+            sach = listSach[indexSach];
         }
 
         /// <summary>
@@ -215,7 +227,7 @@ namespace QuanLiThuVienGUI
 
             if (index >= 0)
             {
-                frmThongTinBanDoc f = new frmThongTinBanDoc(listDocGia[index], this);
+                frmThongTinBanDoc f = new frmThongTinBanDoc(docgia, this);
                 f.ShowDialog();
             }
             else
@@ -261,7 +273,7 @@ namespace QuanLiThuVienGUI
                 if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, dtpNgayTaoTheBanDoc.Value, int.Parse(txbTongTienNoBanDoc.Text),loaiDocGia)))
                 {
                     sttErrorLabel.Text = "Cập nhật thông tin thành công";
-                    loadDanhSachBanDoc(dgvThongTinBanDoc.SelectedRows[0].Index);
+                    loadDanhSachBanDoc(indexBanDoc);
                 }
                 else
                 {
@@ -283,7 +295,7 @@ namespace QuanLiThuVienGUI
             {
                 if (MessageBox.Show("Bạn có muốn xóa bạn đọc " + listDocGia[indexBanDoc].HoTen + "?", "Xóa bạn đọc", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    if (quanLiBanDocBUS.XoaDocGia(listDocGia[indexBanDoc]))
+                    if (quanLiBanDocBUS.XoaDocGia(docgia))
                     {
                         sttErrorLabel.Text = "Xóa bạn đọc thành công";
                         initDataGridViewBanDoc();
@@ -300,7 +312,13 @@ namespace QuanLiThuVienGUI
                 sttErrorLabel.Text = "Vui lòng chọn một bạn đọc";
             }
         }
-        
+
+        /// <summary>
+        /// Event Tab Sach
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void btnTimSach_Click(object sender, EventArgs e)
         {
             refreshError();
@@ -333,7 +351,7 @@ namespace QuanLiThuVienGUI
 
             if (indexSach >= 0)
             {
-                frmThongTinSach f = new frmThongTinSach(listSach[indexSach]);
+                frmThongTinSach f = new frmThongTinSach(sach);
                 f.ShowDialog();
             }
             else
@@ -363,7 +381,7 @@ namespace QuanLiThuVienGUI
                         trangThaiSach = i;
                     }
                 }
-                sachDTO sach = new sachDTO(int.Parse( txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, dtpNgayNhapSach.Value, datebyYear, int.Parse(txbGiaTriSach.Text), trangThaiSach);
+                sachDTO sach = new sachDTO(int.Parse(txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, dtpNgayNhapSach.Value, datebyYear, int.Parse(txbGiaTriSach.Text), trangThaiSach);
 
                 bool isExistTheLoaiSach = false;
                 foreach (loaisachDTO loaisach in listLoaiSach)
@@ -392,7 +410,7 @@ namespace QuanLiThuVienGUI
                 if (quanLiSachBUS.SuaSach(sach))
                 {
                     sttErrorLabel.Text = "Cập nhật thông tin thành công";
-                    loadDanhSachSach(dgvThongTinSach.SelectedRows[0].Index);
+                    loadDanhSachSach(indexSach);
                 }
                 else
                 {
@@ -404,38 +422,6 @@ namespace QuanLiThuVienGUI
                 sttErrorLabel.Text = "Vui lòng điền đầy đủ thông tin";
 
             }
-        }
-
-        /// <summary>
-        /// Event Tab Phieu Muon
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnTaoPhieuMuon_Click(object sender, EventArgs e)
-        {
-            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu mượn", listDocGia, 0, this);
-            f.ShowDialog();
-        }
-
-        /// <summary>
-        /// Event Tab Phieu Tra
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnPhieuTra_Click(object sender, EventArgs e)
-        {
-            frmNhapMaThe f = new frmNhapMaThe("Tạo phiếu trả", listDocGia, 1, this);
-            f.ShowDialog();
-        }
-
-        /// <summary>
-        /// Event Tab Phieu Tra
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnTaoPhieuThuTienPhat_Click(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>
@@ -462,6 +448,7 @@ namespace QuanLiThuVienGUI
             if (data.RowCount > 0)
             {
                 indexBanDoc = data.SelectedRows[0].Index;
+                docgia = listDocGia[indexBanDoc];
                 anhXaThongTinBanDoc(indexBanDoc);
             }
             
@@ -485,6 +472,7 @@ namespace QuanLiThuVienGUI
             if (data.RowCount > 0)
             {
                 indexSach = data.SelectedRows[0].Index;
+                sach = listSach[indexSach];
                 anhXaThongTinSach(indexSach);
             }
         }
