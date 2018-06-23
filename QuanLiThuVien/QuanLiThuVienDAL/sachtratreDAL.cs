@@ -25,6 +25,9 @@ namespace QuanLiThuVienDAL
                 SqlDataAdapter da = new SqlDataAdapter(SQL, cn.openConnection());
 
                 DataTable dt = new DataTable();
+
+               
+
                 da.Fill(dt);
                 return dt;
             }

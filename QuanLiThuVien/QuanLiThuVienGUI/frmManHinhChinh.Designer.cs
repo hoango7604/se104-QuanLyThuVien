@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManHinhChinh));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cậpNhậtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thêmBạnĐọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -155,8 +154,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.pvdInDanhSach = new System.Windows.Forms.PrintPreviewDialog();
-            this.pdInDanhSach = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -1297,7 +1294,7 @@
             this.btnCapNhatQuyDinh.Name = "btnCapNhatQuyDinh";
             this.btnCapNhatQuyDinh.Size = new System.Drawing.Size(242, 73);
             this.btnCapNhatQuyDinh.TabIndex = 1;
-            this.btnCapNhatQuyDinh.Text = "Cập nhật quy định";
+            this.btnCapNhatQuyDinh.Text = "Cập Nhật Quy Định";
             this.btnCapNhatQuyDinh.UseVisualStyleBackColor = true;
             this.btnCapNhatQuyDinh.Click += new System.EventHandler(this.btnCapNhatQuyDinh_Click);
             // 
@@ -1325,6 +1322,7 @@
             // 
             // txbQuyDinhTienPhat
             // 
+            this.txbQuyDinhTienPhat.Enabled = false;
             this.txbQuyDinhTienPhat.Location = new System.Drawing.Point(213, 109);
             this.txbQuyDinhTienPhat.Name = "txbQuyDinhTienPhat";
             this.txbQuyDinhTienPhat.Size = new System.Drawing.Size(231, 29);
@@ -1341,6 +1339,7 @@
             // 
             // txbQuyDinhKhoangCachNamXB
             // 
+            this.txbQuyDinhKhoangCachNamXB.Enabled = false;
             this.txbQuyDinhKhoangCachNamXB.Location = new System.Drawing.Point(213, 65);
             this.txbQuyDinhKhoangCachNamXB.Name = "txbQuyDinhKhoangCachNamXB";
             this.txbQuyDinhKhoangCachNamXB.Size = new System.Drawing.Size(231, 29);
@@ -1384,6 +1383,7 @@
             // 
             // txbQuyDinhTuoiToiThieu
             // 
+            this.txbQuyDinhTuoiToiThieu.Enabled = false;
             this.txbQuyDinhTuoiToiThieu.Location = new System.Drawing.Point(195, 65);
             this.txbQuyDinhTuoiToiThieu.Name = "txbQuyDinhTuoiToiThieu";
             this.txbQuyDinhTuoiToiThieu.Size = new System.Drawing.Size(264, 29);
@@ -1391,6 +1391,7 @@
             // 
             // txbQuyDinhTuoiToiDa
             // 
+            this.txbQuyDinhTuoiToiDa.Enabled = false;
             this.txbQuyDinhTuoiToiDa.Location = new System.Drawing.Point(195, 109);
             this.txbQuyDinhTuoiToiDa.Name = "txbQuyDinhTuoiToiDa";
             this.txbQuyDinhTuoiToiDa.Size = new System.Drawing.Size(264, 29);
@@ -1398,6 +1399,7 @@
             // 
             // txbQuyDinhSoNgayDuocMuon
             // 
+            this.txbQuyDinhSoNgayDuocMuon.Enabled = false;
             this.txbQuyDinhSoNgayDuocMuon.Location = new System.Drawing.Point(196, 152);
             this.txbQuyDinhSoNgayDuocMuon.Name = "txbQuyDinhSoNgayDuocMuon";
             this.txbQuyDinhSoNgayDuocMuon.Size = new System.Drawing.Size(264, 29);
@@ -1405,6 +1407,7 @@
             // 
             // txbQuyDinhSoSachDuocMuon
             // 
+            this.txbQuyDinhSoSachDuocMuon.Enabled = false;
             this.txbQuyDinhSoSachDuocMuon.Location = new System.Drawing.Point(195, 199);
             this.txbQuyDinhSoSachDuocMuon.Name = "txbQuyDinhSoSachDuocMuon";
             this.txbQuyDinhSoSachDuocMuon.Size = new System.Drawing.Size(264, 29);
@@ -1466,21 +1469,6 @@
             this.btnHuy.Text = "button1";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // pvdInDanhSach
-            // 
-            this.pvdInDanhSach.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.pvdInDanhSach.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.pvdInDanhSach.ClientSize = new System.Drawing.Size(400, 300);
-            this.pvdInDanhSach.Enabled = true;
-            this.pvdInDanhSach.Icon = ((System.Drawing.Icon)(resources.GetObject("pvdInDanhSach.Icon")));
-            this.pvdInDanhSach.Name = "pvdInDanhSach";
-            this.pvdInDanhSach.Visible = false;
-            // 
-            // pdInDanhSach
-            // 
-            this.pdInDanhSach.DocumentName = " ";
-            this.pdInDanhSach.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdInDanhSach_PrintPage);
             // 
             // frmManHinhChinh
             // 
@@ -1640,8 +1628,6 @@
         private System.Windows.Forms.RadioButton rdoSachTraTre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvThongKe;
-        private System.Windows.Forms.PrintPreviewDialog pvdInDanhSach;
-        private System.Drawing.Printing.PrintDocument pdInDanhSach;
         private System.Windows.Forms.TabPage tpQuyDinh;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;

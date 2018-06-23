@@ -20,3 +20,9 @@ E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnectio
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\DBconnection\bin\Debug\dbConnection.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\DBconnection\bin\Debug\dbConnection.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\DBconnection\obj\Debug\DBconnection.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\DBconnection\obj\Debug\dbConnection.pdb

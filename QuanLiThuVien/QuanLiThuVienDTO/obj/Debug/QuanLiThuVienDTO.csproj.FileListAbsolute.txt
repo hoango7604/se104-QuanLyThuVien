@@ -20,3 +20,8 @@ E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiT
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csprojAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb

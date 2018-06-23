@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TheLoaiSachDataSet" targetNamespace="http://tempuri.org/TheLoaiSachDataSet.xsd" xmlns:mstns="http://tempuri.org/TheLoaiSachDataSet.xsd" xmlns="http://tempuri.org/TheLoaiSachDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TheLoaiSachDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TheLoaiSachDataSet" msprop:Generator_UserDSName="TheLoaiSachDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TheLoaiSach" msprop:Generator_TableClassName="TheLoaiSachDataTable" msprop:Generator_TableVarName="tableTheLoaiSach" msprop:Generator_TablePropName="TheLoaiSach" msprop:Generator_RowDeletingName="TheLoaiSachRowDeleting" msprop:Generator_RowChangingName="TheLoaiSachRowChanging" msprop:Generator_RowEvHandlerName="TheLoaiSachRowChangeEventHandler" msprop:Generator_RowDeletedName="TheLoaiSachRowDeleted" msprop:Generator_UserTableName="TheLoaiSach" msprop:Generator_RowChangedName="TheLoaiSachRowChanged" msprop:Generator_RowEvArgName="TheLoaiSachRowChangeEvent" msprop:Generator_RowClassName="TheLoaiSachRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TheLoai" msprop:Generator_ColumnVarNameInTable="columnTheLoai" msprop:Generator_ColumnPropNameInRow="TheLoai" msprop:Generator_ColumnPropNameInTable="TheLoaiColumn" msprop:Generator_UserColumnName="TheLoai" type="xs:string" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -38,3 +38,13 @@ E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiT
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csproj.CopyComplete
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDAL.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\dbConnection.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDTO.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\dbConnection.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\bin\Debug\QuanLiThuVienDTO.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienDAL\obj\Debug\QuanLiThuVienDAL.pdb

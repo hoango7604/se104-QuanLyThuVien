@@ -46,3 +46,15 @@ E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiT
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CopyComplete
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
