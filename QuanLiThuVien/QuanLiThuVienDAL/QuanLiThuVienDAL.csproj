@@ -55,9 +55,9 @@
     <Compile Include="sachtratreDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dbConnection\dbConnection.csproj">
-      <Project>{b9b2035e-5ede-4e39-893f-b2a86722ed2a}</Project>
-      <Name>dbConnection</Name>
+    <ProjectReference Include="..\DBconnection\DBconnection.csproj">
+      <Project>{A7CBF1D4-B204-4F61-9D60-BFA10266946A}</Project>
+      <Name>DBconnection</Name>
     </ProjectReference>
     <ProjectReference Include="..\QuanLiThuVienDTO\QuanLiThuVienDTO.csproj">
       <Project>{23683daa-7959-45fb-a885-8a14069b3f60}</Project>

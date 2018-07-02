@@ -192,7 +192,7 @@ namespace QuanLiThuVienGUI
 
         private void thôngTinPhầnMềmToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://github.com/hoango7604/se104-QuanLyThuVien");
         }
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
@@ -307,12 +307,11 @@ namespace QuanLiThuVienGUI
 
             if (indexBanDoc >= 0)
             {
-                if (MessageBox.Show("Bạn có muốn xóa bạn đọc " + listDocGia[indexBanDoc].HoTen + "?", "Xóa bạn đọc", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Bạn có muốn xóa bạn đọc " + listDocGia[indexBanDoc].HoTen + "?", "Xóa bạn đọc", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
                     if (quanLiBanDocBUS.XoaDocGia(docgia))
                     {
                         sttErrorLabel.Text = "Xóa bạn đọc thành công";
-                        //initDataGridViewBanDoc();
                         loadDanhSachBanDoc(indexBanDoc >= listDocGia.Count - 1 ? indexBanDoc - 1 : indexBanDoc);
                     }
                     else
@@ -451,7 +450,7 @@ namespace QuanLiThuVienGUI
         /// <param name="e"></param>
         private void frmManHinhChinh_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thoát chương trình", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thoát chương trình", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
             {
                 e.Cancel = true;
             }

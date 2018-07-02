@@ -54,14 +54,14 @@ namespace QuanLiThuVienGUI
                             index = i;
                         }
                     }
-                    MessageBox.Show("Thu tiền thành công", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Thu tiền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     (mainForm as frmManHinhChinh).loadDanhSachBanDoc(index);
                     Close();
                 }
             }
             catch (Exception error)
             {
-                MessageBox.Show("Thu tiền thất bại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Thu tiền thất bại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(error.ToString());
             }
         }

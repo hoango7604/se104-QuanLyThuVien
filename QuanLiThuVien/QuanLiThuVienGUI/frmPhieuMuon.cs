@@ -104,12 +104,12 @@ namespace QuanLiThuVienGUI
                 {
                     if (quanLiMuonTraMat.MuonSach(docgia, listSachMuon))
                     {
-                        MessageBox.Show("Tạo phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK);
+                        MessageBox.Show("Tạo phiếu mượn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
-                        MessageBox.Show(BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
+                        MessageBox.Show(BUS_notification.mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else

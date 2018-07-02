@@ -51,7 +51,7 @@ namespace QuanLiThuVienGUI
                 docgiaDTO dgDTO = new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, DateTime.Now, 0, loaiDocGia);
                 if (quanLiBanDocBUS.ThemDocGia(dgDTO))
                 {
-                    MessageBox.Show("Đã thêm bạn đọc thành công", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Đã thêm bạn đọc thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     int index = 0;
                     for (int i = 0; i < quanLiBanDocBUS.DanhSachDocGia().Count; i++)
@@ -67,12 +67,12 @@ namespace QuanLiThuVienGUI
                 }
                 else
                 {
-                    MessageBox.Show(BUS_notification.mess, "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show(BUS_notification.mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

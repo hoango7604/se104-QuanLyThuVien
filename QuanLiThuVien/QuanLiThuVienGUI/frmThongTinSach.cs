@@ -35,7 +35,7 @@ namespace QuanLiThuVienGUI
 
         private void btnCapNhatBanDoc_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK);
+            MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

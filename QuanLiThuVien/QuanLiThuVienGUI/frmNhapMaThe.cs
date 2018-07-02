@@ -36,49 +36,56 @@ namespace QuanLiThuVienGUI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (cbNhapMaTheBanDoc.Text != "" && new docgiaDAL().isDocGia(listDocGia[cbNhapMaTheBanDoc.SelectedIndex].MaThe))
+                try
                 {
-                    QuanLiBanDocBUS quanLiBanDoc = new QuanLiBanDocBUS();
-                    QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
-                    docgiaDTO docgia = listDocGia[cbNhapMaTheBanDoc.SelectedIndex];
-
-                    int index = 0;
-                    for (int i = 0; i < quanLiBanDoc.DanhSachDocGia().Count; i++)
+                    if (cbNhapMaTheBanDoc.Text != "" && new docgiaDAL().isDocGia(listDocGia[cbNhapMaTheBanDoc.SelectedIndex].MaThe))
                     {
-                        if (docgia.MaThe == quanLiBanDoc.DanhSachDocGia()[i].MaThe)
+                        QuanLiBanDocBUS quanLiBanDoc = new QuanLiBanDocBUS();
+                        QuanLiSachBUS quanLiSach = new QuanLiSachBUS();
+                        docgiaDTO docgia = listDocGia[cbNhapMaTheBanDoc.SelectedIndex];
+
+                        int index = 0;
+                        for (int i = 0; i < quanLiBanDoc.DanhSachDocGia().Count; i++)
                         {
-                            index = i;
+                            if (docgia.MaThe == quanLiBanDoc.DanhSachDocGia()[i].MaThe)
+                            {
+                                index = i;
+                            }
                         }
-                    }
 
-                    if (codeMuonTra == 0)
-                    {
-                        frmPhieuMuon f = new frmPhieuMuon(docgia);
-                        f.ShowDialog();
-                        (mainForm as frmManHinhChinh).ShowThongTinBanDoc(index);
-                    }
-                    else if (codeMuonTra == 1)
-                    {
-                        frmThongTinBanDoc f = new frmThongTinBanDoc(docgia, mainForm);
-                        f.ShowDialog();
-                    }
-                    else if (codeMuonTra == 2)
-                    {
-                        frmPhieuThuTienPhat f = new frmPhieuThuTienPhat(docgia, mainForm);
-                        f.ShowDialog();
-                    }
-                    this.Close();
-                }
-                else
-                {
-                    if (cbNhapMaTheBanDoc.Text == "")
-                    {
-                        MessageBox.Show("Vui lòng nhập mã bạn đọc", "Thông báo", MessageBoxButtons.OK);
+                        if (codeMuonTra == 0)
+                        {
+                            frmPhieuMuon f = new frmPhieuMuon(docgia);
+                            f.ShowDialog();
+                            (mainForm as frmManHinhChinh).ShowThongTinBanDoc(index);
+                        }
+                        else if (codeMuonTra == 1)
+                        {
+                            frmThongTinBanDoc f = new frmThongTinBanDoc(docgia, mainForm);
+                            f.ShowDialog();
+                        }
+                        else if (codeMuonTra == 2)
+                        {
+                            frmPhieuThuTienPhat f = new frmPhieuThuTienPhat(docgia, mainForm);
+                            f.ShowDialog();
+                        }
+                        this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Bạn đọc không tồn tại", "Thông báo", MessageBoxButtons.OK);
+                        if (cbNhapMaTheBanDoc.Text == "")
+                        {
+                            MessageBox.Show("Vui lòng nhập mã bạn đọc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bạn đọc không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Lỗi định dạng hoặc mã không tồn tại. Vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

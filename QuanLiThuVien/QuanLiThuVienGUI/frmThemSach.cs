@@ -36,7 +36,7 @@ namespace QuanLiThuVienGUI
                 sachDTO sach = new sachDTO(int.Parse(txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, DateTime.Now, dtXuatban, int.Parse(txbGiaTriSach.Text), 1);
                 if (qlsBUSS.ThemSach(sach)) 
                 {
-                    MessageBox.Show("Thêm sách thành công");
+                    MessageBox.Show("Thêm sách thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     refresh();
 
                     if (!listLoaiSach.Contains(new loaisachDTO(cbTheLoaiSach.Text)))
@@ -46,12 +46,12 @@ namespace QuanLiThuVienGUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm sách thất bại. " + BUS_notification.mess);
+                    MessageBox.Show("Thêm sách thất bại. " + BUS_notification.mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Xin hãy nhập đầy đủ thông tin sách");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             frmChinh.loadDanhSachSach();

@@ -81,7 +81,7 @@
             this.panel1.Controls.Add(this.lbNhaXuatBanSach);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(468, 504);
+            this.panel1.Size = new System.Drawing.Size(469, 504);
             this.panel1.TabIndex = 17;
             // 
             // lbMasSachEX
@@ -294,7 +294,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.btnHuySach;
-            this.ClientSize = new System.Drawing.Size(522, 422);
+            this.ClientSize = new System.Drawing.Size(493, 522);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

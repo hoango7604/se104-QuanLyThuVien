@@ -374,9 +374,6 @@ E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\SqlServ
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe.config
-E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.exe
-E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\QuanLiThuVienGUI.pdb
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microsoft.ReportViewer.Common.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -453,11 +450,8 @@ E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiT
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmThongTinSach.resources
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.Properties.Resources.resources
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.GenerateResource.cache
-E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe.licenses
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.CoreCompileInputs.cache
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.csproj.CopyComplete
-E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe
-E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.pdb
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
@@ -482,7 +476,6 @@ E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microso
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microsoft.Build.Framework.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\VSLangProj2.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
-E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.exe.config
 F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -893,3 +886,10 @@ E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\es\DevE
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\ja\DevExpress.Pdf.v17.2.Core.resources.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\ru\DevExpress.Pdf.v17.2.Core.resources.dll
 E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\QuanLiThuVienGUI.frmInThongKe.resources
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Phan mem Quan ly Thu vien.exe.config
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Phan mem Quan ly Thu vien.exe
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\bin\Debug\Phan mem Quan ly Thu vien.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\Phan mem Quan ly Thu vien.exe.config
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\Phan mem Quan ly Thu vien.exe.licenses
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\Phan mem Quan ly Thu vien.exe
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienGUI\obj\Debug\Phan mem Quan ly Thu vien.pdb
