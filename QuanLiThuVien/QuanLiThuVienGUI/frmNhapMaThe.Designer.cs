@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapMaThe));
             this.lbMaTheBanDoc = new System.Windows.Forms.Label();
             this.cbNhapMaTheBanDoc = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             this.ClientSize = new System.Drawing.Size(413, 76);
             this.Controls.Add(this.cbNhapMaTheBanDoc);
             this.Controls.Add(this.lbMaTheBanDoc);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhapMaThe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập mã thẻ";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuTra));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbThongTinBanDoc = new System.Windows.Forms.Label();
             this.txbMaTheBanDoc = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
             this.txbTenBanDoc = new System.Windows.Forms.TextBox();
             this.lbMaTheBanDoc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.lbTongTienPhat = new System.Windows.Forms.Label();
             this.lbNgayTra = new System.Windows.Forms.Label();
             this.txbTongTienPhat = new System.Windows.Forms.TextBox();
@@ -49,7 +51,6 @@
             this.lbDanhSachSachTra = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachTra = new System.Windows.Forms.Panel();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -137,6 +138,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(854, 372);
             this.panel2.TabIndex = 20;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 24;
+            this.btnHuy.Text = "button1";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // lbTongTienPhat
             // 
@@ -286,17 +298,6 @@
             this.pnDanhSachSachTra.Size = new System.Drawing.Size(823, 273);
             this.pnDanhSachSachTra.TabIndex = 19;
             // 
-            // btnHuy
-            // 
-            this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuy.Location = new System.Drawing.Point(1000, 1000);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 24;
-            this.btnHuy.Text = "button1";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
             // frmPhieuTra
             // 
             this.AcceptButton = this.btnHuy;
@@ -306,6 +307,7 @@
             this.ClientSize = new System.Drawing.Size(877, 500);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPhieuTra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu trả";

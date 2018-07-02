@@ -47,12 +47,12 @@ namespace QuanLiThuVienGUI
             txbMaTheBanDoc.Text = docgia.MaThe.ToString();
         }
 
-        private void LoadList(docgiaDTO docgia)
+        private void ScrollToBottom(Panel p)
         {
-            List<sachDTO> listsachdocgiadangmuon = quanLiSach.DanhSachDocGiaDangMuon(docgia, new List<DateTime>());
-            foreach (sachDTO sach in listsachdocgiadangmuon)
+            using (Control c = new Control() { Parent = p, Dock = DockStyle.Bottom })
             {
-                initDongThongTinSach(sach);
+                p.ScrollControlIntoView(c);
+                c.Parent = null;
             }
         }
 
@@ -87,6 +87,7 @@ namespace QuanLiThuVienGUI
                 }
 
                 cbTimSachTheoMa.Text = "";
+                ScrollToBottom(panel3);
             }
             else
             {

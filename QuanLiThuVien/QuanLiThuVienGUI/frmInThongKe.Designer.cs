@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInThongKe));
             this.SachTraTreDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SachTraTreDataSet = new QuanLiThuVienGUI.SachTraTreDataSet();
             this.TKRportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -62,6 +63,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 525);
             this.Controls.Add(this.TKRportViewer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInThongKe";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

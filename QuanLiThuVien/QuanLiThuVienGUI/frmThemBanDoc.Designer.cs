@@ -43,10 +43,10 @@
             this.btnThemBanDoc = new System.Windows.Forms.Button();
             this.btnHuyBanDoc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbNgaySinhEX = new System.Windows.Forms.Label();
             this.lbEmailEX = new System.Windows.Forms.Label();
             this.lbCmndEX = new System.Windows.Forms.Label();
             this.lbTenbandocEX = new System.Windows.Forms.Label();
-            this.lbNgaySinhEX = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,6 +147,12 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // lbNgaySinhEX
+            // 
+            resources.ApplyResources(this.lbNgaySinhEX, "lbNgaySinhEX");
+            this.lbNgaySinhEX.ForeColor = System.Drawing.Color.Red;
+            this.lbNgaySinhEX.Name = "lbNgaySinhEX";
+            // 
             // lbEmailEX
             // 
             resources.ApplyResources(this.lbEmailEX, "lbEmailEX");
@@ -164,12 +170,6 @@
             resources.ApplyResources(this.lbTenbandocEX, "lbTenbandocEX");
             this.lbTenbandocEX.ForeColor = System.Drawing.Color.Red;
             this.lbTenbandocEX.Name = "lbTenbandocEX";
-            // 
-            // lbNgaySinhEX
-            // 
-            resources.ApplyResources(this.lbNgaySinhEX, "lbNgaySinhEX");
-            this.lbNgaySinhEX.ForeColor = System.Drawing.Color.Red;
-            this.lbNgaySinhEX.Name = "lbNgaySinhEX";
             // 
             // frmThemBanDoc
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongTinBanDoc));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
             this.dtpNgayTaoTheBanDoc = new System.Windows.Forms.DateTimePicker();
@@ -440,7 +441,7 @@
             this.pnDanhSachSachDangMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnDanhSachSachDangMuon.Location = new System.Drawing.Point(3, 3);
             this.pnDanhSachSachDangMuon.Name = "pnDanhSachSachDangMuon";
-            this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(823, 211);
+            this.pnDanhSachSachDangMuon.Size = new System.Drawing.Size(817, 203);
             this.pnDanhSachSachDangMuon.TabIndex = 19;
             // 
             // sttError
@@ -471,6 +472,7 @@
             this.Controls.Add(this.sttError);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinBanDoc";

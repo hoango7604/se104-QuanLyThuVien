@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemSach));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbMasSachEX = new System.Windows.Forms.Label();
             this.lbGiaTriEX = new System.Windows.Forms.Label();
@@ -295,6 +296,7 @@
             this.CancelButton = this.btnHuySach;
             this.ClientSize = new System.Drawing.Size(522, 422);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThemSach";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhieuMuon));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
             this.lbThongTinBanDoc = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.lbMaTheBanDoc = new System.Windows.Forms.Label();
             this.txbTenBanDoc = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbError = new System.Windows.Forms.Label();
             this.cbTimSachTheoMa = new System.Windows.Forms.ComboBox();
             this.lbTimSachTheoMa = new System.Windows.Forms.Label();
             this.btnTaoPhieuMuon = new System.Windows.Forms.Button();
@@ -49,7 +51,6 @@
             this.lbDanhSachSachMuon = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnDanhSachSachMuon = new System.Windows.Forms.Panel();
-            this.lbError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -148,6 +149,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(854, 372);
             this.panel2.TabIndex = 19;
+            // 
+            // lbError
+            // 
+            this.lbError.AutoSize = true;
+            this.lbError.ForeColor = System.Drawing.Color.Red;
+            this.lbError.Location = new System.Drawing.Point(11, 74);
+            this.lbError.Name = "lbError";
+            this.lbError.Size = new System.Drawing.Size(0, 13);
+            this.lbError.TabIndex = 23;
             // 
             // cbTimSachTheoMa
             // 
@@ -286,17 +296,8 @@
             this.pnDanhSachSachMuon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnDanhSachSachMuon.Location = new System.Drawing.Point(3, 3);
             this.pnDanhSachSachMuon.Name = "pnDanhSachSachMuon";
-            this.pnDanhSachSachMuon.Size = new System.Drawing.Size(823, 273);
+            this.pnDanhSachSachMuon.Size = new System.Drawing.Size(817, 218);
             this.pnDanhSachSachMuon.TabIndex = 19;
-            // 
-            // lbError
-            // 
-            this.lbError.AutoSize = true;
-            this.lbError.ForeColor = System.Drawing.Color.Red;
-            this.lbError.Location = new System.Drawing.Point(11, 74);
-            this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(0, 13);
-            this.lbError.TabIndex = 23;
             // 
             // frmPhieuMuon
             // 
@@ -307,6 +308,7 @@
             this.ClientSize = new System.Drawing.Size(877, 500);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPhieuMuon";
