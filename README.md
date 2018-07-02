@@ -1,4 +1,7 @@
+![alt text](https://tuyensinh.uit.edu.vn/intro/images/uit.png)
+
 ĐỒ ÁN MÔN HỌC NHẬP MÔN CÔNG NGHỆ PHẦN MỀM - SE104.I23
+GIÁO VIÊN HƯỚNG DẪN: NGUYỄN CÔNG HOAN
 1. MÔ TẢ SƠ LƯỢC DỰ ÁN:
 - Nhằm nâng cao chất lượng dịch vụ của các thư viện, đồng thời mong muốn hỗ trợ cho việc quản lý của thủ thư trở nên dễ dàng và thuận tiện hơn, nhóm đã chọn đề tài cho dự án là phần mềm Quản Lý Thư Viện.
 - Phần mềm hỗ trợ các chức năng chính:
