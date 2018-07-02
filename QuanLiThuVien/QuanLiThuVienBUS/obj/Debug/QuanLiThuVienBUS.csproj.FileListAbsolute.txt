@@ -1,0 +1,60 @@
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
+D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+C:\Users\admin\OneDrive - gm.uit.edu.vn\Đồ án\NMCNPM\Source\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+C:\Users\T-PC\Documents\GitHub\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojAssemblyReference.cache
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CopyComplete
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+E:\Projects\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienBUS.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDAL.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\QuanLiThuVienDTO.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\bin\Debug\dbConnection.pdb
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csprojResolveAssemblyReference.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.csproj.CoreCompileInputs.cache
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.dll
+F:\DoAnMonHoc\DoAn_NMCNPM\2106\QuanLiThuVien\QuanLiThuVienBUS\obj\Debug\QuanLiThuVienBUS.pdb

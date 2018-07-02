@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SachTraTreDataSet" targetNamespace="http://tempuri.org/SachTraTreDataSet.xsd" xmlns:mstns="http://tempuri.org/SachTraTreDataSet.xsd" xmlns="http://tempuri.org/SachTraTreDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SachTraTreDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SachTraTreDataSet" msprop:Generator_UserDSName="SachTraTreDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SachTraTreDataSet" msprop:Generator_TableClassName="SachTraTreDataSetDataTable" msprop:Generator_TableVarName="tableSachTraTreDataSet" msprop:Generator_TablePropName="_SachTraTreDataSet" msprop:Generator_RowDeletingName="SachTraTreDataSetRowDeleting" msprop:Generator_RowChangingName="SachTraTreDataSetRowChanging" msprop:Generator_RowEvHandlerName="SachTraTreDataSetRowChangeEventHandler" msprop:Generator_RowDeletedName="SachTraTreDataSetRowDeleted" msprop:Generator_UserTableName="SachTraTreDataSet" msprop:Generator_RowChangedName="SachTraTreDataSetRowChanged" msprop:Generator_RowEvArgName="SachTraTreDataSetRowChangeEvent" msprop:Generator_RowClassName="SachTraTreDataSetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tensach" msdata:Caption="Tên Sách" msprop:Generator_ColumnVarNameInTable="columntensach" msprop:Generator_ColumnPropNameInRow="tensach" msprop:Generator_ColumnPropNameInTable="tensachColumn" msprop:Generator_UserColumnName="tensach" type="xs:string" minOccurs="0" />
+              <xs:element name="ngaymuon" msdata:Caption="Ngày Mượn" msprop:Generator_ColumnVarNameInTable="columnngaymuon" msprop:Generator_ColumnPropNameInRow="ngaymuon" msprop:Generator_ColumnPropNameInTable="ngaymuonColumn" msprop:Generator_UserColumnName="ngaymuon" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="songaytre" msdata:Caption="Số Ngày Trễ" msprop:Generator_ColumnVarNameInTable="columnsongaytre" msprop:Generator_ColumnPropNameInRow="songaytre" msprop:Generator_ColumnPropNameInTable="songaytreColumn" msprop:Generator_UserColumnName="songaytre" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
