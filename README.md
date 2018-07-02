@@ -14,7 +14,7 @@
 3. CÔNG NGHỆ SỬ DỤNG:
 - Phần mềm Quản Lý Thư Viện sử dụng các công nghệ liệt kê dưới đây:
   + Design Pattern: Mô hình 3 lớp 1 tầng
-  + Lập trình bằng ngôn ngữ C# trên nền tảng .NET phiên bản 4.7
+  + Sử dụng công nghệ WinForm, lập trình bằng ngôn ngữ C# trên nền tảng .NET phiên bản 4.7
   + Quản lý database bằng MS SQL Server phiên bản 2012
   + Sử dụng API Place Autocomplete Address của Google
 4. MÔI TRƯỜNG CÀI ĐẶT VÀ SỬ DỤNG PHẦN MỀM:
