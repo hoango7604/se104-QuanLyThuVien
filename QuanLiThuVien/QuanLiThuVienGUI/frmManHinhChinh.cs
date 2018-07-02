@@ -107,12 +107,15 @@ namespace QuanLiThuVienGUI
         {
             listDocGia = quanLiBanDocBUS.DanhSachDocGia();
             dgvThongTinBanDoc.DataSource = listDocGia.Select(o => new { Column1 = o.MaThe, Column2 = o.HoTen, Column3 = o.Email, Column4 = o.NgaySinh }).ToList();
-            dgvThongTinBanDoc.Rows[0].Selected = false;
-            dgvThongTinBanDoc.Rows[index].Selected = true;
-            dgvThongTinBanDoc.CurrentCell = dgvThongTinBanDoc.Rows[index].Cells[0];
-            anhXaThongTinBanDoc(index);
-            indexBanDoc = index;
-            docgia = listDocGia[indexBanDoc];
+            if (listDocGia.Count > 0)
+            {
+                dgvThongTinBanDoc.Rows[0].Selected = false;
+                dgvThongTinBanDoc.Rows[index].Selected = true;
+                dgvThongTinBanDoc.CurrentCell = dgvThongTinBanDoc.Rows[index].Cells[0];
+                anhXaThongTinBanDoc(index);
+                indexBanDoc = index;
+                docgia = listDocGia[indexBanDoc];
+            }
         }
 
         private void initDataGridViewSach()
@@ -243,7 +246,10 @@ namespace QuanLiThuVienGUI
 
         private void btnHienThongTinChiTietBanDoc_Click(object sender, EventArgs e)
         {
-            ShowThongTinBanDoc(indexBanDoc);
+            if (listDocGia.Count > 0)
+            {
+                ShowThongTinBanDoc(indexBanDoc);
+            }
         }
 
         private void btnThemBanDoc_Click(object sender, EventArgs e)
@@ -259,36 +265,39 @@ namespace QuanLiThuVienGUI
 
             refreshError();
 
-            if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
+            if (listDocGia.Count > 0)
             {
-                tuoi = DateTime.Now.Year - dtpNgaySinhBanDoc.Value.Year;
-                if (tuoi < 18)
+                if (txbTenBanDoc.Text != "" && txbEmailBanDoc.Text != "" && txbDiaChiBanDoc.Text != "" && txbCMNDBanDoc.Text != "" && cbLoaiDocGia.Text != "" && dtpNgaySinhBanDoc.Text != "")
                 {
-                    loaiDocGia = 0;
-                }
-                else if (tuoi >= 18 && tuoi <= 22)
-                {
-                    loaiDocGia = 1;
-                }
-                else if (tuoi > 22)
-                {
-                    loaiDocGia = 2;
-                }
+                    tuoi = DateTime.Now.Year - dtpNgaySinhBanDoc.Value.Year;
+                    if (tuoi < 18)
+                    {
+                        loaiDocGia = 0;
+                    }
+                    else if (tuoi >= 18 && tuoi <= 22)
+                    {
+                        loaiDocGia = 1;
+                    }
+                    else if (tuoi > 22)
+                    {
+                        loaiDocGia = 2;
+                    }
 
-                if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, dtpNgayTaoTheBanDoc.Value, int.Parse(txbTongTienNoBanDoc.Text),loaiDocGia)))
-                {
-                    sttErrorLabel.Text = "Cập nhật thông tin thành công";
-                    loadDanhSachBanDoc(indexBanDoc);
+                    if (quanLiBanDocBUS.SuaDocGia(new docgiaDTO(int.Parse(txbCMNDBanDoc.Text), txbTenBanDoc.Text, txbDiaChiBanDoc.Text, txbEmailBanDoc.Text, dtpNgaySinhBanDoc.Value, dtpNgayTaoTheBanDoc.Value, int.Parse(txbTongTienNoBanDoc.Text), loaiDocGia)))
+                    {
+                        sttErrorLabel.Text = "Cập nhật thông tin thành công";
+                        loadDanhSachBanDoc(indexBanDoc);
+                    }
+                    else
+                    {
+                        sttErrorLabel.Text = "Cập nhật thông tin thất bại. Vui lòng kiểm tra lại";
+                    }
                 }
                 else
                 {
-                    sttErrorLabel.Text = "Cập nhật thông tin thất bại. Vui lòng kiểm tra lại";
-                }
-            }
-            else
-            {
-                sttErrorLabel.Text = "Vui lòng điền đầy đủ thông tin";
+                    sttErrorLabel.Text = "Vui lòng điền đầy đủ thông tin";
 
+                }
             }
         }
 
@@ -303,7 +312,7 @@ namespace QuanLiThuVienGUI
                     if (quanLiBanDocBUS.XoaDocGia(docgia))
                     {
                         sttErrorLabel.Text = "Xóa bạn đọc thành công";
-                        initDataGridViewBanDoc();
+                        //initDataGridViewBanDoc();
                         loadDanhSachBanDoc(indexBanDoc >= listDocGia.Count - 1 ? indexBanDoc - 1 : indexBanDoc);
                     }
                     else
@@ -354,14 +363,17 @@ namespace QuanLiThuVienGUI
         {
             refreshError();
 
-            if (indexSach >= 0)
+            if (listSach.Count > 0)
             {
-                frmThongTinSach f = new frmThongTinSach(sach);
-                f.ShowDialog();
-            }
-            else
-            {
-                sttErrorLabel.Text = "Vui lòng chọn thông tin sách để hiển thị";
+                if (indexSach >= 0)
+                {
+                    frmThongTinSach f = new frmThongTinSach(sach);
+                    f.ShowDialog();
+                }
+                else
+                {
+                    sttErrorLabel.Text = "Vui lòng chọn thông tin sách để hiển thị";
+                }
             }
         }
 
@@ -375,57 +387,60 @@ namespace QuanLiThuVienGUI
         {
             refreshError();
 
-            if (txbTenSach.Text != "" && cbTheLoaiSach.Text != "" && txbTacGiaSach.Text != "" && txbNhaXuatBanSach.Text != "" && txbNamXuatBanSach.Text != "" && txbGiaTriSach.Text != "")
+            if (listSach.Count > 0)
             {
-                DateTime datebyYear = new DateTime(int.Parse(txbNamXuatBanSach.Text),1,1);
-                int trangThaiSach = 0;
-                for (int i = 0; i < QuanLiSachBUS.DanhSachTrangThaiSach.Length; i++)
+                if (txbTenSach.Text != "" && cbTheLoaiSach.Text != "" && txbTacGiaSach.Text != "" && txbNhaXuatBanSach.Text != "" && txbNamXuatBanSach.Text != "" && txbGiaTriSach.Text != "")
                 {
-                    if (cbTinhTrangSach.Text == QuanLiSachBUS.DanhSachTrangThaiSach[i])
+                    DateTime datebyYear = new DateTime(int.Parse(txbNamXuatBanSach.Text), 1, 1);
+                    int trangThaiSach = 0;
+                    for (int i = 0; i < QuanLiSachBUS.DanhSachTrangThaiSach.Length; i++)
                     {
-                        trangThaiSach = i;
+                        if (cbTinhTrangSach.Text == QuanLiSachBUS.DanhSachTrangThaiSach[i])
+                        {
+                            trangThaiSach = i;
+                        }
                     }
-                }
-                sachDTO sach = new sachDTO(int.Parse(txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, dtpNgayNhapSach.Value, datebyYear, int.Parse(txbGiaTriSach.Text), trangThaiSach);
+                    sachDTO sach = new sachDTO(int.Parse(txbMaSach.Text), txbTenSach.Text, cbTheLoaiSach.Text, txbTacGiaSach.Text, txbNhaXuatBanSach.Text, dtpNgayNhapSach.Value, datebyYear, int.Parse(txbGiaTriSach.Text), trangThaiSach);
 
-                bool isExistTheLoaiSach = false;
-                foreach (loaisachDTO loaisach in listLoaiSach)
-                {
-                    if (cbTheLoaiSach.Text == loaisach.Theloaisach)
-                    {
-                        isExistTheLoaiSach = true;
-                    }
-                }
-                if (isExistTheLoaiSach == false)
-                {
-                    quanLiTheLoaiSachBUS.ThemTheLoaisach(new loaisachDTO(cbTheLoaiSach.Text));
-
-                    listLoaiSach.Clear();
-                    listLoaiSach = quanLiTheLoaiSachBUS.LayDanhSachCacTheLoai();
-
-                    cbTheLoaiSach.Items.Clear();
-                    cbTimSachTheoTheLoai.Items.Clear();
+                    bool isExistTheLoaiSach = false;
                     foreach (loaisachDTO loaisach in listLoaiSach)
                     {
-                        cbTheLoaiSach.Items.Add(loaisach.Theloaisach);
-                        cbTimSachTheoTheLoai.Items.Add(loaisach.Theloaisach);
+                        if (cbTheLoaiSach.Text == loaisach.Theloaisach)
+                        {
+                            isExistTheLoaiSach = true;
+                        }
                     }
-                }
+                    if (isExistTheLoaiSach == false)
+                    {
+                        quanLiTheLoaiSachBUS.ThemTheLoaisach(new loaisachDTO(cbTheLoaiSach.Text));
 
-                if (quanLiSachBUS.SuaSach(sach))
-                {
-                    sttErrorLabel.Text = "Cập nhật thông tin thành công";
-                    loadDanhSachSach(indexSach);
+                        listLoaiSach.Clear();
+                        listLoaiSach = quanLiTheLoaiSachBUS.LayDanhSachCacTheLoai();
+
+                        cbTheLoaiSach.Items.Clear();
+                        cbTimSachTheoTheLoai.Items.Clear();
+                        foreach (loaisachDTO loaisach in listLoaiSach)
+                        {
+                            cbTheLoaiSach.Items.Add(loaisach.Theloaisach);
+                            cbTimSachTheoTheLoai.Items.Add(loaisach.Theloaisach);
+                        }
+                    }
+
+                    if (quanLiSachBUS.SuaSach(sach))
+                    {
+                        sttErrorLabel.Text = "Cập nhật thông tin thành công";
+                        loadDanhSachSach(indexSach);
+                    }
+                    else
+                    {
+                        sttErrorLabel.Text = "Cập nhật thông tin thất bại. " + BUS_notification.mess;
+                    }
                 }
                 else
                 {
-                    sttErrorLabel.Text = "Cập nhật thông tin thất bại. " + BUS_notification.mess;
-                }
-            }
-            else
-            {
-                sttErrorLabel.Text = "Vui lòng điền đầy đủ thông tin";
+                    sttErrorLabel.Text = "Vui lòng điền đầy đủ thông tin";
 
+                }
             }
         }
 
