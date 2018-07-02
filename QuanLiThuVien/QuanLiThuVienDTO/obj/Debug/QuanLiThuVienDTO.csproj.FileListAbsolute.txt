@@ -1,5 +1,0 @@
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.dll
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\bin\Debug\QuanLiThuVienDTO.pdb
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.csproj.CoreCompileInputs.cache
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.dll
-D:\Download\tài liệu môn học UIT\SE104\se104-QuanLyThuVien\QuanLiThuVien\QuanLiThuVienDTO\obj\Debug\QuanLiThuVienDTO.pdb
