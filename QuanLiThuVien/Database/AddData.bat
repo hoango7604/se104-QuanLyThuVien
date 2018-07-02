@@ -1,1 +1,1 @@
-SQLCMD -S .\SQLEXPRESS -E -i CreateDatabase.sql
+SQLCMD -S .\SQLEXPRESS -E -i AddData.sql

@@ -1,1 +1,1 @@
-SQLCMD -S .\SQLEXPRESS -E -i Library2.sql
+SQLCMD -S .\SQLEXPRESS -E -i CreateDB.sql

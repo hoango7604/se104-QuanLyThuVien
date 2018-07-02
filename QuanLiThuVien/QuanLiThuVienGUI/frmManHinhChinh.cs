@@ -47,10 +47,6 @@ namespace QuanLiThuVienGUI
                 loadDanhSachSach();
                 initDataGridViewSach();
 
-                anhXaThongTinBanDoc(indexBanDoc);
-
-                anhXaThongTinSach(indexSach);
-
                 anhXaQuyDinh();
             }
             catch (Exception e)
@@ -100,8 +96,11 @@ namespace QuanLiThuVienGUI
         public void loadDanhSachBanDoc()
         {
             listDocGia = quanLiBanDocBUS.DanhSachDocGia();
-            docgia = listDocGia[0];
-            anhXaThongTinBanDoc(0);
+            if (listDocGia.Count > 0)
+            {
+                docgia = listDocGia[0];
+                anhXaThongTinBanDoc(0);
+            }
         }
 
         public void loadDanhSachBanDoc(int index)
@@ -133,8 +132,11 @@ namespace QuanLiThuVienGUI
         public void loadDanhSachSach()
         {
             listSach = quanLiSachBUS.DanhSachSach();
-            sach = listSach[0];
-            anhXaThongTinSach(0);
+            if (listSach.Count > 0)
+            {
+                sach = listSach[0];
+                anhXaThongTinSach(0);
+            }
         }
 
         public void loadDanhSachSach(int index)
